@@ -91,11 +91,15 @@ else {
 						<div class="form-group">
 							<label for="theme" class="col-form-label">Thème</label>
 							<select class="form-control" id="theme" name="theme">
-								<option value="politique"		<?php if ($row['theme'] == 'politique')		echo 'selected' ?>>politique</option>
-								<option value="histoire"		<?php if ($row['theme'] == 'histoire')		echo 'selected' ?>>histoire</option>
+								<option value="art"				<?php if ($row['theme'] == 'art')			echo 'selected' ?>>art</option>
 								<option value="écologie"		<?php if ($row['theme'] == 'écologie')		echo 'selected' ?>>écologie</option>
 								<option value="économie"		<?php if ($row['theme'] == 'économie')		echo 'selected' ?>>économie</option>
+								<option value="histoire"		<?php if ($row['theme'] == 'histoire')		echo 'selected' ?>>histoire</option>
 								<option value="littérature"		<?php if ($row['theme'] == 'littérature')	echo 'selected' ?>>littérature</option>
+								<option value="philosophie"		<?php if ($row['theme'] == 'philosophie')	echo 'selected' ?>>philosophie</option>
+								<option value="politique"		<?php if ($row['theme'] == 'politique')		echo 'selected' ?>>politique</option>
+								<option value="religion"		<?php if ($row['theme'] == 'religion')		echo 'selected' ?>>religion</option>
+								<option value="science"			<?php if ($row['theme'] == 'science')		echo 'selected' ?>>science</option>
 								<option value="sport"			<?php if ($row['theme'] == 'sport')			echo 'selected' ?>>sport</option>
 							</select>
 						</div>

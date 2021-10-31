@@ -158,7 +158,8 @@ echo $hint;
 ?>
 
 
-
+		aLengthMenu: [ [100, 500, 1000, -1], [100, 500, 1000, "Tous"] ],
+		iDisplayLength: 100,
 		dom: 'Bfrtip',
 		select: true,
 		orderCellsTop: true,
