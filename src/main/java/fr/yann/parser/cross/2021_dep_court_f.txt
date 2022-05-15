@@ -1,0 +1,28 @@
+1	14'19''	ROBINEAU-FAUVEY Alanis	Ac Paris-joinville	094	ESF	01	 	 
+2	14'37''	LE FLOCH Eve	Ao Charenton	094	SEF	88	 	 
+3	14'41''	BOGACHKINA Oksana	Ao Charenton	094	SEF	90	 	 
+4	14'52''	LE GOFF Fanny	Ao Charenton	094	SEF	95	 	 
+5	15'04''	JULIER Eleonore	Ao Charenton	094	SEF	92	 	 
+6	15'20''	DA COSTA Helene	Ac Paris-joinville	094	SEF	90	 	 
+7	15'28''	BONET Madison	Ao Charenton	094	SEF	94	 	 
+8	15'34''	BOCCARD Marie	C.a. L'hay Les Roses	094	ESF	99	 	 
+9	15'38''	D ESQUERRE Armelle	Ao Charenton	094	SEF	90	 	 
+10	15'44''	BOURBON Beatrice	Us Creteil	094	SEF	90	 	 
+11	15'49''	TABARY Lea	Thiais Ac	094	ESF	99	 	 
+12	15'55''	CHEVALIER Chloe	Us Creteil	094	SEF	94	 	 
+13	16'05''	GALMICHE Coline	Ao Charenton	094	SEF	89	 	 
+14	16'07''	SECHAUD Ema	Ac Paris-joinville	094	SEF	97	 	 
+15	16'25''	GERARD Amelie	Ao Charenton	094	SEF	93	 	 
+16	17'12''	BENOIT Manon	Us Creteil	094	SEF	94	 	 
+17	17'16''	ROUX Sandrine	Uai Nogent-sur-marne	094	SEF	98	 	 
+18	17'33''	ELANDALOUSSI Louise	Us Ivry	094	ESF	99	 	 
+19	17'43''	CAMARENA VILLAR Soraya (Esp)	Asfi Villejuif Athletisme	094	SEF	96	 	 
+20	18'08''	MEUNIER-SIRVEN Camille	Ao Charenton	094	SEF	96	 	 
+21	18'20''	CHARRAUD Julia	Ao Charenton	094	SEF	89	 	 
+22	18'27''	LAGACHE Lea	Us Creteil	094	SEF	95	 	 
+23	18'28''	AUDURIER-DUBIN Heloise	Ao Charenton	094	ESF	00	 	 
+HC	18'33''	BERTRAND Olivia	Ao Charenton	094	SEF	91	 	 
+24	19'02''	ALVES Ana	Csa Kremlin Bicetre	094	M4F	62	 	 
+25	20'34''	SIROT Anne-Cecile	Ac Paris-joinville	094	M2F	72	 	 
+26	22'20''	SALOBERT-DARIES Sophie	Csm Bonneuil Sur Marne	094	M3F	71	 	 
+27	22'25''	PEDOUX Virginie	Csm Bonneuil Sur Marne	094	M2F	76	 

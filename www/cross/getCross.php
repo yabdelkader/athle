@@ -7,7 +7,7 @@ $championnat	= $_GET['championnat'];
 $annee			= $_GET['annee'];
 
 
-if ($cat === "M"){ // and $annee < 2020
+if ($cat === "M" and $annee < 2020){
     $cat = "V";
 }
 

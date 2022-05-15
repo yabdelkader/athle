@@ -48,27 +48,28 @@ public class E1_TraiteFichierRecordsFede {
 	private static List<LigneRecordDep> traite(int dep, SexeEnum sexeEnum, CategorieEnum catEnum) throws Exception {
 
 		File f = new File(getPathFile(dep, sexeEnum, catEnum));
-		FileReader fr = new FileReader(f);
-		BufferedReader br = new BufferedReader(fr);
+		List<LigneRecordDep> listeRecords;
+		try (FileReader fr = new FileReader(f);BufferedReader br = new BufferedReader(fr)) {
+			LigneRecordDep lr = null;
+			listeRecords = new ArrayList<>();
+
+			String line;
+
+			while ((line = br.readLine()) != null) {
+
+				if (line.startsWith("<tr")) {
+					lr = new LigneRecordDep(dep, sexeEnum, catEnum);
+					ParserRecordDep.traiteLine(line, lr);
+					listeRecords.add(lr);
+				}
+			}
+			br.close();
+			fr.close();
+			return listeRecords;
+		}
 
 		// boolean bTrEncours = false;
 
-		LigneRecordDep lr = null;
-		List<LigneRecordDep> listeRecords = new ArrayList<>();
-
-		String line;
-
-		while ((line = br.readLine()) != null) {
-
-			if (line.startsWith("<tr")) {
-				lr = new LigneRecordDep(dep, sexeEnum, catEnum);
-				ParserRecordDep.traiteLine(line, lr);
-				listeRecords.add(lr);
-			}
-		}
-		br.close();
-		fr.close();
-		return listeRecords;
 	}
 
 	private static String getPathFile(int dep, SexeEnum sexeEnum, CategorieEnum catEnum) {

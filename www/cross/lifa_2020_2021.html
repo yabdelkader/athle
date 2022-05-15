@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cross 2020 et calcul écarts</title>
+<!-- Copyright 1998-2017 by Northwoods Software Corporation. -->
+<meta charset="UTF-8">
+<script src="../exercices/js/go.js"></script>
+
+<!--
+SELECT CONCAT('{ n: "', nom, '", "i": "', chrono, '", "color":"#00BCF2"},') FROM cros WHERE annee = 2020 and championnat = 'reg'
+SELECT CONCAT('{from:"Reg20",fromPort:"', nom, '",to:"Lifa20",toPort: "', nom, '" },') FROM cros WHERE annee = 2020 and championnat = 'reg' and sexe = 'M'
+-->
+<script id="code">
+function init() {
+    if (window.goSamples) goSamples();  // init for these samples -- you don't need to call this
+    var $ = go.GraphObject.make;  // for conciseness in defining templates
+
+    myDiagram =
+      $(go.Diagram, "myDiagramDiv",
+        {
+          initialContentAlignment: go.Spot.Center,
+          validCycle: go.Diagram.CycleNotDirected,  // don't allow loops
+          // For this sample, automatically show the state of the diagram's model on the page
+          "ModelChanged": function(e) {
+              if (e.isTransactionFinished) showModel();
+            },
+          "undoManager.isEnabled": true
+        });
+
+    // This template is a Panel that is used to represent each item in a Panel.itemArray.
+    // The Panel is data bound to the item object.
+    var fieldTemplate =
+      $(go.Panel, "TableRow",  // this Panel is a row in the containing Table
+        new go.Binding("portId", "n"),  // this Panel is a "port"
+        {
+          background: "transparent",  // so this port's background can be picked by the mouse
+          fromSpot: go.Spot.Right,  // links only go from the right side to the left side
+          toSpot: go.Spot.Left,
+          // allow drawing links from or to this port:
+          fromLinkable: false, toLinkable: true
+        },
+
+        { // allow the user to select items -- the background color indicates whether "selected"
+            click: function(e, item) {
+              // assume "transparent" means not "selected", for items
+              var oldskips = item.diagram.skipsUndoManager;
+              item.diagram.skipsUndoManager = true;
+              if (item.background === "transparent") {
+                item.background = "dodgerblue";
+                console.log(item.Zd.n);
+                console.log(item.Zd.i);
+
+                selectionLigne(item.Zd.n);
+
+                // https://gojs.net/latest/learn/graphobject.html
+                // model.setDataProperty(item.Zd, "i", "aaa");                
+                
+                
+              } else {
+                item.background = "transparent";
+              }
+              item.diagram.skipsUndoManager = oldskips;
+            }
+          },        
+        
+        $(go.Shape,
+          { width: 12, height: 12, column: 0, strokeWidth: 2, margin: 4,
+            // but disallow drawing links from or to this shape:
+            fromLinkable: false, toLinkable: false },
+          new go.Binding("figure", "figure"),
+          new go.Binding("fill", "color")),
+        $(go.TextBlock,
+          { margin: new go.Margin(0, 0), column: 1, font: "bold 13px sans-serif",
+            alignment: go.Spot.Left,
+            // and disallow drawing links from or to this text:
+            fromLinkable: false, toLinkable: false },
+          new go.Binding("text", "n")),
+        $(go.TextBlock,
+          { margin: new go.Margin(0, 0), column: 2, font: "13px sans-serif", alignment: go.Spot.Left },
+          new go.Binding("text", "i"))
+      );
+
+    // This template represents a whole "record".
+    myDiagram.nodeTemplate =
+      $(go.Node, "Auto",
+        { movable: false,
+          copyable: false,
+          deletable: false },
+        new go.Binding("location", "loc", go.Point.parse).makeTwoWay(go.Point.stringify),
+        // this rectangular shape surrounds the content of the node
+        $(go.Shape,
+          { fill: "#EEEEEE" }),
+        // the content consists of a header and a list of items
+        $(go.Panel, "Vertical",
+          // this is the header for the whole node
+          $(go.Panel, "Auto",
+            { stretch: go.GraphObject.Horizontal },  // as wide as the whole node
+            $(go.Shape,
+              { fill: "#1570A6", stroke: null }),
+            $(go.TextBlock,
+              {
+                alignment: go.Spot.Center,
+                margin: 3,
+                stroke: "white",
+                textAlign: "center",
+                font: "bold 12pt sans-serif"
+              },
+              new go.Binding("text", "key"))),
+          // this Panel holds a Panel for each item object in the itemArray;
+          // each item Panel is defined by the itemTemplate to be a TableRow in this Table
+          $(go.Panel, "Table",
+            {
+              padding: 2,
+              minSize: new go.Size(100, 10),
+              defaultStretch: go.GraphObject.Horizontal,
+              itemTemplate: fieldTemplate
+            },
+            new go.Binding("itemArray", "fields")
+          )  // end Table Panel of items
+        )  // end Vertical Panel
+      );  // end Node
+
+    myDiagram.linkTemplate =
+      $(go.Link,
+        {
+          relinkableFrom: false, relinkableTo: false, // let user reconnect links
+          toShortLength: 4,  fromShortLength: 2
+        },
+        $(go.Shape, { strokeWidth: 1.5 }),
+        $(go.Shape, { toArrow: "Standard", stroke: null })
+      );
+
+    myDiagram.model =
+      $(go.GraphLinksModel,
+        {
+          linkFromPortIdProperty: "fromPort",
+          linkToPortIdProperty: "toPort",
+          nodeDataArray: [
+
+{key:"Lifa20",
+	fields: [
+{ n: "SADI Ali", "i": "34'52", "color":"#00BCF2"},
+{ n: "PREIRA William", "i": "35'25", "color":"#00BCF2"},
+{ n: "GRUNDTNER Willy", "i": "35'29", "color":"#00BCF2"},
+{ n: "FAVIER Francois-rene", "i": "35'47", "color":"#00BCF2"},
+{ n: "RAYNAUD Bertrand", "i": "35'52", "color":"#00BCF2"},
+{ n: "ROUYER Thomas", "i": "35'55", "color":"#00BCF2"},
+{ n: "LECIEUX Thomas", "i": "35'58", "color":"#00BCF2"},
+{ n: "BROOKS Jerome", "i": "36'00", "color":"#00BCF2"},
+{ n: "NARDI COLOME Franck", "i": "36'03", "color":"#00BCF2"},
+{ n: "CHAREIL Ken", "i": "36'08", "color":"#00BCF2"},
+{ n: "ISMAEL Laurent", "i": "36'35", "color":"#00BCF2"},
+{ n: "KARA Amirouche", "i": "36'36", "color":"#00BCF2"},
+{ n: "DIANI Ilyas", "i": "36'37", "color":"#00BCF2"},
+{ n: "CARANTON Laurent", "i": "36'38", "color":"#00BCF2"},
+{ n: "BENHAMOU Michael", "i": "36'43", "color":"#00BCF2"},
+{ n: "AIT IDER Mustapha", "i": "36'43", "color":"#00BCF2"},
+{ n: "MOUQUET Sylvain", "i": "36'47", "color":"#00BCF2"},
+{ n: "BEAUFORT Sebastien", "i": "36'51", "color":"#00BCF2"},
+{ n: "NEDELLEC Loic", "i": "36'55", "color":"#00BCF2"},
+{ n: "BARGET Yann", "i": "36'59", "color":"#00BCF2"},
+{ n: "LEJEUNE Frank", "i": "37'01", "color":"#00BCF2"},
+{ n: "GRIBEAUVAL Ludovic", "i": "37'02", "color":"#00BCF2"},
+{ n: "GINER Wilfried", "i": "37'04", "color":"#00BCF2"},
+{ n: "CAILLOT Yannick", "i": "37'13", "color":"#00BCF2"},
+{ n: "EL YAMANI Mohammed", "i": "37'14", "color":"#00BCF2"},
+{ n: "LE BOUR Gael", "i": "37'17", "color":"#00BCF2"},
+{ n: "ZEROUKI Mehdi-xavier", "i": "37'19", "color":"#00BCF2"},
+{ n: "MEGHAZI Mhamed", "i": "37'19", "color":"#00BCF2"},
+{ n: "MERROUNE Mohamed", "i": "37'36", "color":"#00BCF2"},
+{ n: "LACHEREST Sebastien", "i": "37'37", "color":"#00BCF2"},
+{ n: "ABACHAD Adil", "i": "37'39", "color":"#00BCF2"},
+{ n: "GUEGANO Raphael", "i": "37'41", "color":"#00BCF2"},
+{ n: "FELEMOU Athos", "i": "37'42", "color":"#00BCF2"},
+{ n: "RENAUD Jean-claude", "i": "37'43", "color":"#00BCF2"},
+{ n: "LAHYANI Najib", "i": "37'43", "color":"#00BCF2"},
+{ n: "BODIER Nicolas", "i": "37'47", "color":"#00BCF2"},
+{ n: "MARTINHO Ezequiel", "i": "37'47", "color":"#00BCF2"},
+{ n: "MAIRESSE Jean-baptiste", "i": "37'48", "color":"#00BCF2"},
+{ n: "ZOETEMELK Karl", "i": "37'50", "color":"#00BCF2"},
+{ n: "RUIZ Pascal", "i": "37'52", "color":"#00BCF2"},
+{ n: "EL HAOUARI Rachid", "i": "37'57", "color":"#00BCF2"},
+{ n: "LE KERVERN Pascal", "i": "38'01", "color":"#00BCF2"},
+{ n: "OULD Fabien", "i": "38'24", "color":"#00BCF2"},
+{ n: "COURJAL Yannick", "i": "38'25", "color":"#00BCF2"},
+{ n: "BARAONA Christophe", "i": "38'29", "color":"#00BCF2"},
+{ n: "BEN-HOUDJA Mohammed", "i": "38'34", "color":"#00BCF2"},
+{ n: "FARIA Rolando", "i": "38'37", "color":"#00BCF2"},
+{ n: "AUSTRUY Eric", "i": "38'40", "color":"#00BCF2"},
+{ n: "HARDY David", "i": "38'40", "color":"#00BCF2"},
+{ n: "HUE Sylvain", "i": "38'44", "color":"#00BCF2"},
+{ n: "ALLONGUE Antoine", "i": "38'46", "color":"#00BCF2"},
+{ n: "DA SILVA Jose carlos", "i": "38'47", "color":"#00BCF2"},
+{ n: "VIOLARD Frederic", "i": "38'48", "color":"#00BCF2"},
+{ n: "ABDELKADER Yann", "i": "38'48", "color":"#00BCF2"},
+{ n: "TOUPENAY Steve", "i": "38'49", "color":"#00BCF2"},
+{ n: "CHERIFIA Farid", "i": "38'50", "color":"#00BCF2"},
+{ n: "ANACHE Alexandre", "i": "38'53", "color":"#00BCF2"},
+{ n: "ABDELMALEK Morad", "i": "38'57", "color":"#00BCF2"},
+{ n: "WILLIATE Nicolas", "i": "39'00", "color":"#00BCF2"},
+{ n: "JARRY Alain", "i": "39'07", "color":"#00BCF2"},
+{ n: "GHIANI Marc", "i": "39'07", "color":"#00BCF2"},
+{ n: "VIDAL Patrick", "i": "39'11", "color":"#00BCF2"},
+{ n: "VILFEU Ludovic", "i": "39'12", "color":"#00BCF2"},
+{ n: "BLANCHARD Nicolas", "i": "39'12", "color":"#00BCF2"},
+{ n: "COUSSEMENT Nicolas", "i": "39'13", "color":"#00BCF2"},
+{ n: "BADARD Christophe", "i": "39'15", "color":"#00BCF2"},
+{ n: "BRIANT Geoffrey", "i": "39'15", "color":"#00BCF2"},
+{ n: "LEGER Franck", "i": "39'17", "color":"#00BCF2"},
+{ n: "DAUVILLIERS Sebastien", "i": "39'20", "color":"#00BCF2"},
+{ n: "LEDOUX Daniel", "i": "39'21", "color":"#00BCF2"},
+{ n: "SANCHEZ Christian", "i": "39'21", "color":"#00BCF2"},
+{ n: "VERDOL Widdy", "i": "39'22", "color":"#00BCF2"},
+{ n: "ANDRIEU Olivier", "i": "39'25", "color":"#00BCF2"},
+{ n: "FORTUN Armel", "i": "39'25", "color":"#00BCF2"},
+{ n: "SAELEN Nicolas", "i": "39'31", "color":"#00BCF2"},
+{ n: "QUEAU Christophe", "i": "39'33", "color":"#00BCF2"},
+{ n: "CATROU Olivier", "i": "39'35", "color":"#00BCF2"},
+{ n: "BENABDELKRIM Hicham", "i": "39'35", "color":"#00BCF2"},
+{ n: "DURAND Jerome", "i": "39'39", "color":"#00BCF2"},
+{ n: "COMPAIN Gaetan", "i": "39'40", "color":"#00BCF2"},
+{ n: "CROIZIER Lilian", "i": "39'41", "color":"#00BCF2"},
+{ n: "DA COSTA Bernard", "i": "39'44", "color":"#00BCF2"},
+{ n: "HANNOUDI Mounir", "i": "39'48", "color":"#00BCF2"},
+{ n: "AUDEBERT Jean-philippe", "i": "39'49", "color":"#00BCF2"},
+{ n: "RAMZI Houcine", "i": "39'50", "color":"#00BCF2"},
+{ n: "DUVERNE Guillaume", "i": "39'52", "color":"#00BCF2"},
+{ n: "MARCOVICI Jean-baptiste", "i": "39'53", "color":"#00BCF2"},
+{ n: "MARCHET Yann", "i": "39'53", "color":"#00BCF2"},
+{ n: "OROBON Christophe", "i": "39'56", "color":"#00BCF2"},
+{ n: "MARTIN Thomas", "i": "39'56", "color":"#00BCF2"},
+{ n: "BUISSON Denis", "i": "39'57", "color":"#00BCF2"},
+{ n: "BAUDRAS Damien", "i": "39'59", "color":"#00BCF2"},
+{ n: "GARCIA SANCHEZ Jesus emilio", "i": "39'59", "color":"#00BCF2"},
+{ n: "MONCHABLON Tristan", "i": "40'00", "color":"#00BCF2"},
+{ n: "SAGNA Aboudou", "i": "40'01", "color":"#00BCF2"},
+{ n: "IMAZATENE Ahmed", "i": "40'03", "color":"#00BCF2"},
+{ n: "HUMBERT Thierry", "i": "40'04", "color":"#00BCF2"},
+{ n: "DELAETER Fabrice", "i": "40'09", "color":"#00BCF2"},
+{ n: "BEUCLAIR Nicolas", "i": "40'10", "color":"#00BCF2"},
+{ n: "HENNI Djilali", "i": "40'12", "color":"#00BCF2"},
+{ n: "TASSIN Jerome", "i": "40'12", "color":"#00BCF2"},
+{ n: "GUINOISEAU Nicolas", "i": "40'14", "color":"#00BCF2"},
+{ n: "ALEXANDRE Christian", "i": "40'15", "color":"#00BCF2"},
+{ n: "PONCHEL Gregory", "i": "40'17", "color":"#00BCF2"},
+{ n: "NOIRY Julien", "i": "40'18", "color":"#00BCF2"},
+{ n: "MOURLON Nicolas", "i": "40'20", "color":"#00BCF2"},
+{ n: "DIOT Johann", "i": "40'22", "color":"#00BCF2"},
+{ n: "FERRAZ Antonio", "i": "40'24", "color":"#00BCF2"},
+{ n: "MATTERN Thibaut", "i": "40'26", "color":"#00BCF2"},
+{ n: "BAUDRY Bernard", "i": "40'29", "color":"#00BCF2"},
+{ n: "MOREAU Stephane", "i": "40'37", "color":"#00BCF2"},
+{ n: "BENHADDA Feth-allah", "i": "40'38", "color":"#00BCF2"},
+{ n: "CURADO Pedro (Por)", "i": "40'39", "color":"#00BCF2"},
+{ n: "PAINEAU Nicolas", "i": "40'40", "color":"#00BCF2"},
+{ n: "DRAY Sebastien", "i": "40'41", "color":"#00BCF2"},
+{ n: "DUPRE Franck", "i": "40'42", "color":"#00BCF2"},
+{ n: "ROSSE Sebastien", "i": "40'45", "color":"#00BCF2"},
+{ n: "ADAO Manuel", "i": "40'45", "color":"#00BCF2"},
+{ n: "ALIX Herve", "i": "40'48", "color":"#00BCF2"},
+{ n: "LAMINE Moustapha (Mar)", "i": "40'49", "color":"#00BCF2"},
+{ n: "ARMAND Gilles", "i": "40'50", "color":"#00BCF2"},
+{ n: "AHMIMID M hamed", "i": "40'51", "color":"#00BCF2"},
+{ n: "JIMENEZ Simon", "i": "40'53", "color":"#00BCF2"},
+{ n: "GRANGER David", "i": "40'55", "color":"#00BCF2"},
+{ n: "LE QUERRE Fabrice", "i": "40'56", "color":"#00BCF2"}
+	],
+loc: "0 0" },
+
+{key:"Lifa21",
+	fields: [
+
+{ n: "JARMUSZEWICZ Quentin", "i": "33'10''", "color":"#00BCF2"},
+{ n: "ISMAEL Laurent", "i": "33'30''", "color":"#00BCF2"},
+{ n: "MAAMOUZ Ahmed", "i": "34'49''", "color":"#00BCF2"},
+{ n: "HOUSSIER Julien", "i": "34'59''", "color":"#00BCF2"},
+{ n: "BARTOLI Julien", "i": "35'03''", "color":"#00BCF2"},
+{ n: "SAPEI Sebastien", "i": "35'08''", "color":"#00BCF2"},
+{ n: "FOUQUET Loic", "i": "35'30''", "color":"#00BCF2"},
+{ n: "COMPAIN Gaetan", "i": "35'48''", "color":"#00BCF2"},
+{ n: "GUERY Arnaud", "i": "35'58''", "color":"#00BCF2"},
+{ n: "VILFEU Ludovic", "i": "36'00''", "color":"#00BCF2"},
+{ n: "STOLTZ Gabriel", "i": "36'14''", "color":"#00BCF2"},
+{ n: "LACHEREST Sebastien", "i": "36'20''", "color":"#00BCF2"},
+{ n: "CHARBONNEAU Franck", "i": "36'25''", "color":"#00BCF2"},
+{ n: "EZBAIR Soufiane", "i": "36'30''", "color":"#00BCF2"},
+{ n: "PROME Thomas", "i": "36'35''", "color":"#00BCF2"},
+{ n: "ABDELKADER Yann", "i": "36'36''", "color":"#00BCF2"},
+{ n: "NOIRY Julien", "i": "36'57''", "color":"#00BCF2"},
+{ n: "GASPAR Paul", "i": "37'03''", "color":"#00BCF2"},
+{ n: "ANCIAES Horacio", "i": "37'09''", "color":"#00BCF2"},
+{ n: "HUGUET Michel", "i": "37'14''", "color":"#00BCF2"},
+{ n: "MONTEIRO Manuel", "i": "37'22''", "color":"#00BCF2"},
+{ n: "FRAYNE Thomas", "i": "37'53''", "color":"#00BCF2"},
+{ n: "GARCIA Stephane", "i": "39'00''", "color":"#00BCF2"},
+{ n: "MORO Alain", "i": "39'09''", "color":"#00BCF2"},
+{ n: "PINET Cyril", "i": "39'12''", "color":"#00BCF2"},
+{ n: "RISSER Lilian", "i": "40'04''", "color":"#00BCF2"},
+{ n: "BELMOKHTAR Omar", "i": "40'23''", "color":"#00BCF2"},
+{ n: "DURAND Luc", "i": "40'30''", "color":"#00BCF2"},
+{ n: "ROBERT Philippe", "i": "41'25''", "color":"#00BCF2"},
+{ n: "KIPPER Brice", "i": "41'38''", "color":"#00BCF2"},
+{ n: "RABOTIN Eddie", "i": "42'55''", "color":"#00BCF2"},
+{ n: "LEROUL Djamel", "i": "43'36''", "color":"#00BCF2"},
+{ n: "DELABARRE Fabrice", "i": "44'04''", "color":"#00BCF2"},
+{ n: "BOYER Frederic", "i": "44'19''", "color":"#00BCF2"},
+{ n: "QUESNEL Stephane", "i": "44'54''", "color":"#00BCF2"}
+
+
+	],
+loc: "800 0" },
+
+
+          ],
+          linkDataArray: [
+
+{from:"Lifa20",fromPort:"ISMAEL Laurent",to:"Lifa21",toPort:"ISMAEL Laurent"},
+{from:"Lifa20",fromPort:"LACHEREST Sebastien",to:"Lifa21",toPort:"LACHEREST Sebastien"},
+{from:"Lifa20",fromPort:"ABDELKADER Yann",to:"Lifa21",toPort:"ABDELKADER Yann"},
+{from:"Lifa20",fromPort:"NOIRY Julien",to:"Lifa21",toPort:"NOIRY Julien"},
+{from:"Lifa20",fromPort:"COMPAIN Gaetan",to:"Lifa21",toPort:"COMPAIN Gaetan"},
+{from:"Lifa20",fromPort:"VILFEU Ludovic",to:"Lifa21",toPort:"VILFEU Ludovic"}
+
+
+            
+          ]
+        });
+
+    showModel();  // show the diagram's initial model
+}
+
+    function showModel() {
+      document.getElementById("mySavedModel").textContent = myDiagram.model.toJson();
+    }
+    
+    function selectionLigne(sel){
+    	if (document.getElementById("sel1").innerText == "__"){
+    		document.getElementById("sel1").innerText = sel;
+    	}
+    	else {
+    		document.getElementById("sel2").innerText = sel;
+    		document.getElementById("btnCompareSel1Sel2").disabled = false;
+    	}
+    }
+    
+    
+    function selectionAthleteJoinville(cross, athletes){
+    	for (var i in athletes) {
+    		if (athletes[i].n == "ABDELKADER Yann"
+|| athletes[i].n == "ANDRIEU Olivier"
+|| athletes[i].n == "LEJEUNE Olivier"
+|| athletes[i].n == "DIANI Ilyas"
+|| athletes[i].n == "BRAHIC Ludovic"
+|| athletes[i].n == "LE ROUX Devrig"
+|| athletes[i].n == "SOFFIATI Thibaud"
+|| athletes[i].n == "JOUGLAS Franck"
+|| athletes[i].n == "DE VENDEGIES Xavier"
+|| athletes[i].n == "RIZZARELLO Romain"
+|| athletes[i].n == "CHASTANG Cedric"
+|| athletes[i].n == "CHASTANG Christophe"
+|| athletes[i].n == "MEYER Jerome"
+    	      ){
+				// model.setDataProperty(item.Zd, "i", "XXXX");			    	      
+    	        myDiagram.model.setDataProperty(athletes[i], "color", "red");
+    	        } // endif
+	        } // endfor
+    }
+    
+  
+    function selectionAthleteCreteil(cross, athletes){
+    	for (var i in athletes) {
+    		if (athletes[i].n == "LEJEUNE Olivier"
+|| athletes[i].n == "DELVER Geoffrey"
+|| athletes[i].n == "PROST Hugo"
+|| athletes[i].n == "BERTHE Damien"
+|| athletes[i].n == "HOUSSIER Julien"
+    	      ){
+				// model.setDataProperty(item.Zd, "i", "XXXX");			    	      
+    	        myDiagram.model.setDataProperty(athletes[i], "color", "blue");
+    	        } // endif
+	        } // endfor
+    }
+    
+    function selectClubJoinville(){
+    	var arr = myDiagram.model.De;
+    	for (var i = 0; i < arr.length; i++){
+    	    var obj = arr[i];
+    	    selectionAthleteJoinville(obj.key, obj.fields);
+   	    }
+    }
+    function selectClubCreteil(){
+    	var arr = myDiagram.model.De;
+    	for (var i = 0; i < arr.length; i++){
+    	    var obj = arr[i];
+    	    selectionAthleteCreteil(obj.key, obj.fields);
+   	    }
+    }
+    
+    function resetSelection(){
+    	document.getElementById("sel1").innerText = '__';
+    	document.getElementById("sel2").innerText = '__';
+    	document.getElementById("btnCompareSel1Sel2").disabled = true;
+    }
+
+    function supprimerDerniereLigne(){
+    	resetTable();
+    }
+
+    function convertSecondes(chrono) {
+    	var min = parseInt(chrono.substr(0,2));
+    	var sec = parseInt(chrono.substr(3,2));
+    	return (min * 60) + sec; 
+    }
+    	
+    
+    function compareSel1Sel2(){
+    	var sel1 = document.getElementById("sel1").innerText;
+    	var sel2 = document.getElementById("sel2").innerText;
+    	
+    	var arr = myDiagram.model.De;
+    	
+    	var table = document.getElementById("ecarts");
+    	// Create an empty <tr> element and add it to the 1st position of the table:
+    	var row = table.insertRow(1);
+		var num = 0;
+    	
+		
+    	for (var i = 0; i < arr.length; i++){
+    	    var obj = arr[i];
+    	    for (var key in obj){
+    	        var val = obj[key];
+    	        
+    	        // console.log(key);
+    	        if (val == 'Dep20' || val == 'Reg20' || val == 'Lifa20'
+    	        ) {
+    	        	ecart(row, val, obj, sel1, sel2, num);
+    	        	num = num + 1;
+    	        }
+    	    }
+    	}
+       	insertFirstCell(row, sel1, sel2);
+    	
+    	var itr2 = myDiagram.nodes;
+    	while (itr2.next()) {
+    	  var node = itr2.value;
+    	  // console.log(node);
+    	}
+    }
+    
+    function insertFirstCell(row, sel1, sel2){
+    	var cell = row.insertCell(0);
+   		cell.innerHTML = sel1 + " - " + sel2;
+    }
+    
+    function insertCell(row, diff, i){
+
+    	// Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
+    	var cell1 = row.insertCell(i);
+
+    	if (isNaN(diff)){
+    		cell1.innerHTML = "";
+    	}
+    	else {
+    		cell1.innerHTML = diff + "''";
+    	}
+    }
+
+    
+    function traiteTab(row, cross, tab, sel1, sel2, i){
+    	
+      var chrono1 = "_";
+   	  var chrono2 = "_";
+    
+   	  for (var p in tab) {
+   		    
+   		//  console.log(p + "  " + tab[p].n + "  " + tab[p].i);
+   		if (tab[p].n == sel1){
+   			chrono1 = tab[p].i;
+   		}
+   		if (tab[p].n == sel2){
+   			chrono2 = tab[p].i;
+   		}
+      }
+   	  
+   	  console.log(chrono1 + " ---- " + chrono2);
+   	  insertCell(row, convertSecondes(chrono2) - convertSecondes(chrono1), i);
+    }
+
+    function ecart(row, cross, obj, sel1, sel2, i){
+    	
+		  for (var key in obj){
+		    var value = obj[key];
+		    if (key == 'fields'){
+		    	// console.log(key + ": " + value);
+		    	traiteTab(row, cross, value, sel1, sel2, i);
+		    }
+		  }
+  }
+    
+    
+    function resetTable(){
+  	    document.getElementById("ecarts").deleteRow(1);
+    }
+    
+</script>
+<style type="text/css">
+table {
+	border-collapse: collapse;
+	margin: 0px 0px 0px 0px;
+	font-size: 11px;
+}
+
+th, td {
+	border: 1px solid;
+	padding: 10px;
+}
+</style>
+
+</head>
+<body onload="init()" style="font-family: Verdana; font-size: 12px">
+	<div id="schema" style="float: left;width: 1300px; margin-right: 50px;padding-left: 10px"></div>
+		<h2>Cross LIFA 2020 - 2021 et calcul écarts</h2>
+		
+		<p>Le diagramme permet de visualiser l'évolution de la hiérarchie des athlètes.
+		Deux flêches se croisent : l'ordre entre deux athlètes change.</p>
+		
+		<h3>Calcul des écarts entre un athlète de référence et plusieurs autres</h3>
+		<p>
+		[sélection par clic sur nom] Athlète 1 : <span id="sel1" style="margin-right: 50px">ANDRIEU Olivier</span>Athlète 2 : <span id="sel2" style="margin-right: 50px">DIANI Ilyas</span>
+			<button id="btnCompareSel1Sel2" onclick="compareSel1Sel2()">Calcul des écarts</button>
+			<button onclick="resetSelection()">Ré-initialiser sélections</button>
+			<button onclick="supprimerDerniereLigne()">Suppression dernière ligne</button>
+		</p>
+		<table id="ecarts">
+		<tr>
+<th>Comparaison</th><th>Lifa 2020</th><th>Lifa 2021</th>
+						
+		</table>
+		<br/>
+		<p><button onclick="selectClubJoinville()">select club Joinville</button>
+		<button onclick="selectClubCreteil()">select club Créteil</button>
+		</p>
+		
+		<div id="sample">
+  <div id="myDiagramDiv" style="border: solid 1px black; width:1200px; height:1400px"></div>
+
+  <div>
+    <textarea id="mySavedModel" style="width:100%;height:250px;display: none "></textarea>
+
+<h2>Construction</h2>
+
+<ul>
+<li>parse HTML en Java &rarr; JSon file liste cross, liste listes {athlète, chrono}.</li>
+<li>lecture du JSon généré <code>Type listType = new TypeToken&lt;List&lt;Cross&gt;>() {}.getType();
+		List&lt;Cross&gt; listCross = new Gson().fromJson(new FileReader("c:\\\\temp\\\\cross.json"), listType);</code>		
+</li>
+<li>génération des liens Json entre les tableaux pour <b>gojs</b></li>
+</ul>
+    
+<h2>Libraires</h2>    
+<p>JavaScript : GoJS 1.7.26</p>  
+<p>Java : com.google.code.gson 2.6.2</p>
+</div>
+</div>	
+</body>
+</html>

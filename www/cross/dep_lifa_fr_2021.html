@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cross 2021</title>
+<meta charset="UTF-8">
+<script src="../exercices/js/go.js"></script>
+
+<!--
+SELECT CONCAT('{ n: "', nom, '", "i": "', chrono, '", "color":"#00BCF2"},') FROM cros WHERE annee = 2020 and championnat = 'reg'
+SELECT CONCAT('{from:"Reg20",fromPort:"', nom, '",to:"Lifa20",toPort: "', nom, '" },') FROM cros WHERE annee = 2020 and championnat = 'reg' and sexe = 'M'
+-->
+<script id="code">
+function init() {
+    if (window.goSamples) goSamples();  // init for these samples -- you don't need to call this
+    var $ = go.GraphObject.make;  // for conciseness in defining templates
+
+    myDiagram =
+      $(go.Diagram, "myDiagramDiv",
+        {
+          initialContentAlignment: go.Spot.Center,
+          validCycle: go.Diagram.CycleNotDirected,  // don't allow loops
+          // For this sample, automatically show the state of the diagram's model on the page
+          "ModelChanged": function(e) {
+              if (e.isTransactionFinished) showModel();
+            },
+          "undoManager.isEnabled": true
+        });
+
+    // This template is a Panel that is used to represent each item in a Panel.itemArray.
+    // The Panel is data bound to the item object.
+    var fieldTemplate =
+      $(go.Panel, "TableRow",  // this Panel is a row in the containing Table
+        new go.Binding("portId", "n"),  // this Panel is a "port"
+        {
+          background: "transparent",  // so this port's background can be picked by the mouse
+          fromSpot: go.Spot.Right,  // links only go from the right side to the left side
+          toSpot: go.Spot.Left,
+          // allow drawing links from or to this port:
+          fromLinkable: false, toLinkable: true
+        },
+
+        { // allow the user to select items -- the background color indicates whether "selected"
+            click: function(e, item) {
+              // assume "transparent" means not "selected", for items
+              var oldskips = item.diagram.skipsUndoManager;
+              item.diagram.skipsUndoManager = true;
+              if (item.background === "transparent") {
+                item.background = "dodgerblue";
+                console.log(item.Zd.n);
+                console.log(item.Zd.i);
+
+                selectionLigne(item.Zd.n);
+
+                // https://gojs.net/latest/learn/graphobject.html
+                // model.setDataProperty(item.Zd, "i", "aaa");                
+                
+                
+              } else {
+                item.background = "transparent";
+              }
+              item.diagram.skipsUndoManager = oldskips;
+            }
+          },        
+        
+        $(go.Shape,
+          { width: 12, height: 12, column: 0, strokeWidth: 2, margin: 4,
+            // but disallow drawing links from or to this shape:
+            fromLinkable: false, toLinkable: false },
+          new go.Binding("figure", "figure"),
+          new go.Binding("fill", "color")),
+        $(go.TextBlock,
+          { margin: new go.Margin(0, 0), column: 1, font: "bold 13px sans-serif",
+            alignment: go.Spot.Left,
+            // and disallow drawing links from or to this text:
+            fromLinkable: false, toLinkable: false },
+          new go.Binding("text", "n")),
+        $(go.TextBlock,
+          { margin: new go.Margin(0, 0), column: 2, font: "13px sans-serif", alignment: go.Spot.Left },
+          new go.Binding("text", "i"))
+      );
+
+    // This template represents a whole "record".
+    myDiagram.nodeTemplate =
+      $(go.Node, "Auto",
+        { movable: false,
+          copyable: false,
+          deletable: false },
+        new go.Binding("location", "loc", go.Point.parse).makeTwoWay(go.Point.stringify),
+        // this rectangular shape surrounds the content of the node
+        $(go.Shape,
+          { fill: "#EEEEEE" }),
+        // the content consists of a header and a list of items
+        $(go.Panel, "Vertical",
+          // this is the header for the whole node
+          $(go.Panel, "Auto",
+            { stretch: go.GraphObject.Horizontal },  // as wide as the whole node
+            $(go.Shape,
+              { fill: "#1570A6", stroke: null }),
+            $(go.TextBlock,
+              {
+                alignment: go.Spot.Center,
+                margin: 3,
+                stroke: "white",
+                textAlign: "center",
+                font: "bold 12pt sans-serif"
+              },
+              new go.Binding("text", "key"))),
+          // this Panel holds a Panel for each item object in the itemArray;
+          // each item Panel is defined by the itemTemplate to be a TableRow in this Table
+          $(go.Panel, "Table",
+            {
+              padding: 2,
+              minSize: new go.Size(100, 10),
+              defaultStretch: go.GraphObject.Horizontal,
+              itemTemplate: fieldTemplate
+            },
+            new go.Binding("itemArray", "fields")
+          )  // end Table Panel of items
+        )  // end Vertical Panel
+      );  // end Node
+
+    myDiagram.linkTemplate =
+      $(go.Link,
+        {
+          relinkableFrom: false, relinkableTo: false, // let user reconnect links
+          toShortLength: 4,  fromShortLength: 2
+        },
+        $(go.Shape, { strokeWidth: 1.5 }),
+        $(go.Shape, { toArrow: "Standard", stroke: null })
+      );
+
+    myDiagram.model =
+      $(go.GraphLinksModel,
+        {
+          linkFromPortIdProperty: "fromPort",
+          linkToPortIdProperty: "toPort",
+          nodeDataArray: [
+
+{key:"Dep21",
+	fields: [
+{ "n": "BADR Youssef", "i": "30'02", "color":"#00BCF2"},
+{ "n": "MAAMOUZ Ahmed", "i": "30'04", "color":"#00BCF2"},
+{ "n": "MEUBLAT Olivier", "i": "32'34", "color":"#00BCF2"},
+{ "n": "ALLONGUE Antoine", "i": "32'47", "color":"#00BCF2"},
+{ "n": "HARDY Sebastien", "i": "33'34", "color":"#00BCF2"},
+{ "n": "PROME Thomas", "i": "33'39", "color":"#00BCF2"},
+{ "n": "FORTES Alexandrino", "i": "33'40", "color":"#00BCF2"},
+{ "n": "BLANCHARD Nicolas", "i": "33'53", "color":"#00BCF2"},
+{ "n": "ABDELKADER Yann", "i": "34'02", "color":"#00BCF2"},
+{ "n": "STOLTZ Gabriel", "i": "34'02", "color":"#00BCF2"},
+{ "n": "ROUHAUD Yvan", "i": "34'58", "color":"#00BCF2"},
+{ "n": "SALAIS Clement", "i": "35'08", "color":"#00BCF2"},
+{ "n": "LANDRIEU Jerome", "i": "35'36", "color":"#00BCF2"},
+{ "n": "LINTIGNAT Boris", "i": "35'54", "color":"#00BCF2"},
+{ "n": "TAUPENAS Simon", "i": "36'00", "color":"#00BCF2"},
+{ "n": "HASSINE Choukri", "i": "36'00", "color":"#00BCF2"},
+{ "n": "FISCHER Nicolas", "i": "36'06", "color":"#00BCF2"},
+{ "n": "FERRE Wilfried", "i": "36'11", "color":"#00BCF2"},
+{ "n": "MONIER Yves", "i": "36'55", "color":"#00BCF2"},
+{ "n": "BELMOKHTAR Omar", "i": "38'47", "color":"#00BCF2"},
+{ "n": "QUESNEL Stephane", "i": "39'46", "color":"#00BCF2"},
+{ "n": "OMRI Naceur", "i": "39'53", "color":"#00BCF2"},
+{ "n": "BUREAU Benoit", "i": "40'26", "color":"#00BCF2"},
+{ "n": "BELLAMY Laurent", "i": "41'04", "color":"#00BCF2"},
+{ "n": "LORDIER Daniel", "i": "45'54", "color":"#00BCF2"}
+	],
+loc: "0 0" },
+
+{key:"Lifa21",
+	fields: [
+{"n":"BADR Youssef","i":"32'52", "color":"#00BCF2"},
+{"n":"JARMUSZEWICZ Quentin","i":"33'10", "color":"#00BCF2"},
+{"n":"CAILLOT Yannick","i":"33'17", "color":"#00BCF2"},
+{"n":"ISMAEL Laurent","i":"33'30", "color":"#00BCF2"},
+{"n":"FAVAZZO Paolo","i":"33'30", "color":"#00BCF2"},
+{"n":"AIT IDER Mustapha","i":"33'38", "color":"#00BCF2"},
+{"n":"ROUYER Thomas","i":"34'02", "color":"#00BCF2"},
+{"n":"GENDRE Alexis","i":"34'11", "color":"#00BCF2"},
+{"n":"RENAUD Jean-Claude","i":"34'17", "color":"#00BCF2"},
+{"n":"MARTINHO Ezequiel","i":"34'36", "color":"#00BCF2"},
+{"n":"MAAMOUZ Ahmed","i":"34'49", "color":"#00BCF2"},
+{"n":"HOUSSIER Julien","i":"34'59", "color":"#00BCF2"},
+{"n":"BARTOLI Julien","i":"35'03", "color":"#00BCF2"},
+{"n":"SAPEI Sebastien","i":"35'08", "color":"#00BCF2"},
+{"n":"ALLONGUE Antoine","i":"35'12", "color":"#00BCF2"},
+{"n":"HARDY Sebastien","i":"35'14", "color":"#00BCF2"},
+{"n":"FELEMOU Athos","i":"35'18", "color":"#00BCF2"},
+{"n":"PEIXOTO Henrique","i":"35'28", "color":"#00BCF2"},
+{"n":"FOUQUET Loic","i":"35'30", "color":"#00BCF2"},
+{"n":"HERCHENROEDER Nathan (Usa)","i":"35'35", "color":"#00BCF2"},
+{"n":"JIMENEZ Simon","i":"35'41", "color":"#00BCF2"},
+{"n":"COMPAIN Gaetan","i":"35'48", "color":"#00BCF2"},
+{"n":"GUERY Arnaud","i":"35'58", "color":"#00BCF2"},
+{"n":"VILFEU Ludovic","i":"36'00", "color":"#00BCF2"},
+{"n":"DRAY Sebastien","i":"36'04", "color":"#00BCF2"},
+{"n":"STOLTZ Gabriel","i":"36'14", "color":"#00BCF2"},
+{"n":"LACHEREST Sebastien","i":"36'20", "color":"#00BCF2"},
+{"n":"CHARBONNEAU Franck","i":"36'25", "color":"#00BCF2"},
+{"n":"EZBAIR Soufiane","i":"36'30", "color":"#00BCF2"},
+{"n":"PROME Thomas","i":"36'35", "color":"#00BCF2"},
+{"n":"ABDELKADER Yann","i":"36'36", "color":"#00BCF2"},
+{"n":"PERTHUIS Nicolas","i":"36'50", "color":"#00BCF2"},
+{"n":"NOIRY Julien","i":"36'57", "color":"#00BCF2"},
+{"n":"GUENIFFET Gabriel","i":"37'00", "color":"#00BCF2"},
+{"n":"GASPAR Paul","i":"37'03", "color":"#00BCF2"},
+{"n":"CATROU Olivier","i":"37'05", "color":"#00BCF2"},
+{"n":"JAUFFRET Thomas","i":"37'07", "color":"#00BCF2"},
+{"n":"ANCIAES Horacio","i":"37'09", "color":"#00BCF2"},
+{"n":"HUGUET Michel","i":"37'14", "color":"#00BCF2"},
+{"n":"MONTEIRO Manuel","i":"37'22", "color":"#00BCF2"},
+{"n":"MARCOVICI Jean-Baptiste","i":"37'47", "color":"#00BCF2"},
+{"n":"FRAYNE Thomas","i":"37'53", "color":"#00BCF2"},
+{"n":"DAUVILLIERS Sebastien","i":"38'02", "color":"#00BCF2"},
+{"n":"FAUX Guillaume","i":"38'11", "color":"#00BCF2"},
+{"n":"AIT ABDELLAH Hassan","i":"38'17", "color":"#00BCF2"},
+{"n":"WALLON Samuel","i":"38'26", "color":"#00BCF2"},
+{"n":"BEN SALEM Monir","i":"38'34", "color":"#00BCF2"},
+{"n":"GARCIA Stephane","i":"39'00", "color":"#00BCF2"},
+{"n":"MORO Alain","i":"39'09", "color":"#00BCF2"},
+{"n":"PINET Cyril","i":"39'12", "color":"#00BCF2"},
+{"n":"TASSOTTI Loris (Ita)","i":"39'20", "color":"#00BCF2"},
+{"n":"BENDJADOUR Abdelkader","i":"39'30", "color":"#00BCF2"},
+{"n":"RISSER Lilian","i":"40'04", "color":"#00BCF2"},
+{"n":"GRAF Remi","i":"40'10", "color":"#00BCF2"},
+{"n":"MACABRE Denis","i":"40'20", "color":"#00BCF2"},
+{"n":"BELMOKHTAR Omar","i":"40'23", "color":"#00BCF2"},
+{"n":"DURAND Luc","i":"40'30", "color":"#00BCF2"},
+{"n":"BOUFOUS Abdellatif","i":"40'40", "color":"#00BCF2"},
+{"n":"IRGUI Mohamed","i":"40'49", "color":"#00BCF2"},
+{"n":"GAUTHERIE Sebastien","i":"40'54", "color":"#00BCF2"},
+{"n":"EL MOUADDABE Habdeltef","i":"41'14", "color":"#00BCF2"},
+{"n":"ROBERT Philippe","i":"41'25", "color":"#00BCF2"},
+{"n":"KIPPER Brice","i":"41'38", "color":"#00BCF2"},
+{"n":"SOULA David","i":"42'04", "color":"#00BCF2"},
+{"n":"LEMOINE Julien","i":"42'28", "color":"#00BCF2"},
+{"n":"RABOTIN Eddie","i":"42'55", "color":"#00BCF2"},
+{"n":"BENZAAZA Mourad","i":"42'56", "color":"#00BCF2"},
+{"n":"MOUAFFAK Ibrahim (Mar)","i":"43'04", "color":"#00BCF2"},
+{"n":"LEROUL Djamel","i":"43'36", "color":"#00BCF2"},
+{"n":"NGUYEN Dac Linh Giao","i":"43'55", "color":"#00BCF2"},
+{"n":"DELABARRE Fabrice","i":"44'04", "color":"#00BCF2"},
+{"n":"BOYER Frederic","i":"44'19", "color":"#00BCF2"},
+{"n":"QUESNEL Stephane","i":"44'54", "color":"#00BCF2"},
+{"n":"FRONT Vincent","i":"46'02", "color":"#00BCF2"},
+{"n":"ROUSSEAU Pierre-Michel","i":"48'01", "color":"#00BCF2"},
+{"n":"MAY Olivier","i":"49'08", "color":"#00BCF2"}
+
+	],
+loc: "400 0" },
+
+
+
+{key:"Fr21_lifa",
+	fields: [
+{"n":"HABRI Najim","i":"33'05", "color":"#00BCF2"},
+{"n":"ROUYER Thomas","i":"34'52", "color":"#00BCF2"},
+{"n":"BADR Youssef","i":"34'53", "color":"#00BCF2"},
+{"n":"FAVAZZO Paolo","i":"35'22", "color":"#00BCF2"},
+{"n":"JARMUSZEWICZ Quentin","i":"35'26", "color":"#00BCF2"},
+{"n":"AIT IDER Mustapha","i":"35'38", "color":"#00BCF2"},
+{"n":"CAILLOT Yannick","i":"35'47", "color":"#00BCF2"},
+{"n":"ISMAEL Laurent","i":"36'02", "color":"#00BCF2"},
+{"n":"MAAMOUZ Ahmed","i":"36'17", "color":"#00BCF2"},
+{"n":"GENDRE Alexis","i":"36'19", "color":"#00BCF2"},
+{"n":"MARTINHO Ezequiel","i":"36'56", "color":"#00BCF2"},
+{"n":"HARDY Sebastien","i":"37'17", "color":"#00BCF2"},
+{"n":"HOUSSIER Julien","i":"37'22", "color":"#00BCF2"},
+{"n":"VILFEU Ludovic","i":"38'20", "color":"#00BCF2"},
+{"n":"ALLONGUE Antoine","i":"38'22", "color":"#00BCF2"},
+{"n":"SAPEI Sebastien","i":"38'28", "color":"#00BCF2"},
+{"n":"JIMENEZ Simon","i":"38'30", "color":"#00BCF2"},
+{"n":"HERCHENROEDER Nathan (Usa)","i":"38'33", "color":"#00BCF2"},
+{"n":"COMPAIN Gaetan","i":"38'38", "color":"#00BCF2"},
+{"n":"DRAY Sebastien","i":"38'45", "color":"#00BCF2"},
+{"n":"GUERY Arnaud","i":"38'54", "color":"#00BCF2"},
+{"n":"PROME Thomas","i":"39'39", "color":"#00BCF2"},
+{"n":"JAUFFRET Thomas","i":"39'43", "color":"#00BCF2"},
+{"n":"ABDELKADER Yann","i":"39'44", "color":"#00BCF2"},
+{"n":"LACHEREST Sebastien","i":"39'46", "color":"#00BCF2"},
+{"n":"NOIRY Julien","i":"39'49", "color":"#00BCF2"},
+{"n":"HUGUET Michel","i":"39'52", "color":"#00BCF2"},
+{"n":"AIT ABDELLAH Hassan","i":"39'58", "color":"#00BCF2"},
+{"n":"FELEMOU Athos","i":"40'02", "color":"#00BCF2"},
+{"n":"CATROU Olivier","i":"40'05", "color":"#00BCF2"},
+{"n":"MARCOVICI Jean-Baptiste","i":"40'30", "color":"#00BCF2"},
+{"n":"GASPAR Paul","i":"41'01", "color":"#00BCF2"},
+{"n":"SMITH Julien","i":"41'07", "color":"#00BCF2"},
+{"n":"FRAYNE Thomas","i":"41'14", "color":"#00BCF2"},
+{"n":"BOYER Frederic","i":"41'18", "color":"#00BCF2"},
+{"n":"MORO Alain","i":"41'30", "color":"#00BCF2"},
+{"n":"KHELIFA-ZOUBIR Miloud","i":"41'38", "color":"#00BCF2"},
+{"n":"TASSOTTI Loris (Ita)","i":"41'40", "color":"#00BCF2"},
+{"n":"WALLON Samuel","i":"42'38", "color":"#00BCF2"},
+{"n":"PINET Cyril","i":"42'40", "color":"#00BCF2"},
+{"n":"RISSER Lilian","i":"42'48", "color":"#00BCF2"}		
+		
+		
+],
+loc: "800 0" },
+
+{key:"Fr21",
+	fields: [
+{"n":"HABRI Najim","i":"33'05", "color":"#00BCF2"},
+{"n":"VALENTI Stephane","i":"33'10", "color":"#00BCF2"},
+{"n":"PURREY Julien","i":"33'19", "color":"#00BCF2"},
+{"n":"JOURHAOUI Mohamed","i":"34'02", "color":"#00BCF2"},
+{"n":"LUCAND Armand","i":"34'07", "color":"#00BCF2"},
+{"n":"TATAH Samir","i":"34'25", "color":"#00BCF2"},
+{"n":"CAILLERE Olivier","i":"34'26", "color":"#00BCF2"},
+{"n":"MOREAU Julien","i":"34'40", "color":"#00BCF2"},
+{"n":"ROUYER Thomas","i":"34'52", "color":"#00BCF2"},
+{"n":"BADR Youssef","i":"34'53", "color":"#00BCF2"},
+{"n":"PETRIACQ Lionel","i":"34'54", "color":"#00BCF2"},
+{"n":"NIAL Ali-Redha (Alg)","i":"34'56", "color":"#00BCF2"},
+{"n":"SBAA Abdel","i":"35'03", "color":"#00BCF2"},
+{"n":"DECEROIT Arnaud","i":"35'07", "color":"#00BCF2"},
+{"n":"BOUDET Damien","i":"35'10", "color":"#00BCF2"},
+{"n":"PETRUS Olivier","i":"35'15", "color":"#00BCF2"},
+{"n":"LAURET Samuel","i":"35'16", "color":"#00BCF2"},
+{"n":"DELORME Jerome","i":"35'16", "color":"#00BCF2"},
+{"n":"FREUDENREICH Bruno","i":"35'19", "color":"#00BCF2"},
+{"n":"ROGEON Herve","i":"35'21", "color":"#00BCF2"},
+{"n":"FAVAZZO Paolo","i":"35'22", "color":"#00BCF2"},
+{"n":"ZOUAOUI Brahim","i":"35'22", "color":"#00BCF2"},
+{"n":"SAPET Nicolas","i":"35'24", "color":"#00BCF2"},
+{"n":"HOLZERNY Benoit","i":"35'25", "color":"#00BCF2"},
+{"n":"JARMUSZEWICZ Quentin","i":"35'26", "color":"#00BCF2"},
+{"n":"COUTABLE Sebastien","i":"35'35", "color":"#00BCF2"},
+{"n":"AIT IDER Mustapha","i":"35'38", "color":"#00BCF2"},
+{"n":"MONMESSIN William","i":"35'40", "color":"#00BCF2"},
+{"n":"CAILLERE David","i":"35'44", "color":"#00BCF2"},
+{"n":"CHACATON Damien","i":"35'46", "color":"#00BCF2"},
+{"n":"MIGNOT Thierry","i":"35'47", "color":"#00BCF2"},
+{"n":"CAILLOT Yannick","i":"35'47", "color":"#00BCF2"},
+{"n":"LEFEVRE Eric","i":"35'47", "color":"#00BCF2"},
+{"n":"MARQUANT Christophe","i":"35'48", "color":"#00BCF2"},
+{"n":"RIMBAULT Stevens","i":"35'52", "color":"#00BCF2"},
+{"n":"BRIA Toufiq","i":"35'52", "color":"#00BCF2"},
+{"n":"DUVAL Geoffroy","i":"35'56", "color":"#00BCF2"},
+{"n":"ISMAEL Laurent","i":"36'02", "color":"#00BCF2"},
+{"n":"DEVARIEUX Pierre","i":"36'03", "color":"#00BCF2"},
+{"n":"DUBREIL Jean-Emmanuel","i":"36'03", "color":"#00BCF2"},
+{"n":"OGIER Fabrice","i":"36'05", "color":"#00BCF2"},
+{"n":"PAPUCHON Julien","i":"36'06", "color":"#00BCF2"},
+{"n":"FLANDRIN-THONIEL Igor","i":"36'10", "color":"#00BCF2"},
+{"n":"PLUMAUGAT Bertrand","i":"36'11", "color":"#00BCF2"},
+{"n":"MAGNIEN Christophe","i":"36'13", "color":"#00BCF2"},
+{"n":"NORGUET Christophe","i":"36'14", "color":"#00BCF2"},
+{"n":"DEBRAY Nicolas","i":"36'15", "color":"#00BCF2"},
+{"n":"MORILLE Nicolas","i":"36'16", "color":"#00BCF2"},
+{"n":"MAAMOUZ Ahmed","i":"36'17", "color":"#00BCF2"},
+{"n":"HAMON Frederic","i":"36'17", "color":"#00BCF2"},
+{"n":"GENDRE Alexis","i":"36'19", "color":"#00BCF2"},
+{"n":"TOURNIER Yan","i":"36'20", "color":"#00BCF2"},
+{"n":"LE MOUILLOUR Mathieu","i":"36'24", "color":"#00BCF2"},
+{"n":"BOSSIS Benoit","i":"36'27", "color":"#00BCF2"},
+{"n":"GIRANDIER Thadde","i":"36'30", "color":"#00BCF2"},
+{"n":"THOMAS Yves","i":"36'33", "color":"#00BCF2"},
+{"n":"CORMIER Manuel","i":"36'34", "color":"#00BCF2"},
+{"n":"DARRIN Sebastien","i":"36'35", "color":"#00BCF2"},
+{"n":"FEUTRIER Mathieu","i":"36'36", "color":"#00BCF2"},
+{"n":"GROUTEL Emmanuel","i":"36'36", "color":"#00BCF2"},
+{"n":"DELUGIN Laurent","i":"36'37", "color":"#00BCF2"},
+{"n":"BALLESTER Cyrille","i":"36'38", "color":"#00BCF2"},
+{"n":"ROQUE Jose","i":"36'41", "color":"#00BCF2"},
+{"n":"DEMOLOMBE Marc","i":"36'41", "color":"#00BCF2"},
+{"n":"MACE Christian","i":"36'41", "color":"#00BCF2"},
+{"n":"ORDONEZ OLMO Edgar (And)","i":"36'43", "color":"#00BCF2"},
+{"n":"NOIZIER Jerome","i":"36'45", "color":"#00BCF2"},
+{"n":"MOINET Antoine","i":"36'47", "color":"#00BCF2"},
+{"n":"LEBLANC Jean-Francois","i":"36'49", "color":"#00BCF2"},
+{"n":"TESSIER Damien","i":"36'50", "color":"#00BCF2"},
+{"n":"HAMEL Yoann","i":"36'50", "color":"#00BCF2"},
+{"n":"BAHA Mohamed","i":"36'51", "color":"#00BCF2"},
+{"n":"HABBAZ Rachid","i":"36'53", "color":"#00BCF2"},
+{"n":"BOUDJEMAI Karim","i":"36'53", "color":"#00BCF2"},
+{"n":"BUCHET Eric","i":"36'55", "color":"#00BCF2"},
+{"n":"MARTINHO Ezequiel","i":"36'56", "color":"#00BCF2"},
+{"n":"URLACHER Olivier","i":"37'06", "color":"#00BCF2"},
+{"n":"PARET Benoit","i":"37'07", "color":"#00BCF2"},
+{"n":"VIGIER Christophe","i":"37'08", "color":"#00BCF2"},
+{"n":"CALASTRENC Ludovic","i":"37'10", "color":"#00BCF2"},
+{"n":"SOULIER Olivier","i":"37'15", "color":"#00BCF2"},
+{"n":"DELANCE Jean-Rene","i":"37'17", "color":"#00BCF2"},
+{"n":"HARDY Sebastien","i":"37'17", "color":"#00BCF2"},
+{"n":"PAILLART Emmanuel","i":"37'18", "color":"#00BCF2"},
+{"n":"SAADAOUI Salim","i":"37'19", "color":"#00BCF2"},
+{"n":"GABARAIN Peio","i":"37'20", "color":"#00BCF2"},
+{"n":"HOUSSIER Julien","i":"37'22", "color":"#00BCF2"},
+{"n":"BERMON Laurent","i":"37'25", "color":"#00BCF2"},
+{"n":"ELDUAYEN Fabrice","i":"37'26", "color":"#00BCF2"},
+{"n":"BOUZON Lionel","i":"37'28", "color":"#00BCF2"},
+{"n":"MARTEL Gaylord","i":"37'29", "color":"#00BCF2"},
+{"n":"TANGUY Fabien","i":"37'30", "color":"#00BCF2"},
+{"n":"DEGUITRE Jean-Marie","i":"37'31", "color":"#00BCF2"},
+{"n":"PICHELIN Thierry","i":"37'35", "color":"#00BCF2"},
+{"n":"VALLAT Julien","i":"37'40", "color":"#00BCF2"},
+{"n":"HERAL Jerome","i":"37'42", "color":"#00BCF2"},
+{"n":"PAROLI Florent","i":"37'43", "color":"#00BCF2"},
+{"n":"RAHMANI Morad","i":"37'44", "color":"#00BCF2"},
+{"n":"VEZIEN Antoine","i":"37'46", "color":"#00BCF2"},
+{"n":"LESUR Cedric","i":"37'48", "color":"#00BCF2"},
+{"n":"THOUEMENT Stephane","i":"37'50", "color":"#00BCF2"},
+{"n":"CORGET Julien","i":"37'55", "color":"#00BCF2"},
+{"n":"HELIAS Stephane","i":"38'01", "color":"#00BCF2"},
+{"n":"REY Mathieu","i":"38'02", "color":"#00BCF2"},
+{"n":"LEKHAL Rachid","i":"38'07", "color":"#00BCF2"},
+{"n":"JEHANNO David","i":"38'09", "color":"#00BCF2"},
+{"n":"RODRIGUEZ Vincent","i":"38'10", "color":"#00BCF2"},
+{"n":"BILOT Wilfrid","i":"38'11", "color":"#00BCF2"},
+{"n":"MULOT Moussa","i":"38'11", "color":"#00BCF2"},
+{"n":"ECHAITI Mustapha","i":"38'12", "color":"#00BCF2"},
+{"n":"CALVO Jerome","i":"38'12", "color":"#00BCF2"},
+{"n":"LIZZI Yannick","i":"38'13", "color":"#00BCF2"},
+{"n":"BARAT David","i":"38'16", "color":"#00BCF2"},
+{"n":"BRIAND David","i":"38'18", "color":"#00BCF2"},
+{"n":"GRANIER Florian","i":"38'19", "color":"#00BCF2"},
+{"n":"EUGENE Jerome","i":"38'20", "color":"#00BCF2"},
+{"n":"VILFEU Ludovic","i":"38'20", "color":"#00BCF2"},
+{"n":"MARCHANDISE Arthur","i":"38'20", "color":"#00BCF2"},
+{"n":"JOUVIN Didier","i":"38'20", "color":"#00BCF2"},
+{"n":"ALLONGUE Antoine","i":"38'22", "color":"#00BCF2"},
+{"n":"ABASQ Didier","i":"38'22", "color":"#00BCF2"},
+{"n":"VOISIN Gregory","i":"38'23", "color":"#00BCF2"},
+{"n":"LENCLUD Laurent","i":"38'25", "color":"#00BCF2"},
+{"n":"HERVE Fabrice","i":"38'26", "color":"#00BCF2"},
+{"n":"ETCHART Kayet","i":"38'27", "color":"#00BCF2"},
+{"n":"LEVEQUE Sebastien","i":"38'27", "color":"#00BCF2"},
+{"n":"SAPEI Sebastien","i":"38'28", "color":"#00BCF2"},
+{"n":"BASTOS Jose Miguel","i":"38'28", "color":"#00BCF2"},
+{"n":"MICHAUX Matthieu","i":"38'29", "color":"#00BCF2"},
+{"n":"JIMENEZ Simon","i":"38'30", "color":"#00BCF2"},
+{"n":"MEHATS Daniel","i":"38'31", "color":"#00BCF2"},
+{"n":"BRELIVET Patrick","i":"38'33", "color":"#00BCF2"},
+{"n":"HERCHENROEDER Nathan (Usa)","i":"38'33", "color":"#00BCF2"},
+{"n":"SUROY Vincent","i":"38'33", "color":"#00BCF2"},
+{"n":"HIVART Geoffrey","i":"38'34", "color":"#00BCF2"},
+{"n":"LABIT Yann","i":"38'35", "color":"#00BCF2"},
+{"n":"NOURDDINE Youssouf","i":"38'38", "color":"#00BCF2"},
+{"n":"COMPAIN Gaetan","i":"38'38", "color":"#00BCF2"},
+{"n":"CARRE Anthony","i":"38'39", "color":"#00BCF2"},
+{"n":"STUDER Richard","i":"38'41", "color":"#00BCF2"},
+{"n":"MEHATS Claude","i":"38'42", "color":"#00BCF2"},
+{"n":"MOUTAUD Pierre","i":"38'43", "color":"#00BCF2"},
+{"n":"COLARD Arnaud","i":"38'44", "color":"#00BCF2"},
+{"n":"BATISTA SANCHES Manuel","i":"38'44", "color":"#00BCF2"},
+{"n":"DRAY Sebastien","i":"38'45", "color":"#00BCF2"},
+{"n":"GUERY Damien","i":"38'47", "color":"#00BCF2"},
+{"n":"DURANTON Emmanuel","i":"38'48", "color":"#00BCF2"},
+{"n":"SENTOST Benoit","i":"38'50", "color":"#00BCF2"},
+{"n":"ROS Patrice","i":"38'52", "color":"#00BCF2"},
+{"n":"BRICLET Frederic","i":"38'54", "color":"#00BCF2"},
+{"n":"GUERY Arnaud","i":"38'54", "color":"#00BCF2"},
+{"n":"BOUCHOUK Aziz","i":"38'57", "color":"#00BCF2"},
+{"n":"PEREZ Javier (Esp)","i":"38'59", "color":"#00BCF2"},
+{"n":"BERTHOME Christian","i":"39'00", "color":"#00BCF2"},
+{"n":"AUFFRET Frederic","i":"39'04", "color":"#00BCF2"},
+{"n":"LIETARD Rene-David","i":"39'10", "color":"#00BCF2"},
+{"n":"MALLET Teddy","i":"39'11", "color":"#00BCF2"},
+{"n":"CANAUD Christophe","i":"39'13", "color":"#00BCF2"},
+{"n":"CEIB Abdelhalim","i":"39'16", "color":"#00BCF2"},
+{"n":"IRIARTE Francois","i":"39'18", "color":"#00BCF2"},
+{"n":"SOUCHET Maxime","i":"39'19", "color":"#00BCF2"},
+{"n":"FERRY Raphael","i":"39'22", "color":"#00BCF2"},
+{"n":"GUIRADO Christophe","i":"39'26", "color":"#00BCF2"},
+{"n":"JULIEN Jean","i":"39'27", "color":"#00BCF2"},
+{"n":"QUARESMA Stephane","i":"39'30", "color":"#00BCF2"},
+{"n":"EVEILLARD Arnaud","i":"39'31", "color":"#00BCF2"},
+{"n":"DEVESSE Alain","i":"39'32", "color":"#00BCF2"},
+{"n":"LE BEHEREC Maxime","i":"39'35", "color":"#00BCF2"},
+{"n":"BRECHOT Julien","i":"39'35", "color":"#00BCF2"},
+{"n":"PROME Thomas","i":"39'39", "color":"#00BCF2"},
+{"n":"JANUEL Bruno","i":"39'42", "color":"#00BCF2"},
+{"n":"HENIN Philippe","i":"39'43", "color":"#00BCF2"},
+{"n":"CHATELAIN Ludovic","i":"39'43", "color":"#00BCF2"},
+{"n":"COCQUET Laurent","i":"39'43", "color":"#00BCF2"},
+{"n":"JAUFFRET Thomas","i":"39'43", "color":"#00BCF2"},
+{"n":"ABDELKADER Yann","i":"39'44", "color":"#00BCF2"},
+{"n":"MERLIN Olivier","i":"39'46", "color":"#00BCF2"},
+{"n":"LACHEREST Sebastien","i":"39'46", "color":"#00BCF2"},
+{"n":"DENNILAULER Nicolas","i":"39'46", "color":"#00BCF2"},
+{"n":"LABOULAIS David","i":"39'46", "color":"#00BCF2"},
+{"n":"NOIRY Julien","i":"39'49", "color":"#00BCF2"},
+{"n":"MABED Patrick","i":"39'52", "color":"#00BCF2"},
+{"n":"HUGUET Michel","i":"39'52", "color":"#00BCF2"},
+{"n":"AIT ABDELLAH Hassan","i":"39'58", "color":"#00BCF2"},
+{"n":"JARD Marius","i":"40'02", "color":"#00BCF2"},
+{"n":"FELEMOU Athos","i":"40'02", "color":"#00BCF2"},
+{"n":"LAVILLE Frederic","i":"40'03", "color":"#00BCF2"},
+{"n":"CORBEAU Vincent","i":"40'03", "color":"#00BCF2"},
+{"n":"BOURGE Guillaume","i":"40'04", "color":"#00BCF2"},
+{"n":"PUNTEL Franck","i":"40'05", "color":"#00BCF2"},
+{"n":"CATROU Olivier","i":"40'05", "color":"#00BCF2"},
+{"n":"DOULAT Aissa","i":"40'05", "color":"#00BCF2"},
+{"n":"VERNIERE Philippe","i":"40'06", "color":"#00BCF2"},
+{"n":"FRATTALI Bruno","i":"40'07", "color":"#00BCF2"},
+{"n":"GAUTIER Nicolas","i":"40'12", "color":"#00BCF2"},
+{"n":"LEBRETON Wilfrid","i":"40'12", "color":"#00BCF2"},
+{"n":"HODOUL Christian","i":"40'15", "color":"#00BCF2"},
+{"n":"RIFFIS William","i":"40'19", "color":"#00BCF2"},
+{"n":"MORGAND Loic","i":"40'19", "color":"#00BCF2"},
+{"n":"FAYEL Romain","i":"40'23", "color":"#00BCF2"},
+{"n":"SIERRA Frederic","i":"40'25", "color":"#00BCF2"},
+{"n":"HENTZIEN Benoit","i":"40'27", "color":"#00BCF2"},
+{"n":"RIOUAL Pascal","i":"40'29", "color":"#00BCF2"},
+{"n":"DOUARIN Arnaud","i":"40'30", "color":"#00BCF2"},
+{"n":"MARCOVICI Jean-Baptiste","i":"40'30", "color":"#00BCF2"},
+{"n":"MYLY Hermann","i":"40'31", "color":"#00BCF2"},
+{"n":"FISCHER Christophe","i":"40'33", "color":"#00BCF2"},
+{"n":"CAFFIER Luc","i":"40'35", "color":"#00BCF2"},
+{"n":"BARRIBAULT Jerome","i":"40'36", "color":"#00BCF2"},
+{"n":"GALLIOT Guillaume","i":"40'48", "color":"#00BCF2"},
+{"n":"BENEDETTI Nicolas","i":"40'57", "color":"#00BCF2"},
+{"n":"GASPAR Paul","i":"41'01", "color":"#00BCF2"},
+{"n":"SMITH Julien","i":"41'07", "color":"#00BCF2"},
+{"n":"ROUPIE Christophe","i":"41'10", "color":"#00BCF2"},
+{"n":"BOUTELOUP Loic","i":"41'13", "color":"#00BCF2"},
+{"n":"FRAYNE Thomas","i":"41'14", "color":"#00BCF2"},
+{"n":"SABALCAGARAY Gilbert","i":"41'16", "color":"#00BCF2"},
+{"n":"BARD Luc","i":"41'17", "color":"#00BCF2"},
+{"n":"BOYER Frederic","i":"41'18", "color":"#00BCF2"},
+{"n":"NOGUES Philippe","i":"41'20", "color":"#00BCF2"},
+{"n":"DUPONT Cyrille","i":"41'25", "color":"#00BCF2"},
+{"n":"MAILLARD Patrick","i":"41'27", "color":"#00BCF2"},
+{"n":"LEBRUN Jean-Marie","i":"41'29", "color":"#00BCF2"},
+{"n":"MORO Alain","i":"41'30", "color":"#00BCF2"},
+{"n":"BAZER-BACHI Frederic","i":"41'31", "color":"#00BCF2"},
+{"n":"D AGOSTO Dominique","i":"41'33", "color":"#00BCF2"},
+{"n":"LABRUDE Remy","i":"41'36", "color":"#00BCF2"},
+{"n":"KHELIFA-ZOUBIR Miloud","i":"41'38", "color":"#00BCF2"},
+{"n":"CHEYNOUX Thierry","i":"41'39", "color":"#00BCF2"},
+{"n":"TASSOTTI Loris (Ita)","i":"41'40", "color":"#00BCF2"},
+{"n":"KNINECH Bouchaib","i":"41'42", "color":"#00BCF2"},
+{"n":"VIGNOLLE Eric","i":"41'47", "color":"#00BCF2"},
+{"n":"SPANNAGEL Marc","i":"41'51", "color":"#00BCF2"},
+{"n":"DEBOFFE Thierry","i":"41'57", "color":"#00BCF2"},
+{"n":"LECLERE Francois","i":"42'06", "color":"#00BCF2"},
+{"n":"PERON Denis","i":"42'11", "color":"#00BCF2"},
+{"n":"LEGRAND Sebastien","i":"42'14", "color":"#00BCF2"},
+{"n":"CHEVALIER Frederic","i":"42'16", "color":"#00BCF2"},
+{"n":"LE ROHIC Mathieu","i":"42'16", "color":"#00BCF2"},
+{"n":"SCHNEIDER Nicolas","i":"42'20", "color":"#00BCF2"},
+{"n":"THUILLER Wilfried","i":"42'29", "color":"#00BCF2"},
+{"n":"WALLON Samuel","i":"42'38", "color":"#00BCF2"},
+{"n":"PINET Cyril","i":"42'40", "color":"#00BCF2"},
+{"n":"STERVINOU Yves-Marie","i":"42'44", "color":"#00BCF2"},
+{"n":"SANSOULET Sebastien","i":"42'45", "color":"#00BCF2"},
+{"n":"RISSER Lilian","i":"42'48", "color":"#00BCF2"},
+{"n":"VOISIN Alain","i":"42'50", "color":"#00BCF2"},
+{"n":"LE FLOCH Mickael","i":"42'52", "color":"#00BCF2"},
+{"n":"CHAMBELLAN Jean-Marie","i":"42'55", "color":"#00BCF2"},
+{"n":"VIALLET Sylvain","i":"43'10", "color":"#00BCF2"}
+	],
+loc: "1200 0" },
+
+
+          ],
+          linkDataArray: [
+
+
+{from:"Dep21",fromPort:"MAAMOUZ Ahmed",to:"Lifa21",toPort:"MAAMOUZ Ahmed"},
+{from:"Dep21",fromPort:"PROME Thomas",to:"Lifa21",toPort:"PROME Thomas"},
+{from:"Dep21",fromPort:"STOLTZ Gabriel",to:"Lifa21",toPort:"STOLTZ Gabriel"},
+{from:"Dep21",fromPort:"ABDELKADER Yann",to:"Lifa21",toPort:"ABDELKADER Yann"},
+{from:"Dep21",fromPort:"BELMOKHTAR Omar",to:"Lifa21",toPort:"BELMOKHTAR Omar"},
+{from:"Dep21",fromPort:"QUESNEL Stephane",to:"Lifa21",toPort:"QUESNEL Stephane"},
+{from:"Dep21",fromPort:"BADR Youssef",to:"Lifa21",toPort:"BADR Youssef"},
+{from:"Dep21",fromPort:"ALLONGUE Antoine",to:"Lifa21",toPort:"ALLONGUE Antoine"},
+{from:"Dep21",fromPort:"MORO Alain",to:"Lifa21",toPort:"MORO Alain"},
+
+{from:"Lifa21",fromPort:"JARMUSZEWICZ Quentin",to:"Fr21_lifa",toPort:"JARMUSZEWICZ Quentin"},
+{from:"Lifa21",fromPort:"ABDELKADER Yann",to:"Fr21_lifa",toPort:"ABDELKADER Yann"},
+{from:"Lifa21",fromPort:"ISMAEL Laurent",to:"Fr21_lifa",toPort:"ISMAEL Laurent"},
+{from:"Lifa21",fromPort:"MAAMOUZ Ahmed",to:"Fr21_lifa",toPort:"MAAMOUZ Ahmed"},
+{from:"Lifa21",fromPort:"LACHEREST Sebastien",to:"Fr21_lifa",toPort:"LACHEREST Sebastien"},
+{from:"Lifa21",fromPort:"FELEMOU Athos",to:"Fr21_lifa",toPort:"FELEMOU Athos"},
+{from:"Lifa21",fromPort:"MARTINHO Ezequiel",to:"Fr21_lifa",toPort:"MARTINHO Ezequiel"},
+{from:"Lifa21",fromPort:"SAPEI Sebastien",to:"Fr21_lifa",toPort:"SAPEI Sebastien"},
+{from:"Lifa21",fromPort:"ALLONGUE Antoine",to:"Fr21_lifa",toPort:"ALLONGUE Antoine"},
+{from:"Lifa21",fromPort:"HERCHENROEDER Nathan (Usa)",to:"Fr21_lifa",toPort:"HERCHENROEDER Nathan (Usa)"},
+{from:"Lifa21",fromPort:"JIMENEZ Simon",to:"Fr21_lifa",toPort:"JIMENEZ Simon"},
+
+{from:"Lifa21",fromPort:"COMPAIN Gaetan",to:"Fr21_lifa",toPort:"COMPAIN Gaetan"},
+{from:"Lifa21",fromPort:"DRAY Sebastien",to:"Fr21_lifa",toPort:"DRAY Sebastien"},
+{from:"Lifa21",fromPort:"HARDY Sebastien",to:"Fr21_lifa",toPort:"HARDY Sebastien"},
+{from:"Lifa21",fromPort:"VILFEU Ludovic",to:"Fr21_lifa",toPort:"VILFEU Ludovic"},
+{from:"Lifa21",fromPort:"AIT IDER Mustapha",to:"Fr21_lifa",toPort:"AIT IDER Mustapha"},
+{from:"Lifa21",fromPort:"GENDRE Alexis",to:"Fr21_lifa",toPort:"GENDRE Alexis"},
+{from:"Lifa21",fromPort:"CAILLOT Yannick",to:"Fr21_lifa",toPort:"CAILLOT Yannick"},
+{from:"Lifa21",fromPort:"BADR Youssef",to:"Fr21_lifa",toPort:"BADR Youssef"},
+{from:"Lifa21",fromPort:"FAVAZZO Paolo",to:"Fr21_lifa",toPort:"FAVAZZO Paolo"},
+{from:"Lifa21",fromPort:"ROUYER Thomas",to:"Fr21_lifa",toPort:"ROUYER Thomas"},
+{from:"Lifa21",fromPort:"GUERY Arnaud",to:"Fr21_lifa",toPort:"GUERY Arnaud"},
+{from:"Lifa21",fromPort:"PROME Thomas",to:"Fr21_lifa",toPort:"PROME Thomas"},
+{from:"Lifa21",fromPort:"JAUFFRET Thomas",to:"Fr21_lifa",toPort:"JAUFFRET Thomas"},
+{from:"Lifa21",fromPort:"NOIRY Julien",to:"Fr21_lifa",toPort:"NOIRY Julien"},
+
+{from:"Lifa21",fromPort:"GASPAR Paul",to:"Fr21_lifa",toPort:"GASPAR Paul"},
+{from:"Lifa21",fromPort:"CATROU Olivier",to:"Fr21_lifa",toPort:"CATROU Olivier"},
+{from:"Lifa21",fromPort:"MORO Alain",to:"Fr21_lifa",toPort:"MORO Alain"},
+{from:"Lifa21",fromPort:"TASSOTTI Loris (Ita)",to:"Fr21_lifa",toPort:"TASSOTTI Loris (Ita)"},
+{from:"Lifa21",fromPort:"PINET Cyril",to:"Fr21_lifa",toPort:"PINET Cyril"},
+{from:"Lifa21",fromPort:"ABDELKADER Yann",to:"Fr21_lifa",toPort:"ABDELKADER Yann"},
+
+
+
+
+
+
+
+
+
+{from:"Lifa21",fromPort:"HOUSSIER Julien",to:"Fr21_lifa",toPort:"HOUSSIER Julien"}
+            
+          ]
+        });
+
+    showModel();  // show the diagram's initial model
+}
+
+    function showModel() {
+      document.getElementById("mySavedModel").textContent = myDiagram.model.toJson();
+    }
+</script>
+
+
+
+
+<style type="text/css">
+table {
+	border-collapse: collapse;
+	margin: 0px 0px 0px 0px;
+	font-size: 11px;
+}
+
+th, td {
+	border: 1px solid;
+	padding: 10px;
+}
+</style>
+
+</head>
+<body onload="init()" style="font-family: Verdana; font-size: 12px">
+	<div id="schema" style="float: left;width: 1300px; margin-right: 50px;padding-left: 10px"></div>
+		
+		<div id="sample">
+  <div id="myDiagramDiv" style="border: solid 1px black; width:1800px; height:1400px"></div>
+
+  <div>
+    <textarea id="mySavedModel" style="width:100%;height:250px;display: none"></textarea>
+<!-- {from:"Lifa21",fromPort:"ABDELKADER Yann",to:"Fr21_lifa",toPort:"ABDELKADER Yann"},
+{from:"Lifa21",fromPort:"ABDELKADER Yann",to:"Fr21_lifa",toPort:"ABDELKADER Yann"},
+{from:"Lifa21",fromPort:"ABDELKADER Yann",to:"Fr21_lifa",toPort:"ABDELKADER Yann"},
+
+{"n":"","i":"36'17", "color":"#00BCF2"},
+{"n":"ROUYER Thomas","i":"34'52", "color":"#00BCF2"},
+{"n":"BADR Youssef","i":"34'53", "color":"#00BCF2"},
+{"n":"FAVAZZO Paolo","i":"35'22", "color":"#00BCF2"},
+{"n":"AIT IDER Mustapha","i":"35'38", "color":"#00BCF2"},
+{"n":"CAILLOT Yannick","i":"35'47", "color":"#00BCF2"},
+{"n":"GENDRE Alexis","i":"36'19", "color":"#00BCF2"},
+{"n":"MARTINHO Ezequiel","i":"36'56", "color":"#00BCF2"},
+{"n":"HARDY Sebastien","i":"37'17", "color":"#00BCF2"},
+{"n":"","i":"37'22", "color":"#00BCF2"},
+{"n":"VILFEU Ludovic","i":"38'20", "color":"#00BCF2"},
+{"n":"ALLONGUE Antoine","i":"38'22", "color":"#00BCF2"},
+{"n":"SAPEI Sebastien","i":"38'28", "color":"#00BCF2"},
+{"n":"JIMENEZ Simon","i":"38'30", "color":"#00BCF2"},
+{"n":"HERCHENROEDER Nathan (Usa)","i":"38'33", "color":"#00BCF2"},
+{"n":"COMPAIN Gaetan","i":"38'38", "color":"#00BCF2"},
+{"n":"DRAY Sebastien","i":"38'45", "color":"#00BCF2"},
+{"n":"GUERY Arnaud","i":"38'54", "color":"#00BCF2"},
+{"n":"PROME Thomas","i":"39'39", "color":"#00BCF2"},
+{"n":"JAUFFRET Thomas","i":"39'43", "color":"#00BCF2"},
+{"n":"NOIRY Julien","i":"39'49", "color":"#00BCF2"},
+{"n":"HUGUET Michel","i":"39'52", "color":"#00BCF2"},
+{"n":"AIT ABDELLAH Hassan","i":"39'58", "color":"#00BCF2"},
+{"n":"","i":"40'02", "color":"#00BCF2"},
+{"n":"CATROU Olivier","i":"40'05", "color":"#00BCF2"},
+{"n":"MARCOVICI Jean-Baptiste","i":"40'30", "color":"#00BCF2"},
+{"n":"GASPAR Paul","i":"41'01", "color":"#00BCF2"},
+{"n":"SMITH Julien","i":"41'07", "color":"#00BCF2"},
+{"n":"FRAYNE Thomas","i":"41'14", "color":"#00BCF2"},
+{"n":"BOYER Frederic","i":"41'18", "color":"#00BCF2"},
+{"n":"MORO Alain","i":"41'30", "color":"#00BCF2"},
+{"n":"KHELIFA-ZOUBIR Miloud","i":"41'38", "color":"#00BCF2"},
+{"n":"TASSOTTI Loris (Ita)","i":"41'40", "color":"#00BCF2"},
+{"n":"WALLON Samuel","i":"42'38", "color":"#00BCF2"},
+{"n":"PINET Cyril","i":"42'40", "color":"#00BCF2"},
+{"n":"RISSER Lilian","i":"42'48", "color":"#00BCF2"}	
+ -->
+<h2>Construction</h2>
+
+<ul>
+<li>parse HTML en Java &rarr; JSon file liste cross, liste listes {athlète, chrono}.</li>
+<li>lecture du JSon généré <code>Type listType = new TypeToken&lt;List&lt;Cross&gt;>() {}.getType();
+		List&lt;Cross&gt; listCross = new Gson().fromJson(new FileReader("c:\\\\temp\\\\cross.json"), listType);</code>		
+</li>
+<li>génération des liens Json entre les tableaux pour <b>gojs</b></li>
+</ul>
+    
+<h2>Libraires</h2>    
+<p>JavaScript : GoJS 1.7.26</p>  
+<p>Java : com.google.code.gson 2.6.2</p>
+</div>
+</div>	
+</body>
+</html>

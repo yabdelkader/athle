@@ -1,0 +1,39 @@
+1	30'02''	BADR Youssef	Ao Charenton	094	M1M	81
+2	30'04''	MAAMOUZ Ahmed	Ao Charenton	094	M1M	81
+3	32'34''	MEUBLAT Olivier	Csa Kremlin Bicetre	094	M1M	81
+4	32'47''	ALLONGUE Antoine	Ao Charenton	094	M1M	77
+5	32'53''	HERCHENROEDER Nathan (Usa)	Ao Charenton	094	M1M	81
+6	33'34''	HARDY Sebastien	Ao Charenton	094	M2M	75
+7	33'39''	PROME Thomas	Ao Charenton	094	M1M	81
+8	33'40''	FORTES Alexandrino	Ao Charenton	094	M1M	80
+9	33'42''	ROUDAUT Paol	Asphalte 94	094	M1M	81
+10	33'53''	BLANCHARD Nicolas	Uai Nogent-sur-marne	094	M1M	77
+11	34'02''	ABDELKADER Yann	Ac Paris-joinville	094	M1M	77
+12	34'02''	STOLTZ Gabriel	Ac Paris-joinville	094	M1M	79
+13	34'58''	ROUHAUD Yvan	Ao Charenton	094	M1M	77
+14	35'08''	CATROU Olivier	Asphalte 94	094	M3M	71
+15	35'08''	SALAIS Clement	Ao Charenton	094	M1M	78
+16	35'36''	LANDRIEU Jerome	Csa Kremlin Bicetre	094	M1M	79
+17	35'45''	MARCOVICI Jean-Baptiste	Ao Charenton	094	M1M	77
+18	35'54''	LINTIGNAT Boris	Es Sucy-en-brie	094	M2M	73
+19	36'00''	TAUPENAS Simon	Vincennes Athletic	094	M1M	79
+20	36'00''	HASSINE Choukri	Ao Charenton	094	M2M	73
+21	36'06''	FISCHER Nicolas	Asfi Villejuif Athletisme	094	M1M	77
+22	36'11''	FERRE Wilfried	Ao Charenton	094	M1M	78
+23	36'25''	FLEURY Julien	Asphalte 94	094	M2M	72
+24	36'55''	MONIER Yves	Ao Charenton	094	M1M	81
+25	37'08''	POULAIN Jean-Luc	Es Sucy-en-brie	094	M3M	68
+26	37'33''	OBJOIS Jean-Michel	Asphalte 94	094	M4M	64
+27	38'47''	BELMOKHTAR Omar	Ao Charenton	094	M3M	68
+28	39'27''	LARDENOIS Thierry	Asphalte 94	094	M5M	60
+29	39'46''	QUESNEL Stephane	Es Sucy-en-brie	094	M3M	69
+30	39'53''	OMRI Naceur	Csa Kremlin Bicetre	094	M3M	70
+31	40'00''	PFERTZEL Jean-Philippe	Ao Charenton	094	M6M	52
+32	40'26''	BUREAU Benoit	Red Star Club Champigny	094	M2M	74
+33	40'29''	NGUYEN Dac Linh Giao	Ao Charenton	094	M3M	69
+34	41'04''	BELLAMY Laurent	Asfi Villejuif Athletisme	094	M4M	65
+35	41'39''	OLLIVIER Christophe	Asphalte 94	094	M5M	60
+36	43'43''	LE GAC Philippe	Asphalte 94	094	M5M	58
+37	43'56''	LOBO Didier	Asphalte 94	094	M7M	48
+38	45'54''	LORDIER Daniel	Asfi Villejuif Athletisme	094	M5M	61
+39	50'28''	MICHEL Pierre-Alain	Es Sucy-en-brie	094	M7M	48 

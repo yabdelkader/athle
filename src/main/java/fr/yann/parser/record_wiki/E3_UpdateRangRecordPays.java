@@ -97,14 +97,13 @@ public class E3_UpdateRangRecordPays {
 
 	//-- puis on retire les '0' disgracieux ajoutés précédement
 	private static void retireZero(Connection con) throws SQLException {
-		Statement stmt = con.createStatement();
-	
-		int i = stmt.executeUpdate("UPDATE record r SET r.perf = SUBSTRING(r.perf, 2, LENGTH(r.perf)) WHERE SUBSTRING(r.perf, 1, 1) = '0'");
+		try (Statement stmt = con.createStatement()) {
+			int i = stmt.executeUpdate("UPDATE record r SET r.perf = SUBSTRING(r.perf, 2, LENGTH(r.perf)) WHERE SUBSTRING(r.perf, 1, 1) = '0'");
 
-		System.out.println("update substring 0 : " + i);
-		
-		
-		stmt.close();
+			System.out.println("update substring 0 : " + i);
+			
+			stmt.close();
+		}
 		
 	}
 	public static Connection getConnection() throws SQLException {
@@ -124,26 +123,27 @@ public class E3_UpdateRangRecordPays {
 		
 		String clauseEpreuvePaysSexe = getClauseEpreuvePaysSexe("r", epreuve, sexe, idPays);
 		
-		Statement stmt = con.createStatement();
-
-		int nombrePaysMeilleurs = 0;
-		try {
-			nombrePaysMeilleurs = getNombrePaysMeilleurs(epreuve, sexe, idPays, stmt);
-		} catch (Exception e) {
-			System.err.println(idPays + " " + epreuve.getCode() + " " + sexe + " " + e.getMessage());
-		}
-		
 		// le nombre de lignes affectées dans le cas d’un insert, d’un update
-		int i = stmt.executeUpdate("UPDATE record r SET r.rang = " + nombrePaysMeilleurs + clauseEpreuvePaysSexe);
+		int i;
+		try (Statement stmt = con.createStatement()) {
+			int nombrePaysMeilleurs = 0;
+			try {
+				nombrePaysMeilleurs = getNombrePaysMeilleurs(epreuve, sexe, idPays, stmt);
+			} catch (Exception e) {
+				System.err.println(idPays + " " + epreuve.getCode() + " " + sexe + " " + e.getMessage());
+			}
+			
+			i = stmt.executeUpdate("UPDATE record r SET r.rang = " + nombrePaysMeilleurs + clauseEpreuvePaysSexe);
 
-		System.out.println("UPDATE record r SET r.rang = " + nombrePaysMeilleurs + clauseEpreuvePaysSexe);
-		
-		stmt.close();
+			System.out.println("UPDATE record r SET r.rang = " + nombrePaysMeilleurs + clauseEpreuvePaysSexe);
+			
+			stmt.close();
 
-		if (i != 1) {
-			// throw new Exception("upddate " + i + " pour " + clauseEpreuvePaysSexe);
-			System.err.println("upddate " + i + " pour " + clauseEpreuvePaysSexe);
-			// Thread.sleep(2000);
+			if (i != 1) {
+				// throw new Exception("upddate " + i + " pour " + clauseEpreuvePaysSexe);
+				System.err.println("upddate " + i + " pour " + clauseEpreuvePaysSexe);
+				// Thread.sleep(2000);
+			}
 		}
 	}
 
@@ -181,9 +181,11 @@ public class E3_UpdateRangRecordPays {
 	}
 
 	// clean SQL
-	void clean(){
+	/*
+	static void clean(){
 		String sql;
 		sql = "delete  FROM record WHERE epreuve like 'dec%' and sexe = 1";
 		sql = "delete  FROM record WHERE annee = 0";
 	}
+	*/
 }

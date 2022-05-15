@@ -2,7 +2,7 @@ package fr.yann.parser.cross;
 
 public class LigneCross {
 
-	private static final String SEPARATOR = ";";
+	// private static final String SEPARATOR = ";";
 	private int rang;
 	private String chrono;
 	private String nom;
@@ -40,6 +40,18 @@ public class LigneCross {
 		}
 		return str + "),";
 
+	}
+
+	public String toJson() {
+		
+		// { "name": "DOUKKANA Rabii (Mar)", "info": "29'22'' qi", "color":"#00BCF2"},
+		String str = "{ n: \"" + nom + "\", \"i\": \"" + chrono + "\", \"color\":\"#00BCF2\"";
+		
+		if ((rang % 250) == 0) {
+			return str + "};";
+		}
+		return str + "},";
+		
 	}
 
 	public int getRang() {

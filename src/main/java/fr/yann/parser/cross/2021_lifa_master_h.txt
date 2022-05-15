@@ -1,0 +1,76 @@
+1		32'52 		BADR Youssef		Ao Charenton		094		M1M/81		 		 
+2		33'10		JARMUSZEWICZ Quentin		Lisses Ac		091		M1M/77		 		 
+3		33'17		CAILLOT Yannick		Grand Paris Seine & Oise Athle		078		M1M/77		 		 
+4		33'30		ISMAEL Laurent		So Houilles		078		M1M/79		 		 
+5		33'30		FAVAZZO Paolo		Athle 78 		078		M1M/80		 		 
+6		33'38		AIT IDER Mustapha		So Houilles		078		M1M/77		 		 
+7		34'02		ROUYER Thomas		Athletic Clubs 92		092		M2M/73		 		 
+8		34'11 		GENDRE Alexis		Grand Paris Seine & Oise Athle		078		M1M/77		 		 
+9		34'17		RENAUD Jean-Claude		Us Torcy Athletisme		077		M1M/77		 		 
+10		34'36		MARTINHO Ezequiel		Villepinte Triathlon 93		093		M1M/78		 		 
+11		34'49		MAAMOUZ Ahmed		Ao Charenton		094		M1M/81		 		 
+12		34'59		HOUSSIER Julien		Us Creteil		094		M1M/81		 		 
+13		35'03		BARTOLI Julien		Ac Du Pays De Meaux		077		M1M/78		 		 
+14		35'08		SAPEI Sebastien		So Houilles		078		M1M/78		 		 
+15		35'12 		ALLONGUE Antoine		Ao Charenton		094		M1M/77		 		 
+16		35'14 		HARDY Sebastien		Ao Charenton		094		M2M/75		 		 
+17		35'18		FELEMOU Athos		Us Metro Transport (paris)		075		M1M/80		 		 
+18		35'28 		PEIXOTO Henrique		Grand Paris Seine & Oise Athle		078		M2M/72		 		 
+19		35'30		FOUQUET Loic		Athletic Brunoy Club		091		M1M/77		 		 
+20		35'35 		HERCHENROEDER Nathan (Usa)		Ao Charenton		094		M1M/81		 		 
+21		35'41 		JIMENEZ Simon		Lisses Ac		091		M1M/77		 		 
+22		35'48		COMPAIN Gaetan		Les Moustiques		075		M1M/80		 		 
+23		35'58		GUERY Arnaud		Orsay Gif Athle		091		M1M/78		 		 
+24		36'00		VILFEU Ludovic		Ca Mantes-la-ville		078		M2M/75		 		 
+25		36'04		DRAY Sebastien		Grand Paris Seine & Oise Athle		078		M2M/76		 		 
+26		36'14		STOLTZ Gabriel		Ac Paris-joinville		094		M1M/79		 		 
+27		36'20		LACHEREST Sebastien		Dynamic Aulnay Club		093		M1M/78		 		 
+28		36'25		CHARBONNEAU Franck		Lisses Ac		091		M2M/72		 		 
+29		36'30		EZBAIR Soufiane		Team Lenglen Athletic Club		092		M2M/74		 		 
+30		36'35		PROME Thomas		Ao Charenton		094		M1M/81		 		 
+31		36'36		ABDELKADER Yann		Ac Paris-joinville		094		M1M/77		 		 
+32		36'50		PERTHUIS Nicolas		Villepinte Triathlon 93		093		M2M/72		 		 
+33		36'57		NOIRY Julien		So Houilles		078		M1M/77		 		 
+34		37'00		GUENIFFET Gabriel		Val D'europe Athletisme		077		M1M/78		 		 
+35		37'03		GASPAR Paul		Team Lenglen Athletic Club		092		M3M/71		 		 
+36		37'05		CATROU Olivier		Asphalte 94		094		M3M/71		 		 
+37		37'07		JAUFFRET Thomas		Grand Paris Seine & Oise Athle		078		M1M/81		 		 
+38		37'09		ANCIAES Horacio		Ca Mantes-la-ville		078		M1M/80		 		 
+39		37'14		HUGUET Michel		Es Sartrouville		078		M4M/66		 		 
+40		37'22		MONTEIRO Manuel		Ca Mantes-la-ville		078		M3M/70		 		 
+41		37'47		MARCOVICI Jean-Baptiste		Ao Charenton		094		M1M/77		 		 
+42		37'53		FRAYNE Thomas		Ac Boulogne Billancourt		092		M1M/79		 		 
+43		38'02		DAUVILLIERS Sebastien		Elan 91		091		M2M/73		 		 
+44		38'11		FAUX Guillaume		Elan 91		091		M1M/81		 		 
+45		38'17		AIT ABDELLAH Hassan		Orsay Gif Athle		091		M1M/80		 		 
+46		38'26 		WALLON Samuel		Orsay Gif Athle		091		M3M/69		 		 
+47		38'34		BEN SALEM Monir		Running 92		092		M1M/77		 		 
+48		39'00		GARCIA Stephane		Lisses Ac		091		M2M/73		 		 
+49		39'09		MORO Alain		Orsay Gif Athle		091		M3M/67		 		 
+50		39'12		PINET Cyril		Les Moustiques		075		M3M/70		 		 
+51		39'20		TASSOTTI Loris (Ita)		So Houilles		078		M2M/74		 		 
+52		39'30		BENDJADOUR Abdelkader		Val D'europe Athletisme		077		M3M/69		 		 
+53		40'04		RISSER Lilian		Ca Mantes-la-ville		078		M2M/76		 		 
+54		40'10		GRAF Remi		Athletic Clubs 92		092		M3M/68		 		 
+55		40'20		MACABRE Denis		Grand Paris Seine & Oise Athle		078		M1M/77		 		 
+56		40'23		BELMOKHTAR Omar		Ao Charenton		094		M3M/68		 		 
+57		40'30		DURAND Luc		Orsay Gif Athle		091		M3M/67		 		 
+58		40'40		BOUFOUS Abdellatif		Grand Paris Seine & Oise Athle		078		M1M/78		 		 
+59		40'49		IRGUI Mohamed		Grand Paris Seine & Oise Athle		078		M1M/77		 		 
+60		40'54		GAUTHERIE Sebastien		Val D'europe Athletisme		077		M2M/74		 		 
+61		41'14		EL MOUADDABE Habdeltef		Grand Paris Seine & Oise Athle		078		M2M/72		 		 
+62		41'25		ROBERT Philippe		Dassault Sports Suresnes		092		M4M/64		 		 
+63		41'38		KIPPER Brice		Avon Athletisme Club		077		M2M/74		 		 
+64		42'04		SOULA David		Villepinte Triathlon 93		093		M2M/73		 		 
+65		42'28		LEMOINE Julien		Val D'europe Athletisme		077		M2M/76		 		 
+66		42'55		RABOTIN Eddie		Marne La Vallee Athletisme		077		M4M/63		 		 
+67		42'56		BENZAAZA Mourad		Val D'europe Athletisme		077		M2M/72		 		 
+68		43'04		MOUAFFAK Ibrahim (Mar)		Grand Paris Seine & Oise Athle		078		M2M/74		 		 
+69		43'36		LEROUL Djamel		Us Torcy Athletisme		077		M2M/76		 		 
+70		43'55		NGUYEN Dac Linh Giao		Ao Charenton		094		M3M/69		 		 
+71		44'04		DELABARRE Fabrice		Usm Malakoff		092		M3M/70		 		 
+72		44'19		BOYER Frederic		Orsay Gif Athle		091		M1M/77		 		 
+73		44'54		QUESNEL Stephane		Es Sucy-en-brie		094		M3M/69		 		 
+74		46'02		FRONT Vincent		Val D'europe Athletisme		077		M2M/75		 		 
+75		48'01		ROUSSEAU Pierre-Michel		Moissy-cramayel Athletisme		077		M1M/79		 		 
+76		49'08		MAY Olivier		Villepinte Triathlon 93		093		M3M/71

@@ -104,11 +104,9 @@ public class TraiteCsvInterclub {
 		if (val.matches("[0-9]{3}")) {
 			return true;
 		}
-		;
 		if (val.matches("[0-9]{4}")) {
 			return true;
 		}
-		;
 
 		return false;
 	}
@@ -207,7 +205,6 @@ public class TraiteCsvInterclub {
 		if (bContientMois) {
 			return true;
 		}
-		;
 
 		boolean bFormatJJ_MM = str.matches("[0-9]{2}/[0-9]{2}");
 
