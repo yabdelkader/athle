@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<title>Championnat de France Master</title>
+	
+	<link media="screen" rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+
+	<link rel="stylesheet" type="text/css" href="../cross/css/jquery.dataTables.min.css"/>
+	
+	<style type="text/css">
+
+footer {
+	width: 100%;
+	color: #fff;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-color: #239fcc;
+}
+
+.ligne-header {
+	height: 1px;
+	background-color: #999;
+	margin: 0 250px 0 0;
+}
+.row-selected, .panel-default>.panel-heading {
+	background-color: #239fcc;
+	color: white;
+}
+
+</style>
+</head>
+<body>
+
+
+	<article class="content">
+
+	<div class="row" style="margin-bottom:50px">
+
+		<div class="col-md-12">
+			<div class="well well-sm atih" align="center" style="color:white;background-color: #239FCC">
+				<h2>Championnat de France Master plein air</h2>
+				<h3>800 M45</h3>
+			</div>
+		</div>
+
+		<div class="col-md-1"></div>
+
+		<div class="col-md-3" style="margin: 0 20px">
+		
+			<div class="panel panel-default">
+				<div class="panel-heading">2016</div>
+	  				<div class="panel-body">
+					<table id="ch2016" class="display table table-striped" >
+						<thead>
+							<tr>
+								<th>Place</th>
+								<th>Nom</th>
+								<th>Chrono</th>
+								<th>Points</th>
+							</tr>
+						</thead>		
+						<tbody></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-3" style="margin: 0 20px">
+		
+			<div class="panel panel-default">
+				<div class="panel-heading">2017</div>
+	  				<div class="panel-body">
+					<table id="ch2017" class="display table table-striped" >
+						<thead>
+							<tr>
+								<th>Place</th>
+								<th>Nom</th>
+								<th>Chrono</th>
+								<th>Points</th>
+							</tr>
+						</thead>		
+						<tbody></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-3" style="margin: 0 20px">
+		
+			<div class="panel panel-default">
+				<div class="panel-heading">2018</div>
+	  				<div class="panel-body">
+					<table id="ch2018" class="display table table-striped" >
+						<thead>
+							<tr>
+								<th>Place</th>
+								<th>Nom</th>
+								<th>Chrono</th>
+								<th>Points</th>
+							</tr>
+						</thead>		
+						<tbody></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-3" style="margin: 0 20px">
+		
+			<div class="panel panel-default">
+				<div class="panel-heading">2019</div>
+	  				<div class="panel-body">
+					<table id="ch2019" class="display table table-striped" >
+						<thead>
+							<tr>
+								<th>Place</th>
+								<th>Nom</th>
+								<th>Chrono</th>
+								<th>Points</th>
+							</tr>
+						</thead>		
+						<tbody></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-3" style="margin: 0 20px">
+		
+			<div class="panel panel-default">
+				<div class="panel-heading">2020</div>
+	  				<div class="panel-body">
+					<table id="ch2020" class="display table table-striped" >
+						<thead>
+							<tr>
+								<th>Place</th>
+								<th>Nom</th>
+								<th>Chrono</th>
+								<th>Points</th>
+							</tr>
+						</thead>		
+						<tbody></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-2"></div>
+		<div class="col-md-3" style="margin: 0 20px">
+		
+			<div class="panel panel-default">
+				<div class="panel-heading">2021</div>
+	  				<div class="panel-body">
+					<table id="ch2021" class="display table table-striped" >
+						<thead>
+							<tr>
+								<th>Place</th>
+								<th>Nom</th>
+								<th>Chrono</th>
+								<th>Points</th>
+							</tr>
+						</thead>		
+						<tbody></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-3" style="margin: 0 20px">
+		
+			<div class="panel panel-default">
+				<div class="panel-heading">2022</div>
+	  				<div class="panel-body">
+					<table id="ch2022" class="display table table-striped" >
+						<thead>
+							<tr>
+								<th>Place</th>
+								<th>Nom</th>
+								<th>Chrono</th>
+								<th>Points</th>
+							</tr>
+						</thead>		
+						<tbody></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	</article>
+	<script type="text/javascript" src="../cross/js/jquery-3.3.1.js"></script>
+	<script type="text/javascript" src="../cross/js/jquery.dataTables.min.js"></script>
+	
+
+	<script type="text/javascript" class="init">
+$(document).ready(function() {
+
+	var table = $('#ch2016').DataTable( {
+	
+		paging: false,
+		bInfo :false,
+		data :
+[
+	{"place":1, "annee":2016, "cat":"45M", "chrono":"2.03.97", "nom":"DUPUY David", "club":"Us Pointe-des-galets", "dep":"974", "ligue":"REU", "naissance":70, "pts":676, "dist":800},
+	{"place":2, "annee":2016, "cat":"45M", "chrono":"2.05.91", "nom":"CELESTE Max", "club":"Livry Gargan Athletisme", "dep":"093", "ligue":"I-F", "naissance":70, "pts":633, "dist":800},
+	{"place":3, "annee":2016, "cat":"45M", "chrono":"2.06.81", "nom":"DUPONT Eric", "club":"Ea Moulins-yzeure-avermes", "dep":"003", "ligue":"AUV", "naissance":67, "pts":614, "dist":800},
+	{"place":4, "annee":2016, "cat":"45M", "chrono":"2.07.12", "nom":"CHEREAU Emmanuel", "club":"Vineuil Sports", "dep":"041", "ligue":"CEN", "naissance":68, "pts":607, "dist":800},
+	{"place":5, "annee":2016, "cat":"45M", "chrono":"2.08.20", "nom":"EL FAKHAR Mohamed MAR", "club":"Club Athletique Caussadais", "dep":"082", "ligue":"PYR", "naissance":67, "pts":584, "dist":800},
+	{"place":6, "annee":2016, "cat":"45M", "chrono":"2.09.27", "nom":"CHAFIK Abdennebi", "club":"C.c. Taverny Athletisme", "dep":"095", "ligue":"I-F", "naissance":67, "pts":562, "dist":800},
+	{"place":7, "annee":2016, "cat":"45M", "chrono":"2.09.36", "nom":"LUX Patrice", "club":"C.o.s. Villers Athletisme", "dep":"054", "ligue":"LOR", "naissance":69, "pts":560, "dist":800},
+	{"place":8, "annee":2016, "cat":"45M", "chrono":"2.13.25", "nom":"MAITREHENRY Alain", "club":"Fpca92 - S/l As Fontenay", "dep":"092", "ligue":"I-F", "naissance":68, "pts":483, "dist":800},
+	{"place":9, "annee":2016, "cat":"45M", "chrono":"2.19.26", "nom":"LAFOND Laurent", "club":"Ca Beglais", "dep":"033", "ligue":"AQU", "naissance":68, "pts":375, "dist":800},
+	{"place":1, "annee":2016, "cat":"45M", "chrono":"2.05.54", "nom":"HAEMMERER Bruno", "club":"Efs Reims A. ", "dep":"051", "ligue":"CHA", "naissance":68, "pts":641, "dist":800},
+	{"place":2, "annee":2016, "cat":"45M", "chrono":"2.11.00", "nom":"EL FAKHAR Driss MAR", "club":"Club Athletique Caussadais", "dep":"082", "ligue":"PYR", "naissance":71, "pts":527, "dist":800},
+	{"place":3, "annee":2016, "cat":"45M", "chrono":"2.13.18", "nom":"SAUVETRE Jean-Paul", "club":"Caps - S/l Vihiers", "dep":"049", "ligue":"P-L", "naissance":66, "pts":484, "dist":800},
+	{"place":4, "annee":2016, "cat":"45M", "chrono":"2.19.19", "nom":"GUERENDEL Stephane", "club":"Osm Lomme Athletisme", "dep":"059", "ligue":"NPC", "naissance":68, "pts":377, "dist":800},
+	{"place":5, "annee":2016, "cat":"45M", "chrono":"2.20.39", "nom":"POZZETTO Jacques", "club":"Sc Chateaurenard", "dep":"013", "ligue":"PRO", "naissance":67, "pts":357, "dist":800},
+	{"place":6, "annee":2016, "cat":"45M", "chrono":"2.21.79", "nom":"BEAUSSEAUX Jean-Claude", "club":"Ca Fresnoy-le-grand", "dep":"002", "ligue":"PIC", "naissance":67, "pts":334, "dist":800},
+	{"place":7, "annee":2016, "cat":"45M", "chrono":"2.26.45", "nom":"HAINCELLIN Christophe", "club":"Ac Noyon", "dep":"060", "ligue":"PIC", "naissance":70, "pts":264, "dist":800}
+],
+
+		"lengthMenu": [ [100, 500, 1000, -1], [100, 500, 1000, "Tous"] ],
+		iDisplayLength: 100,
+		dom: 'Bfrtip',
+		select: true,
+		orderCellsTop: true,
+ 		columns: [
+			{ data: "place" },
+			{ data: "nom" },
+			{ data: "chrono" },
+			{ data: "pts" }
+		],
+		fixedColumns: true
+	} );
+
+	var table = $('#ch2017').DataTable( {
+	
+		paging: false,
+		bInfo :false,
+		data :
+[
+
+	{"place":1, "annee":2017, "cat":"45M", "chrono":"2.04.86", "nom":"SOUSSEING Bruno", "club":"Les Aigles Abymes", "dep":"971", "ligue":"GUA", "naissance":72, "pts":656, "dist":800},
+	{"place":2, "annee":2017, "cat":"45M", "chrono":"2.06.43", "nom":"DUPUY David", "club":"Us Pointe-des-galets", "dep":"974", "ligue":"REU", "naissance":70, "pts":622, "dist":800},
+	{"place":3, "annee":2017, "cat":"45M", "chrono":"2.07.31", "nom":"LITTRE Michel", "club":"Lisses Ac", "dep":"091", "ligue":"I-F", "naissance":71, "pts":603, "dist":800},
+	{"place":4, "annee":2017, "cat":"45M", "chrono":"2.09.10", "nom":"LE LURON Stephane", "club":"Livry Gargan Athletisme", "dep":"093", "ligue":"I-F", "naissance":68, "pts":565, "dist":800},
+	{"place":5, "annee":2017, "cat":"45M", "chrono":"2.09.38", "nom":"DUPONT Eric", "club":"Ea Moulins-yzeure-avermes", "dep":"003", "ligue":"ARA", "naissance":67, "pts":560, "dist":800},
+	{"place":6, "annee":2017, "cat":"45M", "chrono":"2.11.29", "nom":"SEKIOU Rachid", "club":"As Monaco", "dep":"006", "ligue":"PCA", "naissance":68, "pts":521, "dist":800},
+	{"place":7, "annee":2017, "cat":"45M", "chrono":"2.11.88", "nom":"CHEREAU Emmanuel", "club":"Vineuil Sports", "dep":"041", "ligue":"CEN", "naissance":68, "pts":510, "dist":800},
+	{"place":8, "annee":2017, "cat":"45M", "chrono":"2.14.28", "nom":"RABOT Laurent", "club":"Vineuil Sports", "dep":"041", "ligue":"CEN", "naissance":72, "pts":464, "dist":800},
+	{"place":9, "annee":2017, "cat":"45M", "chrono":"2.15.77", "nom":"LEGRAND Jean-Michel", "club":"Lyon Athletisme", "dep":"069", "ligue":"ARA", "naissance":69, "pts":436, "dist":800},
+	{"place":10, "annee":2017, "cat":"45M", "chrono":"2.16.67", "nom":"PERRIN Herve", "club":"Grand Angouleme Athletisme", "dep":"016", "ligue":"N-A", "naissance":71, "pts":420, "dist":800},
+	{"place":11, "annee":2017, "cat":"45M", "chrono":"2.20.32", "nom":"AIME Christian", "club":"Grand Angouleme Athletisme", "dep":"016", "ligue":"N-A", "naissance":67, "pts":358, "dist":800}
+],
+
+		"lengthMenu": [ [100, 500, 1000, -1], [100, 500, 1000, "Tous"] ],
+		iDisplayLength: 100,
+		dom: 'Bfrtip',
+		select: true,
+		orderCellsTop: true,
+ 		columns: [
+			{ data: "place" },
+			{ data: "nom" },
+			{ data: "chrono" },
+			{ data: "pts" }
+		],
+		fixedColumns: true
+	} );
+	var table = $('#ch2018').DataTable( {
+	
+		paging: false,
+		bInfo :false,
+		data :
+[
+	{"place":1, "annee":2018, "cat":"45M", "chrono":"2.04.55", "nom":"GOMEZ Joel", "club":"Plm Conflans", "dep":"078", "ligue":"I-F", "naissance":72, "pts":653, "dist":800},
+	{"place":2, "annee":2018, "cat":"45M", "chrono":"2.04.73", "nom":"GENTEUIL Bruno", "club":"Clermontaa - S/l As Montferran", "dep":"063", "ligue":"ARA", "naissance":70, "pts":649, "dist":800},
+	{"place":3, "annee":2018, "cat":"45M", "chrono":"2.06.39", "nom":"HERCOUET Didier", "club":"Oc Gif Sur Yvette", "dep":"091", "ligue":"I-F", "naissance":69, "pts":612, "dist":800},
+	{"place":4, "annee":2018, "cat":"45M", "chrono":"2.06.45", "nom":"LECIGNE Sylvain", "club":"Avenir Social De Sin Le Noble", "dep":"059", "ligue":"H-F", "naissance":72, "pts":610, "dist":800},
+	{"place":5, "annee":2018, "cat":"45M", "chrono":"2.07.37", "nom":"SOLTANI Mohamed", "club":"Foulees De St Germain En Laye", "dep":"078", "ligue":"I-F", "naissance":73, "pts":590, "dist":800},
+	{"place":6, "annee":2018, "cat":"45M", "chrono":"2.09.08", "nom":"JEGAT Stephane", "club":"Athletic Club Salonais ", "dep":"013", "ligue":"PCA", "naissance":71, "pts":554, "dist":800},
+	{"place":7, "annee":2018, "cat":"45M", "chrono":"2.10.40", "nom":"VILLEFAYOT Herve", "club":"Athletic Trois Tours", "dep":"037", "ligue":"CEN", "naissance":72, "pts":527, "dist":800},
+	{"place":8, "annee":2018, "cat":"45M", "chrono":"2.10.97", "nom":"KUDLA Sebastien", "club":"Vs Ozoir La Ferriere", "dep":"077", "ligue":"I-F", "naissance":73, "pts":515, "dist":800},
+	{"place":9, "annee":2018, "cat":"45M", "chrono":"2.11.68", "nom":"GUILLON Regis", "club":"Nma - S/l Ac La Chapelle/erdre", "dep":"044", "ligue":"P-L", "naissance":72, "pts":501, "dist":800},
+	{"place":10, "annee":2018, "cat":"45M", "chrono":"2.12.56", "nom":"DUBOIS Christophe", "club":"Esl - S/l   Asul Bron", "dep":"069", "ligue":"ARA", "naissance":71, "pts":483, "dist":800},
+	{"place":11, "annee":2018, "cat":"45M", "chrono":"2.15.50", "nom":"VANESSCHE Pascal", "club":"Usm Malakoff", "dep":"092", "ligue":"I-F", "naissance":73, "pts":428, "dist":800},
+	{"place":12, "annee":2018, "cat":"45M", "chrono":"2.18.43", "nom":"PERRIN Herve", "club":"Grand Angouleme Athletisme", "dep":"016", "ligue":"N-A", "naissance":71, "pts":375, "dist":800},
+	{"place":13, "annee":2018, "cat":"45M", "chrono":"2.33.65", "nom":"WAKINE Majid", "club":"Ea Cergy Pontoise Athletisme ", "dep":"095", "ligue":"I-F", "naissance":72, "pts":159, "dist":800}
+],
+
+		"lengthMenu": [ [100, 500, 1000, -1], [100, 500, 1000, "Tous"] ],
+		iDisplayLength: 100,
+		dom: 'Bfrtip',
+		select: true,
+		orderCellsTop: true,
+ 		columns: [
+			{ data: "place" },
+			{ data: "nom" },
+			{ data: "chrono" },
+			{ data: "pts" }
+		],
+		fixedColumns: true
+	} );
+	var table = $('#ch2019').DataTable( {
+	
+		paging: false,
+		bInfo :false,
+		data :
+[
+	{"place":1, "annee":2019, "cat":"45M", "chrono":"2.01.99", "nom":"GOMEZ Joel", "club":"Gpso A - S/l Plm Conflans", "dep":"078", "ligue":"I-F", "naissance":72, "pts":713, "dist":800},
+	{"place":2, "annee":2019, "cat":"45M", "chrono":"2.02.85", "nom":"GENTEUIL Bruno", "club":"Clermontaa - S/l As Montferran", "dep":"063", "ligue":"ARA", "naissance":70, "pts":692, "dist":800},
+	{"place":3, "annee":2019, "cat":"45M", "chrono":"2.03.70", "nom":"RINCE Mickael", "club":"Nma - S/l Ac La Chapelle/erdre", "dep":"044", "ligue":"P-L", "naissance":72, "pts":672, "dist":800},
+	{"place":4, "annee":2019, "cat":"45M", "chrono":"2.06.01", "nom":"LECIGNE Sylvain", "club":"Avenir Social De Sin Le Noble", "dep":"059", "ligue":"H-F", "naissance":72, "pts":620, "dist":800},
+	{"place":5, "annee":2019, "cat":"45M", "chrono":"2.07.72", "nom":"HERCOUET Didier", "club":"Oga - S/l Oc Gif Sur Yvette", "dep":"091", "ligue":"I-F", "naissance":69, "pts":583, "dist":800},
+	{"place":6, "annee":2019, "cat":"45M", "chrono":"2.12.76", "nom":"JEAN Richard", "club":"As Tourlaville", "dep":"050", "ligue":"NOR", "naissance":72, "pts":480, "dist":800},
+	{"place":7, "annee":2019, "cat":"45M", "chrono":"2.13.35", "nom":"GUERIN Philippe", "club":"Ac Du Pays De Meaux", "dep":"077", "ligue":"I-F", "naissance":70, "pts":468, "dist":800},
+	{"place":8, "annee":2019, "cat":"45M", "chrono":"2.17.01", "nom":"GUILLON Regis", "club":"Nma - S/l Ac La Chapelle/erdre", "dep":"044", "ligue":"P-L", "naissance":72, "pts":400, "dist":800},
+	{"place":9, "annee":2019, "cat":"45M", "chrono":"2.27.95", "nom":"LALOYER Tony", "club":"Dreux Athletic Club A.", "dep":"028", "ligue":"CEN", "naissance":72, "pts":229, "dist":800},
+	{"place":10, "annee":2019, "cat":"45M", "chrono":"2.29.38", "nom":"WAKINE Majid", "club":"Ea Cergy Pontoise Athletisme ", "dep":"095", "ligue":"I-F", "naissance":72, "pts":210, "dist":800}
+],
+
+		"lengthMenu": [ [100, 500, 1000, -1], [100, 500, 1000, "Tous"] ],
+		iDisplayLength: 100,
+		dom: 'Bfrtip',
+		select: true,
+		orderCellsTop: true,
+ 		columns: [
+			{ data: "place" },
+			{ data: "nom" },
+			{ data: "chrono" },
+			{ data: "pts" }
+		],
+		fixedColumns: true
+	} );
+	var table = $('#ch2020').DataTable( {
+	
+		paging: false,
+		bInfo :false,
+		data :
+[
+
+	{"place":1, "annee":2020, "cat":"45M", "chrono":"2.05.35", "nom":"GOMEZ Joel", "club":"Gpso A - S/l Plm Conflans", "dep":"078", "ligue":"I-F", "naissance":72, "pts":635, "dist":800},
+	{"place":2, "annee":2020, "cat":"45M", "chrono":"2.05.79", "nom":"MARC Sebastien", "club":"Eag 38 - S/l Grenoble Uc", "dep":"038", "ligue":"ARA", "naissance":75, "pts":625, "dist":800},
+	{"place":3, "annee":2020, "cat":"45M", "chrono":"2.07.19", "nom":"RUDLOFF William", "club":"Sr Obernai", "dep":"067", "ligue":"G-E", "naissance":72, "pts":594, "dist":800},
+	{"place":4, "annee":2020, "cat":"45M", "chrono":"2.09.13", "nom":"GENTEUIL Bruno", "club":"Clermontaa - S/l As Montferran", "dep":"063", "ligue":"ARA", "naissance":70, "pts":553, "dist":800},
+	{"place":5, "annee":2020, "cat":"45M", "chrono":"2.10.95", "nom":"RINCE Mickael", "club":"Nma - S/l Ac La Chapelle/erdre", "dep":"044", "ligue":"P-L", "naissance":72, "pts":516, "dist":800},
+	{"place":6, "annee":2020, "cat":"45M", "chrono":"2.11.40", "nom":"LECIGNE Sylvain", "club":"Avenir Social De Sin Le Noble", "dep":"059", "ligue":"H-F", "naissance":72, "pts":506, "dist":800},
+	{"place":7, "annee":2020, "cat":"45M", "chrono":"2.12.19", "nom":"SOUSSEING Bruno", "club":"Les Aigles Abymes", "dep":"971", "ligue":"GUA", "naissance":72, "pts":491, "dist":800},
+	{"place":1, "annee":2020, "cat":"45M", "chrono":"2.13.84", "nom":"HOAREAU Philippe", "club":"Athle Du Pays De Redon", "dep":"035", "ligue":"BRE", "naissance":74, "pts":459, "dist":800},
+	{"place":2, "annee":2020, "cat":"45M", "chrono":"2.18.31", "nom":"KUDLA Sebastien", "club":"Vs Ozoir La Ferriere", "dep":"077", "ligue":"I-F", "naissance":73, "pts":377, "dist":800},
+	{"place":3, "annee":2020, "cat":"45M", "chrono":"2.21.22", "nom":"GALLET Franck", "club":"Artois Athletisme", "dep":"062", "ligue":"H-F", "naissance":73, "pts":329, "dist":800},
+	{"place":4, "annee":2020, "cat":"45M", "chrono":"2.21.49", "nom":"BEN AYED Hatem", "club":"Asad - S/l Union Montelimar Sp", "dep":"007", "ligue":"ARA", "naissance":71, "pts":324, "dist":800},
+	{"place":5, "annee":2020, "cat":"45M", "chrono":"2.21.95", "nom":"PETITE Benoit SUI", "club":"As Aix-les-bains", "dep":"073", "ligue":"ARA", "naissance":75, "pts":317, "dist":800},
+	{"place":6, "annee":2020, "cat":"45M", "chrono":"2.22.59", "nom":"GALLIANO Herve", "club":"Club Athletique Crestois", "dep":"026", "ligue":"ARA", "naissance":71, "pts":307, "dist":800},
+	{"place":7, "annee":2020, "cat":"45M", "chrono":"2.26.01", "nom":"MARECHAL Didier", "club":"Usm Malakoff", "dep":"092", "ligue":"I-F", "naissance":75, "pts":256, "dist":800}
+	
+],
+
+		"lengthMenu": [ [100, 500, 1000, -1], [100, 500, 1000, "Tous"] ],
+		iDisplayLength: 100,
+		dom: 'Bfrtip',
+		select: true,
+		orderCellsTop: true,
+ 		columns: [
+			{ data: "place" },
+			{ data: "nom" },
+			{ data: "chrono" },
+			{ data: "pts" }
+		],
+		fixedColumns: true
+	} );
+	var table = $('#ch2021').DataTable( {
+	
+		paging: false,
+		bInfo :false,
+		data :
+[
+
+	{"place":1, "annee":2021, "cat":"45M", "chrono":"1.55.67", "nom":"ANICET Bruno", "club":"Athle 632 - S/l Athle 632 Tour", "dep":"031", "ligue":"OCC", "naissance":76, "pts":871, "dist":800},
+	{"place":2, "annee":2021, "cat":"45M", "chrono":"2.05.83", "nom":"MARC Sebastien", "club":"Eag 38 - S/l Grenoble Uc", "dep":"038", "ligue":"ARA", "naissance":75, "pts":624, "dist":800},
+	{"place":2, "annee":2021, "cat":"45M", "chrono":"2.05.83", "nom":"MERROUNE Mohamed", "club":"Gpso A - S/l As Mantes", "dep":"078", "ligue":"I-F", "naissance":76, "pts":624, "dist":800},
+	{"place":4, "annee":2021, "cat":"45M", "chrono":"2.06.72", "nom":"MICHAUD Stephane", "club":"Club Athletique Du Roannais", "dep":"042", "ligue":"ARA", "naissance":76, "pts":605, "dist":800},
+	{"place":5, "annee":2021, "cat":"45M", "chrono":"2.07.72", "nom":"LECIGNE Sylvain", "club":"Avenir Social De Sin Le Noble", "dep":"059", "ligue":"H-F", "naissance":72, "pts":583, "dist":800},
+	{"place":6, "annee":2021, "cat":"45M", "chrono":"2.08.54", "nom":"BUCCIALI Nicolas", "club":"Asad - S/l Union Montelimar Sp", "dep":"007", "ligue":"ARA", "naissance":75, "pts":565, "dist":800},
+	{"place":7, "annee":2021, "cat":"45M", "chrono":"2.15.19", "nom":"KUDLA Sebastien", "club":"Vs Ozoir La Ferriere", "dep":"077", "ligue":"I-F", "naissance":73, "pts":433, "dist":800},
+	{"place":8, "annee":2021, "cat":"45M", "chrono":"2.15.77", "nom":"RONDE-OUSTEAU Nicolas", "club":"Us Colomiers", "dep":"031", "ligue":"OCC", "naissance":76, "pts":423, "dist":800},
+	{"place":9, "annee":2021, "cat":"45M", "chrono":"2.16.85", "nom":"MEHATS Claude", "club":"Pays Basque Athletisme", "dep":"064", "ligue":"N-A", "naissance":75, "pts":403, "dist":800},
+	{"place":10, "annee":2021, "cat":"45M", "chrono":"2.28.38", "nom":"PINEL Ludovic", "club":"Ca Balma", "dep":"031", "ligue":"OCC", "naissance":76, "pts":223, "dist":800},
+	{"place":11, "annee":2021, "cat":"45M", "chrono":"2.32.74", "nom":"BELABASSI Ahmed", "club":"Ca Balma", "dep":"031", "ligue":"OCC", "naissance":73, "pts":169, "dist":800}
+],
+
+		"lengthMenu": [ [100, 500, 1000, -1], [100, 500, 1000, "Tous"] ],
+		iDisplayLength: 100,
+		dom: 'Bfrtip',
+		select: true,
+		orderCellsTop: true,
+ 		columns: [
+			{ data: "place" },
+			{ data: "nom" },
+			{ data: "chrono" },
+			{ data: "pts" }
+		],
+		fixedColumns: true
+	} );
+	
+	var table = $('#ch2022').DataTable( {
+	
+		paging: false,
+		bInfo :false,
+		data :
+[
+	{"place":1, "annee":2022, "cat":"45M", "chrono":"1.58.98", "nom":"ANICET Bruno", "club":"Athle 632 - S/l Athle 632 Tour", "dep":"031", "ligue":"OCC", "naissance":76, "pts":786, "dist":800},
+	{"place":2, "annee":2022, "cat":"45M", "chrono":"2.02.90", "nom":"LE CUN Gerald", "club":"Ma - S/l Olympique De Marseill", "dep":"013", "ligue":"PCA", "naissance":77, "pts":691, "dist":800},
+	{"place":3, "annee":2022, "cat":"45M", "chrono":"2.03.07", "nom":"MERROUNE Mohamed", "club":"Gpso A - S/l As Mantes", "dep":"078", "ligue":"I-F", "naissance":76, "pts":687, "dist":800},
+	{"place":4, "annee":2022, "cat":"45M", "chrono":"2.04.12", "nom":"RUDLOFF William", "club":"Sr Obernai", "dep":"067", "ligue":"G-E", "naissance":72, "pts":663, "dist":800},
+	{"place":5, "annee":2022, "cat":"45M", "chrono":"2.04.23", "nom":"MARC Sebastien", "club":"Eag 38 - S/l Grenoble Uc", "dep":"038", "ligue":"ARA", "naissance":75, "pts":660, "dist":800},
+	{"place":6, "annee":2022, "cat":"45M", "chrono":"2.07.83", "nom":"BUCCIALI Nicolas", "club":"Asad - S/l Union Montelimar Sp", "dep":"007", "ligue":"ARA", "naissance":75, "pts":581, "dist":800},
+	{"place":7, "annee":2022, "cat":"45M", "chrono":"2.12.01", "nom":"ABDELLAOUI Morad", "club":"Nma - S/l Stade Nantais Ac", "dep":"044", "ligue":"P-L", "naissance":75, "pts":494, "dist":800},
+	{"place":8, "annee":2022, "cat":"45M", "chrono":"2.14.60", "nom":"ENJOLRAS Franck", "club":"Ea St Quentin En Yvelines", "dep":"078", "ligue":"I-F", "naissance":75, "pts":444, "dist":800},
+	{"place":9, "annee":2022, "cat":"45M", "chrono":"2.16.49", "nom":"MEHATS Claude", "club":"Pays Basque Athletisme", "dep":"064", "ligue":"N-A", "naissance":75, "pts":410, "dist":800},
+	{"place":1, "annee":2022, "cat":"45M", "chrono":"2.12.30", "nom":"HORRILLO Emmanuel", "club":"Sa Merignac", "dep":"033", "ligue":"N-A", "naissance":76, "pts":489, "dist":800},
+	{"place":2, "annee":2022, "cat":"45M", "chrono":"2.19.86", "nom":"NEMAR Emmanuel", "club":"Oga - S/l Ca Orsay", "dep":"091", "ligue":"I-F", "naissance":74, "pts":351, "dist":800},
+	{"place":3, "annee":2022, "cat":"45M", "chrono":"2.20.96", "nom":"GUILLON Regis", "club":"Nma - S/l Ac La Chapelle/erdre", "dep":"044", "ligue":"P-L", "naissance":72, "pts":333, "dist":800},
+	{"place":4, "annee":2022, "cat":"45M", "chrono":"2.23.28", "nom":"JOSEPH Stephane", "club":"Ca Pezenas", "dep":"034", "ligue":"OCC", "naissance":75, "pts":296, "dist":800},
+	{"place":5, "annee":2022, "cat":"45M", "chrono":"2.24.02", "nom":"MALOSSE Richard", "club":"Sa Merignac", "dep":"033", "ligue":"N-A", "naissance":74, "pts":285, "dist":800},
+	{"place":6, "annee":2022, "cat":"45M", "chrono":"2.24.37", "nom":"BOUCHENY Olivier", "club":"Ea Cergy Pontoise Athletisme ", "dep":"095", "ligue":"I-F", "naissance":74, "pts":280, "dist":800},
+	{"place":7, "annee":2022, "cat":"45M", "chrono":"2.27.13", "nom":"PERRONNET Olivier", "club":"La Berrichonne Chateauroux Ath", "dep":"036", "ligue":"CEN", "naissance":74, "pts":240, "dist":800},
+	{"place":8, "annee":2022, "cat":"45M", "chrono":"2.29.75", "nom":"TINON Gregory", "club":"Sa Merignac", "dep":"033", "ligue":"N-A", "naissance":73, "pts":205, "dist":800}
+],
+
+		"lengthMenu": [ [100, 500, 1000, -1], [100, 500, 1000, "Tous"] ],
+		iDisplayLength: 100,
+		dom: 'Bfrtip',
+		select: true,
+		orderCellsTop: true,
+ 		columns: [
+			{ data: "place" },
+			{ data: "nom" },
+			{ data: "chrono" },
+			{ data: "pts" }
+		],
+		fixedColumns: true
+	} );
+	
+	
+	
+	
+	
+	
+	table.on( 'select', function ( e, dt, type, indexes ) {
+	    table[ type ]( indexes ).nodes().to$().addClass( 'row-selected' );
+	} );
+
+	table.on( 'select', function ( e, dt, type, indexes ) {
+		var rowData = table.rows( indexes ).data().toArray();
+			alert('popup detail non dév');
+		} )
+
+	$('#ch2016_filter').hide();
+	$('#ch2017_filter').hide();
+	$('#ch2018_filter').hide();
+	$('#ch2019_filter').hide();
+	$('#ch2020_filter').hide();
+	$('#ch2021_filter').hide();
+	$('#ch2022_filter').hide();
+	
+} );
+
+	</script>
+
+</body>
+</html>
