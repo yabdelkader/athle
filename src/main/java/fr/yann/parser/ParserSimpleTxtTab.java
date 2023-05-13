@@ -38,7 +38,14 @@ public class ParserSimpleTxtTab {
 	}
 
 	private static String	place		= "(\\d+)_";
-	private static String	chrono		= "(\\d'\\d{2}''\\d{2})_";
+	// moins 10'
+	private static String	chrono		= "(\\d{2}''\\d{2})_";
+	// moins 10'
+	// private static String	chrono		= "(\\d'\\d{2}''\\d{2})_";
+	// plus 10'
+	// private static String	chrono		= "(\\d{2}'\\d{2}''\\d{2})_";
+
+	
 	private static String	nom			= "([A-Za-z-\\s]+)_";
 	// private static String	club		= "([a-zA-Z\\.]+[a-zA-Z])_";
 	private static String	club		= "([A-Za-z\\d\\s-/\\.']+)_";
@@ -48,14 +55,19 @@ public class ParserSimpleTxtTab {
 	//	private static String	naissance	= "(\\d{2})_";
 	//	private static String	points		= "(\\d{4})_";
 	//	private static String	annee		= "(\\d{2})_";
-	//	private static String	distance	= "(\\d{4})";
+	private static String	distance	= "(\\d{4})";
 
-	private static String pattern = place + chrono + nom + club + dep + "([\\w-]+)/(\\d{2})_([A-Z]+\\d)_(\\d+)_(\\d{4})_(\\d+)";
+	private static String pattern = place + chrono + nom + club + dep + "([\\w-]+)/(\\d{2})_([A-Z]+\\d)_(\\d+)_" + distance + "(\\d+)";
 	/*
-// place chrono           nom          club
-(\d+)_(\d'\d{2}''\d{2})_([A-Za-z\s]+)_([A-Za-z\s]+)_(\d+)_([\w-]+)/(\d{2})_([A-Z]+\d)_(\d+)_(\d{4})_(\d+)
-(\d+)_(\d'\d{2}''\d{2})_([A-Za-z\s]+)_([A-Za-z\s-/\.]+)_(\d+)_([\w-]+)/(\d{2})_([A-Z]+\d)_(\d+)_(\d{4})_(\d+)
+		// place chrono           nom          club
+		(\d+)_(\d'\d{2}''\d{2})_([A-Za-z\s]+)_([A-Za-z\s]+)_(\d+)_([\w-]+)/(\d{2})_([A-Z]+\d)_(\d+)_(\d{4})_(\d+)
+		(\d+)_(\d'\d{2}''\d{2})_([A-Za-z\s]+)_([A-Za-z\s-/\.]+)_(\d+)_([\w-]+)/(\d{2})_([A-Z]+\d)_(\d+)_(\d{4})_(\d+)
 	*/
+	
+	private static String patternHtml = place + chrono + nom + club + dep + "([\\w-]+)/(\\d{2})_([A-Z]+\\d)_(\\d+)";
+
+	
+	
 	/**
 	 * Ex : <tr><td class="datas0">1</td><td class="separator3"></td><td class="datas0"><b>1'44''04</b></td><td class="separator3"></td><td class="datas0">E</td><td class="separator3"></td><td class="datas0"><a href="javascript:bddThrowAthlete('bilans',%20127580,%200)" title="cliquez pour le détail">BAALA Mehdi</a></td><td class="separator3"></td><td class="datas0">Asptt strasbourg*</td><td class="separator3"></td><td class="datas0"><a href="http://bases.athle.com/asp.net/liste.aspx?frmbase=bilans&amp;frmmode=1&amp;frmannee=2006&amp;frmepreuve=208&amp;frmsexe=M&amp;frmligue=ALS">ALS</a></td><td class="separator3"></td><td class="datas0"><a href="http://bases.athle.com/asp.net/liste.aspx?frmbase=bilans&amp;frmmode=1&amp;frmannee=2006&amp;frmepreuve=208&amp;frmsexe=M&amp;frmdepartement=067">067</a></td><td class="separator3"></td><td class="datas0">SEM</td><td class="separator3"></td><td class="datas0"><a href="http://bases.athle.com/asp.net/liste.aspx?frmbase=bilans&amp;frmmode=1&amp;frmannee=2006&amp;frmepreuve=208&amp;frmsexe=M&amp;frmamini=1978&amp;frmamaxi=1978">78</a></td><td class="separator3"></td><td class="datas0">18/08/06</td><td class="separator3"></td><td class="datas0">Zurich (SUI)</td></tr>
 	 * @param line
@@ -63,7 +75,7 @@ public class ParserSimpleTxtTab {
 	 * @param p_annee 
 	 * @param isLastLine 
 	 */
-	private static void traiteLigne(String line, StringBuffer sb) {
+	private static void traiteLigneFromExcel(String line, StringBuffer sb) {
 
 		if (line == null) {
 			return;
@@ -99,6 +111,41 @@ public class ParserSimpleTxtTab {
 		}
 
 	}
+	public static LigneChampionnat traiteLigneFromHtml(String line, int annee, int distance, String categorie) {
+		
+		if (line == null) {
+			return null;
+		}
+		
+		// Create a Pattern object
+		Pattern r = Pattern.compile(patternHtml);
+		
+		// Now create matcher object.
+		Matcher m = r.matcher(line);
+		if (m.find()) {
+			String[] l_c = m.group(6).split("_");
+			String ligue = l_c[0];
+			// String cat = l_c[1];
+			return new LigneChampionnat(
+					Integer.parseInt(m.group(1)),						// 1 place
+					m.group(2).replace("\"", ".").replace("''", ".").replace("'", "."),	// 2 chrono
+					m.group(3).replace("'", " "),						// 3 nom
+					m.group(4).replace("'", " "),						// 4 club
+					m.group(5).replace("'", " "),						// 5 dep
+					ligue,												// ligue 
+					categorie,												// cat 
+					Integer.parseInt(m.group(7)),						// naissance
+					Integer.parseInt(m.group(9)),						// pts
+					annee,												// annee
+					distance											// distance
+					);
+		}
+		else {
+			System.err.println(line);
+		}
+		return null;
+		
+	}
 
 	private static void lireFichier(String path, StringBuffer sb) throws FileNotFoundException {
 		File f = new File(path);
@@ -109,7 +156,7 @@ public class ParserSimpleTxtTab {
 			String line = br.readLine();
 			while (line != null) {
 				line = br.readLine();
-				traiteLigne(line, sb);
+				traiteLigneFromExcel(line, sb);
 			}
 
 			br.close();

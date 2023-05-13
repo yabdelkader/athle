@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
  * 
  * Parsing du texte simple issu du copier coller de PDF
  * <tr>
- * <td class="datas0">
+ * <td>
  * <tr>
  * <td class="datas1">
  */
@@ -18,7 +18,7 @@ public class DeleteParentheses {
 	}
 	
 	public static String clean(String str) {
-		Pattern p = Pattern.compile("\s(\\()(.*)(\\))");
+		Pattern p = null; // = Pattern.compile("\s(\\()(.*)(\\))");
 		Matcher m = p.matcher(str);
 		if (m.find()) {
 			return(m.replaceAll(""));

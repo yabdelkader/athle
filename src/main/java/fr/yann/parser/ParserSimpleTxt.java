@@ -46,7 +46,7 @@ public class ParserSimpleTxt {
 	 * @param p_annee 
 	 * @param isLastLine 
 	 */
-	private static void traiteLigne(String line, StringBuffer sb, EpreuveEnum epreuveEnum, SexeEnum sexeEnum, int p_annee) {
+	public static void traiteLigne(String line, StringBuffer sb, EpreuveEnum epreuveEnum, SexeEnum sexeEnum, int p_annee) {
 
 		if (line == null) {
 			return;

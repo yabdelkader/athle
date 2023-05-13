@@ -24,15 +24,15 @@ public class E1_TraiteFichierChampionnat {
 
 		List<Integer>	annees		= new ArrayList<Integer>(Arrays.asList(2016, 2017, 2018, 2019, 2020, 2021, 2022));
 		// List<Integer>	annees		= new ArrayList<Integer>(Arrays.asList(2016));
-		Integer			epreuve		= 800;
-		String			categorie	= "45M";
+		Integer			epreuve		= 400;
+		String			categorie	= "60M";
 
 		for (Integer annee : annees) {
 			
 			System.out.println();
 			StringBuffer sb = new StringBuffer();
 
-			String path = PATH_PAGES_CHAMPIONNAT + "\\" + annee + "_" + epreuve + "_" + categorie + ".html";
+			String path = PATH_PAGES_CHAMPIONNAT + "\\" + annee + "\\" + annee + "_" + epreuve + "_" + categorie + ".html";
 
 			List<LigneChampionnat> liste = traite(path, annee, epreuve, categorie);
 

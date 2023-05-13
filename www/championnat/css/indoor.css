@@ -1,0 +1,34 @@
+.row-selected, .panel-default>.panel-heading {
+	background-color:  #7c2800;
+	color: white;
+}
+
+#rm > span:nth-child(1), #rf > span:nth-child(1) {
+	font-weight: bold;
+	display:inline-block;
+	width: 30px;
+}
+
+#rm > span:nth-child(2), #rf > span:nth-child(2) {
+	display:inline-block;
+	width: 250px;
+}
+
+.box_flex {
+	display: flex;
+	flex-direction: raw;
+	justify-content:space-between;
+ 	align-items: center;
+	
+	color:white;
+	background-color: #7c2800;
+}
+
+.records {
+	margin-top: 20px;
+	margin-left: 20px;
+}
+
+.records, .box_flex > form {
+	width: 500px;
+}

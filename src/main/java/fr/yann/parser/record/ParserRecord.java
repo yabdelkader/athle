@@ -22,7 +22,7 @@ public class ParserRecord {
 		return line.replace(oldStr, newStr);
 	}
 
-	private static String replaceHtmlTagByJoker(final String str) {
+	public static String replaceHtmlTagByJoker(final String str) {
 
 		// supression des balises html
 		String patternCleanHtml = "<[^>]*>";

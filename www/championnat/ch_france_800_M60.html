@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<title>Championnat de France Master</title>
+	
+	<link media="screen" rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+
+	<link rel="stylesheet" type="text/css" href="../cross/css/jquery.dataTables.min.css"/>
+	
+	<link rel="stylesheet" type="text/css" href="css/championnat.css"/>
+</head>
+<body>
+
+
+	<article class="content">
+
+	<div class="row" style="margin-bottom:50px">
+
+		<div class="col-md-12">
+			<div class="well well-sm box_flex">
+
+
+				<div class="records">
+					<h2>Championnat de France Master plein air</h2>
+					<h3>800 M60</h3>
+				</div>
+				
+				<div class="records">
+					<p id="rm"><span>RM</span><span>2.08.56 Nolan Shaheed USA</span>	<span>  </span></p>
+					<p id="rf"><span>RF</span><span>2.12.36 ZAVATTERO Benoit</span>	<span>  </span></p>
+				</div>
+				
+				<div style="float: right;margin-top: -85px; margin-right: 20px">
+				
+				<form class="form-horizontal">
+				
+					<div style="margin: 0">
+						<label class="radio-inline"  style="font-weight: bold;width: 100px">Catégorie</label> 
+						<label class="radio-inline"><input type="radio" name="categorie" value="35" required="required">M35</label>
+						<label class="radio-inline"><input type="radio" name="categorie" value="40">M40</label>
+						<label class="radio-inline"><input type="radio" name="categorie" value="45">M45</label>
+						<label class="radio-inline"><input type="radio" name="categorie" value="50">M50</label>
+						<label class="radio-inline"><input type="radio" name="categorie" value="55">M55</label>
+						<label class="radio-inline"><input type="radio" name="categorie" value="60" checked="checked">M60</label>
+					</div>
+					<div>
+						<label class="radio-inline" style="font-weight: bold;width: 100px;">Épreuve</label>
+						<label class="radio-inline"><input type="radio" name="epreuve" value="400">400</label>
+						<label class="radio-inline"><input type="radio" name="epreuve" value="800" checked="checked">800</label>
+						<label class="radio-inline"><input type="radio" name="epreuve" value="1500">1500</label>
+						<label class="radio-inline"><input type="radio" name="epreuve" value="5000">5000</label>
+					</div>
+				</form>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-1"></div>
+
+		<div class="col-md-3" style="margin: 0 20px">
+		
+			<div class="panel panel-default">
+				<div class="panel-heading">2016 Compiègne</div>
+	  				<div class="panel-body">
+					<table id="ch2016" class="display table table-striped" >
+						<thead>
+							<tr>
+								<th>Place</th>
+								<th>Nom</th>
+								<th>Chrono</th>
+								<th>Points</th>
+							</tr>
+						</thead>		
+						<tbody></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-3" style="margin: 0 20px">
+		
+			<div class="panel panel-default">
+				<div class="panel-heading">2017 Arles</div>
+	  				<div class="panel-body">
+					<table id="ch2017" class="display table table-striped" >
+						<thead>
+							<tr>
+								<th>Place</th>
+								<th>Nom</th>
+								<th>Chrono</th>
+								<th>Points</th>
+							</tr>
+						</thead>		
+						<tbody></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-3" style="margin: 0 20px">
+		
+			<div class="panel panel-default">
+				<div class="panel-heading">2018 Angers</div>
+	  				<div class="panel-body">
+					<table id="ch2018" class="display table table-striped" >
+						<thead>
+							<tr>
+								<th>Place</th>
+								<th>Nom</th>
+								<th>Chrono</th>
+								<th>Points</th>
+							</tr>
+						</thead>		
+						<tbody></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-3" style="margin: 0 20px">
+		
+			<div class="panel panel-default">
+				<div class="panel-heading">2019 Dreux</div>
+	  				<div class="panel-body">
+					<table id="ch2019" class="display table table-striped" >
+						<thead>
+							<tr>
+								<th>Place</th>
+								<th>Nom</th>
+								<th>Chrono</th>
+								<th>Points</th>
+							</tr>
+						</thead>		
+						<tbody></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-3" style="margin: 0 20px">
+		
+			<div class="panel panel-default">
+				<div class="panel-heading">2020 Chalon-sur-Saône</div>
+	  				<div class="panel-body">
+					<table id="ch2020" class="display table table-striped" >
+						<thead>
+							<tr>
+								<th>Place</th>
+								<th>Nom</th>
+								<th>Chrono</th>
+								<th>Points</th>
+							</tr>
+						</thead>		
+						<tbody></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-2"></div>
+		<div class="col-md-3" style="margin: 0 20px">
+		
+		
+			<div class="panel panel-default">
+				<div class="panel-heading">2021 Albi</div>
+	  				<div class="panel-body">
+					<table id="ch2021" class="display table table-striped" >
+						<thead>
+							<tr>
+								<th>Place</th>
+								<th>Nom</th>
+								<th>Chrono</th>
+								<th>Points</th>
+							</tr>
+						</thead>		
+						<tbody></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-3" style="margin: 0 20px">
+		
+			<div class="panel panel-default">
+				<div class="panel-heading">2022 Châteauroux</div>
+	  				<div class="panel-body">
+					<table id="ch2022" class="display table table-striped" >
+						<thead>
+							<tr>
+								<th>Place</th>
+								<th>Nom</th>
+								<th>Chrono</th>
+								<th>Points</th>
+							</tr>
+						</thead>		
+						<tbody></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	</article>
+	<script type="text/javascript" src="../cross/js/jquery-3.3.1.js"></script>
+	<script type="text/javascript" src="../cross/js/jquery.dataTables.min.js"></script>
+	
+
+		<script type="text/javascript" class="init">
+$(document).ready(function() {
+
+	var table = $('#ch2016').DataTable( {
+	
+		paging: false,
+		bInfo :false,
+		data :
+[
+	{"place":1, "annee":2016, "cat":"60M", "chrono":"2.26.13", "nom":"RIOU Jean", "club":"Vs Ozoir La Ferriere", "dep":"077", "ligue":"I-F", "naissance":55, "pts":269, "dist":800},
+	{"place":2, "annee":2016, "cat":"60M", "chrono":"2.26.58", "nom":"LEVASSEUR Yves", "club":"St Leu D esserent Athletisme", "dep":"060", "ligue":"PIC", "naissance":51, "pts":262, "dist":800},
+	{"place":3, "annee":2016, "cat":"60M", "chrono":"2.26.77", "nom":"SCHMITT Marc", "club":"Athle 52 - S/l Langres Ac Sud", "dep":"052", "ligue":"CHA", "naissance":55, "pts":260, "dist":800},
+	{"place":4, "annee":2016, "cat":"60M", "chrono":"2.31.45", "nom":"DERYCKE Robert", "club":"Ac Bourg-st-andeol Pierrelatte", "dep":"007", "ligue":"R-A", "naissance":54, "pts":198, "dist":800},
+	{"place":5, "annee":2016, "cat":"60M", "chrono":"2.41.55", "nom":"BALLEUX Jean-Philippe", "club":"As Athletique Onnaing", "dep":"059", "ligue":"NPC", "naissance":52, "pts":94, "dist":800},
+	{"place":6, "annee":2016, "cat":"60M", "chrono":"2.49.07", "nom":"PARDO Benjamin", "club":"Paris Uc", "dep":"075", "ligue":"I-F", "naissance":55, "pts":41, "dist":800},
+	{"place":7, "annee":2016, "cat":"60M", "chrono":"2.50.43", "nom":"HUBERT Daniel", "club":"Ma - S/l Stade Marseillais U.", "dep":"013", "ligue":"PRO", "naissance":52, "pts":34, "dist":800},
+
+],
+
+		"lengthMenu": [ [100, 500, 1000, -1], [100, 500, 1000, "Tous"] ],
+		iDisplayLength: 100,
+		dom: 'Bfrtip',
+		select: true,
+		orderCellsTop: true,
+		
+ 		columns: [
+			{ data: "place" },
+			{ data: "nom" },
+			{ data: "chrono" },
+			{ data: "pts" }
+		],
+		fixedColumns: true
+	} );
+
+	var table = $('#ch2017').DataTable( {
+	
+		paging: false,
+		bInfo :false,
+		data :
+[
+	{"place":1, "annee":2017, "cat":"60M", "chrono":"2.22.83", "nom":"RIOU Jean", "club":"Vs Ozoir La Ferriere", "dep":"077", "ligue":"I-F", "naissance":55, "pts":318, "dist":800},
+	{"place":2, "annee":2017, "cat":"60M", "chrono":"2.29.04", "nom":"DERYCKE Robert", "club":"Ac Bourg-st-andeol Pierrelatte", "dep":"007", "ligue":"ARA", "naissance":54, "pts":229, "dist":800},
+	{"place":4, "annee":2017, "cat":"60M", "chrono":"2.34.91", "nom":"LAGANT Denis", "club":"Athletic Club Draveil", "dep":"091", "ligue":"I-F", "naissance":56, "pts":158, "dist":800},
+	{"place":7, "annee":2017, "cat":"60M", "chrono":"2.52.50", "nom":"ZUMTANGWALD Philippe", "club":"Aix Athle Provence", "dep":"013", "ligue":"PCA", "naissance":53, "pts":24, "dist":800},
+	{"place":8, "annee":2017, "cat":"60M", "chrono":"2.53.60", "nom":"PARDO Benjamin", "club":"Paris Uc", "dep":"075", "ligue":"I-F", "naissance":55, "pts":20, "dist":800},
+
+],
+
+		"lengthMenu": [ [100, 500, 1000, -1], [100, 500, 1000, "Tous"] ],
+		iDisplayLength: 100,
+		dom: 'Bfrtip',
+		select: true,
+		orderCellsTop: true,
+		
+ 		columns: [
+			{ data: "place" },
+			{ data: "nom" },
+			{ data: "chrono" },
+			{ data: "pts" }
+		],
+		fixedColumns: true
+	} );
+	var table = $('#ch2018').DataTable( {
+	
+		paging: false,
+		bInfo :false,
+		data :
+[
+	{"place":1, "annee":2018, "cat":"60M", "chrono":"2.20.51", "nom":"DE PESSEMIER Alain", "club":"Athle 91 - S/l Viry Chatillon", "dep":"091", "ligue":"I-F", "naissance":57, "pts":340, "dist":800},
+	{"place":2, "annee":2018, "cat":"60M", "chrono":"2.21.58", "nom":"RIOU Jean", "club":"Vs Ozoir La Ferriere", "dep":"077", "ligue":"I-F", "naissance":55, "pts":323, "dist":800},
+	{"place":3, "annee":2018, "cat":"60M", "chrono":"2.25.58", "nom":"ASO Robert", "club":"Cu Pau", "dep":"064", "ligue":"N-A", "naissance":57, "pts":262, "dist":800},
+	{"place":4, "annee":2018, "cat":"60M", "chrono":"2.26.56", "nom":"BARBEAU Patrick", "club":"Asptt Vendee Course A Pied", "dep":"085", "ligue":"P-L", "naissance":58, "pts":248, "dist":800},
+	{"place":5, "annee":2018, "cat":"60M", "chrono":"2.27.99", "nom":"DERYCKE Robert", "club":"Ac Bourg-st-andeol Pierrelatte", "dep":"007", "ligue":"ARA", "naissance":54, "pts":229, "dist":800},
+	{"place":6, "annee":2018, "cat":"60M", "chrono":"2.35.60", "nom":"BERTAGNA Daniel", "club":"Ust Courir A Saint Tropez", "dep":"083", "ligue":"PCA", "naissance":57, "pts":137, "dist":800},
+	{"place":7, "annee":2018, "cat":"60M", "chrono":"2.35.94", "nom":"RAVERDEL Denis", "club":"Suresnes Passion Athle Maratho", "dep":"092", "ligue":"I-F", "naissance":56, "pts":134, "dist":800},
+	{"place":8, "annee":2018, "cat":"60M", "chrono":"2.37.60", "nom":"LE TIEC Patrick", "club":"Vie Au Grand Air De St Maur", "dep":"094", "ligue":"I-F", "naissance":57, "pts":117, "dist":800},
+	{"place":9, "annee":2018, "cat":"60M", "chrono":"2.45.88", "nom":"PARDO Benjamin", "club":"Paris Uc", "dep":"075", "ligue":"I-F", "naissance":55, "pts":51, "dist":800},
+	{"place":10, "annee":2018, "cat":"60M", "chrono":"2.47.37", "nom":"BARREAU Marc", "club":"Moissac Athle", "dep":"082", "ligue":"OCC", "naissance":53, "pts":42, "dist":800},
+
+],
+
+		"lengthMenu": [ [100, 500, 1000, -1], [100, 500, 1000, "Tous"] ],
+		iDisplayLength: 100,
+		dom: 'Bfrtip',
+		select: true,
+		orderCellsTop: true,
+ 		columns: [
+			{ data: "place" },
+			{ data: "nom" },
+			{ data: "chrono" },
+			{ data: "pts" }
+		],
+		fixedColumns: true
+	} );
+	var table = $('#ch2019').DataTable( {
+	
+		paging: false,
+		bInfo :false,
+		data :
+[
+	{"place":1, "annee":2019, "cat":"60M", "chrono":"2.21.82", "nom":"RIOU Jean", "club":"Vs Ozoir La Ferriere", "dep":"077", "ligue":"I-F", "naissance":55, "pts":319, "dist":800},
+	{"place":2, "annee":2019, "cat":"60M", "chrono":"2.26.59", "nom":"MAUDUIT Eric", "club":"R2ma - S/l Asptt Rouen", "dep":"076", "ligue":"NOR", "naissance":59, "pts":248, "dist":800},
+	{"place":3, "annee":2019, "cat":"60M", "chrono":"2.27.48", "nom":"AUGIER Jacky", "club":"Racing Multi Athlon", "dep":"075", "ligue":"I-F", "naissance":57, "pts":235, "dist":800},
+	{"place":4, "annee":2019, "cat":"60M", "chrono":"2.28.29", "nom":"JOUVENCEL Michel", "club":"St Leu D esserent Athletisme", "dep":"060", "ligue":"H-F", "naissance":59, "pts":225, "dist":800},
+	{"place":5, "annee":2019, "cat":"60M", "chrono":"2.35.38", "nom":"BARBEAU Patrick", "club":"Asptt La Roche Sur Yon", "dep":"085", "ligue":"P-L", "naissance":58, "pts":140, "dist":800},
+	{"place":6, "annee":2019, "cat":"60M", "chrono":"2.39.74", "nom":"PEAN Patrick", "club":"Uao 31 - S/l   Us Fronton Athl", "dep":"031", "ligue":"OCC", "naissance":58, "pts":98, "dist":800},
+	{"place":7, "annee":2019, "cat":"60M", "chrono":"2.41.78", "nom":"GILLEN Dominique", "club":"Ca Balma", "dep":"031", "ligue":"OCC", "naissance":57, "pts":80, "dist":800},
+	{"place":8, "annee":2019, "cat":"60M", "chrono":"2.44.16", "nom":"RAVERDEL Denis", "club":"Suresnes Passion Athle Maratho", "dep":"092", "ligue":"I-F", "naissance":56, "pts":63, "dist":800},
+	{"place":9, "annee":2019, "cat":"60M", "chrono":"2.45.46", "nom":"ABISSET Patrick", "club":"Ca Balma", "dep":"031", "ligue":"OCC", "naissance":57, "pts":54, "dist":800},
+
+],
+
+		"lengthMenu": [ [100, 500, 1000, -1], [100, 500, 1000, "Tous"] ],
+		iDisplayLength: 100,
+		dom: 'Bfrtip',
+		select: true,
+		orderCellsTop: true,
+ 		columns: [
+			{ data: "place" },
+			{ data: "nom" },
+			{ data: "chrono" },
+			{ data: "pts" }
+		],
+		fixedColumns: true
+	} );
+	var table = $('#ch2020').DataTable( {
+	
+		paging: false,
+		bInfo :false,
+		data :
+[
+	{"place":1, "annee":2020, "cat":"60M", "chrono":"2.35.52", "nom":"DE PESSEMIER Alain", "club":"Athle 91 - S/l Viry Chatillon", "dep":"091", "ligue":"I-F", "naissance":57, "pts":138, "dist":800},
+	{"place":2, "annee":2020, "cat":"60M", "chrono":"2.37.22", "nom":"DELBE Dominique", "club":"Ain-est Athletisme", "dep":"001", "ligue":"ARA", "naissance":60, "pts":121, "dist":800},
+	{"place":3, "annee":2020, "cat":"60M", "chrono":"2.39.00", "nom":"DOS SANTOS Dominique", "club":"Atoutsports", "dep":"042", "ligue":"ARA", "naissance":58, "pts":104, "dist":800},
+	{"place":4, "annee":2020, "cat":"60M", "chrono":"2.40.19", "nom":"RAVERDEL Denis", "club":"Suresnes Passion Athle Maratho", "dep":"092", "ligue":"I-F", "naissance":56, "pts":94, "dist":800},
+	{"place":5, "annee":2020, "cat":"60M", "chrono":"2.44.00", "nom":"GUERIAUD Patrice", "club":"Rc Vichy", "dep":"003", "ligue":"ARA", "naissance":58, "pts":64, "dist":800},
+	{"place":6, "annee":2020, "cat":"60M", "chrono":"2.44.48", "nom":"GILLEN Dominique", "club":"Ca Balma", "dep":"031", "ligue":"OCC", "naissance":57, "pts":60, "dist":800},
+	{"place":7, "annee":2020, "cat":"60M", "chrono":"2.51.91", "nom":"BUSCH Gabriel", "club":"Ana - S/l Fcja Bischwiller", "dep":"067", "ligue":"G-E", "naissance":60, "pts":20, "dist":800},
+
+],
+
+		"lengthMenu": [ [100, 500, 1000, -1], [100, 500, 1000, "Tous"] ],
+		iDisplayLength: 100,
+		dom: 'Bfrtip',
+		select: true,
+		orderCellsTop: true,
+ 		columns: [
+			{ data: "place" },
+			{ data: "nom" },
+			{ data: "chrono" },
+			{ data: "pts" }
+		],
+		fixedColumns: true
+	} );
+	var table = $('#ch2021').DataTable( {
+	
+		paging: false,
+		bInfo :false,
+		data :
+[
+	{"place":1, "annee":2021, "cat":"60M", "chrono":"2.18.16", "nom":"MARIQUE Pierre-Jean", "club":"As17 - S/l Athletisme Marennes", "dep":"017", "ligue":"N-A", "naissance":57, "pts":380, "dist":800},
+	{"place":2, "annee":2021, "cat":"60M", "chrono":"2.23.96", "nom":"DELBE Dominique", "club":"Ain-est Athletisme", "dep":"001", "ligue":"ARA", "naissance":60, "pts":286, "dist":800},
+	{"place":3, "annee":2021, "cat":"60M", "chrono":"2.25.14", "nom":"DE PESSEMIER Alain", "club":"Dordogne A - S/l Ca Perigueux", "dep":"024", "ligue":"N-A", "naissance":57, "pts":269, "dist":800},
+	{"place":4, "annee":2021, "cat":"60M", "chrono":"2.28.95", "nom":"FLACHAIRE Lionel", "club":"Apc - S/l Aix Athle Provence", "dep":"013", "ligue":"PCA", "naissance":58, "pts":216, "dist":800},
+	{"place":5, "annee":2021, "cat":"60M", "chrono":"2.42.00", "nom":"GILLEN Dominique", "club":"Ca Balma", "dep":"031", "ligue":"OCC", "naissance":57, "pts":79, "dist":800},
+	{"place":6, "annee":2021, "cat":"60M", "chrono":"2.45.94", "nom":"RAVERDEL Denis", "club":"Suresnes Passion Athle Maratho", "dep":"092", "ligue":"I-F", "naissance":56, "pts":51, "dist":800},
+	{"place":1, "annee":2021, "cat":"60M", "chrono":"2.23.45", "nom":"HERMAN Gilles", "club":"Avenir Social De Sin Le Noble", "dep":"059", "ligue":"H-F", "naissance":60, "pts":294, "dist":800},
+	{"place":2, "annee":2021, "cat":"60M", "chrono":"2.26.69", "nom":"CHANCEL Alain", "club":"Lbcac - S/l Le Blanc Athletism", "dep":"036", "ligue":"CEN", "naissance":60, "pts":246, "dist":800},
+	{"place":3, "annee":2021, "cat":"60M", "chrono":"2.30.66", "nom":"MATE Gerard", "club":"Ca Villenave D ornon", "dep":"033", "ligue":"N-A", "naissance":60, "pts":194, "dist":800},
+	{"place":4, "annee":2021, "cat":"60M", "chrono":"2.31.94", "nom":"DE LA GICLAIS Herve", "club":"Cercle Athl. Castelsarrasinois", "dep":"082", "ligue":"OCC", "naissance":59, "pts":178, "dist":800},
+	{"place":5, "annee":2021, "cat":"60M", "chrono":"2.34.12", "nom":"JOUVENCEL Michel", "club":"St Leu D esserent Athletisme", "dep":"060", "ligue":"H-F", "naissance":59, "pts":153, "dist":800},
+	{"place":6, "annee":2021, "cat":"60M", "chrono":"2.57.05", "nom":"LE JEUNE Gilbert", "club":"Concarneau Olympique Athletism", "dep":"029", "ligue":"BRE", "naissance":58, "pts":4, "dist":800},
+
+],
+
+		"lengthMenu": [ [100, 500, 1000, -1], [100, 500, 1000, "Tous"] ],
+		iDisplayLength: 100,
+		dom: 'Bfrtip',
+		select: true,
+		orderCellsTop: true,
+ 		columns: [
+			{ data: "place" },
+			{ data: "nom" },
+			{ data: "chrono" },
+			{ data: "pts" }
+		],
+		fixedColumns: true
+	} );
+	
+	var table = $('#ch2022').DataTable( {
+	
+		paging: false,
+		bInfo :false,
+		data :
+[
+	{"place":1, "annee":2022, "cat":"60M", "chrono":"2.19.95", "nom":"ZAVATTERO Benoit", "club":"Atp - S/l Usc Albi", "dep":"081", "ligue":"OCC", "naissance":60, "pts":350, "dist":800},
+	{"place":2, "annee":2022, "cat":"60M", "chrono":"2.27.19", "nom":"MOULKI Mbark MAR", "club":"Lunel A.", "dep":"034", "ligue":"OCC", "naissance":61, "pts":239, "dist":800},
+	{"place":3, "annee":2022, "cat":"60M", "chrono":"2.28.70", "nom":"DE PESSEMIER Alain", "club":"Dordogne A - S/l Ca Perigueux", "dep":"024", "ligue":"N-A", "naissance":57, "pts":219, "dist":800},
+	{"place":4, "annee":2022, "cat":"60M", "chrono":"2.31.45", "nom":"DELBE Dominique", "club":"Ain-est Athletisme", "dep":"001", "ligue":"ARA", "naissance":60, "pts":184, "dist":800},
+
+],
+
+		"lengthMenu": [ [100, 500, 1000, -1], [100, 500, 1000, "Tous"] ],
+		iDisplayLength: 100,
+		dom: 'Bfrtip',
+		select: true,
+		orderCellsTop: true,
+		
+ 		columns: [
+			{ data: "place" },
+			{ data: "nom" },
+			{ data: "chrono" },
+			{ data: "pts" }
+		],
+		fixedColumns: true
+	} );
+	
+	
+	
+	table.on( 'select', function ( e, dt, type, indexes ) {
+	    table[ type ]( indexes ).nodes().to$().addClass( 'row-selected' );
+	} );
+
+	table.on( 'select', function ( e, dt, type, indexes ) {
+		var rowData = table.rows( indexes ).data().toArray();
+			alert('popup detail non dév');
+		} )
+
+	$('#ch2016_filter').hide();
+	$('#ch2017_filter').hide();
+	$('#ch2018_filter').hide();
+	$('#ch2019_filter').hide();
+	$('#ch2020_filter').hide();
+	$('#ch2021_filter').hide();
+	$('#ch2022_filter').hide();
+	
+} );
+
+
+	function selection() {
+	    
+		var categorie = $("input[name='categorie']:checked").val();
+		var epreuve = $("input[name='epreuve']:checked").val();
+
+    	if (categorie == undefined || epreuve == undefined){
+			return;    		
+    	}
+    	location.href = 'ch_france_' + epreuve + '_M' + categorie + '.html';
+	}
+		
+	var elts = document.querySelectorAll("input");
+	for (var i = 0; i < elts.length; i++){
+		
+		elts[i].addEventListener("change", selection, true);
+	}	
+
+	</script>
+
+</body>
+</html>

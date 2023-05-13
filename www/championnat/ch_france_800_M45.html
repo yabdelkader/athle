@@ -7,27 +7,8 @@
 
 	<link rel="stylesheet" type="text/css" href="../cross/css/jquery.dataTables.min.css"/>
 	
-	<style type="text/css">
+	<link rel="stylesheet" type="text/css" href="css/championnat.css"/>
 
-footer {
-	width: 100%;
-	color: #fff;
-	padding-top: 20px;
-	padding-bottom: 20px;
-	background-color: #239fcc;
-}
-
-.ligne-header {
-	height: 1px;
-	background-color: #999;
-	margin: 0 250px 0 0;
-}
-.row-selected, .panel-default>.panel-heading {
-	background-color: #239fcc;
-	color: white;
-}
-
-</style>
 </head>
 <body>
 
@@ -37,9 +18,39 @@ footer {
 	<div class="row" style="margin-bottom:50px">
 
 		<div class="col-md-12">
-			<div class="well well-sm atih" align="center" style="color:white;background-color: #239FCC">
-				<h2>Championnat de France Master plein air</h2>
-				<h3>800 M45</h3>
+			<div class="well well-sm box_flex">
+
+
+				<div class="records">
+					<h2>Championnat de France Master plein air</h2>
+					<h3>800 M45</h3>
+				</div>
+				<div class="records">
+					<p id="rm"><span>RM</span><span>1.49.86 Anthony Whiteman GBR</span>	<span>  </span></p>
+					<p id="rf"><span>RF</span><span>1.54.47	ANICET Bruno</span>	<span>  </span></p>
+				</div>
+				<div style="float: right;margin-top: -85px; margin-right: 20px">
+				
+				<form class="form-horizontal">
+				
+					<div style="margin: 0">
+						<label class="radio-inline"  style="font-weight: bold;width: 100px">Catégorie</label> 
+						<label class="radio-inline"><input type="radio" name="categorie" value="35" required="required">M35</label>
+						<label class="radio-inline"><input type="radio" name="categorie" value="40">M40</label>
+						<label class="radio-inline"><input type="radio" name="categorie" value="45" checked="checked">M45</label>
+						<label class="radio-inline"><input type="radio" name="categorie" value="50">M50</label>
+						<label class="radio-inline"><input type="radio" name="categorie" value="55">M55</label>
+						<label class="radio-inline"><input type="radio" name="categorie" value="60">M60</label>
+					</div>
+					<div>
+						<label class="radio-inline" style="font-weight: bold;width: 100px;">Épreuve</label>
+						<label class="radio-inline"><input type="radio" name="epreuve" value="400">400</label>
+						<label class="radio-inline"><input type="radio" name="epreuve" value="800" checked="checked">800</label>
+						<label class="radio-inline"><input type="radio" name="epreuve" value="1500">1500</label>
+						<label class="radio-inline"><input type="radio" name="epreuve" value="5000">5000</label>
+					</div>
+				</form>
+				</div>
 			</div>
 		</div>
 
@@ -48,7 +59,7 @@ footer {
 		<div class="col-md-3" style="margin: 0 20px">
 		
 			<div class="panel panel-default">
-				<div class="panel-heading">2016</div>
+				<div class="panel-heading">2016 Compiègne</div>
 	  				<div class="panel-body">
 					<table id="ch2016" class="display table table-striped" >
 						<thead>
@@ -68,7 +79,7 @@ footer {
 		<div class="col-md-3" style="margin: 0 20px">
 		
 			<div class="panel panel-default">
-				<div class="panel-heading">2017</div>
+				<div class="panel-heading">2017 Arles</div>
 	  				<div class="panel-body">
 					<table id="ch2017" class="display table table-striped" >
 						<thead>
@@ -88,7 +99,7 @@ footer {
 		<div class="col-md-3" style="margin: 0 20px">
 		
 			<div class="panel panel-default">
-				<div class="panel-heading">2018</div>
+				<div class="panel-heading">2018 Angers</div>
 	  				<div class="panel-body">
 					<table id="ch2018" class="display table table-striped" >
 						<thead>
@@ -108,7 +119,7 @@ footer {
 		<div class="col-md-3" style="margin: 0 20px">
 		
 			<div class="panel panel-default">
-				<div class="panel-heading">2019</div>
+				<div class="panel-heading">2019 Dreux</div>
 	  				<div class="panel-body">
 					<table id="ch2019" class="display table table-striped" >
 						<thead>
@@ -128,7 +139,7 @@ footer {
 		<div class="col-md-3" style="margin: 0 20px">
 		
 			<div class="panel panel-default">
-				<div class="panel-heading">2020</div>
+				<div class="panel-heading">2020 Chalon-sur-Saône</div>
 	  				<div class="panel-body">
 					<table id="ch2020" class="display table table-striped" >
 						<thead>
@@ -148,7 +159,7 @@ footer {
 		<div class="col-md-3" style="margin: 0 20px">
 		
 			<div class="panel panel-default">
-				<div class="panel-heading">2021</div>
+				<div class="panel-heading">2021 Albi</div>
 	  				<div class="panel-body">
 					<table id="ch2021" class="display table table-striped" >
 						<thead>
@@ -168,7 +179,7 @@ footer {
 		<div class="col-md-3" style="margin: 0 20px">
 		
 			<div class="panel panel-default">
-				<div class="panel-heading">2022</div>
+				<div class="panel-heading">2022 Châteauroux</div>
 	  				<div class="panel-body">
 					<table id="ch2022" class="display table table-striped" >
 						<thead>
@@ -423,7 +434,7 @@ $(document).ready(function() {
 	{"place":4, "annee":2022, "cat":"45M", "chrono":"2.23.28", "nom":"JOSEPH Stephane", "club":"Ca Pezenas", "dep":"034", "ligue":"OCC", "naissance":75, "pts":296, "dist":800},
 	{"place":5, "annee":2022, "cat":"45M", "chrono":"2.24.02", "nom":"MALOSSE Richard", "club":"Sa Merignac", "dep":"033", "ligue":"N-A", "naissance":74, "pts":285, "dist":800},
 	{"place":6, "annee":2022, "cat":"45M", "chrono":"2.24.37", "nom":"BOUCHENY Olivier", "club":"Ea Cergy Pontoise Athletisme ", "dep":"095", "ligue":"I-F", "naissance":74, "pts":280, "dist":800},
-	{"place":7, "annee":2022, "cat":"45M", "chrono":"2.27.13", "nom":"PERRONNET Olivier", "club":"La Berrichonne Chateauroux Ath", "dep":"036", "ligue":"CEN", "naissance":74, "pts":240, "dist":800},
+	{"place":7, "annee":2022, "cat":"45M", "chrono":"2.27.13", "nom":"PERRONNET Olivier", "club":"La Berrichonne Châteauroux Ath", "dep":"036", "ligue":"CEN", "naissance":74, "pts":240, "dist":800},
 	{"place":8, "annee":2022, "cat":"45M", "chrono":"2.29.75", "nom":"TINON Gregory", "club":"Sa Merignac", "dep":"033", "ligue":"N-A", "naissance":73, "pts":205, "dist":800}
 ],
 
@@ -464,6 +475,24 @@ $(document).ready(function() {
 	$('#ch2022_filter').hide();
 	
 } );
+
+
+	function selection() {
+	    
+		var categorie = $("input[name='categorie']:checked").val();
+		var epreuve = $("input[name='epreuve']:checked").val();
+
+    	if (categorie == undefined || epreuve == undefined){
+			return;    		
+    	}
+    	location.href = 'ch_france_' + epreuve + '_M' + categorie + '.html';
+	}
+		
+	var elts = document.querySelectorAll("input");
+	for (var i = 0; i < elts.length; i++){
+		
+		elts[i].addEventListener("change", selection, true);
+	}	
 
 	</script>
 
