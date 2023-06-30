@@ -1,0 +1,1 @@
+keytool -import -noprompt -trustcacerts -alias https://bases.athle.fr -file _.athle.fr.crt -keystore cacerts

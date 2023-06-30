@@ -196,6 +196,26 @@
 			</div>
 		</div>
 
+		<div class="col-md-3" style="margin: 0 20px">
+		
+			<div class="panel panel-default">
+				<div class="panel-heading">2023 Laval</div>
+	  				<div class="panel-body">
+					<table id="ch2023" class="display table table-striped" >
+						<thead>
+							<tr>
+								<th>Place</th>
+								<th>Nom</th>
+								<th>Chrono</th>
+								<th>Points</th>
+							</tr>
+						</thead>		
+						<tbody></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
 	</div>
 
 	</article>
@@ -452,6 +472,29 @@ $(document).ready(function() {
 		fixedColumns: true
 	} );
 	
+	var table = $('#ch2023').DataTable( {
+	
+		paging: false,
+		bInfo :false,
+		data :
+[
+	{"place":1, "annee":2023, "cat":"45M", "chrono":"1.58.98", "nom":"ANICET Bruno", "club":"Athle 632 - S/l Athle 632 Tour", "dep":"031", "ligue":"OCC", "naissance":76, "pts":786, "dist":800},
+],
+
+		"lengthMenu": [ [100, 500, 1000, -1], [100, 500, 1000, "Tous"] ],
+		iDisplayLength: 100,
+		dom: 'Bfrtip',
+		select: true,
+		orderCellsTop: true,
+ 		columns: [
+			{ data: "place" },
+			{ data: "nom" },
+			{ data: "chrono" },
+			{ data: "pts" }
+		],
+		fixedColumns: true
+	} );
+	
 	
 	
 	
@@ -473,6 +516,7 @@ $(document).ready(function() {
 	$('#ch2020_filter').hide();
 	$('#ch2021_filter').hide();
 	$('#ch2022_filter').hide();
+	$('#ch2023_filter').hide();
 	
 } );
 

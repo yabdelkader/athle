@@ -8,7 +8,10 @@ import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
@@ -19,6 +22,7 @@ public class ImportChampionnat {
 	public static void main(String[] args) throws MalformedURLException, InterruptedException {
 		Map<Integer, Integer> mapAnneeIdCompetition = new HashMap<>();
 
+		/*
 		// 2016 Compiègne
 		mapAnneeIdCompetition.put(2016, 182722);
 
@@ -39,30 +43,47 @@ public class ImportChampionnat {
 
 		// 2022 Chateauroux
 		mapAnneeIdCompetition.put(2022, 264984);
+		*/
+		
 		// urls.add("264984&frmepreuve=800m+%2f+45M");
 		// urls.add("264984&frmepreuve=1+500m+%2f+40M");
-
+		
+		
+		// 2023 Lava
+		mapAnneeIdCompetition.put(2023, 278693);
+		
+		
+		// List<Integer> epreuves = new ArrayList<>(Arrays. asList(800, 1500, 5000));
+		List<Integer> epreuves = new ArrayList<>(Arrays. asList(400));
+		List<String> categories = new ArrayList<>(Arrays. asList("35M", "40M", "45M", "50M", "55M", "60M"));
+		
 		for (Integer annee : mapAnneeIdCompetition.keySet()) {
 			
-			int epreuve = 200;
-			String categorie = "40M";
-
-			String strEpreuve = epreuve + "";
+			for (Integer epreuve:epreuves) {
+				for (String categorie:categories) {
 			
-			if (epreuve == 1500) {
-				strEpreuve = "1+500";
+					String strEpreuve = getStrEpreuve(epreuve);
+		
+					String url = URL_BASES_ATHLE_FR + mapAnneeIdCompetition.get(annee) + "&frmepreuve=" + strEpreuve +  "m+%2f+" + categorie;
+					// System.err.println(url);
+					importPage(url, annee, epreuve, categorie);
+				}
 			}
-			else if (epreuve == 5000) {
-				strEpreuve = "5+000";
-			}
-
-			String url = URL_BASES_ATHLE_FR + mapAnneeIdCompetition.get(annee) + "&frmepreuve=" + strEpreuve +  "m+%2f+" + categorie;
-			// System.err.println(url);
-			importPage(url, annee, epreuve, categorie);
 		}
 		
 		
 
+	}
+
+	private static String getStrEpreuve(Integer epreuve) {
+		String strEpreuve = "" + epreuve;
+		if (epreuve == 1500) {
+			strEpreuve = "1+500";
+		}
+		else if (epreuve == 5000) {
+			strEpreuve = "5+000";
+		}
+		return strEpreuve;
 	}
 
 	private static void importPage(String url, int annee, int epreuve, String categorie) throws MalformedURLException, InterruptedException {
