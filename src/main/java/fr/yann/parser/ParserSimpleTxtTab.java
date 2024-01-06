@@ -39,9 +39,9 @@ public class ParserSimpleTxtTab {
 
 	private static String	place		= "(\\d+)_";
 	// moins 10'
-	private static String	chrono		= "(\\d{2}''\\d{2})_";
+	// private static String	chrono		= "(\\d{2}''\\d{2})_";
 	// moins 10'
-	// private static String	chrono		= "(\\d'\\d{2}''\\d{2})_";
+	private static String	chrono		= "(\\d'\\d{2}''\\d{2})_";
 	// plus 10'
 	// private static String	chrono		= "(\\d{2}'\\d{2}''\\d{2})_";
 
@@ -69,7 +69,11 @@ public class ParserSimpleTxtTab {
 	
 	
 	/**
-	 * Ex : <tr><td class="datas0">1</td><td class="separator3"></td><td class="datas0"><b>1'44''04</b></td><td class="separator3"></td><td class="datas0">E</td><td class="separator3"></td><td class="datas0"><a href="javascript:bddThrowAthlete('bilans',%20127580,%200)" title="cliquez pour le détail">BAALA Mehdi</a></td><td class="separator3"></td><td class="datas0">Asptt strasbourg*</td><td class="separator3"></td><td class="datas0"><a href="http://bases.athle.com/asp.net/liste.aspx?frmbase=bilans&amp;frmmode=1&amp;frmannee=2006&amp;frmepreuve=208&amp;frmsexe=M&amp;frmligue=ALS">ALS</a></td><td class="separator3"></td><td class="datas0"><a href="http://bases.athle.com/asp.net/liste.aspx?frmbase=bilans&amp;frmmode=1&amp;frmannee=2006&amp;frmepreuve=208&amp;frmsexe=M&amp;frmdepartement=067">067</a></td><td class="separator3"></td><td class="datas0">SEM</td><td class="separator3"></td><td class="datas0"><a href="http://bases.athle.com/asp.net/liste.aspx?frmbase=bilans&amp;frmmode=1&amp;frmannee=2006&amp;frmepreuve=208&amp;frmsexe=M&amp;frmamini=1978&amp;frmamaxi=1978">78</a></td><td class="separator3"></td><td class="datas0">18/08/06</td><td class="separator3"></td><td class="datas0">Zurich (SUI)</td></tr>
+	 * Ex 2022
+	 *  <tr><td class="datas0">1</td><td class="separator3"></td><td class="datas0"><b>1'44''04</b></td><td class="separator3"></td><td class="datas0">E</td><td class="separator3"></td><td class="datas0"><a href="javascript:bddThrowAthlete('bilans',%20127580,%200)" title="cliquez pour le détail">BAALA Mehdi</a></td><td class="separator3"></td><td class="datas0">Asptt strasbourg*</td><td class="separator3"></td><td class="datas0"><a href="http://bases.athle.com/asp.net/liste.aspx?frmbase=bilans&amp;frmmode=1&amp;frmannee=2006&amp;frmepreuve=208&amp;frmsexe=M&amp;frmligue=ALS">ALS</a></td><td class="separator3"></td><td class="datas0"><a href="http://bases.athle.com/asp.net/liste.aspx?frmbase=bilans&amp;frmmode=1&amp;frmannee=2006&amp;frmepreuve=208&amp;frmsexe=M&amp;frmdepartement=067">067</a></td><td class="separator3"></td><td class="datas0">SEM</td><td class="separator3"></td><td class="datas0"><a href="http://bases.athle.com/asp.net/liste.aspx?frmbase=bilans&amp;frmmode=1&amp;frmannee=2006&amp;frmepreuve=208&amp;frmsexe=M&amp;frmamini=1978&amp;frmamaxi=1978">78</a></td><td class="separator3"></td><td class="datas0">18/08/06</td><td class="separator3"></td><td class="datas0">Zurich (SUI)</td></tr>
+	 * Ex 2023
+	 *  <tr><td class="datas0">1</td><td class="separator3"></td><td class="datas0"><b>1'56''23</b></td><td class="separator3"></td><td class="datas0"><a href="javascript:bddThrowAthlete('resultats', 1576629, 0)">CADET Jean-Marie</a></td><td class="separator3"></td><td class="datas0"><a href="/asp.net/liste.aspx?frmbase=resultats&frmmode=1&pardisplay=1&frmespace=0&frmcompetition=278693&frmclub=974065">Ac Entente Nord Saint Denis</a></td><td class="separator3"></td><td class="datas0"><a href="/asp.net/liste.aspx?frmbase=resultats&frmmode=1&frmespace=0&frmcompetition=278693&FrmDepartement=974">974</a></td><td class="separator3"></td><td class="datas0"><a href="/asp.net/liste.aspx?frmbase=resultats&frmmode=1&frmespace=0&frmcompetition=278693&FrmLigue=REU">REU</a></td><td class="separator3"></td><td class="datas0">M45M/76</td><td class="separator3"></td><td class="datas0">IR1</td><td class="separator3"></td><td class="datas0">856</td></tr>
+	 * 
 	 * @param line
 	 * @param sb 
 	 * @param p_annee 

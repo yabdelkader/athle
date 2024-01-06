@@ -1,0 +1,78 @@
+input[type=checkbox], th {
+	cursor: pointer;
+}
+
+input[type=checkbox]+label {
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+	padding-left: 1px;
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	line-height: 32px;
+	cursor: pointer;
+	font-weight: normal;
+}
+
+input[type=checkbox]:checked+label {
+	background-position: left -32px;
+}
+
+fieldset > div > div {
+	display: inline-block;	
+}
+
+fieldset > div > div > div > div {
+	display: inline-block;	
+}
+
+.row-selected, .panel-default>.panel-heading {
+	background-color: #239fcc;
+	color: white;
+}
+
+tr.selected td {
+	background-color: #239fcc;
+}
+
+/* tr:hover { background: #acbad4 !important; }*/
+
+fieldset.scheduler-border {
+    border: 1px groove #ddd !important;
+    padding: 0 1.4em 0em 1.4em !important;
+    margin: 0 0 1.5em 0 !important;
+}
+legend.scheduler-border {
+    width:inherit; /* Or auto */
+    padding:0 10px; /* To give a bit of padding on the left and right */
+    border-bottom:none;
+}
+
+fieldset {
+    background-color: #daeaf9;
+    border-radius: 20px;
+    padding: 25px;
+    color: #3371e3;
+}
+fieldset > legend {
+    color: #3371e3;
+}
+
+th {
+    background-color: #daeaf9;
+    color: #3371e3;
+}
+th {
+    border: 1px solid #ccc;
+}
+td:nth-child(odd) {
+    border-right: 1px solid #ddd;
+}
+
+thead > tr > th.athlete {
+    border-right: 1px solid #ccc;
+}
+
+fieldset > div > div > div > span {
+	line-height: 32px;
+}

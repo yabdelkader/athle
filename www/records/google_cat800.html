@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<script src="https://www.gstatic.com/charts/loader.js"></script>
+
+
+<body>
+	<div id="linechart_material"></div>
+
+
+
+
+
+<script>
+google.charts.load('current', {'packages':['line']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Âge');
+data.addColumn('number', 'Igor');
+data.addColumn('number', 'Yann');
+
+data.addRows([
+  [30,  109.82, 114.97],
+  [35,  114.42, 117.14],
+  [40,  115.61, 119.99],
+  // [45,  11.7, 10.5],
+]);
+
+var options = {
+  chart: {
+    title: '800',
+    subtitle: 'chronos convertis en secondes'
+  },
+  width: 900,
+  height: 500,
+  vAxis: {
+      title: 'Popularity',
+      direction: '-1'
+    }
+};
+
+var chart = new google.charts.Line(document.getElementById('linechart_material'));
+
+chart.draw(data, google.charts.Line.convertOptions(options));
+}</script>
+
+</body>
+</html>
+
+
+

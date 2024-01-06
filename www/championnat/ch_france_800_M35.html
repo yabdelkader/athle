@@ -20,17 +20,16 @@
 		<div class="col-md-12">
 			<div class="well well-sm box_flex">
 
-
 				<div class="records">
+					<p id="rm"><span>RM</span><span>1.43.36 Johnny Gray USA</span>	<span>  </span></p>
+					<p id="rf"><span>RF</span><span>1.48.44 Driss Maazouzi </span>	<span>  </span></p>
+				</div>				
+
+				<div align="center">
 					<h2>Championnat de France Master plein air</h2>
 					<h3>800 M35</h3>
 				</div>
 				
-				<div class="records">
-					<p id="rm"><span>RM</span><span>1.43.36 Johnny Gray USA</span>	<span>  </span></p>
-					<p id="rf"><span>RF</span><span>1.48.44 MAAZOUZI Driss</span>	<span>  </span></p>
-				</div>				
-				<div style="float: right;margin-top: -85px; margin-right: 20px">
 				
 				<form class="form-horizontal">
 				
@@ -51,7 +50,6 @@
 						<label class="radio-inline"><input type="radio" name="epreuve" value="5000">5000</label>
 					</div>
 				</form>
-				</div>
 			</div>
 		</div>
 
@@ -196,7 +194,25 @@
 				</div>
 			</div>
 		</div>
-
+		<div class="col-md-3" style="margin: 0 20px">
+		
+			<div class="panel panel-default">
+				<div class="panel-heading">2023 Laval</div>
+	  				<div class="panel-body">
+					<table id="ch2023" class="display table table-striped" >
+						<thead>
+							<tr>
+								<th>Place</th>
+								<th>Nom</th>
+								<th>Chrono</th>
+								<th>Points</th>
+							</tr>
+						</thead>		
+						<tbody></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
 	</div>
 
 	</article>
@@ -436,6 +452,40 @@ $(document).ready(function() {
 		fixedColumns: true
 	} );
 	
+	var table = $('#ch2023').DataTable( {
+	
+		paging: false,
+		bInfo :false,
+		data :
+[
+	{"place":1, "annee":2023, "cat":"35M", "chrono":"1.57.19", "nom":"FONTAINE Pierrick", "club":"Ua Maurienne st-jean", "dep":"073", "ligue":"ARA", "naissance":87, "pts":831, "dist":800},
+	{"place":2, "annee":2023, "cat":"35M", "chrono":"2.00.05", "nom":"SEGARD Renaud", "club":"Esa - S/l Endurance 72", "dep":"072", "ligue":"P-L", "naissance":87, "pts":759, "dist":800},
+	{"place":3, "annee":2023, "cat":"35M", "chrono":"2.01.01", "nom":"AHMED Houssamoudine", "club":"Racing Club De Mamoudzou", "dep":"976", "ligue":"MAY", "naissance":88, "pts":736, "dist":800},
+	{"place":4, "annee":2023, "cat":"35M", "chrono":"2.01.51", "nom":"DENJEAN Fabien", "club":"Entente Sevre", "dep":"085", "ligue":"P-L", "naissance":85, "pts":724, "dist":800},
+	{"place":5, "annee":2023, "cat":"35M", "chrono":"2.02.64", "nom":"SOLE Ritchy", "club":"Ca Villenave D ornon", "dep":"033", "ligue":"N-A", "naissance":86, "pts":697, "dist":800},
+	{"place":6, "annee":2023, "cat":"35M", "chrono":"2.04.04", "nom":"ROUZEE Mathieu", "club":"Evreux Ac ", "dep":"027", "ligue":"NOR", "naissance":85, "pts":665, "dist":800},
+	{"place":7, "annee":2023, "cat":"35M", "chrono":"2.04.49", "nom":"LEBRUN Julien", "club":"Psla - S/l Stade Saint-lo", "dep":"050", "ligue":"NOR", "naissance":86, "pts":654, "dist":800},
+	{"place":8, "annee":2023, "cat":"35M", "chrono":"2.14.30", "nom":"BRETEL Fabien", "club":"Bourges En - S/l Us Berry Athl", "dep":"018", "ligue":"CEN", "naissance":88, "pts":450, "dist":800},
+	{"place":9, "annee":2023, "cat":"35M", "chrono":"2.15.43", "nom":"LELEU Robin", "club":"Toucan Athletic Club", "dep":"973", "ligue":"GUY", "naissance":84, "pts":429, "dist":800},
+	{"place":10, "annee":2023, "cat":"35M", "chrono":"2.16.83", "nom":"PUTEANUS Anthony", "club":"Athle Halluin-val-de-lys", "dep":"059", "ligue":"H-F", "naissance":87, "pts":403, "dist":800},
+	{"place":11, "annee":2023, "cat":"35M", "chrono":"2.20.08", "nom":"SEVINGUE Stephane", "club":"Athletic Trois Tours", "dep":"037", "ligue":"CEN", "naissance":84, "pts":347, "dist":800}
+],
+
+		"lengthMenu": [ [100, 500, 1000, -1], [100, 500, 1000, "Tous"] ],
+		iDisplayLength: 100,
+		dom: 'Bfrtip',
+		select: true,
+		orderCellsTop: true,
+		
+ 		columns: [
+			{ data: "place" },
+			{ data: "nom" },
+			{ data: "chrono" },
+			{ data: "pts" }
+		],
+		fixedColumns: true
+	} );
+	
 	
 	
 	
@@ -457,6 +507,7 @@ $(document).ready(function() {
 	$('#ch2020_filter').hide();
 	$('#ch2021_filter').hide();
 	$('#ch2022_filter').hide();
+	$('#ch2023_filter').hide();
 	
 } );
 

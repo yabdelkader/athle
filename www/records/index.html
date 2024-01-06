@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<title>Championnat de France Master</title>
+	
+	<link media="screen" rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+
+	<link rel="stylesheet" type="text/css" href="../cross/css/jquery.dataTables.min.css"/>
+ 	<link rel="stylesheet" type="text/css" href="css/records.css"/>
+	
+	<style type="text/css">
+
+
+</style>
+</head>
+<body>
+
+
+	<article class="content">
+
+	<div class="row" style="margin-bottom:0px">
+
+		<div class="col-md-12">
+			<div class="well well-sm atih" align="center" style="color:white;background-color: #daeaf9">
+				<h2 style="color: #3371e3">Records</h2>
+			</div>
+		</div>
+
+		<!-- 
+		<div class="col-md-offset-1 col-md-3" style="margin: 0 20px">
+
+			https://world-masters-athletics.org/wp-content/uploads/2023/04/Outdoor-Women-2023-1.pdf
+			http://masters.athle.fr/asp.net/espaces.html/html.aspx?id=8375
+			Liens FFA			
+			<a href="https://bases.athle.fr/asp.net/liste.aspx?frmpostback=true&frmbase=records&frmmode=1&frmespace=0&frmexploitation=actuel&frmtype=MP&frmsouscategorie=M40&frmsexe=M&frmniveau=NA">M40</a>
+			<a href="https://bases.athle.fr/asp.net/liste.aspx?frmpostback=true&frmbase=records&frmmode=1&frmespace=0&frmexploitation=actuel&frmtype=MP&frmsouscategorie=M45&frmsexe=M&frmniveau=NA">M45</a>
+			<a href="https://bases.athle.fr/asp.net/liste.aspx?frmpostback=true&frmbase=records&frmmode=1&frmespace=0&frmexploitation=actuel&frmtype=MP&frmsouscategorie=M50&frmsexe=M&frmniveau=NA">M50</a>
+			<a href="https://bases.athle.fr/asp.net/liste.aspx?frmpostback=true&frmbase=records&frmmode=1&frmespace=0&frmexploitation=actuel&frmtype=MP&frmsouscategorie=M55&frmsexe=M&frmniveau=NA">M55</a>
+			<a href="https://bases.athle.fr/asp.net/liste.aspx?frmpostback=true&frmbase=records&frmmode=1&frmespace=0&frmexploitation=actuel&frmtype=MP&frmsouscategorie=M60&frmsexe=M&frmniveau=NA">M60</a>
+
+		</div>
+		 -->
+	</div>
+
+	<div class="row" style="margin-bottom:50px">
+
+
+		<div class="col-md-offset-1 col-md-10">
+		
+		
+			<fieldset class="scheduler-border">
+			    <legend class="scheduler-border">Sélection</legend>
+			  
+				<div class="col-md-2"><label class="control-label" >Records Monde</label></div>
+				<div class="col-md-5">
+					<div><span style="padding-right: 20px">Femmes</span></div>
+					<div><input type="checkbox" id="wrf" checked="checked" /><label for="wrf" style="width: 46px">absolu</label></div>					
+					<div><input type="checkbox" id="wrf35" /><label for="wrf35">35</label></div>
+					<div><input type="checkbox" id="wrf40" /><label for="wrf40">40</label></div>					
+					<div><input type="checkbox" id="wrf45"/><label for="wrf45">45</label></div>					
+					<div><input type="checkbox" id="wrf50" /><label for="wrf50">50</label></div>					
+					<div><input type="checkbox" id="wrf55" /><label for="wrf55">55</label></div>					
+					<div><input type="checkbox" id="wrf60" /><label for="wrf60">60</label></div>					
+					<div><input type="checkbox" id="wrf65" /><label for="wrf65">65</label></div>					
+				
+				</div>
+
+				<div class="col-md-5">
+					<div><span style="padding-right: 20px">Hommes</span></div>
+					<div><input type="checkbox" id="wrh"/><label for="wrh" style="width: 46px">absolu</label></div>	
+					<div><input type="checkbox" id="wrh35" /><label for="wrh35">35</label></div>					
+					<div><input type="checkbox" id="wrh40" /><label for="wrh40">40</label></div>					
+					<div><input type="checkbox" id="wrh45" /><label for="wrh45">45</label></div>					
+					<div><input type="checkbox" id="wrh50" /><label for="wrh50">50</label></div>					
+					<div><input type="checkbox" id="wrh55" /><label for="wrh55">55</label></div>					
+					<div><input type="checkbox" id="wrh60" /><label for="wrh60">60</label></div>					
+					<div><input type="checkbox" id="wrh65" /><label for="wrh65">65</label></div>					
+				</div>
+				
+				<div class="col-md-2"><label class="control-label" >Records France</label></div> 
+
+				<div class="col-md-5">
+					<div><span style="padding-right: 20px">Femmes</span></div>
+
+					<div><input type="checkbox" id="rff" /><label for="rff" style="width: 46px">absolu</label></div>
+					<div><input type="checkbox" id="rff35" /><label for="rff35">35</label></div>
+					<div><input type="checkbox" id="rff40" /><label for="rff40">40</label></div>					
+					<div><input type="checkbox" id="rff45" /><label for="rff45">45</label></div>					
+					<div><input type="checkbox" id="rff50" /><label for="rff50">50</label></div>					
+					<div><input type="checkbox" id="rff55" /><label for="rff55">55</label></div>					
+					<div><input type="checkbox" id="rff60" /><label for="rff60">60</label></div>					
+					<div><input type="checkbox" id="rff65" /><label for="rff65">65</label></div>					
+				</div>
+				 				
+				<div class="col-md-5">
+					<div><span style="padding-right: 20px">Hommes</span></div>
+					<div><input type="checkbox" id="rfh"/><label for="rfh" style="width: 46px">absolu</label></div>		
+					<div><input type="checkbox" id="rfh35"  /><label for="rfh35">35</label></div>					
+					<div><input type="checkbox" id="rfh40"  checked="checked"/><label for="rfh40">40</label></div>					
+					<div><input type="checkbox" id="rfh45" /><label for="rfh45">45</label></div>					
+					<div><input type="checkbox" id="rfh50" /><label for="rfh50">50</label></div>					
+					<div><input type="checkbox" id="rfh55" /><label for="rfh55">55</label></div>					
+					<div><input type="checkbox" id="rfh60"  /><label for="rfh60">60</label></div>					
+					<div><input type="checkbox" id="rfh65"  /><label for="rfh65">65</label></div>					
+				</div>					
+
+				<div class="col-md-2"><label class="control-label">Athlètes</label></div> 				
+				<div class="col-md-3">
+					<div class="row">
+						<div class="col-md-2"><span style="padding-right: 20px">FG</span></div>
+						<div class="col-md-10">
+							<div><input type="checkbox" id="fg"/><label for="fg" style="width: 46px">absolu</label></div>	
+							<div><input type="checkbox" id="fg35" name="fg35" /><label for="fg35">35</label></div>					
+							<div><input type="checkbox" id="fg40" name="fg40" /><label for="fg40">40</label></div>					
+							<div><input type="checkbox" id="fg45" name="fg45" /><label for="fg45">45</label></div>					
+							<div><input type="checkbox" id="fg50" name="fg50" /><label for="fg50">50</label></div>					
+						</div>
+
+						<div class="col-md-2"><span style="padding-right: 20px">Igor</span></div>
+						<div class="col-md-10">
+							<div><input type="checkbox" id="igor"/><label for="igor" style="width: 46px">absolu</label></div>	
+							<div><input type="checkbox" id="igor35" name="igor35" /><label for="igor35">35</label></div>					
+							<div><input type="checkbox" id="igor40" name="igor40" /><label for="igor40">40</label></div>					
+							<div><input type="checkbox" id="igor45" name="igor45" disabled="disabled"/><label for="igor45">45</label></div>					
+						</div>
+					
+						<div class="col-md-2"><span style="padding-right: 20px">Ilyas</span></div>
+						<div class="col-md-10">
+							<div><input type="checkbox" id="ilyas"/><label for="ilyas" style="width: 46px">absolu</label></div>
+							<div><input type="checkbox" id="ilyas35" name="ilyas35" /><label for="ilyas35">35</label></div>
+							<div><input type="checkbox" id="ilyas40" name="ilyas40" /><label for="ilyas40">40</label></div>					
+							<div><input type="checkbox" id="ilyas45" name="ilyas45" disabled="disabled"/><label for="ilyas45">45</label></div>					
+						</div>
+					</div>
+				</div>
+
+
+				<div class="col-md-3">
+					
+					<div class="row">
+				
+						<div class="col-md-2"><span style="padding-right: 20px">Juliette</span></div>
+						<div class="col-md-10">
+							<div><input type="checkbox" id="juliette"/><label for="juliette" style="width: 46px">absolu</label></div>	
+							<div><input type="checkbox" id="juliette35" name="juliette35" /><label for="juliette35">35</label></div>					
+							<div><input type="checkbox" id="juliette40" name="juliette40" disabled="disabled" /><label for="juliette40">40</label></div>					
+						</div>
+						<div class="col-md-2"><span style="padding-right: 20px">Olivier</span></div>
+						<div class="col-md-10">
+							<div><input type="checkbox" id="olivier"/><label for="thib" style="width: 46px">absolu</label></div>								
+							<div><input type="checkbox" id="olivier35" name="olivier35" /><label for="olivier35">35</label></div>					
+							<div><input type="checkbox" id="olivier40" name="olivier40" disabled="disabled" /><label for="olivier40">40</label></div>					
+							<div><input type="checkbox" id="olivier45" name="olivier45" disabled="disabled" /><label for="olivier45">45</label></div>					
+						</div>
+						<div class="col-md-2"><span style="padding-right: 20px">Séb</span></div>
+						<div class="col-md-10">
+							<div><input type="checkbox" id="seb"/><label for="seb" style="width: 46px">absolu</label></div>	
+							<div><input type="checkbox" id="seb35" name="seb35" /><label for="seb35">35</label></div>					
+							<div><input type="checkbox" id="seb40" name="seb40" /><label for="seb40">40</label></div>			
+							<div><input type="checkbox" id="seb45" name="seb45" /><label for="seb45">45</label></div>
+						</div>
+					</div>					
+				</div>
+				<div class="col-md-3">
+					
+					<div class="row">
+						<div class="col-md-2"><span style="padding-right: 20px">Thibaud</span></div>
+						<div class="col-md-10">
+							<div><input type="checkbox" id="thib"/><label for="thib" style="width: 46px">absolu</label></div>								
+							<div><input type="checkbox" id="thib35" name="thib35" /><label for="thib35">35</label></div>					
+							<div><input type="checkbox" id="thib40" name="thib40" disabled="disabled" /><label for="thib40">40</label></div>					
+						</div>
+						<div class="col-md-2"><span style="padding-right: 20px">Yann</span></div>
+						<div class="col-md-10">
+							<div><input type="checkbox" id="yann"/><label for="yann" style="width: 46px">absolu</label></div>	
+							<div><input type="checkbox" id="yann35" name="yann35" /><label for="yann35">35</label></div>					
+							<div><input type="checkbox" id="yann40" name="yann40" /><label for="yann40">40</label></div>			
+							<div><input type="checkbox" id="yann45" name="yann45" /><label for="yann45">45</label></div>
+						</div>
+					</div>					
+				</div>
+			</fieldset>
+			
+			
+		</div>		
+		<div class="col-md-12">
+		
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<table id="records_table" class="display table table-striped">
+					<thead>
+						<tr>
+							<th colspan="1" style="text-align: center;"></th>
+
+							<th colspan="2" style="text-align: center; display: none;">WR Femmes</th>
+							<th colspan="2" style="text-align: center; display: none;">WR Femmes 35</th>
+							<th colspan="2" style="text-align: center; display: none;">WR Femmes 40</th>
+							<th colspan="2" style="text-align: center; display: none;">WR Femmes 45</th>
+							<th colspan="2" style="text-align: center; display: none;">WR Femmes 50</th>
+							<th colspan="2" style="text-align: center; display: none;">WR Femmes 55</th>
+							<th colspan="2" style="text-align: center; display: none;">WR Femmes 60</th>
+							<th colspan="2" style="text-align: center; display: none;">WR Femmes 65</th>
+
+							<th colspan="2" style="text-align: center; display: none;">WR Hommes</th>
+							<th colspan="2" style="text-align: center; display: none;">WR Hommes 35</th>
+							<th colspan="2" style="text-align: center; display: none;">WR Hommes 40</th>
+							<th colspan="2" style="text-align: center; display: none;">WR Hommes 45</th>
+							<th colspan="2" style="text-align: center; display: none;">WR Hommes 50</th>
+							<th colspan="2" style="text-align: center; display: none;">WR Hommes 55</th>
+							<th colspan="2" style="text-align: center; display: none;">WR Hommes 60</th>
+							<th colspan="2" style="text-align: center; display: none;">WR Hommes 65</th>
+
+							<th colspan="2" style="text-align: center; display: none;">RF Femmes</th>
+							<th colspan="2" style="text-align: center; display: none;">RF Femmes 35</th>
+							<th colspan="2" style="text-align: center; display: none;">RF Femmes 40</th>
+							<th colspan="2" style="text-align: center; display: none;">RF Femmes 45</th>
+							<th colspan="2" style="text-align: center; display: none;">RF Femmes 50</th>
+							<th colspan="2" style="text-align: center; display: none;">RF Femmes 55</th>
+							<th colspan="2" style="text-align: center; display: none;">RF Femmes 60</th>
+							<th colspan="2" style="text-align: center; display: none;">RF Femmes 65</th>
+
+							<th colspan="2" style="text-align: center; display: none;">RF Hommes</th>
+							<th colspan="2" style="text-align: center; display: none;">RF Hommes 35</th>
+							<th colspan="2" style="text-align: center; display: none;">RF Hommes 40</th>
+							<th colspan="2" style="text-align: center; display: none;">RF Hommes 45</th>
+							<th colspan="2" style="text-align: center; display: none;">RF Hommes 50</th>
+							<th colspan="2" style="text-align: center; display: none;">RF Hommes 55</th>
+							<th colspan="2" style="text-align: center; display: none;">RF Hommes 60</th>
+							<th colspan="2" style="text-align: center; display: none;">RF Hommes 65</th>
+
+							<th class="athlete" style="text-align: center; display: none;">FG</th>
+							<th class="athlete" style="text-align: center; display: none;">FG 35</th>
+							<th class="athlete" style="text-align: center; display: none;">FG 40</th>
+							<th class="athlete" style="text-align: center; display: none;">FG 45</th>
+							<th class="athlete" style="text-align: center; display: none;">FG 50</th>
+
+							<th class="athlete" style="text-align: center; display: none;">Igor</th>
+							<th class="athlete" style="text-align: center; display: none;">Igor 35</th>
+							<th class="athlete" style="text-align: center; display: none;">Igor 40</th>
+							<th class="athlete" style="text-align: center; display: none;">Igor 45</th>
+
+							<th class="athlete" style="text-align: center; display: none;">Ilyas</th>
+							<th class="athlete" style="text-align: center; display: none;">Ilyas 35</th>
+							<th class="athlete" style="text-align: center; display: none;">Ilyas 40</th>
+							<th class="athlete" style="text-align: center; display: none;">Ilyas 45</th>
+
+							<th class="athlete" style="text-align: center; display: none;">Juliette</th>
+							<th class="athlete" style="text-align: center; display: none;">Juliette 35</th>
+							<th class="athlete" style="text-align: center; display: none;">Juliette 40</th>
+
+							<th class="athlete" style="text-align: center; display: none;">Olivier</th>
+							<th class="athlete" style="text-align: center; display: none;">Olivier 35</th>
+							<th class="athlete" style="text-align: center; display: none;">Olivier 40</th>
+							<th class="athlete" style="text-align: center; display: none;">Olivier 45</th>
+
+							<th class="athlete" style="text-align: center; display: none;">Séb</th>
+							<th class="athlete" style="text-align: center; display: none;">Séb 35</th>
+							<th class="athlete" style="text-align: center; display: none;">Séb 40</th>
+							<th class="athlete" style="text-align: center; display: none;">Séb 45</th>
+
+							<th class="athlete" style="text-align: center; display: none;">Thibaud</th>
+							<th class="athlete" style="text-align: center; display: none;">Thibaud 35</th>
+							<th class="athlete" style="text-align: center; display: none;">Thibaud 40</th>
+
+							<th class="athlete" style="text-align: center; display: none;">Yann</th>
+							<th class="athlete" style="text-align: center; display: none;">Yann 35</th>
+							<th class="athlete" style="text-align: center; display: none;">Yann 40</th>
+							<th class="athlete" style="text-align: center; display: none;">Yann 45</th>
+
+						</tr>
+					</thead>		
+					<tbody>
+						<!-- wrf wrh rff rfh athlètes -->
+					</tbody>		
+		
+				</table>
+				
+				
+				<span id="selection1"></span>
+				<span id="selection2"></span>
+			</div>
+		</div>
+
+
+		<div class="col-md-1"></div>
+
+
+
+	</div>
+	</div>
+
+	</article>
+
+	<script type="text/javascript" src="../cross/js/jquery-3.3.1.js"></script>
+	
+
+	<script type="text/javascript" class="init">
+	
+		var json = '['
+			+'{"epr" : "100",'
+			+ '"wrfperf":"10.49",	"wrfnom":"GRIFFITH/JOYNER Florence USA",	"wrf35perf":"10.70",	"wrf35nom":"Shelly-Ann Fraser-Pryce",		"wrf40perf":"11.34",	"wrf40nom":"Merlene Ottey",		"wrf45perf":"11.34",		 "wrf45nom":"Merlene Ottey",		"wrf50perf":"11.67",		 "wrf50nom":"Merlene Ottey",		"wrf55perf":"12.24", "wrf55nom":"Julie Brims",		"wrf60perf":"13.20", "wrf60nom":"Nicole Alexis",		"wrf65perf":"13.91",	"wrf65nom":"Karla Del Grande",		"wrf70perf":"14.73",		"wrf70nom":"Ingnrid Meier",'
+			+ '"wrhperf":"9.58",	"wrhnom":"BOLT Usain JAM",					"wrh35perf":"9.87",		"wrh35nom":"Justin Gatlin USA",					"wrh40perf":"9.93",		"wrh40nom":"Kim Collins",		"wrh45perf":"10.72",		 "wrh45nom":"Willie Gault",			"wrh50perf":"10.88",		 "wrh50nom":"Willie Gault",			"wrh55perf":"11.30", "wrh55nom":"Willie Gault",		"wrh60perf":"11.70", "wrh60nom":"Ronald Taylor ",		"wrh65perf":"12.31",	"wrh65nom":"Damien Leake",			"wrh70perf":"12.77",		"wrh70nom":"Robert Whilden Jr",'
+			
+			+ '"rffperf":"10.73",	"rffnom":"Christine Arron",		"rff35perf":"11.27",	"rff35nom":"ARRON Christine",		"rff40perf":"11.71",	"rff40nom":"GIRARD Patricia",		"rff45perf":"12.25",	 "rff45nom":"LAPIERRE Violetta",	"rff50perf":"12.74",		 "rff50nom":"ALEXIS Nicole",	"rff55perf":"12.80",	"rff55nom":"ALEXIS Nicole",		"rff60perf":"13.05", "rff60nom":"ALEXIS Nicole",		"rff65perf":"15.41",	"rff65nom":"KEREBEL Jeannine",		"rff70perf":"...",		"rff70nom":"...",'
+			+ '"rfhperf":"9.86",	"rfhnom":"Jimmy Vicaut",		"rfh35perf":"10.33",	"rfh35nom":"LOMBA Hermann",			"rfh40perf":"10.79",	"rfh40nom":"LUCENAY Steeve",		"rfh45perf":"11.13",	 "rfh45nom":"CLAUDEON Philippe",	"rfh50perf":"11.29",		 "rfh50nom":"DUPUY Bruno",		"rfh55perf":"11.79",	"rfh55nom":"DUPUY Bruno",		"rfh60perf":"12.10", "rfh60nom":"CARNIER Patrice",		"rfh65perf":"12.90",	"rfh65nom":"MARCHAND Jean-luc",		"rfh70perf":"...",		"rfh70nom":"...",'
+			
+			+ '"fg":"",				"fg35":"",			"fg40":"",			"fg45":"",			"fg50":"",	'
+			+ '"igor":"11.1",		"igor35":"",		"igor40":"",		"igor45":"",		"igor50":"",	'
+			+ '"ilyas":"",			"ilyas35":"",		"ilyas40":"",		"ilyas45":"",		"ilyas50":"",	'
+			+ '"juliette":"",		"juliette35":"",	"juliette40":"",	"juliette45":"",	"juliette50":"",	'
+			+ '"olivier":"",		"olivier35":"",		"olivier40":"",		"olivier45":"",		"olivier50":"",	'
+			+ '"seb":"",			"seb35":"",			"seb40":"",			"seb45":"",			"seb50":"",	'
+			+ '"thib":"",			"thib35":"",		"thib40":"thib40",	"thib45":"",		"thib50":"",	'
+			+ '"yann":"12.92",		"yann35":"12.92",	"yann40":"",		"yann45":"",		"yann50":""	'
+			+ '},'
+
+			+'{"epr" : "200",'
+			+ '"wrfperf":"21.34",	"wrfnom":"GRIFFITH/JOYNER Florence USA",	"wrf35perf":"21.81",	"wrf35nom":"Shelly-Ann Fraser-Pryce USA",	"wrf40perf":"22.72", "wrf40nom":"OTTEY Merlene JAM",	"wrf45perf":"23.82",		 "wrf45nom":"OTTEY Merlene JAM",		"wrf50perf":"24.33",		 "wrf50nom":"OTTEY Merlene JAM",		"wrf55perf":"25.07",		 "wrf55nom":"Julie Brims AUS",		"wrf60perf":"27.34",	"wrf60nom":"ALEXIS Nicole FRA",		"wrf65perf":"28.53",	"wrf65nom":"Karla Del Grande CAN",		"wrf70perf":".73",		"wrf70nom":"...",'
+			+ '"wrhperf":"19.19",	"wrhnom":"BOLT Usain JAM",					"wrh35perf":"20.11",	"wrh35nom":"Linford Christie GBR",			"wrh40perf":"20.64", "wrh40nom":"Troy Douglas NED",		"wrh45perf":"21.65",		 "wrh45nom":"Alexander Kosenkow GER",			"wrh50perf":"22.44", "wrh50nom":"Willie Gault USA",			"wrh55perf":"23.24",		 "wrh55nom":"Willie Gault USA",		"wrh60perf":"24.00", 	"wrh60nom":"Ronald Taylor GBR",		"wrh65perf":"24.65",	"wrh65nom":"Charles Allie USA",			"wrh70perf":".77",		"wrh70nom":"...",'
+			
+			+ '"rffperf":"21.99",	"rffnom":"Marie-Jo Pérec",		"rff35perf":"23.85",	"rff35nom":"BUVAL Patricia",	"rff40perf":"24.25",	"rff40nom":"LAPIERRE Violetta",		"rff45perf":"25.05",		 "rff45nom":"ICARRE Maryvonne",		"rff50perf":"25.94",	"rff50nom":"ICARRE Maryvonne",		"rff55perf":"26.13",	 "rff55nom":"ALEXIS Nicole",		"rff60perf":"27.34",		 "rff60nom":"ALEXIS Nicole",		"rff65perf":"32.27",		 "rff65nom":"CAUX Edith",			"rff70perf":"...",		"rff70nom":"...",'
+			+ '"rfhperf":"19.80",	"rfhnom":"LEMAITRE Christophe",	"rfh35perf":"21.00",	"rfh35nom":"NTHEPE Aime",		"rfh40perf":"22.02",	"rfh40nom":"DUPUY Bruno",			"rfh45perf":"22.80",		 "rfh45nom":"DUPUY Bruno",			"rfh50perf":"23.08",	"rfh50nom":"DUPUY Bruno",			"rfh55perf":"24.22",	 "rfh55nom":"DUPUY Bruno",			"rfh60perf":"24.43",		 "rfh60nom":"CARNIER Patrice",		"rfh65perf":"26.63",		 "rfh65nom":"MARCHAND Jean-luc",	"rfh70perf":"...",		"rfh70nom":"...",'
+			
+			+ '"fg":".98",			"fg35":".50",		"fg40":"",			"fg45":"",		"fg50":"",	'
+			+ '"igor":"22.44",		"igor35":"...",		"igor40":"",		"igor45":"",		"igor50":"",	'
+			+ '"ilyas":"...",		"ilyas35":"...",	"ilyas40":"",		"ilyas45":"",		"ilyas50":"",	'
+			+ '"juliette":"...",	"juliette35":"...",	"juliette40":"",	"juliette45":"",	"juliette50":"",	'
+			+ '"olivier":"..",		"olivier35":"...",	"olivier40":"",		"olivier45":"",	"olivier50":"",	'
+			+ '"seb":"...",			"seb35":"...",		"seb40":"",			"seb45":"",		"seb50":"",	'
+			+ '"thib":"",			"thib35":"...",		"thib40":"...",		"thib45":"...",	"thib50":"",	'
+			+ '"yann":"23.98",		"yann35":"25.43",	"yann40":"25.95",	"yann45":"",		"yann50":""	'
+			+ '},'
+
+
+
+/*
+M 55  55 12/07/03 Carolina, PUR
+M 60 53.88 Ralph Romain TTO 63 22/07/95 Buffalo, USA
+M 65 56.09  65 18/05/13 Raleigh, USA
+M 70 57.26 Charles Allie USA 71 11/09/18 MÃ¡laga, ESP
+M 75 1:02.40 Guido MÃ¼eller GER 75 28/06/14 Elsenfeld, GER
+
+
+*/
+			+'{"epr" : "400",'
+				
+			+ '"wrfperf":"47.60",	"wrfnom":"KOCH Marita RDA",			"wrf35perf":"49.46",	"wrf35nom":"Allyson Felix USA",		"wrf40perf":"53.68",	"wrf40nom":"Sara Montecinos CHI",		"wrf45perf":"56.14",		 "wrf45nom":"Angela Henry-Nott USA",		"wrf50perf":"57.55",		 "wrf50nom":"Sally Cooke GBR",				"wrf55perf":"59.36",		 "wrf55nom":"Julie Brims AUS",		"wrf60perf":"1.02.34",		 "wrf60nom":"Sue McDonald USA",		"wrf65perf":"1:08.08",		 "wrf65nom":"Karla Del Grande CAN",		"wrf70perf":".73",		"wrf70nom":"...",'
+			+ '"wrhperf":"43.03",	"wrhnom":"VAN NIEKERK Wayde RSA",	"wrh35perf":"44.54",	"wrh35nom":"Christopher Brown BAH",	"wrh40perf":"47.81",	"wrh40nom":"Enrico Saraceni ITA",		"wrh45perf":"49.09",		 "wrh45nom":"Allen Woodard USA",			"wrh50perf":"50.51",		 "wrh50nom":"Juan Luis Lopez Anaya ESP",	"wrh55perf":"52.24",		 "wrh55nom":"Charles Allie USA",	"wrh60perf":"53.88",		 "wrh60nom":"Ralph Romain TTO",		"wrh65perf":"56.09",		 "wrh65nom":"Charles Allie USA",		"wrh70perf":".77",		"wrh70nom":"...",'
+			
+			+ '"rffperf":"48.25",	"rffnom":"Marie-Jo Pérec",		"rff35perf":"52.17",		"rff35nom":"HURTIS Muriel",		"rff40perf":"56.15",		"rff40nom":"AKNIN Barbara",		"rff45perf":"59.18",		 "rff45nom":"BEAUJEAN Juliette",		"rff50perf":"...",		 "rff50nom":"...",		"rff55perf":"...",		 "rff55nom":"...",		"rff60perf":"...",		 "rff60nom":"...",		"rff65perf":"...",		 "rff65nom":"...",		"rff70perf":"...",		"rff70nom":"...",'
+			+ '"rfhperf":"44.46",	"rfhnom":"Leslie Djhone",		"rfh35perf":"45.76",		"rfh35nom":"WADE Ibrahima",		"rfh40perf":"48.4",			"rfh40nom":"ROGER Hugues",		"rfh45perf":"51.1",		 "rfh45nom":"HOMBEL Damien",		"rfh50perf":"...",		 "rfh50nom":"...",		"rfh55perf":"...",		 "rfh55nom":"...",		"rfh60perf":"...",		 "rfh60nom":"...",		"rfh65perf":"...",		 "rfh65nom":"...",		"rfh70perf":"...",		"rfh70nom":"...",'
+			
+			+ '"fg":"",		"fg35":".50",			"fg40":"",		"fg45":"",		"fg50":"",	'
+			+ '"igor":"48.48",		"igor35":"49.72",		"igor40":"",		"igor45":"",		"igor50":"",	'
+			+ '"ilyas":".49",		"ilyas35":"...",		"ilyas40":"",		"ilyas45":"",		"ilyas50":"",	'
+			+ '"juliette":".49",	"juliette35":"...",	"juliette40":"",	"juliette45":"",	"juliette50":"",	'
+			+ '"olivier":"..",	"olivier35":"...",	"olivier40":"",	"olivier45":"",	"olivier50":"",	'
+			+ '"seb":".49",		"seb35":"...",		"seb40":"",		"seb45":"",		"seb50":"",	'
+			+ '"thib":"",		"thib35":"...",		"thib40":"...",		"thib45":"...",	"thib50":"",	'
+			+ '"yann":"51.20",	"yann35":"52.99",		"yann40":"54.73",		"yann45":"",		"yann50":""	'
+			+ '},'
+
+			
+			+'{"epr" : "800",'
+			+ '"wrfperf":"1.53.28",	"wrfnom":"KRATOCHVILOVA Jarmila (TCH)",		"wrf35perf":"1.56.53",		"wrf35nom":"Lyubov Gurina",		"wrf40perf":"1.59.25",	"wrf40nom":"Yekaterina Podkopayeva",	"wrf45perf":"2.02.82",		 "wrf45nom":"Yekaterina Podkopayeva",	"wrf50perf":"2.12.50",	"wrf50nom":"Eva Trost",			"wrf55perf":"2.19.63",		 "wrf55nom":"Sue McDonald",			"wrf60perf":"2.39.61",		 "wrf60nom":"Sabra Harvey",		"wrf65perf":"2.46.20",		 "wrf65nom":"KROES Annick",		"wrf70perf":"3.07.19",		"wrf70nom":"Angela Copson",'
+			+ '"wrhperf":"1.40.91",	"wrhnom":"RUDISHA",							"wrh35perf":"1.43.36",		"wrh35nom":"Johny Gray",		"wrh40perf":"1.48.05",	"wrh40nom":"Anthony Whiteman",			"wrh45perf":"1.49.86",		 "wrh45nom":"Anthony Whiteman",			"wrh50perf":"1.58.65",	"wrh50nom":"Nolan Shaheed",		"wrh55perf":"2.02.92",		 "wrh55nom":"Peter Oberlieen",		"wrh60perf":"2.08.56",		 "wrh60nom":"Nolan Shaheed",	"wrh65perf":"2.14.33",		 "wrh65nom":"Earl Fee",			"wrh70perf":"2.20.72",		"wrh70nom":"Earl Fee",'
+			
+			+ '"rffperf":"1.56.53",	"rffnom":"DJATÉ Patricia",		"rff35perf":"1.58.48 i",	"rff35nom":"YARIGO Noelie",		"rff40perf":"2.11.0",	"rff40nom":"BURLEIGH Antoinette",	"rff45perf":"2.14.73",	"rff45nom":"JAFFRELOT Anne",	"rff50perf":"2.23.2",		 "rff50nom":"DOUAY Helene",		"rff55perf":"2.32.47",		 "rff55nom":"MULALIC Carole",		"rff60perf":"2.42.52",		 "rff60nom":"LE GALLO Maryse",	"rff65perf":"2.46.20",		 "rff65nom":"KROES Annick",			"rff70perf":"rff70perf",		"rff70nom":"rff70nom",'
+			+ '"rfhperf":"1.42.53",	"rfhnom":"BOSSE Pierre Amboise","rfh35perf":"1.48.44 ",		"rfh35nom":"MAAZOUZI Driss",	"rfh40perf":"1.52.77",	"rfh40nom":"NIANG Babacar",			"rfh45perf":"1.54.47",	"rfh45nom":"ANICET Bruno",		"rfh50perf":"2.00.91",		 "rfh50nom":"RUDLOFF William",	"rfh55perf":"2.03.92",		 "rfh55nom":"Benoit Zavattero",		"rfh60perf":"2.11.67",		 "rfh60nom":"LEFAY Xavier",		"rfh65perf":"2.18.58",		 "rfh65nom":"MARIQUE Pierre-jean",	"rfh70perf":"rfh70perf",		"rfh70nom":"rfh70nom",'
+			
+			+ '"fg":"2.03.39 (i)",		"fg35":"",				"fg40":"",			"fg45":"",			"fg50":"",	'
+			+ '"igor":"1.49.82",		"igor35":"1.54.42",		"igor40":"1.55.61",	"igor45":"",		"igor50":"",	'
+			+ '"ilyas":"",				"ilyas35":"",			"ilyas40":"",		"ilyas45":"",		"ilyas50":"",	'
+			+ '"juliette":"2.25.16 i",	"juliette35":"",		"juliette40":"",	"juliette45":"",	"juliette50":"",	'
+			+ '"olivier":"...",			"olivier35":"",			"olivier40":"",		"olivier45":"",		"olivier50":"",	'
+			+ '"seb":"1.58.77",			"seb35":"",				"seb40":"",			"seb45":"",			"seb50":"",	'
+			+ '"thib":"1.56.26",		"thib35":"1.58.64",		"thib40":"",		"thib45":"",		"thib50":"",	'
+			+ '"yann":"1.54.97",		"yann35":"1.57.14",		"yann40":"1.59.99",	"yann45":"2.07.28",	"yann50":""	'
+			+ '},'
+
+
+
+
+			+'{"epr" : "1500",'
+			+ '"wrfperf":"3:49.11",	"wrfnom":"Faith KIPYEGON KEN",			"wrf35perf":"3:57.73",	"wrf35nom":"Maricica Puica ROU",	"wrf40perf":"3:59.78",	"wrf40nom":"Yekaterina Podkopayeva URS",	"wrf45perf":"4:05.44",		 "wrf45nom":"Yekaterina Podkopayeva URS",	"wrf50perf":"4:35.40",		 "wrf50nom":"Nicole Weijling-Dissel NED",	"wrf55perf":"4:41.46",		 "wrf55nom":"Anne Gilshinan IRL",		"wrf60perf":"5:04.27",		 "wrf60nom":"Sue McDonald USA",		"wrf65perf":"5:25.65",	 "wrf65nom":"Kathryn Martin USA",		"wrf70perf":".73",		"wrf70nom":"...",'
+			+ '"wrhperf":"3.26.00",	"wrhnom":"Hicham EL GUERROUJ MAR",		"wrh35perf":"3.32.51",	"wrh35nom":"Bernard Lagat USA",		"wrh40perf":"3.41.87",		"wrh40nom":"Bernard Lagat USA",			"wrh45perf":"3:48.72",		 "wrh45nom":"Anthony Whiteman GBR",			"wrh50perf":"3.58.26",		 "wrh50nom":"David Heath GBR",				"wrh55perf":"4:12.35",		 "wrh55nom":"Keith Bateman AUS",		"wrh60perf":"4:24.00",		 "wrh60nom":"Nolan Shaheed USA",	"wrh65perf":"4.39.87",	"wrh65nom":"Simon Herlaar NED",			"wrh70perf":".77",		"wrh70nom":"...",'
+
+			+ '"rffperf":"3.59.76",	"rffnom":"DEHIBA CHAHYD Hind",			"rff35perf":"4.09.45",	"rff35nom":"ESSAROKH Latifa",		"rff40perf":"4.21.96",	"rff40nom":"BARDELLE Christine",		"rff45perf":"4.29.98",		 "rff45nom":"LEVEQUE Nicole",		"rff50perf":"4.42.80",		 "rff50nom":"DUCRET-BITZNER Blandine",		"rff55perf":"...",		 "rff55nom":"...",		"rff60perf":"...",		 "rff60nom":"...",		"rff65perf":"5.49.47",		 "rff65nom":"KROES Annick",		"rff70perf":"...",		"rff70nom":"...",'
+			+ '"rfhperf":"3.28.98",	"rfhnom":"BAALA Mehdi",					"rfh35perf":"3.35.43",	"rfh35nom":"MAAZOUZI Driss",		"rfh40perf":"3.51.26",	"rfh40nom":"GONZALEZ Alexandre",		"rfh45perf":"3.56.29",		 "rfh45nom":"CADET Jean-marie",		"rfh50perf":"4.08.38",		 "rfh50nom":"FAUCHEUR Pierre",		"rfh55perf":"4.20.52",		 "rfh55nom":"EL YAMANI Mohammed",		"rfh60perf":"...",		 "rfh60nom":"...",		"rfh65perf":"...",		 "rfh65nom":"...",		"rfh70perf":"...",		"rfh70nom":"...",'
+			
+			+ '"fg":"3.48.73",		"fg35":"",			"fg40":"4.02.55",		"fg45":"4.07.81",		"fg50":"4.33.21",	'
+			+ '"igor":"3.57.25",	"igor35":"...",			"igor40":"",		"igor45":"",		"igor50":"",	'
+			+ '"ilyas":"4.29.24",	"ilyas35":"...",		"ilyas40":"",		"ilyas45":"",		"ilyas50":"",	'
+			+ '"juliette":"4.42.84 i",	"juliette35":"",		"juliette40":"",	"juliette45":"",	"juliette50":"",	'
+			+ '"olivier":"4.07.75",	"olivier35":"...",		"olivier40":"",	"olivier45":"",	"olivier50":"",	'
+			+ '"seb":".49",			"seb35":"...",			"seb40":"",		"seb45":"",		"seb50":"",	'
+			+ '"thib":"2.53.90",	"thib35":"4.02.16",		"thib40":"...",		"thib45":"...",	"thib50":"",	'
+			+ '"yann":"4.03.45",	"yann35":"4.03.45",		"yann40":"4.19.42",		"yann45":"",		"yann50":""	'
+			+ '},'
+			/* 
+			+'{"epr" : "00",'
+			+ '"wrfperf":"...",	"wrfnom":"...",		"wrf35perf":"...",	"wrf35nom":"...",		"wrf40perf":"...",	"wrf40nom":"...",		"wrf45perf":".34",		 "wrf45nom":"...",		"wrf50perf":"...",		 "wrf50nom":"...",		"wrf55perf":".24",		 "wrf55nom":"...",		"wrf60perf":".20",		 "wrf60nom":"...",		"wrf65perf":".91",		 "wrf65nom":"...",		"wrf70perf":".73",		"wrf70nom":"...",'
+			+ '"wrhperf":"...",	"wrhnom":"...",	"wrh35perf":"...",		"wrh35nom":"...",		"wrh40perf":"...",		"wrh40nom":"...",		"wrh45perf":".72",		 "wrh45nom":"...",			"wrh50perf":".88",		 "wrh50nom":"...",			"wrh55perf":".30",		 "wrh55nom":"...",		"wrh60perf":".70",		 "wrh60nom":"...",		"wrh65perf":".31",		 "wrh65nom":"...",			"wrh70perf":".77",		"wrh70nom":"...",'
+			
+			+ '"rffperf":".73",	"rffnom":"...",		"rff35perf":"...",		"rff35nom":"rff35nom",		"rff40perf":"rff40perf",	"rff40nom":"rff40pnom",		"rff45perf":"...",		 "rff45nom":"...",		"rff50perf":"...",		 "rff50nom":"...",		"rff55perf":"...",		 "rff55nom":"...",		"rff60perf":"...",		 "rff60nom":"...",		"rff65perf":"...",		 "rff65nom":"...",		"rff70perf":"...",		"rff70nom":"...",'
+			+ '"rfhperf":"9.86",	"rfhnom":"...",		"rfh35perf":"...",	"rfh35nom":"rf 35 nom",		"rfh40perf":".79",		"rfh40nom":"...",		"rfh45perf":"...",		 "rfh45nom":"...",		"rfh50perf":"...",		 "rfh50nom":"...",		"rfh55perf":"...",		 "rfh55nom":"...",		"rfh60perf":"...",		 "rfh60nom":"...",		"rfh65perf":"...",		 "rfh65nom":"...",		"rfh70perf":"...",		"rfh70nom":"...",'
+			
+			+ '"fg":".98",		"fg35":".50",			"fg40":"",		"fg45":"",		"fg50":"",	'
+			+ '"igor":".49",		"igor35":"...",		"igor40":"",		"igor45":"",		"igor50":"",	'
+			+ '"ilyas":".49",		"ilyas35":"...",		"ilyas40":"",		"ilyas45":"",		"ilyas50":"",	'
+			+ '"juliette":".49",	"juliette35":"...",	"juliette40":"",	"juliette45":"",	"juliette50":"",	'
+			+ '"olivier":"4.07.75",	"olivier35":"...",	"olivier40":"",	"olivier45":"",	"olivier50":"",	'
+			+ '"seb":".49",		"seb35":"...",		"seb40":"",		"seb45":"",		"seb50":"",	'
+			+ '"thib":"",		"thib35":"...",		"thib40":"...",		"thib45":"...",	"thib50":"",	'
+			+ '"yann":"...",	"yann35":"...",		"yann40":"",		"yann45":"",		"yann50":""	'
+			+ '},'
+
+			 */			
+			 
+	
+			+'{"epr" : "3000",'
+			+ '"wrfperf":"8.06.11",	"wrfnom":"WANG Junxia CHN",		"wrf35perf":"8:27.83",	"wrf35nom":"Maricica Puica ROM",	"wrf40perf":"9.03.40 Nuria",	"wrf40nom":"Fernandez Dominguez ESP",	"wrf45perf":"9:17.27",		 "wrf45nom":"Yekaterina Podkopayeva URS",		"wrf50perf":"9:47.20",		 "wrf50nom":"Gitte Karlshoj DEN",			"wrf55perf":"10:03.90",		 "wrf55nom":"Silke Schmidt GER",		"wrf60perf":"10:28.94",		 "wrf60nom":"Silke Schmidt GER",		"wrf65perf":"11:42.8h",		 "wrf65nom":"Kathryn Martin USA",	"wrf70perf":"12:13.12",		"wrf70nom":"Angela Copson GBR",'
+			+ '"wrhperf":"7.20.67",	"wrhnom":"KOMEN Daniel KEN",	"wrh35perf":"7:29.00",	"wrh35nom":"Bernard Lagat USA",		"wrh40perf":"7.42.75",			"wrh40nom":"Bernard Lagat USA",			"wrh45perf":"8.15.58",		 "wrh45nom":"Vyacheslav Shavunin RUS",			"wrh50perf":"8:37.94",		 "wrh50nom":"Antoni Bernado Planas AND",	"wrh55perf":"8:56.80",		 "wrh55nom":"Keith Bateman AUS",		"wrh60perf":"9:21.38",		 "wrh60nom":"Yoshitsugu Iwanaga JPN",	"wrh65perf":"9:47.4",		 "wrh65nom":"Derek Turnbull NZL",	"wrh70perf":"10:40.56",		"wrh70nom":"John Bermingham AUS",'
+															
+			+ '"rffperf":"8.35.41",	"rffnom":"GHEZIELLE Bouchra",	"rff35perf":"9.02.16",	"rff35nom":"DAUNAY Christelle",		"rff40perf":"9.14.72",		"rff40nom":"LEVEQUE Nicole",		"rff45perf":"9.34.09",		 "rff45nom":"LEVEQUE Nicole",		"rff50perf":"10.06.56",		 "rff50nom":"DUCRET-BITZNER Blandine",		"rff55perf":"10.22.59",		 "rff55nom":"ROBINE Martine",		"rff60perf":"...",		 "rff60nom":"...",		"rff65perf":"...",		 "rff65nom":"...",		"rff70perf":"...",		"rff70nom":"...",'
+			+ '"rfhperf":"7.30.78",	"rfhnom":"ESSAID Mustapha",		"rfh35perf":"7.38.28",	"rfh35nom":"BEHAR Abdellah",		"rfh40perf":"8.12.33",		"rfh40nom":"SIMON Michael",			"rfh45perf":"8.25.31",		 "rfh45nom":"LETELLIER Loic",		"rfh50perf":"8.41.2",		 "rfh50nom":"GEFFRAY Christian",			"rfh55perf":"9.06.46",		 "rfh55nom":"EL YAMANI Mohammed",	"rfh60perf":"...",		 "rfh60nom":"...",		"rfh65perf":"...",		 "rfh65nom":"...",		"rfh70perf":"...",		"rfh70nom":"...",'
+			
+			+ '"fg":"8.28.03",				"fg35":".50",			"fg40":"",		"fg45":"",		"fg50":"",	'
+			+ '"igor":"9.06.16",			"igor35":"...",		"igor40":"",		"igor45":"",		"igor50":"",	'
+			+ '"ilyas":"9.20.63",			"ilyas35":"...",		"ilyas40":"",		"ilyas45":"",		"ilyas50":"",	'
+			+ '"juliette":"10.06.72",	"juliette35":"...",	"juliette40":"",	"juliette45":"",	"juliette50":"",	'
+			+ '"olivier":"8.52.03",		"olivier35":"...",	"olivier40":"",	"olivier45":"",	"olivier50":"",	'
+			+ '"seb":"8.45.33",				"seb35":"...",		"seb40":"",		"seb45":"",		"seb50":"",	'
+			+ '"thib":"9.01.51",		"thib35":"...",		"thib40":"...",		"thib45":"...",	"thib50":"",	'
+			+ '"yann":"9.02.32",		"yann35":"9.20",		"yann40":"",		"yann45":"",		"yann50":""	'
+			+ '},'
+/*
+ 5000m
+ W 40  40 05/06/14 Rome, ITA
+ W 45 15:55.71 Nicole Leveque FRA 45 01/06/96 Angers, FRA
+ W 50 16:51.17 Gitte Karlshï¿½j DEN 50 23/06/09 Aarhus, DEN
+ W 55 17:29.28 Silke Schmidt GER 55 27/06/15 Eindhoven, NED
+ W 60 17:59.16 Silke Schmidt GER 60 07/08/19 Wageningen, NED
+ W 65 20:08.17 Kathryn Martin USA 65 28/10/16 Perth, AUS
+ W 70  70 25/06/17 Birmingham, GBR
+ 
+M 55 15:29.7 Keith Bateman AUS 55 05/01/11 Blacktown, AUS
+M 60 15:52.9h Stephen Moneghetti AUS 60 01/12/22 Melbourne, AUS
+M 65 16:36.59 Alastair Walker GBR 66 13/08/22 Tullamore, IRL
+M 70 18:15.53 Ron Robertson NZL 70 09/07/11 Sacramento, USA
+M 75 19:07.02 Edward Whitlock CAN 75 23/07/06 Dieppe, FRA
+M 80 20:20.01 José Vicente Rioseco LÃ³pez ESP 80 04/09/21 Pontevedra, ESP
+ */
+			+'{"epr" : "5000",'
+			+ '"wrfperf":"14.05.20",	"wrfnom":"KIPYEGON Faith KEN",		"wrf35perf":"14:33.84",	"wrf35nom":"Edith Masai KEN",		"wrf40perf":"15:04.87",	"wrf40nom":"Joanne Pavey GBR",		"wrf45perf":"15.55.71",		 "wrf45nom":"Nicole Leveque FRA",	"wrf50perf":"16:51.17",		"wrf50nom":"Gitte Karlshøj DEN",		"wrf55perf":"17.29.28",		"wrf55nom":"Silke Schmidt GER",			"wrf60perf":"17.59.28",		 "wrf60nom":"Silke Schmidt GER",			"wrf65perf":".91",		 "wrf65nom":"...",		"wrf70perf":"20:56.13",		"wrf70nom":"Angela Copson GBR",'
+			+ '"wrhperf":"12.35.36",	"wrhnom":"Joshua CHEPTEGEI KEN",	"wrh35perf":"12.53.60",	"wrh35nom":"Bernard Lagat USA",		"wrh40perf":"13.06.78",	"wrh40nom":"Bernard Lagat USA",		"wrh45perf":"14:23.6",		 "wrh45nom":"Lucien Rault",			"wrh50perf":"14:52.92",		"wrh50nom":"Sean Wade USA",				"wrh55perf":"15.29.7",		"wrh55nom":"Keith Bateman AUS",			"wrh60perf":"15.52.9",		 "wrh60nom":"Stephen Moneghetti AUS",		"wrh65perf":".31",		 "wrh65nom":"...",			"wrh70perf":".77",		"wrh70nom":"...",'
+			
+			+ '"rffperf":"14.43.90",	"rffnom":"MAURY Margaret",		"rff35perf":"15.16.01",		"rff35nom":"BARDELLE Christine",	"rff40perf":"15.51.7",	"rff40nom":"LEVEQUE Nicole",		"rff45perf":"15.55.71",		 "rff45nom":"LEVEQUE Nicole",		"rff50perf":"17.09.96",		"rff50nom":"LEVEQUE Nicole",			"rff55perf":"18.34.85",		 "rff55nom":"FRECHOU Houria",			"rff60perf":"19.54.06",		 "rff60nom":"LE GALLO Maryse",		"rff65perf":"21.11.61",		 "rff65nom":"KROES Annick",			"rff70perf":"...",		"rff70nom":"...",'
+			+ '"rfhperf":"12.56.09",	"rfhnom":"GRESSIER Jimmy",		"rfh35perf":"13.12.22",		"rfh35nom":"TAHRI Bouabdellah",		"rfh40perf":"13.43.15",	"rfh40nom":"EZZHER Mohamed",		"rfh45perf":"14:23.6",		 "rfh45nom":"Lucien Rault",			"rfh50perf":"15.13.74",		"rfh50nom":"CHAUVELIER Dominique",		"rfh55perf":"15.31.39",		 "rfh55nom":"EL YAMANI Mohammed",		"rfh60perf":"16.42.91",		 "rfh60nom":"ROUSSEL Patrick",		"rfh65perf":"17.47.48",		 "rfh65nom":"ROUSSEL Patrick",		"rfh70perf":"...",		"rfh70nom":"...",'
+			
+			+ '"fg":".",		"fg35":".50",			"fg40":"",		"fg45":"",		"fg50":"",	'
+			+ '"igor":".",		"igor35":"...",		"igor40":"",		"igor45":"",		"igor50":"",	'
+			+ '"ilyas":"15.48",		"ilyas35":"...",		"ilyas40":"",		"ilyas45":"",		"ilyas50":"",	'
+			+ '"juliette":"17.07.2",	"juliette35":"...",	"juliette40":"",	"juliette45":"",	"juliette50":"",	'
+			+ '"olivier":"15.24.06",	"olivier35":"...",	"olivier40":"",	"olivier45":"",	"olivier50":"",	'
+			+ '"seb":"14.5?",			"seb35":"...",		"seb40":"",		"seb45":"",		"seb50":"",	'
+			+ '"thib":"16.25.13",		"thib35":"...",		"thib40":"...",		"thib45":"...",	"thib50":"",	'
+			+ '"yann":"16.27",	"yann35":"...",		"yann40":"",		"yann45":"",		"yann50":""	'
+			+ '},'
+			
+			
+			+'{"epr" : "10k",'
+			+ '"wrfperf":"29.14",	"wrfnom":"Yalemzerf Yehualaw ETH",	"wrf35perf":"...",		"wrf35nom":"...",		"wrf40perf":"...",	"wrf40nom":"...",		"wrf45perf":".34",		 "wrf45nom":"...",		"wrf50perf":"...",		 "wrf50nom":"...",		"wrf55perf":".24",		 "wrf55nom":"...",		"wrf60perf":".20",		 "wrf60nom":"...",		"wrf65perf":".91",		 "wrf65nom":"...",		"wrf70perf":".73",		"wrf70nom":"...",'
+			+ '"wrhperf":"26.24",	"wrhnom":"Rhonex Kipruto KEN",		"wrh35perf":"...",		"wrh35nom":"...",		"wrh40perf":"...",		"wrh40nom":"...",		"wrh45perf":".72",		 "wrh45nom":"...",			"wrh50perf":".88",		 "wrh50nom":"...",			"wrh55perf":".30",		 "wrh55nom":"...",		"wrh60perf":".70",		 "wrh60nom":"...",		"wrh65perf":".31",		 "wrh65nom":"...",			"wrh70perf":".77",		"wrh70nom":"...",'
+			
+			+ '"rffperf":"31.15",	"rffnom":"WESTPHAL Liv",			"rff35perf":"31.48",	"rff35nom":"DAUNAY Christelle",		"rff40perf":"32.23",	"rff40nom":"DAUNAY Christelle",		"rff45perf":"32.38.54",		 "rff45nom":"LEVEQUE Nicole",		"rff50perf":"35.40",		 "rff50nom":"LEVEQUE Nicole",		"rff55perf":"37.22",		 "rff55nom":"FRECHOU Houria",		"rff60perf":"39.37",		"rff60nom":"LE GALLO Maryse",		"rff65perf":"42.19",	 "rff65nom":"LHEUREUX Gisele",		"rff70perf":"...",		"rff70nom":"...",'
+			+ '"rfhperf":"27.13",	"rfhnom":"WANDERS Julien",			"rfh35perf":"28.05",	"rfh35nom":"BEHAR Abdellah",		"rfh40perf":"29.00",	"rfh40nom":"LEVISSE Pierre",		"rfh45perf":"30.03",		 "rfh45nom":"LETELLIER Loic",		"rfh50perf":"31.35",		 "rfh50nom":"FEKIH Lahcene",		"rfh55perf":"32.05",		 "rfh55nom":"EL YAMANI Mohammed",	"rfh60perf":"33.51",		"rfh60nom":"ROUSSEL Patrick",		"rfh65perf":"35.39",	 "rfh65nom":"ROUSSEL Patrick",		"rfh70perf":"...",		"rfh70nom":"...",'
+			
+			+ '"fg":"30.48",		"fg35":"31.18",			"fg40":"31.18",		"fg45":"33.24",		"fg50":"",	'
+			+ '"igor":"33.29",		"igor35":"33.29",		"igor40":"34.02",		"igor45":"",		"igor50":"",	'
+			+ '"ilyas":"33",		"ilyas35":"...",		"ilyas40":"",		"ilyas45":"",		"ilyas50":"",	'
+			+ '"juliette":"36.23",	"juliette35":"...",	"juliette40":"",	"juliette45":"",	"juliette50":"",	'
+			+ '"olivier":"32",		"olivier35":"...",	"olivier40":"",	"olivier45":"",	"olivier50":"",	'
+			+ '"seb":"32",			"seb35":"...",		"seb40":"",		"seb45":"",		"seb50":"",	'
+			+ '"thib":"32.33",		"thib35":"",		"thib40":"",		"thib45":"",	"thib50":"",	'
+			+ '"yann":"33.32",		"yann35":"33.32",		"yann40":"34.56",		"yann45":"35.19",		"yann50":""	'
+			+ '},'
+			
+			+'{"epr" : "Marathon",'
+			+ '"wrfperf":"2h11.53",	"wrfnom":"Tigist Assefa ETH",		"wrf35perf":"2h19.19",	"wrf35nom":"Irina Mikitenko",		"wrf40perf":"2h22.27",	"wrf40nom":"Mariya Konovalova",	"wrf45perf":"2h29.09",	"wrf45nom":"Tatyana Pozdnyakova UKR",	"wrf50perf":"2h31.05",	"wrf50nom":"Tatyana Pozdnyakova",	"wrf55perf":"2h48.06 ",		 "wrf55nom":"Krisha Stanton AUS",		"wrf60perf":"2h52.13",		 "wrf60nom":"Mariko Yugeta JPN",	"wrf65perf":"3h07.51",		 "wrf65nom":"Kimi Ushiroda",		"wrf70perf":"3h35.29",		"wrf70nom":"Helga Miketta",'
+			+ '"wrhperf":"2h00.35",	"wrhnom":"Kelvin Kiptum KEN",		"wrh35perf":"2h01.09",	"wrh35nom":"Eliud Kipchoge",		"wrh40perf":"2h06.25",	"wrh40nom":"Ayad Lamdassem",	"wrh45perf":"2h14",		"wrh45nom":"Bernard Lagat USA",			"wrh50perf":"2h19.29",	"wrh50nom":"Titus Mamabolo RSA",	"wrh55perf":"2h25:56",		 "wrh55nom":"Piet van Alphen NED",		"wrh60perf":"2h36:30",		 "wrh60nom":"Yoshihisa Hosaka JPN",	"wrh65perf":"2h41:57",		 "wrh65nom":"Derek Turnbull NZL",	"wrh70perf":"2h54:19",		"wrh70nom":"Joseph Schoonbroodt NED",'
+			
+			+ '"rffperf":"2h24.22",	"rffnom":"DAUNAY Christelle",		"rff35perf":"2h24.22",	"rff35nom":"DAUNAY Christelle",		"rff40perf":"2h26.57",	"rff40nom":"DAUNAY Christelle",	"rff45perf":"2h36.52",	"rff45nom":"LEVEQUE Nicole",			"rff50perf":"2h51.48",	 "rff50nom":"VASSEUR Nathalie",		"rff55perf":"2h57.47",		 "rff55nom":"CHORIN Joelle",			"rff60perf":"3h02.50",		 "rff60nom":"MARCHADIER Claudine",	"rff65perf":"3h27.55",		 "rff65nom":"ARNAUD Marie-helene",		"rff70perf":"rff70perf",		"rff70nom":"rff70nom",'
+			+ '"rfhperf":"2h05.22",	"rfhnom":"AMDOUNI Morhad",			"rfh35perf":"2h07.30",	"rfh35nom":"TAMBWE NGOLE Patrick",	"rfh40perf":"2h10.32",	"rfh40nom":"EZZHER Mohamed",	"rfh45perf":"2h21.48",	"rfh45nom":"ZIMMERMANN Eric",			"rfh50perf":"2h26.36",	 "rfh50nom":"EL YAMANI Mohammed",	"rfh55perf":"2h26.57",		 "rfh55nom":"EL YAMANI Mohammed",		"rfh60perf":"2h41.11",		 "rfh60nom":"TABARANT Yves",		"rfh65perf":"2h44.30",		 "rfh65nom":"ROUSSEL Patrick",			"rfh70perf":"rfh70perf",		"rfh70nom":"rfh70nom",'
+			
+			+ '"fg":"2h30.27",		"fg35":"",				"fg40":"",		"fg45":"",			"fg50":"",	'
+			+ '"igor":"",			"igor35":"",			"igor40":"",		"igor45":"",		"igor50":"",	'
+			+ '"ilyas":"2h59.31",	"ilyas35":"",			"ilyas40":"",		"ilyas45":"",		"ilyas50":"",	'
+			+ '"juliette":"",		"juliette35":"",		"juliette40":"",	"juliette45":"",	"juliette50":"",	'
+			+ '"olivier":"",		"olivier35":"...",		"olivier40":"",	"olivier45":"",		"olivier50":"",	'
+			+ '"seb":"2h40.37",		"seb35":"...",			"seb40":"",		"seb45":"",			"seb50":"",	'
+			+ '"thib":"2h48.01",	"thib35":"2h48.01",		"thib40":"",		"thib45":"",		"thib50":"",	'
+			+ '"yann":"2h49.54",	"yann35":"",			"yann40":"2h49.54",	"yann45":"",		"yann50":""	'
+			+ '}'
+		
+			+']';
+			// console.log(json);
+		
+		// convert string to JSON
+		data = $.parseJSON(json);
+		
+		$(function() {
+			$.each(data, function(i, item) {
+				var $tr = $('<tr>').append(
+					$('<td>').text(item.epr),
+		
+					$('<td>').text(item.wrfperf),	$('<td>').text(item.wrfnom),	$('<td>').text(item.wrf35perf),	$('<td>').text(item.wrf35nom),
+					$('<td>').text(item.wrf40perf),	$('<td>').text(item.wrf40nom),	$('<td>').text(item.wrf45perf),	$('<td>').text(item.wrf45nom),
+					$('<td>').text(item.wrf50perf),	$('<td>').text(item.wrf50nom),	$('<td>').text(item.wrf55perf),	$('<td>').text(item.wrf55nom),
+					$('<td>').text(item.wrf60perf),	$('<td>').text(item.wrf60perf),	$('<td>').text(item.wrf65perf),	$('<td>').text(item.wrf65nom),
+		
+					$('<td>').text(item.wrhperf),	$('<td>').text(item.wrhnom),	$('<td>').text(item.wrh35perf),	$('<td>').text(item.wrh35nom),
+					$('<td>').text(item.wrh40perf),	$('<td>').text(item.wrh40nom),	$('<td>').text(item.wrh45perf),	$('<td>').text(item.wrh45nom),
+					$('<td>').text(item.wrh50perf),	$('<td>').text(item.wrh50nom),	$('<td>').text(item.wrh55perf),	$('<td>').text(item.wrh55nom),
+					$('<td>').text(item.wrh60perf),	$('<td>').text(item.wrh60nom),	$('<td>').text(item.wrh65perf),	$('<td>').text(item.wrh65nom),
+		
+					$('<td>').text(item.rffperf),	$('<td>').text(item.rffnom),	$('<td>').text(item.rff35perf),	$('<td>').text(item.rff35nom),
+					$('<td>').text(item.rff40perf),	$('<td>').text(item.rff40nom),	$('<td>').text(item.rff45perf),	$('<td>').text(item.rff45nom),
+					$('<td>').text(item.rff50perf),	$('<td>').text(item.rff50nom),	$('<td>').text(item.rff55perf),	$('<td>').text(item.rff55nom),
+					$('<td>').text(item.rff60perf),	$('<td>').text(item.rff60nom),	$('<td>').text(item.rff65perf),	$('<td>').text(item.rff65nom),
+		
+					$('<td>').text(item.rfhperf),	$('<td>').text(item.rfhnom),	$('<td>').text(item.rfh35perf),	$('<td>').text(item.rfh35nom),
+					$('<td>').text(item.rfh40perf),	$('<td>').text(item.rfh40nom),	$('<td>').text(item.rfh45perf),	$('<td>').text(item.rfh45nom),
+					$('<td>').text(item.rfh50perf),	$('<td>').text(item.rfh50nom),	$('<td>').text(item.rfh55perf),	$('<td>').text(item.rfh55nom),
+					$('<td>').text(item.rfh60perf),	$('<td>').text(item.rfh60nom),	$('<td>').text(item.rfh65perf),	$('<td>').text(item.rfh65nom),
+		
+					$('<td>').text(item.fg),		$('<td>').text(item.fg35),		$('<td>').text(item.fg40),		$('<td>').text(item.fg45),	$('<td>').text(item.fg50),
+					$('<td>').text(item.igor),		$('<td>').text(item.igor35),	$('<td>').text(item.igor40),    $('<td>').text(item.igor45),
+					$('<td>').text(item.ilyas),		$('<td>').text(item.ilyas35),	$('<td>').text(item.ilyas40),	$('<td>').text(item.ilyas45),
+					$('<td>').text(item.juliette),	$('<td>').text(item.juliette35),$('<td>').text(item.juliette40),
+					$('<td>').text(item.olivier),	$('<td>').text(item.olivier35),	$('<td>').text(item.olivier40),	$('<td>').text(item.olivier45),
+					$('<td>').text(item.seb),		$('<td>').text(item.seb35),		$('<td>').text(item.seb40),		$('<td>').text(item.seb45),
+					$('<td>').text(item.thib),		$('<td>').text(item.thib35),	$('<td>').text(item.thib40),
+					$('<td>').text(item.yann),		$('<td>').text(item.yann35),	$('<td>').text(item.yann40),	$('<td>').text(item.yann45)
+
+				).appendTo('#records_table');
+			});
+			
+			// par défaut on cache toute les lignes
+			$('table > tbody > tr > td').css("display","none");
+			
+			// sauf la colonne des épreuves 
+			$('table > tbody > tr > td:nth-child(1)').css("display","table-cell");
+
+			// ainsi que wrf
+			$('table > thead > tr > th:nth-child(2)').css("display","table-cell");
+			$('table > tbody > tr > td:nth-child(2)').css("display","table-cell");
+			$('table > tbody > tr > td:nth-child(3)').css("display","table-cell");
+
+			// et rfh40
+			$('table > thead > tr > th:nth-child(28)').css("display","table-cell");
+			$('table > tbody > tr > td:nth-child(54)').css("display","table-cell");
+			$('table > tbody > tr > td:nth-child(55)').css("display","table-cell");
+
+			// FG
+			// $('table > thead > tr > th:nth-child(34)').css("display","table-cell");
+			// $('table > tbody > tr > td:nth-child(66)').css("display","table-cell");
+
+			// fg35
+			// $('table > thead > tr > th:nth-child(35)').css("display","table-cell");
+			// $('table > tbody > tr > td:nth-child(67)').css("display","table-cell");
+
+			
+			// CSS
+			$('td:nth-child(1)').css('border-right', '1px solid #AAA')
+			$('td:nth-child(3)').css('border-right', '1px solid #AAA')
+			$('td:nth-child(5)').css('border-right', '1px solid #AAA')
+			$('td:nth-child(7)').css('border-right', '1px solid #AAA')
+			$('td:nth-child(9)').css('border-right', '1px solid #AAA')
+		});		
+		
+		
+		// wrf de 1-2   jusqu'Ã  15-16 (wrf65) 
+		// wrh de 17-18 jusqu'Ã  (wrh65)
+		// rff de jusqu'Ã  (rff65) 
+		// rfh de jusqu'Ã  
+		// FG	de jusqu'Ã  
+		// Igor	de 71 jusqu'Ã  
+
+		var td_wrf = 1;
+		var td_wrf35 = 3;
+		var td_wrf40 = 5;
+		var td_wrf45 = 7;
+		var td_wrf50 = 9;
+		var td_wrf55 = 11;
+		var td_wrf60 = 13;
+		var td_wrf65 = 15;
+
+		var td_wrh = 17;
+		var td_wrh35 = 19;
+		var td_wrh40 = 21
+		var td_wrh45 = 23;
+		var td_wrh50 = 25;
+		var td_wrh55 = 27;
+		var td_wrh60 = 29;
+		var td_wrh65 = 31;
+		
+		var td_rff = 33;
+		var td_rff35 = 35;
+		var td_rff40 = 37;
+		var td_rff45 = 39;
+		var td_rff50 = 41;
+		var td_rff55 = 43;
+		var td_rff60 = 45;
+		var td_rff65 = 47;
+		
+		var td_rfh = 49;
+		var td_rfh35 = 51;
+		var td_rfh40 = 53;
+		var td_rfh45 = 55;
+		var td_rfh50 = 57;
+		var td_rfh55 = 59;
+		var td_rfh60 = 61;
+		var td_rfh65 = 63;
+		
+		var td_fg = 66;
+		var td_fg35 = 67;
+		var td_fg40 = 68;
+		var td_fg45 = 69;
+		var td_fg50 = 70;
+
+		var td_igor = 71;
+		var td_igor35 = 72;
+		var td_igor40 = 73;
+		var td_igor45 = 74;
+
+		var td_ilyas = 75;
+		var td_ilyas35 = 76;
+		var td_ilyas40 = 77;
+		var td_ilyas45 = 78;
+
+		var td_juliette = 79;
+		var td_juliette35 = 80;
+		var td_juliette40 = 81;
+
+		var td_olivier = 82;
+		var td_olivier35 = 83;
+		var td_olivier40 = 84;
+		var td_olivier45 = 85;
+
+		var td_seb = 86;
+		var td_seb35 = 87;
+		var td_seb40 = 88;
+		var td_seb45 = 89;
+
+		var td_thib = 90;
+		var td_thib35 = 91;
+		var td_thib40 = 92;
+
+		var td_yann = 93;
+		var td_yann35 = 94;
+		var td_yann40 = 95;
+		var td_yann45 = 96;
+
+		
+		$('input[type="checkbox"]').click(function() {
+
+			if (this.id == 'wrf'){			numeroTD = td_wrf;}
+			else if (this.id == 'wrf35'){	numeroTD = td_wrf35;}
+			else if (this.id == 'wrf40'){	numeroTD = td_wrf40;}
+			else if (this.id == 'wrf45'){	numeroTD = td_wrf45;}
+			else if (this.id == 'wrf50'){	numeroTD = td_wrf50;}
+			else if (this.id == 'wrf55'){	numeroTD = td_wrf55;}
+			else if (this.id == 'wrf60'){	numeroTD = td_wrf60;}
+			else if (this.id == 'wrf65'){	numeroTD = td_wrf65;}
+			
+			else if (this.id == 'wrh'){	numeroTD = td_wrh;}
+			else if (this.id == 'wrh35'){	numeroTD = td_wrh35;}
+			else if (this.id == 'wrh40'){	numeroTD = td_wrh40;}
+			else if (this.id == 'wrh45'){	numeroTD = td_wrh45;}
+			else if (this.id == 'wrh50'){	numeroTD = td_wrh50;}
+			else if (this.id == 'wrh55'){	numeroTD = td_wrh55;}
+			else if (this.id == 'wrh60'){	numeroTD = td_wrh60;}
+			else if (this.id == 'wrh65'){	numeroTD = td_wrh65;}
+
+			else if (this.id == 'rff'){	numeroTD = td_rff;}
+			else if (this.id == 'rff35'){	numeroTD = td_rff35;}
+			else if (this.id == 'rff40'){	numeroTD = td_rff40;}
+			else if (this.id == 'rff45'){	numeroTD = td_rff45;}
+			else if (this.id == 'rff50'){	numeroTD = td_rff50;}
+			else if (this.id == 'rff55'){	numeroTD = td_rff55;}
+			else if (this.id == 'rff60'){	numeroTD = td_rff60;}
+			else if (this.id == 'rff65'){	numeroTD = td_rff65;}
+
+			else if (this.id == 'rfh'){	numeroTD = td_rfh;}
+			else if (this.id == 'rfh35'){	numeroTD = td_rfh35;}
+			else if (this.id == 'rfh40'){	numeroTD = td_rfh40;}
+			else if (this.id == 'rfh45'){	numeroTD = td_rfh45;}
+			else if (this.id == 'rfh50'){	numeroTD = td_rfh50;}
+			else if (this.id == 'rfh55'){	numeroTD = td_rfh55;}
+			else if (this.id == 'rfh60'){	numeroTD = td_rfh60;}
+			else if (this.id == 'rfh65'){	numeroTD = td_rfh65;}
+
+			else {
+				return showHideAthlete(this.id, $(this).is(':checked'));
+			}
+			
+			var numeroTH = (((numeroTD + 1) / 2) + 1);
+			console.log(numeroTH);
+			
+			// montrer
+			if ($(this).is(':checked')) {
+
+				$('table > thead > tr > th:nth-child(' + numeroTH  + ')').show();
+
+				$('table > tbody > tr > td:nth-child(' + (numeroTD + 1) +')').show();
+				$('table > tbody > tr > td:nth-child(' + (numeroTD + 2) + ')').show();
+			}
+			// cacher
+			else {
+				$('table > thead > tr > th:nth-child(' + numeroTH + ')').hide();
+				$('table > tbody > tr > td:nth-child(' + (numeroTD + 1 )+ ')').hide();
+				$('table > tbody > tr > td:nth-child(' + (numeroTD + 2) + ')').hide();
+			}
+		});
+		
+		function showHideAthlete(id, isChecked) {
+
+			
+			// 66 > th 34
+			var numeroTD;
+			
+			if (id == 'fg'){		numeroTD = td_fg;}
+			else if (id == 'fg35'){	numeroTD = td_fg35;}
+			else if (id == 'fg40'){	numeroTD = td_fg40;}
+			else if (id == 'fg45'){	numeroTD = td_fg45;}
+			else if (id == 'fg50'){	numeroTD = td_fg50;}
+
+			else if (id == 'igor'){		numeroTD = td_igor;}
+			else if (id == 'igor35'){	numeroTD = td_igor35;}
+			else if (id == 'igor40'){	numeroTD = td_igor40;}
+			else if (id == 'igor45'){	numeroTD = td_igor45;}
+
+			else if (id == 'ilyas'){	numeroTD = td_ilyas;}
+			else if (id == 'ilyas35'){	numeroTD = td_ilyas35;}
+			else if (id == 'ilyas40'){	numeroTD = td_ilyas40;}
+			else if (id == 'ilyas45'){	numeroTD = td_ilyas45;}
+
+			else if (id == 'juliette'){		numeroTD = td_juliette;}
+			else if (id == 'juliette35'){	numeroTD = td_juliette35;}
+			else if (id == 'juliette40'){	numeroTD = td_juliette40;}
+
+			else if (id == 'olivier'){		numeroTD = td_olivier;}
+			else if (id == 'olivier35'){	numeroTD = td_olivier35;}
+			else if (id == 'olivier40'){	numeroTD = td_olivier40;}
+			else if (id == 'olivier45'){	numeroTD = td_olivier45;}
+
+			else if (id == 'seb'){		numeroTD = td_seb;}
+			else if (id == 'seb35'){	numeroTD = td_seb35;}
+			else if (id == 'seb40'){	numeroTD = td_seb40;}
+			else if (id == 'seb45'){	numeroTD = td_seb45;}
+
+			else if (id == 'thib'){		numeroTD = td_thib;}
+			else if (id == 'thib35'){	numeroTD = td_thib35;}
+			else if (id == 'thib40'){	numeroTD = td_thib40;}
+
+
+			else if (id == 'yann'){	numeroTD = td_yann;}
+			else if (id == 'yann35'){	numeroTD = td_yann35;}
+			else if (id == 'yann40'){	numeroTD = td_yann40;}
+			else if (id == 'yann45'){	numeroTD = td_yann45;}
+
+			var numeroTH = numeroTD - 32;
+			
+			// montrer
+			if (isChecked) {
+				$('table > thead > tr > th:nth-child(' + numeroTH + ')').show();
+				$('table > tbody > tr > td:nth-child(' + numeroTD +')').show();
+			}
+			// cacher
+			else {
+				$('table > thead > tr > th:nth-child(' + numeroTH + ')').hide();
+				$('table > tbody > tr > td:nth-child(' + numeroTD + ')').hide();
+			}
+		}
+		var colonneSelectionnee1;
+		var colonneSelectionnee2;
+
+		$('th').click(function() {
+			// alert($(this).text());
+			
+			if ($(this).hasClass("selected")){
+				$(this).removeClass("selected");
+
+				// console.log($('th:not(.selected)'));
+				return;			
+			}
+			
+			var col = $(this).parent().children().index($(this));
+
+			$(this).addClass("selected");
+			$(this).css("background-color", "#DDE");
+			// $('table > tbody > tr > td').css("background-color", "#DDE");
+			
+			if ($('#selection1').text() == ''){
+				$('#selection1').text($(this).text());
+				colonneSelectionnee1 = col;
+				return;
+			}
+			$('#selection2').text($(this).text());
+			colonneSelectionnee2 = col;
+			
+			compare();
+			
+		});
+		
+		function compare() {
+			
+			// alert(colonneSelectionnee1 + ' ' + colonneSelectionnee2);
+			
+		}
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<title>Championnat de France Master</title>
+	
+	<link media="screen" rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+
+	<link rel="stylesheet" type="text/css" href="../cross/css/jquery.dataTables.min.css"/>
+ 	<link rel="stylesheet" type="text/css" href="css/checkbox.css"/>
+	
+	<style type="text/css">
+
+.row-selected, .panel-default>.panel-heading {
+	background-color: #239fcc;
+	color: white;
+}
+
+/* tr:hover { background: #acbad4 !important; }*/
+
+fieldset.scheduler-border {
+    border: 1px groove #ddd !important;
+    padding: 0 1.4em 0em 1.4em !important;
+    margin: 0 0 1.5em 0 !important;
+}
+legend.scheduler-border {
+    width:inherit; /* Or auto */
+    padding:0 10px; /* To give a bit of padding on the left and right */
+    border-bottom:none;
+}
+
+fieldset {
+    background-color: #daeaf9;
+    border-radius: 20px;
+    padding: 25px;
+    color: #3371e3;
+}
+fieldset > legend {
+    color: #3371e3;
+}
+
+th {
+    background-color: #daeaf9;
+    color: #3371e3;
+}
+th {
+    border: 1px solid #ddd;
+}
+td:nth-child(odd) {
+    border-right: 1px solid #ddd;
+}
+</style>
+</head>
+<body>
+
+
+	<article class="content">
+
+	<div class="row" style="margin-bottom:0px">
+
+		<div class="col-md-12">
+			<div class="well well-sm atih" align="center" style="color:white;background-color: #daeaf9">
+				<h2 style="color: #3371e3">Records</h2>
+			</div>
+		</div>
+
+		<!-- 
+		<div class="col-md-offset-1 col-md-3" style="margin: 0 20px">
+
+			https://world-masters-athletics.org/wp-content/uploads/2023/04/Outdoor-Women-2023-1.pdf
+
+			Liens FFA			
+			<a href="https://bases.athle.fr/asp.net/liste.aspx?frmpostback=true&frmbase=records&frmmode=1&frmespace=0&frmexploitation=actuel&frmtype=MP&frmsouscategorie=M40&frmsexe=M&frmniveau=NA">M40</a>
+			<a href="https://bases.athle.fr/asp.net/liste.aspx?frmpostback=true&frmbase=records&frmmode=1&frmespace=0&frmexploitation=actuel&frmtype=MP&frmsouscategorie=M45&frmsexe=M&frmniveau=NA">M45</a>
+			<a href="https://bases.athle.fr/asp.net/liste.aspx?frmpostback=true&frmbase=records&frmmode=1&frmespace=0&frmexploitation=actuel&frmtype=MP&frmsouscategorie=M50&frmsexe=M&frmniveau=NA">M50</a>
+			<a href="https://bases.athle.fr/asp.net/liste.aspx?frmpostback=true&frmbase=records&frmmode=1&frmespace=0&frmexploitation=actuel&frmtype=MP&frmsouscategorie=M55&frmsexe=M&frmniveau=NA">M55</a>
+			<a href="https://bases.athle.fr/asp.net/liste.aspx?frmpostback=true&frmbase=records&frmmode=1&frmespace=0&frmexploitation=actuel&frmtype=MP&frmsouscategorie=M60&frmsexe=M&frmniveau=NA">M60</a>
+
+		</div>
+		 -->
+	</div>
+
+	<div class="row" style="margin-bottom:50px">
+
+
+		<div class="col-md-offset-1 col-md-10">
+		
+		
+			<fieldset class="scheduler-border">
+			    <legend class="scheduler-border">Sélection</legend>
+			  
+				<div class="col-md-2"><label class="control-label" >Records Monde</label></div>
+				<div class="col-md-5">
+					<div><span style="padding-right: 20px">Femmes</span></div>
+					<div><input type="checkbox" id="wrf" checked="checked" /><label for="wrf" style="width: 46px">absolu</label></div>					
+					<div><input type="checkbox" id="wrf35" /><label for="wrf35">35</label></div>
+					<div><input type="checkbox" id="wrf40" /><label for="wrf40">40</label></div>					
+					<div><input type="checkbox" id="wrf45"/><label for="wrf45">45</label></div>					
+					<div><input type="checkbox" id="wrf50" /><label for="wrf50">50</label></div>					
+					<div><input type="checkbox" id="wrf55" /><label for="wrf55">55</label></div>					
+					<div><input type="checkbox" id="wrf60" /><label for="wrf60">60</label></div>					
+					<div><input type="checkbox" id="wrf65" /><label for="wrf65">65</label></div>					
+				
+				</div>
+
+				<div class="col-md-5">
+					<div><span style="padding-right: 20px">Hommes</span></div>
+					<div><input type="checkbox" id="wrh"/><label for="wrh" style="width: 46px">absolu</label></div>	
+					<div><input type="checkbox" id="wrh35" /><label for="wrh35">35</label></div>					
+					<div><input type="checkbox" id="wrh40" /><label for="wrh40">40</label></div>					
+					<div><input type="checkbox" id="wrh45" /><label for="wrh45">45</label></div>					
+					<div><input type="checkbox" id="wrh50" /><label for="wrh50">50</label></div>					
+					<div><input type="checkbox" id="wrh55" /><label for="wrh55">55</label></div>					
+					<div><input type="checkbox" id="wrh60" /><label for="wrh60">60</label></div>					
+					<div><input type="checkbox" id="wrh65" /><label for="wrh65">65</label></div>					
+				</div>
+				
+				<div class="col-md-2"><label class="control-label" >Records France</label></div> 
+
+				<div class="col-md-5">
+					<div><span style="padding-right: 20px">Femmes</span></div>
+
+					<div><input type="checkbox" id="rff" /><label for="rff" style="width: 46px">absolu</label></div>
+					<div><input type="checkbox" id="rff35" /><label for="rff35">35</label></div>
+					<div><input type="checkbox" id="rff40" /><label for="rff40">40</label></div>					
+					<div><input type="checkbox" id="rff45" /><label for="rff45">45</label></div>					
+					<div><input type="checkbox" id="rff50" /><label for="rff50">50</label></div>					
+					<div><input type="checkbox" id="rff55" /><label for="rff55">55</label></div>					
+					<div><input type="checkbox" id="rff60" /><label for="rff60">60</label></div>					
+					<div><input type="checkbox" id="rff65" /><label for="rff55">65</label></div>					
+				</div>
+				 				
+				<div class="col-md-5">
+					<div><span style="padding-right: 20px">Hommes</span></div>
+					<div><input type="checkbox" id="rfh"/><label for="rfh" style="width: 46px">absolu</label></div>		
+					<div><input type="checkbox" id="rfh35"  /><label for="rfh35">35</label></div>					
+					<div><input type="checkbox" id="rfh40"  checked="checked"/><label for="rfh40">40</label></div>					
+					<div><input type="checkbox" id="rfh45" /><label for="rfh45">45</label></div>					
+					<div><input type="checkbox" id="rfh50" /><label for="rfh50">50</label></div>					
+					<div><input type="checkbox" id="rfh55" /><label for="rfh55">55</label></div>					
+					<div><input type="checkbox" id="rfh60"  /><label for="rfh60">60</label></div>					
+					<div><input type="checkbox" id="rfh65"  /><label for="rfh65">65</label></div>					
+				</div>					
+
+				<div class="col-md-2"><label class="control-label">Athlètes</label></div> 				
+				<div class="col-md-4">
+					<div class="row">
+						<div class="col-md-2"><span style="padding-right: 20px">FG</span></div>
+						<div class="col-md-10">
+							<div><input type="checkbox" id="fg"/><label for="fg" style="width: 46px">absolu</label></div>	
+							<div><input type="checkbox" id="fg35" name="fg35" /><label for="fg35">35</label></div>					
+							<div><input type="checkbox" id="fg40" name="fg40" /><label for="fg40">40</label></div>					
+							<div><input type="checkbox" id="fg45" name="fg45" /><label for="fg45">45</label></div>					
+							<div><input type="checkbox" id="fg50" name="fg50" /><label for="fg50">50</label></div>					
+						</div>
+
+						<div class="col-md-2"><span style="padding-right: 20px">Igor</span></div>
+						<div class="col-md-10">
+							<div><input type="checkbox" id="igor"/><label for="igor" style="width: 46px">absolu</label></div>	
+							<div><input type="checkbox" id="igor35" name="igor35" /><label for="igor35">35</label></div>					
+							<div><input type="checkbox" id="igor40" name="igor40" /><label for="igor40">40</label></div>					
+							<div><input type="checkbox" id="igor45" name="igor45" disabled="disabled"/><label for="igor45">45</label></div>					
+						</div>
+					
+						<div class="col-md-2"><span style="padding-right: 20px">Ilyas</span></div>
+						<div class="col-md-10">
+							<div><input type="checkbox" id="ilyas"/><label for="ilyas" style="width: 46px">absolu</label></div>
+							<div><input type="checkbox" id="ilyas35" name="ilyas35" /><label for="ilyas35">35</label></div>
+							<div><input type="checkbox" id="ilyas40" name="ilyas40" /><label for="ilyas40">40</label></div>					
+							<div><input type="checkbox" id="ilyas45" name="ilyas45" disabled="disabled"/><label for="ilyas45">45</label></div>					
+						</div>
+					</div>
+				</div>
+
+
+				<div class="col-md-4">
+					
+					<div class="row">
+				
+						<div class="col-md-2"><span style="padding-right: 20px">Juliette</span></div>
+						<div class="col-md-10">
+							<div><input type="checkbox" id="juliette"/><label for="juliette" style="width: 46px">absolu</label></div>	
+							<div><input type="checkbox" id="juliette35" name="juliette35" /><label for="juliette35">35</label></div>					
+							<div><input type="checkbox" id="juliette40" name="juliette40" disabled="disabled" /><label for="juliette40">40</label></div>					
+						</div>
+						<div class="col-md-2"><span style="padding-right: 20px">Thibaud</span></div>
+						<div class="col-md-10">
+							<div><input type="checkbox" id="thib"/><label for="thib" style="width: 46px">absolu</label></div>								
+							<div><input type="checkbox" id="thibaud35" name="thibaud35" /><label for="thibaud35">35</label></div>					
+							<div><input type="checkbox" id="thibaud40" name="thibaud40" disabled="disabled" /><label for="thibaud40">40</label></div>					
+						</div>
+						<div class="col-md-2"><span style="padding-right: 20px">Yann</span></div>
+						<div class="col-md-10">
+							<div><input type="checkbox" id="yann"/><label for="yann" style="width: 46px">absolu</label></div>	
+							<div><input type="checkbox" id="yann35" name="yann35" /><label for="yann35">35</label></div>					
+							<div><input type="checkbox" id="yann40" name="yann40" /><label for="yann40">40</label></div>			
+							<div><input type="checkbox" id="yann45" name="yann45" /><label for="yann45">45</label></div>
+						</div>
+					</div>					
+				</div>
+			</fieldset>
+			
+			
+		</div>		
+		<div class="col-md-12">
+		
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<table id="records_table" class="display table table-striped">
+					<thead>
+						<tr>
+							<th colspan="1" style="text-align: center;"></th>
+
+							<th colspan="2" style="text-align: center;">WR Femmes</th>
+							<th colspan="2" style="text-align: center; display: none;">WR Femmes 35</th>
+							<th colspan="2" style="text-align: center; display: none;">WR Femmes 40</th>
+							<th colspan="2" style="text-align: center; display: none;">WR Femmes 45</th>
+							<th colspan="2" style="text-align: center; display: none;">WR Femmes 50</th>
+							<th colspan="2" style="text-align: center; display: none;">WR Femmes 55</th>
+							<th colspan="2" style="text-align: center; display: none;">WR Femmes 60</th>
+							<th colspan="2" style="text-align: center; display: none;">WR Femmes 65</th>
+
+							<th colspan="2" style="text-align: center; display: none;">WR Hommes</th>
+							<th colspan="2" style="text-align: center; display: none;">WR Hommes 35</th>
+							<th colspan="2" style="text-align: center; display: none;">WR Hommes 40</th>
+							<th colspan="2" style="text-align: center; display: none;">WR Hommes 45</th>
+							<th colspan="2" style="text-align: center; display: none;">WR Hommes 50</th>
+							<th colspan="2" style="text-align: center; display: none;">WR Hommes 55</th>
+							<th colspan="2" style="text-align: center; display: none;">WR Hommes 60</th>
+							<th colspan="2" style="text-align: center; display: none;">WR Hommes 65</th>
+
+							<th colspan="2" style="text-align: center; display: none;">RF Femmes</th>
+							<th colspan="2" style="text-align: center; display: none;">RF Femmes 35</th>
+							<th colspan="2" style="text-align: center; display: none;">RF Femmes 40</th>
+							<th colspan="2" style="text-align: center; display: none;">RF Femmes 45</th>
+							<th colspan="2" style="text-align: center; display: none;">RF Femmes 50</th>
+							<th colspan="2" style="text-align: center; display: none;">RF Femmes 55</th>
+							<th colspan="2" style="text-align: center; display: none;">RF Femmes 60</th>
+							<th colspan="2" style="text-align: center; display: none;">RF Femmes 65</th>
+
+							<th colspan="2" style="text-align: center; display: none;">RF Hommes</th>
+							<th colspan="2" style="text-align: center; display: none;">RF Hommes 35</th>
+							<th colspan="2" style="text-align: center;">RF Hommes 40</th>
+							<th colspan="2" style="text-align: center; display: none;">RF Hommes 45</th>
+							<th colspan="2" style="text-align: center; display: none;">RF Hommes 50</th>
+							<th colspan="2" style="text-align: center; display: none;">RF Hommes 55</th>
+							<th colspan="2" style="text-align: center; display: none;">RF Hommes 60</th>
+							<th colspan="2" style="text-align: center; display: none;">RF Hommes 65</th>
+
+							<th colspan="2" style="text-align: center; display: none;">FG</th>
+						</tr>
+					</thead>		
+					<tbody>
+						
+<!-- 						wrf				WRH			 rff		RFH		Athlètes-->
+					</tbody>		
+		
+		
+		
+				</table>
+			</div>
+		</div>
+
+
+		<div class="col-md-1"></div>
+
+
+
+	</div>
+	</div>
+
+	</article>
+
+	<script type="text/javascript" src="../cross/js/jquery-3.3.1.js"></script>
+	
+
+	<script type="text/javascript" class="init">
+	
+		// insert data
+		
+		
+		var json = '['
+			+'{"epr" : "100",'
+			+ '"wrfperf":"10.49",	"wrfnom":"Joyner",		"wrf35perf":"10.70",	"wrf35nom":"Shelly-Ann Fraser-Pryce",		"wrf40perf":"11.34",	"wrf40nom":"Merlene Ottey",		"wrf45perf":"11.34",		 "wrf45nom":"Merlene Ottey",		"wrf50perf":"11.67",		 "wrf50nom":"Merlene Ottey",		"wrf55perf":"12.24",		 "wrf55nom":"Julie Brims",		"wrf60perf":"13.20",		 "wrf60nom":"Nicole Alexis",		"wrf65perf":"13.91",		 "wrf65nom":"Karla Del Grande",		"wrf70perf":"14.73",		"wrf70nom":"Ingnrid Meier",'
+			+ '"wrhperf":"9.58",	"wrhnom":"Usain Bolt",	"wrh35perf":"9.87",		"wrh35nom":"Justin Gatlin",					"wrh40perf":"9.93",		"wrh40nom":"Kim Collins",		"wrh45perf":"10.72",		 "wrh45nom":"Willie Gault",			"wrh50perf":"10.88",		 "wrh50nom":"Willie Gault",			"wrh55perf":"11.30",		 "wrh55nom":"Willie Gault",		"wrh60perf":"11.70",		 "wrh60nom":"Ronald Taylor ",		"wrh65perf":"12.31",		 "wrh65nom":"Damien Leake",			"wrh70perf":"12.77",		"wrh70nom":"Robert Whilden Jr",'
+			
+			+ '"rffperf":"10.73",	"rffnom":"Arron",		"rff35perf":"...",		"rff35nom":"aaa bbbb",		"rff40perf":"...",	"rff40nom":"...",		"rff45perf":"...",		 "rff45nom":"...",		"rff50perf":"...",		 "rff50nom":"...",		"rff55perf":"...",		 "rff55nom":"...",		"rff60perf":"...",		 "rff60nom":"...",		"rff65perf":"...",		 "rff65nom":"rff65nom",		"rff70perf":"rff70perf",		"rff70nom":"rff70nom",'
+			+ '"rfhperf":"9.86",	"rfhnom":"Vicaut",		"rfh35perf":"...",		"rfh35nom":"aaa hhhh",		"rfh40perf":"10.99",		"rfh40nom":"rfh40nom",		"rfh45perf":"...",		 "rfh45nom":"...",		"rfh50perf":"...",		 "rfh50nom":"...",		"rfh55perf":"...",		 "rfh55nom":"...",		"rfh60perf":"...",		 "rfh60nom":"...",		"rfh65perf":"...",		 "rfh65nom":"...",		"rfh70perf":"...",		"rfh70nom":"...",'
+			
+			+ '"fg":"10.49",		"fg35":"11.90",			"fg40":"13",		"fg45":"14",		"fg50":"15",	'
+			+ '"igor":"10.49",		"igor35":"11.90",		"igor40":"13",		"igor45":"14",		"igor50":"15",	'
+			+ '"ilyas":"11.49",		"ilyas35":"12.90",		"ilyas40":"14",		"ilyas45":"15",		"ilyas50":"16",	'
+			+ '"thib":"10.49",		"thib35":"11.90",		"thib40":"13",		"thib45":"14",		"thib50":"15",	'
+			+ '"juliette":"10.49",	"juliette35":"11.90",	"juliette40":"13",	"juliette45":"14",	"juliette50":"15",	'
+			+ '"yann":"10.49",		"yann35":"11.90",		"yann40":"13",		"yann45":"14",		"yann50":"15"	'
+			+ '}'
+		
+			+']';
+	console.log(json);
+		
+		// convert string to JSON
+		data = $.parseJSON(json);
+		
+		$(function() {
+		    $.each(data, function(i, item) {
+		        var $tr = $('<tr>').append(
+		            $('<td>').text(item.epr),
+
+		            $('<td>').text(item.wrfperf),
+		            $('<td>').text(item.wrfnom),
+		            $('<td>').text(item.wrf35perf),
+		            $('<td>').text(item.wrf35nom),
+		            $('<td>').text(item.wrf40perf),
+		            $('<td>').text(item.wrf40nom),
+		            $('<td>').text(item.wrf45perf),
+		            $('<td>').text(item.wrf45nom),
+		            $('<td>').text(item.wrf50perf),
+		            $('<td>').text(item.wrf50nom),
+		            $('<td>').text(item.wrf55perf),
+		            $('<td>').text(item.wrf55nom),
+		            $('<td>').text(item.wrf60perf),
+		            $('<td>').text(item.wrf60perf),
+		            $('<td>').text(item.wrf65perf),
+		            $('<td>').text(item.wrf65nom),
+
+		            $('<td>').text(item.wrhperf),
+		            $('<td>').text(item.wrhnom),
+		            $('<td>').text(item.wrh35perf),
+		            $('<td>').text(item.wrh35nom),
+		            $('<td>').text(item.wrh40perf),
+		            $('<td>').text(item.wrh40nom),
+		            $('<td>').text(item.wrh45perf),
+		            $('<td>').text(item.wrh45nom),
+		            $('<td>').text(item.wrh50perf),
+		            $('<td>').text(item.wrh50nom),
+		            $('<td>').text(item.wrh55perf),
+		            $('<td>').text(item.wrh55nom),
+		            $('<td>').text(item.wrh60perf),
+		            $('<td>').text(item.wrh60perf),
+		            $('<td>').text(item.wrh65perf),
+		            $('<td>').text(item.wrh65nom),
+
+		            $('<td>').text(item.rffperf),
+		            $('<td>').text(item.rffnom),
+		            $('<td>').text(item.rff35perf),
+		            $('<td>').text(item.rff35nom),
+		            $('<td>').text(item.rff40perf),
+		            $('<td>').text(item.rff40nom),
+		            $('<td>').text(item.rff45perf),
+		            $('<td>').text(item.rff45nom),
+		            $('<td>').text(item.rff50perf),
+		            $('<td>').text(item.rff50nom),
+		            $('<td>').text(item.rff55perf),
+		            $('<td>').text(item.rff55nom),
+		            $('<td>').text(item.rff60perf),
+		            $('<td>').text(item.rff60perf),
+		            $('<td>').text(item.rff65perf),
+		            $('<td>').text(item.rff65nom),
+
+		            $('<td>').text(item.rfhperf),
+		            $('<td>').text(item.rfhnom),
+		            $('<td>').text(item.rfh35perf),
+		            $('<td>').text(item.rfh35nom),
+		            $('<td>').text(item.rfh40perf),
+		            $('<td>').text(item.rfh40nom),
+		            $('<td>').text(item.rfh45perf),
+		            $('<td>').text(item.rfh45nom),
+		            $('<td>').text(item.rfh50perf),
+		            $('<td>').text(item.rfh50nom),
+		            $('<td>').text(item.rfh55perf),
+		            $('<td>').text(item.rfh55nom),
+		            $('<td>').text(item.rfh60perf),
+		            $('<td>').text(item.rfh60perf),
+		            $('<td>').text(item.rfh65perf),
+		            $('<td>').text(item.rfh65nom),
+
+		            $('<td>').text(item.fg),
+		            $('<td>').text(item.fg35),
+		            $('<td>').text(item.fg40),
+		            $('<td>').text(item.fg45),
+		            $('<td>').text(item.fg50),
+
+		        
+		        ).appendTo('#records_table');
+		        // console.log($tr.wrap('<p>').html());
+		    });
+			
+			// par défaut on cache toute les lignes
+			$('table > tbody > tr > td').css("display","none");
+			
+			// sauf la colonne des épreuves 
+			$('table > tbody > tr > td:nth-child(1)').css("display","table-cell");
+
+			// ainsi que wrf et rfh40
+			$('table > tbody > tr > td:nth-child(2)').css("display","table-cell");
+			$('table > tbody > tr > td:nth-child(3)').css("display","table-cell");
+
+			$('table > tbody > tr > td:nth-child(79)').css("display","table-cell");
+			$('table > tbody > tr > td:nth-child(80)').css("display","table-cell");
+			
+			
+			// CSS
+			$('td:nth-child(1)').css('border-right', '1px solid #AAA')
+			$('td:nth-child(3)').css('border-right', '1px solid #AAA')
+			$('td:nth-child(5)').css('border-right', '1px solid #AAA')
+			$('td:nth-child(7)').css('border-right', '1px solid #AAA')
+			$('td:nth-child(9)').css('border-right', '1px solid #AAA')
+		});		
+		
+		
+		// wrf de 3-4   jusqu'à 18-19 (wrf65) 
+		// wrh de 20-21 jusqu'à 36-37 (wrh70)
+		// rff de 38-39 jusqu'à 54-55 (rff70) 
+		// rfh de 56-57 jusqu'à 80 
+		// FG		de jusqu'à 
+		// Igor		de jusqu'à 
+		// Ilyas	de jusqu'à 
+		// Juliette	de 
+		// Thibaud	de 
+		// Yann		de
+		var td_wrf = 1;
+		var td_wrf35 = 3;
+		var td_wrf40 = 5;
+		var td_wrf45 = 7;
+		var td_wrf50 = 9;
+		var td_wrf55 = 11;
+		var td_wrf60 = 13;
+		var td_wrf65 = 15;
+
+		var td_wrh = 17;
+		var td_wrh35 = 19;
+		var td_wrh40 = 21
+		var td_wrh45 = 23;
+		var td_wrh50 = 25;
+		var td_wrh55 = 27;
+		var td_wrh60 = 29;
+		var td_wrh65 = 31;
+		
+		var td_rff = 33;
+		var td_rff35 = 35;
+		var td_rff40 = 41;
+		var td_rff45 = 43;
+		var td_rff50 = 45;
+		var td_rff55 = 47;
+		var td_rff60 = 49;
+		var td_rff65 = 51;
+		
+		var td_rfh = 51;
+		var td_rfh40 = 53;
+		var td_rfh45 = 55;
+		var td_rfh50 = 57;
+		var td_rfh55 = 59;
+		var td_rfh60 = 61;
+		var td_rfh65 = 63;
+		
+		var td_fg = 65;
+		var td_fg35 = 67;
+		var td_fg40 = 69;
+		
+		$('input[type="checkbox"]').click(function() {
+
+			if (this.id == 'wrf'){			numeroTD = td_wrf;}
+			else if (this.id == 'wrf35'){	numeroTD = td_wrf35;}
+			else if (this.id == 'wrf40'){	numeroTD = td_wrf40;}
+			else if (this.id == 'wrf45'){	numeroTD = td_wrf45;}
+			else if (this.id == 'wrf50'){	numeroTD = td_wrf50;}
+			else if (this.id == 'wrf55'){	numeroTD = td_wrf55;}
+			else if (this.id == 'wrf60'){	numeroTD = td_wrf60;}
+			else if (this.id == 'wrf65'){	numeroTD = td_wrf65;}
+			
+			else if (this.id == 'wrh'){	numeroTD = td_wrh;}
+			else if (this.id == 'wrh35'){	numeroTD = td_wrh35;}
+			else if (this.id == 'wrh40'){	numeroTD = td_wrh40;}
+			else if (this.id == 'wrh45'){	numeroTD = td_wrh45;}
+			else if (this.id == 'wrh50'){	numeroTD = td_wrh50;}
+			else if (this.id == 'wrh55'){	numeroTD = td_wrh55;}
+			else if (this.id == 'wrh60'){	numeroTD = td_wrh60;}
+			else if (this.id == 'wrh65'){	numeroTD = td_wrf65;}
+
+			else if (this.id == 'rff'){	numeroTD = td_rff;}
+			else if (this.id == 'rff35'){	numeroTD = td_rff35;}
+			else if (this.id == 'rff40'){	numeroTD = td_rff40;}
+			else if (this.id == 'rff45'){	numeroTD = td_rff45;}
+			else if (this.id == 'rff50'){	numeroTD = td_rff50;}
+			else if (this.id == 'rff55'){	numeroTD = td_rff55;}
+			else if (this.id == 'rff60'){	numeroTD = td_rff60;}
+			else if (this.id == 'rff65'){	numeroTD = td_rff65;}
+
+			else if (this.id == 'rfh'){	numeroTD = td_rfh;}
+			else if (this.id == 'rfh35'){	numeroTD = td_rfh35;}
+			else if (this.id == 'rfh40'){	numeroTD = td_rfh40;}
+			else if (this.id == 'rfh45'){	numeroTD = td_rfh45;}
+			else if (this.id == 'rfh50'){	numeroTD = td_rfh50;}
+			else if (this.id == 'rfh55'){	numeroTD = td_rfh55;}
+			else if (this.id == 'rfh60'){	numeroTD = td_rfh60;}
+			else if (this.id == 'rfh65'){	numeroTD = td_rfh65;}
+
+			else if (this.id == 'fg'){	numeroTD = td_fg;}
+
+			else {
+				return;
+			}
+			
+			var numeroTH = (((numeroTD + 1) / 2) + 1);
+			console.log(numeroTH);
+			
+			// montrer
+			if ($(this).is(':checked')) {
+
+				$('table > thead > tr > th:nth-child(' + numeroTH  + ')').show();
+
+				$('table > tbody > tr > td:nth-child(' + (numeroTD + 1) +')').show();
+				$('table > tbody > tr > td:nth-child(' + (numeroTD + 2) + ')').show();
+			}
+			// cacher
+			else {
+				$('table > thead > tr > th:nth-child(' + numeroTH + ')').hide();
+				$('table > tbody > tr > td:nth-child(' + (numeroTD + 1 )+ ')').hide();
+				$('table > tbody > tr > td:nth-child(' + (numeroTD + 2) + ')').hide();
+			}
+		});		
+    </script>
+
+</body>
+</html>
