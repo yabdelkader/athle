@@ -216,6 +216,26 @@
 			</div>
 		</div>
 
+		<div class="col-md-3" style="margin: 0 20px">
+		
+			<div class="panel panel-default">
+				<div class="panel-heading">2024 Laval</div>
+	  				<div class="panel-body">
+					<table id="ch2024" class="display table table-striped" >
+						<thead>
+							<tr>
+								<th>Place</th>
+								<th>Nom</th>
+								<th>Chrono</th>
+								<th>Points</th>
+							</tr>
+						</thead>		
+						<tbody></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
 	</div>
 
 	</article>
@@ -513,6 +533,39 @@ $(document).ready(function() {
 	} );
 	
 	
+	
+	
+	
+	var table = $('#ch2023').DataTable( {
+	
+		paging: false,
+		bInfo :false,
+		data :
+[
+	{"place":1, "annee":2024, "cat":"50M", "chrono":"2'02''02", "nom":"", "club":"", "pts":, "dist":800},
+	{"place":2, "annee":2024, "cat":"50M", "chrono":"2'02''66", "nom":"", "club":"", "pts":, "dist":800},
+	{"place":3, "annee":2024, "cat":"50M", "chrono":"2'02''90", "nom":"", "club":"", "pts":, "dist":800},
+	{"place":4, "annee":2024, "cat":"50M", "chrono":"2'06''32", "nom":"", "club":"", "pts":, "dist":800},
+	{"place":5, "annee":2024, "cat":"50M", "chrono":"2'06''35", "nom":"", "club":"", "pts":, "dist":800},
+	{"place":6, "annee":2024, "cat":"50M", "chrono":"2'06''63", "nom":"", "club":"", "pts":, "dist":800},
+	{"place":1, "annee":2024, "cat":"50M", "chrono":"2'10''79", "nom":"", "club":"", "pts":, "dist":800}
+
+],
+
+		"lengthMenu": [ [100, 500, 1000, -1], [100, 500, 1000, "Tous"] ],
+		iDisplayLength: 100,
+		dom: 'Bfrtip',
+		select: true,
+		orderCellsTop: true,
+		
+ 		columns: [
+			{ data: "place" },
+			{ data: "nom" },
+			{ data: "chrono" },
+			{ data: "pts" }
+		],
+		fixedColumns: true
+	} );
 	
 	
 	

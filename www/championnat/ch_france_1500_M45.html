@@ -117,6 +117,9 @@
 			</div>
 		</div>
 
+	</div>
+	<div class="row" style="margin-bottom:50px">
+		<div class="col-md-1"></div>
 		<div class="col-md-3" style="margin: 0 20px">
 		
 			<div class="panel panel-default">
@@ -177,12 +180,53 @@
 			</div>
 		</div>
 
+	</div>
+	<div class="row" style="margin-bottom:50px">
+		<div class="col-md-1"></div>
 		<div class="col-md-3" style="margin: 0 20px">
 		
 			<div class="panel panel-default">
 				<div class="panel-heading">2022 Châteauroux</div>
 	  				<div class="panel-body">
 					<table id="ch2022" class="display table table-striped" >
+						<thead>
+							<tr>
+								<th>Place</th>
+								<th>Nom</th>
+								<th>Chrono</th>
+								<th>Points</th>
+							</tr>
+						</thead>		
+						<tbody></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3" style="margin: 0 20px">
+		
+			<div class="panel panel-default">
+				<div class="panel-heading">2023 Laval</div>
+	  				<div class="panel-body">
+					<table id="ch2023" class="display table table-striped" >
+						<thead>
+							<tr>
+								<th>Place</th>
+								<th>Nom</th>
+								<th>Chrono</th>
+								<th>Points</th>
+							</tr>
+						</thead>		
+						<tbody></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3" style="margin: 0 20px">
+		
+			<div class="panel panel-default">
+				<div class="panel-heading">2024 Thonon-les-Bains</div>
+	  				<div class="panel-body">
+					<table id="ch2024" class="display table table-striped" >
 						<thead>
 							<tr>
 								<th>Place</th>
@@ -456,6 +500,75 @@ $(document).ready(function() {
 	} );
 	
 	
+	var table = $('#ch2023').DataTable( {
+	
+		paging: false,
+		bInfo :false,
+		data :
+[
+	{"place":1, "annee":2023, "cat":"45M", "chrono":"4.07..48", "nom":"CADET Jean-Marie", "club":"Ac Entente Nord Saint Denis", "pts":768, "dist":1500},
+	{"place":2, "annee":2023, "cat":"45M", "chrono":"4.08..80", "nom":"LEBORGNE Cedric", "club":"Quimper Athletisme", "pts":754, "dist":1500},
+	{"place":3, "annee":2023, "cat":"45M", "chrono":"4.09..75", "nom":"CAILLERE Olivier", "club":"Eanm - S/l Ca Nord Ouest Mayen", "pts":743, "dist":1500},
+	{"place":4, "annee":2023, "cat":"45M", "chrono":"4.15..26", "nom":"BLOCK Olivier", "club":"Athle 52 - S/l Co Saint-dizier", "pts":684, "dist":1500},
+	{"place":5, "annee":2023, "cat":"45M", "chrono":"4.22..74", "nom":"CHIQUET Jerome", "club":"Uai Nogent-sur-marne", "pts":607, "dist":1500},
+	{"place":6, "annee":2023, "cat":"45M", "chrono":"4.27..00", "nom":"LATRUWE Johan", "club":"Cognac Ac", "pts":566, "dist":1500},
+	{"place":7, "annee":2023, "cat":"45M", "chrono":"4.32..20", "nom":"YOUSFI Chokri", "club":"Apc - S/l Pelican Athletisme", "pts":517, "dist":1500},
+	{"place":8, "annee":2023, "cat":"45M", "chrono":"4.32..41", "nom":"HORRILLO Emmanuel", "club":"Sa Merignac", "pts":515, "dist":1500},
+	{"place":9, "annee":2023, "cat":"45M", "chrono":"4.35..66", "nom":"ABDELKADER Yann", "club":"Ac Paris-joinville", "pts":486, "dist":1500},
+	{"place":10, "annee":2023, "cat":"45M", "chrono":"4.37..46", "nom":"LEKHAL Rachid", "club":"As Caluire Et Cuire", "pts":470, "dist":1500},
+	{"place":11, "annee":2023, "cat":"45M", "chrono":"4.38..04", "nom":"DAVOUST Franck", "club":"L2a53 - S/l Stade Lavallois", "pts":465, "dist":1500}
+],
+
+		"lengthMenu": [ [100, 500, 1000, -1], [100, 500, 1000, "Tous"] ],
+		iDisplayLength: 100,
+		dom: 'Bfrtip',
+		select: true,
+		orderCellsTop: true,
+		order: [[3, 'desc']],
+ 		columns: [
+			{ data: "place" },
+			{ data: "nom" },
+			{ data: "chrono" },
+			{ data: "pts" }
+		],
+		fixedColumns: true
+	} );
+	
+	
+	var table = $('#ch2024').DataTable( {
+	
+		paging: false,
+		bInfo :false,
+		data :
+[
+	{"place":1, "annee":2024, "cat":"45M", "chrono":"4.18..57", "nom":"LE CUN Gerald", "club":"As Cavaillon", "pts":649, "dist":1500},
+	{"place":2, "annee":2024, "cat":"45M", "chrono":"4.22.29", "nom":"FLANDRIN-THONIEL Igor", "club":"Aunis A. La Rochelle Aytre*", "pts":612, "dist":1500},
+	{"place":3, "annee":2024, "cat":"45M", "chrono":"4.23.33", "nom":"MARTIN Thomas", "club":"Athletic Club Merevillois", "pts":601, "dist":1500},
+	{"place":4, "annee":2024, "cat":"45M", "chrono":"4.24.30", "nom":"BUCCIALI Nicolas", "club":"Asad - S/l Union Montelimar Sp", "pts":592, "dist":1500},
+	{"place":5, "annee":2024, "cat":"45M", "chrono":"4.28.05", "nom":"ABDELKADER Yann", "club":"Ac Paris-Joinville*", "pts":556, "dist":1500},
+	{"place":6, "annee":2024, "cat":"45M", "chrono":"4.34.82", "nom":"MAGNIEN Christophe", "club":"Pays Haut A Reuni", "pts":493, "dist":1500},
+	{"place":7, "annee":2024, "cat":"45M", "chrono":"4.42.38", "nom":"DUBOT Anthony", "club":"Sg Hericourt", "pts":428, "dist":1500},
+	{"place":8, "annee":2024, "cat":"45M", "chrono":"4.51.69", "nom":"MORIN Clement", "club":"Les Foulees Chablaisiennes", "pts":354, "dist":1500},
+	{"place":9, "annee":2024, "cat":"45M", "chrono":"5.02.95", "nom":"JOFFE Stephane", "club":"Aea - S/l Ecole D.athletisme D", "pts":273, "dist":1500}
+
+],
+
+		"lengthMenu": [ [100, 500, 1000, -1], [100, 500, 1000, "Tous"] ],
+		iDisplayLength: 100,
+		dom: 'Bfrtip',
+		select: true,
+		orderCellsTop: true,
+		order: [[3, 'desc']],
+ 		columns: [
+			{ data: "place" },
+			{ data: "nom" },
+			{ data: "chrono" },
+			{ data: "pts" }
+		],
+		fixedColumns: true
+	} );
+	
+	
 	
 	
 	
@@ -476,6 +589,8 @@ $(document).ready(function() {
 	$('#ch2020_filter').hide();
 	$('#ch2021_filter').hide();
 	$('#ch2022_filter').hide();
+	$('#ch2023_filter').hide();
+	$('#ch2024_filter').hide();
 	
 } );
 

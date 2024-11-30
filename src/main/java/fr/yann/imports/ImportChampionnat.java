@@ -49,8 +49,11 @@ public class ImportChampionnat {
 		// urls.add("264984&frmepreuve=1+500m+%2f+40M");
 		
 		
-		// 2023 Lava
-		mapAnneeIdCompetition.put(2023, 278693);
+		// 2023 Laval
+		// mapAnneeIdCompetition.put(2023, 278693);
+		
+		// 2024 Thonon
+		mapAnneeIdCompetition.put(2024, 291388);
 		
 		
 		// List<Integer> epreuves = new ArrayList<>(Arrays. asList(800, 1500, 5000));

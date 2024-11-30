@@ -44,7 +44,7 @@
 						<label class="radio-inline"><input type="radio" name="epreuve" value="400">400</label>
 						<label class="radio-inline"><input type="radio" name="epreuve" value="800" checked="checked">800</label>
 						<label class="radio-inline"><input type="radio" name="epreuve" value="1500">1500</label>
-						<label class="radio-inline"><input type="radio" name="epreuve" value="5000">5000</label>
+						<label class="radio-inline"><input type="radio" name="epreuve" value="3000">3000</label>
 					</div>
 				</form>
 
@@ -112,6 +112,9 @@
 				</div>
 			</div>
 		</div>
+	</div>
+	<div class="row">		
+		<div class="col-md-1"></div>
 
 		<div class="col-md-3" style="margin: 0 20px">
 		
@@ -132,6 +135,7 @@
 				</div>
 			</div>
 		</div>
+
 
 		<div class="col-md-3" style="margin: 0 20px">
 		
@@ -156,19 +160,9 @@
 		<div class="col-md-3" style="margin: 0 20px">
 		
 			<div class="panel panel-default">
-				<div class="panel-heading">2021 Albi</div>
+				<div class="panel-heading">2021 Covid</div>
 	  				<div class="panel-body">
-					<table id="ch2021" class="display table table-striped" >
-						<thead>
-							<tr>
-								<th>Place</th>
-								<th>Nom</th>
-								<th>Chrono</th>
-								<th>Points</th>
-							</tr>
-						</thead>		
-						<tbody></tbody>
-					</table>
+					
 				</div>
 			</div>
 		</div>
@@ -176,7 +170,7 @@
 		<div class="col-md-3" style="margin: 0 20px">
 		
 			<div class="panel panel-default">
-				<div class="panel-heading">2022</div>
+				<div class="panel-heading">2022 Metz</div>
   				<div class="panel-body">
 					<table id="ch2022" class="display table table-striped" >
 						<thead>
@@ -193,10 +187,14 @@
 			</div>
 		</div>
 
-		<div class="col-md-10" style="margin: 0 20px">
+	</div>
+	<div class="row">
+		<div class="col-md-1"></div>
+
+		<div class="col-md-3" style="margin: 0 20px">
 		
 			<div class="panel panel-default">
-				<div class="panel-heading">2023</div>
+				<div class="panel-heading">2023 Miramas</div>
   				<div class="panel-body">
 					<table id="ch2023" class="display table table-striped" >
 						<thead>
@@ -210,13 +208,28 @@
 						<tbody></tbody>
 					</table>
 				</div>
-<pre>1		2'09''76		LE CUN Gerald		As Cavaillon			084		PCA		M45M/77		R4		580
-2		2'10''06		CHAGHIL Driss		Ca Beglais			033		N-A		M45M/76		R4		574
-3		2'10''70		MARC Sebastien		Eag 38 - S/l Grenoble Uc	038		ARA		M45M/75		R4		560
-4		2'12''64		GFELLER Samuel		Troyes Omnisports		010		G-E		M45M/77		R5		520
-5		2'13''24		HORRILLO Emmanuel	Sa Merignac			033		N-A		M45M/76		R5		508
-6		2'16''22		ABDELKADER Yann		Ac Paris-joinville*		094		I-F		M45M/77		R6		450
-7		2'18''07		PETITE Benoit (SUI)	PerForm-CBS		 	_	 			M45M/75		D1		416</pre>
+			</div>
+		</div>
+
+
+
+		<div class="col-md-3" style="margin: 0 20px">
+		
+			<div class="panel panel-default">
+				<div class="panel-heading">2023 Lyon</div>
+  				<div class="panel-body">
+					<table id="ch2024" class="display table table-striped" >
+						<thead>
+							<tr>
+								<th>Place</th>
+								<th>Nom</th>
+								<th>Chrono</th>
+								<th>Points</th>
+							</tr>
+						</thead>		
+						<tbody></tbody>
+					</table>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -360,8 +373,10 @@ $(document).ready(function() {
 [
 	
 
-	{"place":1, "annee":2020, "cat":"M45M", "chrono":"2.04.19", "nom":"GOMEZ Joel", "club":"Gps A - S/l Plm Conflans", "dep":"78", "ligue":"I-F", "naissance":72, "pts":772, "dist":800},
-	{"place":3, "annee":2020, "cat":"M45M", "chrono":"2.05.92", "nom":"RINCE Mickael", "club":"Nma - S/l Ac La Chapelle/erdre", "dep":"44", "ligue":"P-L", "naissance":72, "pts":699, "dist":800},
+	{"place":1, "annee":2020, "cat":"M45M", "chrono":"2.04.19", "nom":"GOMEZ Joel",		"club":"Gps A - S/l Plm Conflans", "dep":"78", "ligue":"I-F", "naissance":72, "pts":772, "dist":800},
+	{"place":2, "annee":2020, "cat":"M45M", "chrono":"2.05.34", "nom":"GENTEUIL Bruno",	"club":" ", "dep":" ", "ligue":" ", "naissance":0, "pts":0, "dist":800},
+	{"place":3, "annee":2020, "cat":"M45M", "chrono":"2.05.92", "nom":"RINCE Mickael",	"club":"Nma - S/l Ac La Chapelle/erdre", "dep":"44", "ligue":"P-L", "naissance":72, "pts":699, "dist":800},
+	{"place":4, "annee":2020, "cat":"M45M", "chrono":"2.06.80", "nom":"LECIGNE Sylvain",	"club":" ", "dep":" ", "ligue":" ", "naissance":0, "pts":0, "dist":800},
 
 	
 ],
@@ -385,7 +400,6 @@ $(document).ready(function() {
 		bInfo :false,
 		data :
 [
-
 ],
 
 		"lengthMenu": [ [100, 500, 1000, -1], [100, 500, 1000, "Tous"] ],
@@ -408,11 +422,11 @@ $(document).ready(function() {
 		bInfo :false,
 		data :
 [
-
-	
-	
-	
-	
+	{"place":1, "annee":2022, "cat":"M45M", "chrono":"2.03.32", "nom":"MARC Sebastien",		"pts":726, "dist":800},
+	{"place":2, "annee":2022, "cat":"M45M", "chrono":"2.03.44", "nom":"RUDLOFF William",	"pts":723, "dist":800},
+	{"place":3, "annee":2022, "cat":"M45M", "chrono":"2.03.62", "nom":"GOMEZ Joel",			"pts":719, "dist":800},	
+	{"place":4, "annee":2022, "cat":"M45M", "chrono":"2.05.63", "nom":"LECIGNE Sylvain",	"pts":672,	"dist":800},
+	{"place":5, "annee":2022, "cat":"M45M", "chrono":"2.15.83", "nom":"MOREAU Stephane",	"pts":458,	"dist":800}
 ],
 
 		"lengthMenu": [ [100, 500, 1000, -1], [100, 500, 1000, "Tous"] ],
@@ -429,8 +443,56 @@ $(document).ready(function() {
 		fixedColumns: true
 	} );
 	
+	var table = $('#ch2023').DataTable( {
+		
+		paging: false,
+		bInfo :false,
+		data :
+[
+	{"place":1, "chrono":"2.09.76", "nom":"LE CUN Gerald",		"pts":580,	"dist":800},
+	{"place":2, "chrono":"2.10.06", "nom":"CHAGHIL Driss",		"pts":574,	"dist":800},
+	{"place":3, "chrono":"2.10.70", "nom":"MARC Sebastien",		"pts":560,	"dist":800},
+	{"place":4, "chrono":"2.12.64", "nom":"GFELLER Samuel",		"pts":520,	"dist":800},
+	{"place":5, "chrono":"2.13.24", "nom":"HORRILLO Emmanuel",	"pts":508,	"dist":800},
+	{"place":6, "chrono":"2.16.22", "nom":"ABDELKADER Yann",	"pts":450,	"dist":800},
+	{"place":7, "chrono":"2.18.07", "nom":"PETITE Benoit (SUI)","pts":416, "dist":800}
+],
+
+	"lengthMenu": [ [100, 500, 1000, -1], [100, 500, 1000, "Tous"] ],
+	iDisplayLength: 100,
+	dom: 'Bfrtip',
+	select: true,
+	orderCellsTop: true,
+		columns: [
+		{ data: "place" },
+		{ data: "nom" },
+		{ data: "chrono" },
+		{ data: "pts" }
+	],
+	fixedColumns: true
+} );	
 	
-	
+	var table = $('#ch2024').DataTable( {
+		
+		paging: false,
+		bInfo :false,
+		data :
+[
+],
+
+	"lengthMenu": [ [100, 500, 1000, -1], [100, 500, 1000, "Tous"] ],
+	iDisplayLength: 100,
+	dom: 'Bfrtip',
+	select: true,
+	orderCellsTop: true,
+		columns: [
+		{ data: "place" },
+		{ data: "nom" },
+		{ data: "chrono" },
+		{ data: "pts" }
+	],
+	fixedColumns: true
+} );	
 	
 	
 	

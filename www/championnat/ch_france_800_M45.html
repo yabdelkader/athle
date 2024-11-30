@@ -114,6 +114,9 @@
 			</div>
 		</div>
 
+	</div>
+	<div class="row" style="margin-bottom:50px">
+		<div class="col-md-1"></div>
 		<div class="col-md-3" style="margin: 0 20px">
 		
 			<div class="panel panel-default">
@@ -133,7 +136,9 @@
 				</div>
 			</div>
 		</div>
-
+	
+	
+	
 		<div class="col-md-3" style="margin: 0 20px">
 		
 			<div class="panel panel-default">
@@ -173,7 +178,9 @@
 				</div>
 			</div>
 		</div>
-
+	</div>
+	<div class="row" style="margin-bottom:50px">
+		<div class="col-md-1"></div>
 		<div class="col-md-3" style="margin: 0 20px">
 		
 			<div class="panel panel-default">
@@ -200,6 +207,26 @@
 				<div class="panel-heading">2023 Laval</div>
 	  				<div class="panel-body">
 					<table id="ch2023" class="display table table-striped" >
+						<thead>
+							<tr>
+								<th>Place</th>
+								<th>Nom</th>
+								<th>Chrono</th>
+								<th>Points</th>
+							</tr>
+						</thead>		
+						<tbody></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-3" style="margin: 0 20px">
+		
+			<div class="panel panel-default">
+				<div class="panel-heading">2024 Thonon-les-Bains</div>
+	  				<div class="panel-body">
+					<table id="ch2024" class="display table table-striped" >
 						<thead>
 							<tr>
 								<th>Place</th>
@@ -516,6 +543,41 @@ $(document).ready(function() {
 		fixedColumns: true
 	} );
 	
+	// "'{"place":" & A1 & ", 'annee':2024, 'cat':'45M', 'chrono':'" & C1 & "', 'nom':'" & E1 & "', 'club':'" & G1 & "', pts':" & Q1 & ", 'dist':800},"
+	var table = $('#ch2024').DataTable( {
+	
+		paging: false,
+		bInfo :false,
+		data :
+[
+
+	{"place":1, "annee":2024, "cat":"45M", "chrono":"2.02.02", "nom":"LE CUN Gerald", "club":"As Cavaillon", "pts":712, "dist":800},
+	{"place":2, "annee":2024, "cat":"45M", "chrono":"2.02.66", "nom":"CLARENC Philip", "club":"Asvel Villeurbanne", "pts":697, "dist":800},
+	{"place":3, "annee":2024, "cat":"45M", "chrono":"2.02.90", "nom":"FLANDRIN-THONIEL Igor", "club":"Aunis A. La Rochelle Aytre*", "pts":691, "dist":800},
+	{"place":4, "annee":2024, "cat":"45M", "chrono":"2.06.32", "nom":"BUCCIALI Nicolas", "club":"Asad - S/l Union Montelimar Sp", "pts":613, "dist":800},
+	{"place":5, "annee":2024, "cat":"45M", "chrono":"2.06.35", "nom":"MARTIN Thomas",	"club":"Athletic Club Merevillois", "pts":613, "dist":800},
+	{"place":6, "annee":2024, "cat":"45M", "chrono":"2.06.63", "nom":"ABDELKADER Yann", "club":"Ac Paris-Joinville*", "pts":607, "dist":800},
+	{"place":1, "annee":2024, "cat":"45M", "chrono":"2.10.79", "nom":"LEGER Franck",	"club":"Sporting Club Athletic De Bry", "pts":519, "dist":800},
+	{"place":2, "annee":2024, "cat":"45M", "chrono":"2.12.25", "nom":"GFELLER Samuel",	"club":"Troyes Omnisports",		"pts":490, "dist":800}
+
+	
+],
+
+		"lengthMenu": [ [100, 500, 1000, -1], [100, 500, 1000, "Tous"] ],
+		iDisplayLength: 100,
+		dom: 'Bfrtip',
+		select: true,
+		orderCellsTop: true,
+		order: [[3, 'desc']],
+ 		columns: [
+			{ data: "place" },
+			{ data: "nom" },
+			{ data: "chrono" },
+			{ data: "pts" }
+		],
+		fixedColumns: true
+	} );
+	
 	
 	
 	
@@ -538,6 +600,7 @@ $(document).ready(function() {
 	$('#ch2021_filter').hide();
 	$('#ch2022_filter').hide();
 	$('#ch2023_filter').hide();
+	$('#ch2024_filter').hide();
 	
 } );
 

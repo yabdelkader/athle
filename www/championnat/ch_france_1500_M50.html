@@ -117,7 +117,10 @@
 				</div>
 			</div>
 		</div>
+	</div>
+	<div class="row" style="margin-bottom:50px">
 
+		<div class="col-md-1"></div>
 		<div class="col-md-3" style="margin: 0 20px">
 		
 			<div class="panel panel-default">
@@ -177,6 +180,10 @@
 				</div>
 			</div>
 		</div>
+	</div>
+	<div class="row" style="margin-bottom:50px">
+
+		<div class="col-md-1"></div>
 
 		<div class="col-md-3" style="margin: 0 20px">
 		
@@ -184,6 +191,46 @@
 				<div class="panel-heading">2022 Châteauroux</div>
 	  				<div class="panel-body">
 					<table id="ch2022" class="display table table-striped" >
+						<thead>
+							<tr>
+								<th>Place</th>
+								<th>Nom</th>
+								<th>Chrono</th>
+								<th>Points</th>
+							</tr>
+						</thead>		
+						<tbody></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-3" style="margin: 0 20px">
+		
+			<div class="panel panel-default">
+				<div class="panel-heading">2023 Laval</div>
+	  				<div class="panel-body">
+					<table id="ch2023" class="display table table-striped" >
+						<thead>
+							<tr>
+								<th>Place</th>
+								<th>Nom</th>
+								<th>Chrono</th>
+								<th>Points</th>
+							</tr>
+						</thead>		
+						<tbody></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-3" style="margin: 0 20px">
+		
+			<div class="panel panel-default">
+				<div class="panel-heading">2024 Thonon les Bains</div>
+	  				<div class="panel-body">
+					<table id="ch2024" class="display table table-striped" >
 						<thead>
 							<tr>
 								<th>Place</th>
@@ -434,6 +481,62 @@ $(document).ready(function() {
 	{"place":10, "annee":2022, "cat":"50M", "chrono":"4.50.97", "nom":"GASPAR Paul", "club":"Team Lenglen Athletic Club", "dep":"092", "ligue":"I-F", "naissance":71, "pts":359, "dist":1500},
 	{"place":11, "annee":2022, "cat":"50M", "chrono":"4.51.82", "nom":"BETRICHE Hocine", "club":"Athle Halluin-val-de-lys", "dep":"059", "ligue":"H-F", "naissance":71, "pts":353, "dist":1500},
 	{"place":12, "annee":2022, "cat":"50M", "chrono":"4.58.30", "nom":"PASQUIER Patrick", "club":"Entente Poitiers Athle 86", "dep":"086", "ligue":"N-A", "naissance":71, "pts":305, "dist":1500},
+
+],
+
+		"lengthMenu": [ [100, 500, 1000, -1], [100, 500, 1000, "Tous"] ],
+		iDisplayLength: 100,
+		dom: 'Bfrtip',
+		select: true,
+		orderCellsTop: true,
+		
+ 		columns: [
+			{ data: "place" },
+			{ data: "nom" },
+			{ data: "chrono" },
+			{ data: "pts" }
+		],
+		fixedColumns: true
+	} );
+	
+	var table = $('#ch2023').DataTable( {
+	
+		paging: false,
+		bInfo :false,
+		data :
+[
+
+],
+
+		"lengthMenu": [ [100, 500, 1000, -1], [100, 500, 1000, "Tous"] ],
+		iDisplayLength: 100,
+		dom: 'Bfrtip',
+		select: true,
+		orderCellsTop: true,
+		
+ 		columns: [
+			{ data: "place" },
+			{ data: "nom" },
+			{ data: "chrono" },
+			{ data: "pts" }
+		],
+		fixedColumns: true
+	} );
+	
+	var table = $('#ch2024').DataTable( {
+	
+		paging: false,
+		bInfo :false,
+		data :
+[
+
+
+	{"place":1, "annee":2024, "cat":"50M", "chrono":"4.24.06", "nom":"ROUYER Thomas", "club":"Ac 92 - S/l Antony Athletisme", "pts":594, "dist":1500},
+	{"place":2, "annee":2024, "cat":"50M", "chrono":"4.29.09", "nom":"BUISSON Antoine", "club":"Asm St-Etienne", "pts":546, "dist":1500},
+	{"place":3, "annee":2024, "cat":"50M", "chrono":"4.30.68", "nom":"CHANTIR Nordine", "club":"Sg Hericourt", "pts":531, "dist":1500},
+	{"place":4, "annee":2024, "cat":"50M", "chrono":"4.32.44", "nom":"CAILLERET David", "club":"Rc Arras*", "pts":515, "dist":1500},
+	{"place":5, "annee":2024, "cat":"50M", "chrono":"4.34.69", "nom":"BENHAMOU Michael", "club":"Us Creteil", "pts":494, "dist":1500},
+	{"place":6, "annee":2024, "cat":"50M", "chrono":"4.40.05", "nom":"MARMOEX Jean-Paul", "club":"Les Foulees Chablaisiennes", "pts":447, "dist":1500}
 
 ],
 

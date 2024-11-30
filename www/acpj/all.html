@@ -4,10 +4,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"> -->
 
-<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet"  href="../css/bootstrap.min.css" type="text/css" />
 
-<link type="text/css" href="../cross/css/jquery.dataTables.min.css">
-<link type="text/css" href="../css/fixedHeader.dataTables.min.css">
+<link rel="stylesheet" type="text/css" href="../cross/css/jquery.dataTables.min.css">
+<link rel="stylesheet" type="text/css" href="../css/fixedHeader.dataTables.min.css">
 
 	<style type="text/css">
 
@@ -60,6 +60,7 @@ footer {
 						<th>Nom</th>
 						<th>Sexe</th>
 						<th>Épreuve</th>
+						<th>Perf</th>
 						<th>Points</th>
 						<th>Niveau</th>
 						
@@ -109,7 +110,7 @@ $(document).ready(function() {
 	// var table = $('#example').removeAttr('width').DataTable( {
 	var table = $('#example').DataTable( {
 	
-	
+		order: [[4, 'desc']],
 		data :
 [
 {n:'CRANE Sabrina',c:'CA',s:'F',e:'1500',p:'5.33.86',pt:571,niv:'R3',nai:'92',a:2009,d:'03 mai'},
@@ -2006,26 +2007,26 @@ $(document).ready(function() {
 {n:'DUFLOT-GUIMPIER Lucien',s:'M',e:'200',p:'23.59 (+0.4)',pt:'720',niv:'R1',c:'JU',nai:'04',a:2023,d:'21 mai'},
 {n:'FOURNIER Timothee',s:'M',e:'Perche',p:'3m80',pt:'674',niv:'R2',c:'JU',nai:'05',a:2023,d:'21 mai'},
 {n:'NDEKE Rayan',s:'M',e:'200',p:'22.07 (-0.8)',pt:'916',niv:'N4',c:'JU',nai:'04',a:2023,d:'21 mai'},
-{n:'RAFFOUX Jules',s:'M',e:'3000m Steeple (91)',p:'10.57.61',pt:'566',niv:'R4',c:'JU',nai:'04',a:2023,d:'21 mai'},
-{n:'SOFFIATI Thibaud',s:'M',e:'1 500',p:'4.06.75',pt:'777',niv:'IR3',c:'MA',nai:'85',a:2023,d:'21 mai'},
+{n:'RAFFOUX Jules',s:'M',e:'3000 Steeple (91)',p:'10.57.61',pt:'566',niv:'R4',c:'JU',nai:'04',a:2023,d:'21 mai'},
+{n:'SOFFIATI Thibaud',s:'M',e:'1500',p:'4.06.75',pt:'777',niv:'IR3',c:'MA',nai:'85',a:2023,d:'21 mai'},
 {n:'ANIESA Ange',s:'M',e:'800',p:'1.58.59',pt:'796',niv:'IR2',c:'SE',nai:'90',a:2023,d:'21 mai'},
 {n:'BELLA Maximilien',s:'M',e:'800',p:'1.57.42',pt:'825',niv:'IR2',c:'SE',nai:'96',a:2023,d:'21 mai'},
-{n:'BEURION-MEKOUCHE Mathieu',s:'M',e:'5 000m Marche',p:'26.16.0',pt:'610',niv:'R2',c:'SE',nai:'89',a:2023,d:'21 mai'},
-{n:'BROU Florent',s:'M',e:'5 000m Marche',p:'28.21.0',pt:'487',niv:'R6',c:'SE',nai:'93',a:2023,d:'21 mai'},
+{n:'BEURION-MEKOUCHE Mathieu',s:'M',e:'5000 Marche',p:'26.16.0',pt:'610',niv:'R2',c:'SE',nai:'89',a:2023,d:'21 mai'},
+{n:'BROU Florent',s:'M',e:'5000 Marche',p:'28.21.0',pt:'487',niv:'R6',c:'SE',nai:'93',a:2023,d:'21 mai'},
 {n:'CRETINOIR Jean-noel',s:'M',e:'110m Haies (106)',p:'15.49 (+0.0)',pt:'814',niv:'IR1',c:'SE',nai:'94',a:2023,d:'21 mai'},
 {n:'EFFA EFFA Junior',s:'M',e:'110m Haies (106)',p:'14.35 (-0.7)',pt:'1004',niv:'N3',c:'SE',nai:'96',a:2023,d:'21 mai'},
 {n:'ERNEST Gregory (MRI)',s:'M',e:'3 000',p:'9.22.77',pt:'626',niv:'R2',c:'SE',nai:'97',a:2023,d:'21 mai'},
 {n:'FEUILLARD Johan',s:'M',e:'Disque (2.0 Kg)',p:'45m14',pt:'788',niv:'IR1',c:'SE',nai:'89',a:2023,d:'21 mai'},
-{n:'GOMES Anthony',s:'M',e:'400m Haies (91)',p:'58.11',pt:'763',niv:'IR3',c:'SE',nai:'97',a:2023,d:'21 mai'},
+{n:'GOMES Anthony',s:'M',e:'400 Haies (91)',p:'58.11',pt:'763',niv:'IR3',c:'SE',nai:'97',a:2023,d:'21 mai'},
 {n:'GUIMELLI Bastien',s:'M',e:'Perche',p:'4m00',pt:'727',niv:'R1',c:'SE',nai:'99',a:2023,d:'21 mai'},
 {n:'HAMROUNI Hamza',s:'M',e:'Triple Saut',p:'14m32 (+1.1)',pt:'882',niv:'IR1',c:'SE',nai:'99',a:2023,d:'21 mai'},
 {n:'IREBIO Jean-martial',s:'M',e:'100',p:'11.29 (-1.5)',pt:'803',niv:'IR2',c:'SE',nai:'97',a:2023,d:'21 mai'},
 {n:'IREBIO Jean-martial',s:'M',e:'Longueur',p:'7m01 (-0.3)',pt:'924',niv:'N4',c:'SE',nai:'97',a:2023,d:'21 mai'},
-{n:'IZALGUIER Remy',s:'M',e:'3000m Steeple (91)',p:'11.11.67',pt:'523',niv:'R5',c:'SE',nai:'91',a:2023,d:'21 mai'},
+{n:'IZALGUIER Remy',s:'M',e:'3000 Steeple (91)',p:'11.11.67',pt:'523',niv:'R5',c:'SE',nai:'91',a:2023,d:'21 mai'},
 {n:'JEAN Antonin',s:'M',e:'100',p:'11.01 (+0.0)',pt:'883',niv:'IR1',c:'SE',nai:'99',a:2023,d:'21 mai'},
 {n:'JEAN Antonin',s:'M',e:'Longueur',p:'7m08 (+1.5)',pt:'939',niv:'N4',c:'SE',nai:'99',a:2023,d:'21 mai'},
 {n:'MIESCH Alexandre',s:'M',e:'Disque (2.0 Kg)',p:'37m91',pt:'656',niv:'R1',c:'SE',nai:'92',a:2023,d:'21 mai'},
-{n:'MOHAMED Raebey (SUD)',s:'M',e:'400m Haies (91)',p:'53.59',pt:'959',niv:'N3',c:'SE',nai:'95',a:2023,d:'21 mai'},
+{n:'MOHAMED Raebey (SUD)',s:'M',e:'400 Haies (91)',p:'53.59',pt:'959',niv:'N3',c:'SE',nai:'95',a:2023,d:'21 mai'},
 {n:'REBEYROLLES Simon',s:'M',e:'400',p:'48.69',pt:'937',niv:'N4',c:'SE',nai:'98',a:2023,d:'21 mai'},
 {n:'SALOME Lou-emmanuel',s:'M',e:'Hauteur',p:'1m85',pt:'784',niv:'IR4',c:'SE',nai:'00',a:2023,d:'21 mai'},
 {n:'SALOME Lou-emmanuel',s:'M',e:'Javelot (800 G)',p:'46m69',pt:'630',niv:'R2',c:'SE',nai:'00',a:2023,d:'21 mai'},
@@ -2036,72 +2037,281 @@ $(document).ready(function() {
 {n:'TOURE Samba-junior',s:'M',e:'Triple Saut',p:'14m87 (+0.3)',pt:'940',niv:'N4',c:'SE',nai:'98',a:2023,d:'21 mai'},
 {n:'TUFFERY Jules',s:'M',e:'Hauteur',p:'1m90',pt:'827',niv:'IR3',c:'SE',nai:'97',a:2023,d:'21 mai'},
 {n:'WEBER Nicolas',s:'M',e:'3000',p:'8.42.66',pt:'820',niv:'IR2',c:'SE',nai:'91',a:2023,d:'21 mai'},
-{n:'ZOLA Emile',s:'M',e:'Marteau (7 Kg)',p:'52m65',pt:'774',niv:'IR1',c:'SE',nai:'90',a:2023,d:'21 mai'}
-
-
-
-
-
-/*
-
-{n:'CREPIN Naeva',s:'F',e:'100m / SEF',p:'814',pt:'IR4',niv:'ESF/02',nai:'',a:2023,d:'27 avril.},
-{n:'DIELNA Sarah',s:'F',e:'100m / SEF',p:'805',pt:' & E1 & ',niv:'& F1 & ',nai:'& G1 & ',a:2023,d:'07 mai.},
-{n:'DIELNA Sarah',s:':'F',e:'Longueur / SEF',p:'747',pt:' & E1 & ',niv:'& F1 & ',nai:':'& G1 & ',a:2023,d:'07 mai.},
-{n:'KOUASSI Serena',s:'F',e:'400m / SEF',p:'973',pt:' & E1 & ',niv:'& F1 & ',nai:'& G1 & ',a:2023,d:':'07 mai.},
-{n:'KOUASSI Serena',s:'F',e:'Poids (4 Kg) / SEF',p:'0',pt:' & E1 & ',niv:'& F1 & ',nai:'& G1 & ',a:2023,d:'07 mai.},
-{n:'LUSAKWENO BABAYILA Iris-lucie',s:'F',e:'400m Haies (76) / SEF',p:'914',pt:' & E1 & ',niv:'& F1 & ',nai:'& G1 & ',a:2023,d:'07 mai.},
-{n:'ROUX Ninon',s:'F',e:'Poids (4 Kg) / SEF',p:'500',pt:' & E1 & ',niv:'& F1 & ',nai:'& G1 & ',a:2023,d:'07 mai.},
-{n:'THEVENOT Alice',s:'F',e:'Javelot (600 G) / SEF',p:'482',pt:' & E1 & ',niv:'& F1 & ',nai:'& G1 & ',a:2023,d:'07 mai.},
-{n:'THEVENOT Alice',s:'F',e:'Hauteur / SEF',p:'687',pt:' & E1 & ',niv:'& F1 & ',nai:'& G1 & ',a:2023,d:'07 mai.},
-{n:'EL HAOUZY Jade',s:'F',e:'Perche / SEF',p:'420',pt:' & E1 & ',niv:'& F1 & ',nai:'& G1 & ',a:2023,d:'07 mai.},
-{n:'TRINQUANT Romane',s:'F',e:'800m / SEF',p:'870',pt:' & E1 & ',niv:'& F1 & ',nai:'& G1 & ',a:2023,d:'07 mai.},
-{n:'VIOMESNIL Sara',s:'F',e:'Disque (1.0 Kg) / SEF',p:'702',pt:' & E1 & ',niv:'& F1 & ',nai:'& G1 & ',a:2023,d:'07 mai.},
-{n:'ISTE Myriam',s:'F',e:'3 000m Marche / SEF',p:'364',pt:' & E1 & ',niv:'& F1 & ',nai:'& G1 & ',a:2023,d:'07 mai.},
-{n:'LUMBALA Emilie',s:'F',e:'Marteau (4 Kg) / SEF',p:'716',pt:' & E1 & ',niv:'& F1 & ',nai:'& G1 & ',a:2023,d:'07 mai.},
-{n:'REAUD Delphine',s:'F',e:'3 000m Marche / SEF',p:'671',pt:' & E1 & ',niv:'& F1 & ',nai:'& G1 & ',a:2023,d:'07 mai.},
-{n:'BEAUJOUR Maeva',s:'F',e:'200m / SEF',p:'864',pt:' & E1 & ',niv:'& F1 & ',nai:'& G1 & ',a:2023,d:'07 mai.},
-{n:'CONCHON KERJAN Raphaele',s:'F',e:'1 500m / SEF',p:'780',pt:' & E1 & ',niv:'& F1 & ',nai:'& G1 & ',a:2023,d:'07 mai.},
-{n:'FERRERO Nina',s:'F',e:'400m / SEF',p:'913',pt:' & E1 & ',niv:'& F1 & ',nai:'& G1 & ',a:2023,d:'07 mai.},
-{n:'KUREK Caroline',s:'F',e:'Perche / SEF',p:'657',pt:' & E1 & ',niv:'& F1 & ',nai:'& G1 & ',a:2023,d:'07 mai.},
-{n:'ROBIC Maelle',s:'F',e:'Marteau (4 Kg) / SEF',p:'663',pt:' & E1 & ',niv:'& F1 & ',nai:'& G1 & ',a:2023,d:'07 mai.},
-{n:'SECHAUD Ema',s:'F',e:'800m / SEF',p:'768',pt:' & E1 & ',niv:'& F1 & ',nai:'& G1 & ',a:2023,d:'07 mai.},
-{n:'SECHAUD Ema',s:'F',e:'Javelot (600 G) / SEF',p:'300',pt:' & E1 & ',niv:'& F1 & ',nai:'& G1 & ',a:2023,d:'07 mai.},
-{n:'TSOUMOU-MBELE Marione',s:'F',e:'Triple Saut / SEF',p:'922',pt:' & E1 & ',niv:'& F1 & ',nai:'& G1 & ',a:2023,d:'07 mai.},
-
-
-{n:'MBIANDA Mathis',s:'M',e:'110m Haies (106) / SEM',p:'957',pt:'N3',niv:'ESM/03',nai:a:2023,d:'27 avril'},
-{n:'MBIANDA Mathis',s:'M',e:'Disque (2.0 Kg) / SEM',p:'561',pt:'R5',niv:'ESM/03',nai:,a:2023,d:'27 avril'},
-{n:'NDEKE Rayan',s:'M',e:'200m / SEM',p:'902',pt:'N4',niv:'ESM/04',nai:,a:2023,d:'27 avril'},
-{n:'RAFFOUX Jules',s:'M',e:'3000m Steeple (91) / SEM',p:'729',pt:'IR4',niv:'ESM/04',nai:,a:2023,d:'27 avril'},
-{n:'SIROT Louis',s:'M',e:'3 000m / SEM',p:'581',pt:'R3',niv:'ESM/02',nai:,a:2023,d:'27 avril'},
-{n:'FEUILLARD Johan',s:'M',e:'Disque (2.0 Kg) / SEM',p:'797',pt:'IR1',niv:'MAM/89',nai:,a:2023,d:'27 avril'},
-{n:'LEGEMBLE Bruno',s:'M',e:'5 000m Marche / SEM',p:'0',pt:'',niv:'MAM/70',nai:,a:2023,d:'27 avril'},
-{n:'PONCHEL Gregory',s:'M',e:'5 000m Marche / SEM',p:'282',pt:'D4',niv:'MAM/73',nai:,a:2023,d:'27 avril'},
-{n:'SOFFIATI Thibaud',s:'M',e:'1 500m / SEM',p:'771',pt:'IR3',niv:'MAM/85',nai:,a:2023,d:'27 avril'},
-{n:'BAH Amadou-oury',s:'M',e:'Triple Saut / SEM',p:'745',pt:'R1',niv:'SEM/99',nai:,a:2023,d:'27 avril'},
-{n:'BOUCHER Thomas',s:'M',e:'1 500m / SEM',p:'613',pt:'R2',niv:'SEM/98',nai:,a:2023,d:'27 avril'},
-{n:'GOMES Anthony',s:'M',e:'400m Haies (91) / SEM',p:'927',pt:'N4',niv:'SEM/97',nai:,a:2023,d:'27 avril'},
-{n:'GUIMELLI Bastien',s:'M',e:'Perche / SEM',p:'780',pt:'IR4',niv:'SEM/99',nai:,a:2023,d:'27 avril'},
-{n:'IZALGUIER Remy',s:'M',e:'3 000m / SEM',p:'682',pt:'R1',niv:'SEM/91',nai:,a:2023,d:'27 avril'},
-{n:'MOHAMED Raebey (SUD)',s:'M',e:'400m / SEM',p:'0',pt:'',niv:'SEM/95',nai:,a:2023,d:'27 avril'},
-{n:'NEZAR Younes',s:'M',e:'100m / SEM',p:'952',pt:'N3',niv:'SEM/97',nai:,a:2023,d:'27 avril'},
-{n:'PAYET Mathieu',s:'M',e:'800m / SEM',p:'661',pt:'R1',niv:'SEM/93',nai:,a:2023,d:'27 avril'},
-{n:'REBEYROLLES Simon',s:'M',e:'400m / SEM',p:'946',pt:'N3',niv:'SEM/98',nai:,a:2023,d:'27 avril'},
-{n:'SALOME Lou-emmanuel',s:'M',e:'Longueur / SEM',p:'858',pt:'IR2',niv:'SEM/00',nai:,a:2023,d:'27 avril'},
-{n:'SALOME Lou-emmanuel',s:'M',e:'Javelot (800 G) / SEM',p:'674',pt:'IR4',niv:'SEM/00',nai:,a:2023,d:'27 avril'},
-{n:'SANCHEZ-NUNEZ Leo',s:'M',e:'Marteau (7 Kg) / SEM',p:'787',pt:'IR1',niv:'SEM/97',nai:,a:2023,d:'27 avril'},
-{n:'SCHLATTER Sebastien',s:'M',e:'Poids (7 Kg) / SEM',p:'631',pt:'R2',niv:'SEM/96',nai:,a:2023,d:'27 avril'},
-{n:'THARUSHA DHANANJAYA Pattiya (SRI)',s:'M',e:'200m / SEM',p:'847',pt:'IR2',niv:'SEM/98',nai:,a:2023,d:'27 avril'},
-{n:'TOURE Samba-junior',s:'M',e:'Triple Saut / SEM',p:'995',pt:'N3',niv:'SEM/98',nai:,a:2023,d:'27 avril'},
-{n:'TUFFERY Jules',s:'M',e:'Hauteur / SEM',p:'827',pt:'IR3',niv:'SEM/97',nai:,a:2023,d:'27 avril'},
-{n:'VAILHE Baptiste',s:'M',e:'100m / SEM',p:'783',pt:'IR3',niv:'SEM/00',nai:,a:2023,d:'27 avril'},
-{n:'WEBER Nicolas',s:'M',e:'3000m Steeple (91) / SEM',p:'818',pt:'IR2',niv:'SEM/91',nai:,a:2023,d:'27 avril'},
-{n:'ZOLA Emile',s:'M',e:'Marteau (7 Kg) / SEM',p:'773',pt:'IR1',niv:'SEM/90',nai:,a:2023,d:'27 avril'},
-
-
-
 {n:'ZOLA Emile',s:'M',e:'Marteau (7 Kg)',p:'52m65',pt:'774',niv:'IR1',c:'SE',nai:'90',a:2023,d:'21 mai'},
-*/
+
+
+
+
+
+
+
+
+
+
+
+{n:'CREPIN Naeva',s:'F',e:'100',pt:'814',p:'12..94 (+0.1)',niv:'IR4',a:2024,d:'27 avril'},
+{n:'DIELNA Sarah',s:'F',e:'100',pt:'805',p:'12..99 (-0.3)',niv:'IR4',a:2024,d:'27 avril'},
+{n:'DIELNA Sarah',s:'F',e:'Longueur',pt:'747',p:'4m83 (+0.0)',niv:'R3',a:2024,d:'27 avril'},
+{n:'KOUASSI Serena',s:'F',e:'400',pt:'973',p:'56..10',niv:'N4',a:2024,d:'27 avril'},
+{n:'LUSAKWENO BABAYILA Iris-lucie',s:'F',e:'400 Haies (76)',pt:'914',p:'63..77',niv:'N4',a:2024,d:'27 avril'},
+{n:'ROUX Ninon',s:'F',e:'Poids (4 Kg)',pt:'500',p:'8m61',niv:'R5',a:2024,d:'27 avril'},
+{n:'THEVENOT Alice',s:'F',e:'Javelot (600 G)',pt:'482',p:'27m60',niv:'R5',a:2024,d:'27 avril'},
+{n:'THEVENOT Alice',s:'F',e:'Hauteur',pt:'687',p:'1m45',niv:'R3',a:2024,d:'27 avril'},
+{n:'EL HAOUZY Jade',s:'F',e:'Perche',pt:'420',p:'2m20',niv:'D1',a:2024,d:'27 avril'},
+{n:'TRINQUANT Romane',s:'F',e:'800',pt:'870',p:'2.17..49',niv:'IR1',a:2024,d:'27 avril'},
+{n:'VIOMESNIL Sara',s:'F',e:'Disque (1.0 Kg)',pt:'702',p:'39m89',niv:'IR1',a:2024,d:'27 avril'},
+{n:'ISTE Myriam',s:'F',e:'3000 Marche',pt:'364',p:'20.27..92',niv:'D2',a:2024,d:'27 avril'},
+{n:'LUMBALA Emilie',s:'F',e:'Marteau (4 Kg)',pt:'716',p:'46m57',niv:'IR2',a:2024,d:'27 avril'},
+{n:'REAUD Delphine',s:'F',e:'3000 Marche',pt:'671',p:'16.38..25',niv:'IR3',a:2024,d:'27 avril'},
+{n:'BEAUJOUR Maeva',s:'F',e:'200',pt:'864',p:'25..86 (-2.0)',niv:'IR2',a:2024,d:'27 avril'},
+{n:'CONCHON KERJAN Raphaele',s:'F',e:'1500',pt:'780',p:'4.58..73',niv:'IR3',a:2024,d:'27 avril'},
+{n:'FERRERO Nina',s:'F',e:'400',pt:'913',p:'57..79',niv:'IR1',a:2024,d:'27 avril'},
+{n:'KUREK Caroline',s:'F',e:'Perche',pt:'657',p:'3m00',niv:'IR3',a:2024,d:'27 avril'},
+{n:'ROBIC Maelle',s:'F',e:'Marteau (4 Kg)',pt:'663',p:'43m25',niv:'IR3',a:2024,d:'27 avril'},
+{n:'SECHAUD Ema',s:'F',e:'800',pt:'768',p:'2.24..28',niv:'IR3',a:2024,d:'27 avril'},
+{n:'SECHAUD Ema',s:'F',e:'Javelot (600 G)',pt:'300',p:'17m62',niv:'D5',a:2024,d:'27 avril'},
+{n:'TSOUMOU-MBELE Marione',s:'F',e:'Triple Saut',pt:'922',p:'12m08 (+0.2)',niv:'N3',a:2024,d:'27 avril'},
+
+
+{n:'MBIANDA Mathis',s:'M',e:'110m Haies (106)',pt:'957',p:'14..62 (-0.2)',niv:'N3',a:2024,d:'27 avril'},
+{n:'MBIANDA Mathis',s:'M',e:'Disque (2.0 Kg)',pt:'561',p:'32m68',niv:'R5',a:2024,d:'27 avril'},
+{n:'NDEKE Rayan',s:'M',e:'200',pt:'902',p:'22..17 (-0.9)',niv:'N4',a:2024,d:'27 avril'},
+{n:'RAFFOUX Jules',s:'M',e:'3000 Steeple (91)',pt:'729',p:'10.08..92',niv:'IR4',a:2024,d:'27 avril'},
+{n:'SIROT Louis',s:'M',e:'3000',pt:'581',p:'9.32..80',niv:'R3',a:2024,d:'27 avril'},
+{n:'FEUILLARD Johan',s:'M',e:'Disque (2.0 Kg)',pt:'797',p:'45m62',niv:'IR1',a:2024,d:'27 avril'},
+{n:'LEGEMBLE Bruno',s:'M',e:'5000 Marche',pt:'0',p:'DQ',niv:'',a:2024,d:'27 avril'},
+{n:'PONCHEL Gregory',s:'M',e:'5000 Marche',pt:'282',p:'32.33..31',niv:'D4',a:2024,d:'27 avril'},
+{n:'SOFFIATI Thibaud',s:'M',e:'1500',pt:'771',p:'4.07..27',niv:'IR3',a:2024,d:'27 avril'},
+{n:'BAH Amadou-oury',s:'M',e:'Triple Saut',pt:'745',p:'13m00 (+0.7)',niv:'R1',a:2024,d:'27 avril'},
+{n:'BOUCHER Thomas',s:'M',e:'1500',pt:'613',p:'4.22..21',niv:'R2',a:2024,d:'27 avril'},
+{n:'GOMES Anthony',s:'M',e:'400 Haies (91)',pt:'927',p:'54..28',niv:'N4',a:2024,d:'27 avril'},
+{n:'GUIMELLI Bastien',s:'M',e:'Perche',pt:'780',p:'4m20',niv:'IR4',a:2024,d:'27 avril'},
+{n:'IZALGUIER Remy',s:'M',e:'3000',pt:'682',p:'9.10..64',niv:'R1',a:2024,d:'27 avril'},
+{n:'MOHAMED Raebey (SUD)',s:'M',e:'400',pt:'0',p:'DNS',niv:'',a:2024,d:'27 avril'},
+{n:'NEZAR Younes',s:'M',e:'100',pt:'952',p:'10..78 (+0.4)',niv:'N3',a:2024,d:'27 avril'},
+{n:'PAYET Mathieu',s:'M',e:'800',pt:'661',p:'2.04..22',niv:'R1',a:2024,d:'27 avril'},
+{n:'REBEYROLLES Simon',s:'M',e:'400',pt:'946',p:'48..56',niv:'N3',a:2024,d:'27 avril'},
+{n:'SALOME Lou-emmanuel',s:'M',e:'Longueur',pt:'858',p:'6m70 (+0.3)',niv:'IR2',a:2024,d:'27 avril'},
+{n:'SALOME Lou-emmanuel',s:'M',e:'Javelot (800 G)',pt:'674',p:'49m84',niv:'IR4',a:2024,d:'27 avril'},
+{n:'SANCHEZ-NUNEZ Leo',s:'M',e:'Marteau (7 Kg)',pt:'787',p:'53m47',niv:'IR1',a:2024,d:'27 avril'},
+{n:'SCHLATTER Sebastien',s:'M',e:'Poids (7 Kg)',pt:'631',p:'11m74',niv:'R2',a:2024,d:'27 avril'},
+{n:'THARUSHA DHANANJAYA Pattiya (SRI)',s:'M',e:'200',pt:'847',p:'22..58 (-1.1)',niv:'IR2',a:2024,d:'27 avril'},
+{n:'TOURE Samba-junior',s:'M',e:'Triple Saut',pt:'995',p:'15m40 (+0.0)',niv:'N3',a:2024,d:'27 avril'},
+{n:'TUFFERY Jules',s:'M',e:'Hauteur',pt:'827',p:'1m90',niv:'IR3',a:2024,d:'27 avril'},
+{n:'VAILHE Baptiste',s:'M',e:'100',pt:'783',p:'11..36 (+0.2)',niv:'IR3',a:2024,d:'27 avril'},
+{n:'WEBER Nicolas',s:'M',e:'3000 Steeple (91)',pt:'818',p:'9.44..53',niv:'IR2',a:2024,d:'27 avril'},
+{n:'ZOLA Emile',s:'M',e:'Marteau (7 Kg)',pt:'773',p:'52m58',niv:'IR1',a:2024,d:'27 avril'},
+
+
+{n:'BUKASA Alexis',s:'F',e:'Triple Saut',pt:'670',p:'9m55 (+1.8)',niv:'R6',a:2024,d:'28 avril'},
+{n:'BUKASA Alexis',s:'F',e:'Longueur',pt:'715',p:'4m68 (+3.8)',niv:'R5',a:2024,d:'28 avril'},
+{n:'CAZALON Chloe',s:'F',e:'800',pt:'588',p:'2.37..48',niv:'R4',a:2024,d:'28 avril'},
+{n:'FROMAGER Imane',s:'F',e:'Poids (4 Kg)',pt:'370',p:'6m48',niv:'D4',a:2024,d:'28 avril'},
+{n:'KABA Ramatoulaye (USA)',s:'F',e:'Javelot (600 G)',pt:'439',p:'25m25',niv:'D1',a:2024,d:'28 avril'},
+{n:'KABA Ramatoulaye (USA)',s:'F',e:'100 Haies (84)',pt:'538',p:'18..37 (+2.3)',niv:'R6',a:2024,d:'28 avril'},
+{n:'KOUASSI Beyonce',s:'F',e:'Triple Saut',pt:'647',p:'9m31 (+1.8)',niv:'D1',a:2024,d:'28 avril'},
+{n:'KOUASSI Beyonce',s:'F',e:'100',pt:'759',p:'13..25 (+3.8)',niv:'R2',a:2024,d:'28 avril'},
+{n:'TAVARES-FERRARI Charlotte',s:'F',e:'200',pt:'629',p:'28..75 (+2.8)',niv:'R4',a:2024,d:'28 avril'},
+{n:'ETIENNE Baya',s:'F',e:'800',pt:'495',p:'2.45..12',niv:'R6',a:2024,d:'28 avril'},
+{n:'HOCINE Ines',s:'F',e:'Marteau (4 Kg)',pt:'193',p:'13m71',niv:'D8',a:2024,d:'28 avril'},
+{n:'POTIER Juliette',s:'F',e:'1500',pt:'619',p:'5.24..98',niv:'R4',a:2024,d:'28 avril'},
+{n:'POTIER Juliette',s:'F',e:'Disque (1.0 Kg)',pt:'256',p:'15m31',niv:'D6',a:2024,d:'28 avril'},
+{n:'ACAR Selda',s:'F',e:'3000',pt:'480',p:'12.44..85',niv:'D2',a:2024,d:'28 avril'},
+{n:'BOURDARIAS Peggy',s:'F',e:'Perche',pt:'538',p:'2m60',niv:'R3',a:2024,d:'28 avril'},
+{n:'HIEGEL Veronique',s:'F',e:'3000 Marche',pt:'111',p:'25.15..30',niv:'D8',a:2024,d:'28 avril'},
+{n:'PERROT Laurence',s:'F',e:'3000 Marche',pt:'304',p:'21.22..72',niv:'D4',a:2024,d:'28 avril'},
+{n:'SIROT Anne-cecile',s:'F',e:'1500',pt:'528',p:'5.41..38',niv:'D1',a:2024,d:'28 avril'},
+{n:'CONDORE Melina',s:'F',e:'Javelot (600 G)',pt:'207',p:'12m52',niv:'D7',a:2024,d:'28 avril'},
+{n:'CONDORE Melina',s:'F',e:'400',pt:'675',p:'65..11',niv:'R2',a:2024,d:'28 avril'},
+{n:'GAUTHERON Mathilde',s:'F',e:'200',pt:'771',p:'26..95 (+4.0)',niv:'IR4',a:2024,d:'28 avril'},
+{n:'GAUTHERON Mathilde',s:'F',e:'Marteau (4 Kg)',pt:'420',p:'27m99',niv:'D1',a:2024,d:'28 avril'},
+{n:'GOMIS Melissa',s:'F',e:'Hauteur',pt:'735',p:'1m50',niv:'R1',a:2024,d:'28 avril'},
+{n:'GOMIS Melissa',s:'F',e:'400 Haies (76)',pt:'969',p:'61..83',niv:'N3',a:2024,d:'28 avril'},
+{n:'HOUNSINOU Julie',s:'F',e:'Hauteur',pt:'546',p:'1m30',niv:'D3',a:2024,d:'28 avril'},
+{n:'HOUNSINOU Julie',s:'F',e:'400 Haies (76)',pt:'805',p:'67..84',niv:'IR2',a:2024,d:'28 avril'},
+{n:'HURIER Christelle',s:'F',e:'Poids (4 Kg)',pt:'582',p:'9m94',niv:'R2',a:2024,d:'28 avril'},
+{n:'HURIER Christelle',s:'F',e:'Disque (1.0 Kg)',pt:'383',p:'22m31',niv:'D3',a:2024,d:'28 avril'},
+{n:'LAI Johanna',s:'F',e:'3000',pt:'720',p:'11.07..39',niv:'R1',a:2024,d:'28 avril'},
+{n:'MABILLOT Johanna',s:'F',e:'400',pt:'724',p:'63..51',niv:'R1',a:2024,d:'28 avril'},
+{n:'ZADI Mahilys',s:'F',e:'100',pt:'826',p:'12..87 (+2.8)',niv:'IR4',a:2024,d:'28 avril'},
+{n:'ZADI Mahilys',s:'F',e:'Longueur',pt:'616',p:'4m21 (+3.2)',niv:'D2',a:2024,d:'28 avril'},
+
+
+{n:'CRAZOVER Jules',s:'M',e:'800',pt:'680',p:'2.03..37',niv:'R1',a:2024,d:'28 avril'},
+{n:'RIFFAUD Esteban',s:'M',e:'Poids (7 Kg)',pt:'481',p:'9m20',niv:'R6',a:2024,d:'28 avril'},
+{n:'DALLE Titouan',s:'M',e:'800',pt:'681',p:'2.03..35',niv:'R1',a:2024,d:'28 avril'},
+{n:'DUBREIL Lino',s:'M',e:'400',pt:'610',p:'54..54',niv:'R2',a:2024,d:'28 avril'},
+{n:'FONTAINE Paulin',s:'M',e:'200',pt:'681',p:'23..92 (+4.2)',niv:'R2',a:2024,d:'28 avril'},
+{n:'GUIHEUX Octave',s:'M',e:'Hauteur',pt:'485',p:'1m50',niv:'D3',a:2024,d:'28 avril'},
+{n:'GUIHEUX Octave',s:'M',e:'400 Haies (91)',pt:'639',p:'61..28',niv:'R2',a:2024,d:'28 avril'},
+{n:'GUITTEAUD Mathys',s:'M',e:'400 Haies (91)',pt:'331',p:'70..86',niv:'D5',a:2024,d:'28 avril'},
+{n:'IVANOV Viktor (UKR)',s:'M',e:'110m Haies (106)',pt:'781',p:'15..70 (+3.1)',niv:'IR2',a:2024,d:'28 avril'},
+{n:'IVANOV Viktor (UKR)',s:'M',e:'Hauteur',pt:'741',p:'1m80',niv:'R2',a:2024,d:'28 avril'},
+{n:'KAAG Timeo',s:'M',e:'Javelot (800 G)',pt:'568',p:'42m27',niv:'R4',a:2024,d:'28 avril'},
+{n:'KAAG Timeo',s:'M',e:'Poids (7 Kg)',pt:'440',p:'8m50',niv:'D2',a:2024,d:'28 avril'},
+{n:'KONE Eliott',s:'M',e:'100',pt:'814',p:'11..25 (+3.5)',niv:'IR2',a:2024,d:'28 avril'},
+{n:'KONE Eliott',s:'M',e:'Longueur',pt:'875',p:'6m78 (+5.3)',niv:'IR2',a:2024,d:'28 avril'},
+{n:'ABDELKADER Yann',s:'M',e:'1500',pt:'522',p:'4.31..64',niv:'R4',a:2024,d:'28 avril'},
+{n:'BARANGER-MERINO Alberto',s:'M',e:'Marteau (7 Kg)',pt:'716',p:'48m79',niv:'IR3',a:2024,d:'28 avril'},
+{n:'BARANGER-MERINO Alberto',s:'M',e:'Disque (2.0 Kg)',pt:'398',p:'23m65',niv:'D3',a:2024,d:'28 avril'},
+{n:'COURBIN Jillian',s:'M',e:'5000 Marche',pt:'200',p:'34.39..50',niv:'D6',a:2024,d:'28 avril'},
+{n:'DA HORTA SEMEDO Tony',s:'M',e:'Marteau (7 Kg)',pt:'545',p:'37m58',niv:'R4',a:2024,d:'28 avril'},
+{n:'GEVART Louis',s:'M',e:'3000 Steeple (91)',pt:'105',p:'14.23..99',niv:'D8',a:2024,d:'28 avril'},
+{n:'LOTTIER Pascal',s:'M',e:'Disque (2.0 Kg)',pt:'359',p:'21m52',niv:'D4',a:2024,d:'28 avril'},
+{n:'LOUNI Amar',s:'M',e:'1500',pt:'557',p:'4.27..89',niv:'R3',a:2024,d:'28 avril'},
+{n:'MADANG Amine',s:'M',e:'400',pt:'685',p:'53..09',niv:'IR4',a:2024,d:'28 avril'},
+{n:'SECHAUD Gilles',s:'M',e:'5000 Marche',pt:'151',p:'36.08..83',niv:'D8',a:2024,d:'28 avril'},
+{n:'ABDALLAH Zaid',s:'M',e:'100',pt:'0',p:'DQ (+2.3)',niv:'',a:2024,d:'28 avril'},
+{n:'BAILLY Owen',s:'M',e:'200',pt:'866',p:'22..44 (+3.0)',niv:'IR1',a:2024,d:'28 avril'},
+{n:'BALAY Wilheim',s:'M',e:'Javelot (800 G)',pt:'603',p:'44m76',niv:'R3',a:2024,d:'28 avril'},
+{n:'CRETINOIR Jean-noel',s:'M',e:'Triple Saut',pt:'985',p:'15m30 (+2.6)',niv:'N3',a:2024,d:'28 avril'},
+{n:'GORCE Jean-baptiste',s:'M',e:'3000',pt:'565',p:'9.36..53',niv:'R3',a:2024,d:'28 avril'},
+{n:'LETORT Fabien',s:'M',e:'3000',pt:'462',p:'10.01..78',niv:'R6',a:2024,d:'28 avril'},
+{n:'RAZAFINDRAKOTO Jordan',s:'M',e:'Longueur',pt:'556',p:'5m26 (+4.9)',niv:'D2',a:2024,d:'28 avril'},
+{n:'TIMON Nelson',s:'M',e:'Triple Saut',pt:'510',p:'10m69 (+1.5)',niv:'D3',a:2024,d:'28 avril'},
+
+
+{n:'CREPIN Naeva',s:'F',e:'100',pt:'796',p:'13.04 (-1.7)',niv:'IR4',a:2024,d:'12 mai'},
+{n:'CREPIN Naeva',s:'F',e:'Longueur',pt:'720',p:'4m70 (-1.5)',niv:'R4',a:2024,d:'12 mai'},
+{n:'KOUASSI Serena',s:'F',e:'200',pt:'1039',p:'23.97 (+0.5)',niv:'N2',a:2024,d:'12 mai'},
+{n:'LUSAKWENO BABAYILA Iris-lucie',s:'F',e:'400 Haies (76)',pt:'962',p:'62.06',niv:'N3',a:2024,d:'12 mai'},
+{n:'ROUX Ninon',s:'F',e:'Poids (4 kg)',pt:'558',p:'9m54',niv:'R3',a:2024,d:'12 mai'},
+{n:'THEVENOT Alice',s:'F',e:'Javelot (600 g)',pt:'361',p:'20m98',niv:'D4',a:2024,d:'12 mai'},
+{n:'EL HAOUZY Jade',s:'F',e:'Disque (1.0 kg)',pt:'298',p:'17m66',niv:'D5',a:2024,d:'12 mai'},
+{n:'EL HAOUZY Jade',s:'F',e:'Perche',pt:'960',p:'4m00',niv:'N2',a:2024,d:'12 mai'},
+{n:'POTIER Juliette',s:'F',e:'1500',pt:'603',p:'5.27.83',niv:'R5',a:2024,d:'12 mai'},
+{n:'TRINQUANT Romane',s:'F',e:'200',pt:'909',p:'25.36 (+1.0)',niv:'IR1',a:2024,d:'12 mai'},
+{n:'TRINQUANT Romane',s:'F',e:'Longueur',pt:'830',p:'5m22 (-0.9)',niv:'IR3',a:2024,d:'12 mai'},
+{n:'VIOMESNIL Sara',s:'F',e:'Disque (1.0 kg)',pt:'696',p:'39m54',niv:'IR1',a:2024,d:'12 mai'},
+{n:'DEMONTIGNY Melissa',s:'F',e:'100 Haies (84)',pt:'655',p:'17.17 (-0.3)',niv:'R2',a:2024,d:'12 mai'},
+{n:'DEMONTIGNY Melissa',s:'F',e:'Perche',pt:'838',p:'3m60',niv:'N3',a:2024,d:'12 mai'},
+{n:'ISTE Myriam',s:'F',e:'3000 Marche',pt:'303',p:'21.08.70',niv:'D4',a:2024,d:'12 mai'},
+{n:'LUMBALA Emilie',s:'F',e:'Marteau (4 kg)',pt:'728',p:'47m33',niv:'IR1',a:2024,d:'12 mai'},
+{n:'REAUD Delphine',s:'F',e:'3000 Marche',pt:'602',p:'17.13.83',niv:'IR4',a:2024,d:'12 mai'},
+{n:'BEAUJOUR Maeva',s:'F',e:'400',pt:'1017',p:'54.89',niv:'N3',a:2024,d:'12 mai'},
+{n:'DA COSTA Helene',s:'F',e:'3000',pt:'832',p:'10.27.53',niv:'IR2',a:2024,d:'12 mai'},
+{n:'FERRERO Nina',s:'F',e:'800',pt:'979',p:'2.10.70',niv:'N3',a:2024,d:'12 mai'},
+{n:'GAUTHERON Mathilde',s:'F',e:'100',pt:'839',p:'12.80 (+1.7)',niv:'IR3',a:2024,d:'12 mai'},
+{n:'GOMIS Melissa',s:'F',e:'400 Haies (76)',pt:'1017',p:'60.14',niv:'N2',a:2024,d:'12 mai'},
+{n:'GOMIS Melissa',s:'F',e:'Hauteur',pt:'687',p:'1m45',niv:'R3',a:2024,d:'12 mai'},
+{n:'HOUNSINOU Julie',s:'F',e:'Hauteur',pt:'640',p:'1m40',niv:'R5',a:2024,d:'12 mai'},
+{n:'HURIER Christelle',s:'F',e:'Poids (4 kg)',pt:'551',p:'9m43',niv:'R3',a:2024,d:'12 mai'},
+{n:'JARNET Eva',s:'F',e:'1500',pt:'654',p:'5.19.02',niv:'R3',a:2024,d:'12 mai'},
+{n:'KUREK Caroline',s:'F',e:'100 Haies (84)',pt:'542',p:'18.32 (-0.5)',niv:'R5',a:2024,d:'12 mai'},
+{n:'KUREK Caroline',s:'F',e:'Triple saut',pt:'734',p:'10m19 (+0.0)',niv:'R3',a:2024,d:'12 mai'},
+{n:'LAI Johanna',s:'F',e:'3000',pt:'766',p:'10.50.52',niv:'IR4',a:2024,d:'12 mai'},
+{n:'LANGLOIS Maelle',s:'F',e:'400',pt:'962',p:'56.40',niv:'N4',a:2024,d:'12 mai'},
+{n:'ROBIC Maelle',s:'F',e:'Marteau (4 kg)',pt:'660',p:'43m06',niv:'IR3',a:2024,d:'12 mai'},
+{n:'SECHAUD Ema',s:'F',e:'Javelot (600 g)',pt:'343',p:'19m97',niv:'D4',a:2024,d:'12 mai'},
+{n:'SECHAUD Ema',s:'F',e:'800',pt:'787',p:'2.23.03',niv:'IR3',a:2024,d:'12 mai'},
+
+
+{n:'MBIANDA Mathis',s:'M',e:'110m Haies (106)',pt:'933',p:'14.76 (-0.8)',niv:'N4',a:2024,d:'12 mai'},
+{n:'MBIANDA Mathis',s:'M',e:'Disque (2.0 kg)',pt:'589',p:'34m21',niv:'R3',a:2024,d:'12 mai'},
+{n:'NDEKE Rayan',s:'M',e:'200',pt:'982',p:'21.59 (+1.2)',niv:'N3',a:2024,d:'12 mai'},
+{n:'RAFFOUX Jules',s:'M',e:'3000 Steeple (91)',pt:'739',p:'10.05.98',niv:'IR4',a:2024,d:'12 mai'},
+{n:'DALLE Titouan',s:'M',e:'800',pt:'719',p:'2.01.70',niv:'IR4',a:2024,d:'12 mai'},
+{n:'FOURNIER Timothee',s:'M',e:'Perche',pt:'727',p:'4m00',niv:'R1',a:2024,d:'12 mai'},
+{n:'KONE Eliott',s:'M',e:'100',pt:'761',p:'11.44 (+0.7)',niv:'IR3',a:2024,d:'12 mai'},
+{n:'FEUILLARD Johan',s:'M',e:'Disque (2.0 kg)',pt:'796',p:'45m55',niv:'IR1',a:2024,d:'12 mai'},
+{n:'LEGEMBLE Bruno',s:'M',e:'5000 Marche',pt:'40',p:'40.01.37',niv:'D8',a:2024,d:'12 mai'},
+{n:'MBIANDA Martial',s:'M',e:'Poids (7.26 kg)',pt:'678',p:'12m54',niv:'IR4',a:2024,d:'12 mai'},
+{n:'SOFFIATI Thibaud',s:'M',e:'1500',pt:'806',p:'4.04.19',niv:'IR3',a:2024,d:'12 mai'},
+{n:'BAILLY Owen',s:'M',e:'200',pt:'891',p:'22.25 (+0.3)',niv:'IR1',a:2024,d:'12 mai'},
+{n:'BELLA Maximilien',s:'M',e:'800',pt:'778',p:'1.59.29',niv:'IR3',a:2024,d:'12 mai'},
+{n:'BOUCHER Thomas',s:'M',e:'1500',pt:'696',p:'4.14.14',niv:'R1',a:2024,d:'12 mai'},
+{n:'BROU Florent',s:'M',e:'5000 Marche',pt:'342',p:'30.42.35',niv:'D2',a:2024,d:'12 mai'},
+{n:'CRETINOIR Jean-noel',s:'M',e:'Triple saut',pt:'990',p:'15m35 (+0.0)',niv:'N3',a:2024,d:'12 mai'},
+{n:'EFFA EFFA Junior',s:'M',e:'110m Haies (106)',pt:'1013',p:'14.30 (-0.2)',niv:'N3',a:2024,d:'12 mai'},
+{n:'GOMES Anthony',s:'M',e:'400 Haies (91)',pt:'970',p:'53.34',niv:'N3',a:2024,d:'12 mai'},
+{n:'GORCE Jean-baptiste',s:'M',e:'3000',pt:'468',p:'10.00.25',niv:'R6',a:2024,d:'12 mai'},
+{n:'GUIMELLI Bastien',s:'M',e:'Perche',pt:'833',p:'4m40',niv:'IR2',a:2024,d:'12 mai'},
+{n:'IREBIO Jean-martial',s:'M',e:'Longueur',pt:'794',p:'6m40 (+0.0)',niv:'IR3',a:2024,d:'12 mai'},
+{n:'IZALGUIER Remy',s:'M',e:'3000',pt:'716',p:'9.03.56',niv:'IR4',a:2024,d:'12 mai'},
+{n:'JEAN Antonin',s:'M',e:'Longueur',pt:'937',p:'7m07 (+0.0)',niv:'N4',a:2024,d:'12 mai'},
+{n:'MOHAMED Raebey (SUD)',s:'M',e:'400 Haies (91)',pt:'882',p:'55.30',niv:'IR1',a:2024,d:'12 mai'},
+{n:'NEZAR Younes',s:'M',e:'100',pt:'910',p:'10.92 (-0.7)',niv:'N4',a:2024,d:'12 mai'},
+{n:'REBEYROLLES Simon',s:'M',e:'400',pt:'968',p:'48.20',niv:'N3',a:2024,d:'12 mai'},
+{n:'SALOME Lou-emmanuel',s:'M',e:'Hauteur',pt:'870',p:'1m95',niv:'IR1',a:2024,d:'12 mai'},
+{n:'SALOME Lou-emmanuel',s:'M',e:'Javelot (800 g)',pt:'686',p:'50m67',niv:'IR4',a:2024,d:'12 mai'},
+{n:'SANCHEZ NUNEZ Esteban',s:'M',e:'Javelot (800 g)',pt:'573',p:'42m60',niv:'R4',a:2024,d:'12 mai'},
+{n:'SANCHEZ-NUNEZ Leo',s:'M',e:'Marteau (7.26 kg)',pt:'685',p:'46m51',niv:'IR4',a:2024,d:'12 mai'},
+{n:'SCHLATTER Sebastien',s:'M',e:'Poids (7.26 kg)',pt:'592',p:'11m09',niv:'R3',a:2024,d:'12 mai'},
+{n:'THARUSHA DHANANJAYA Pattiya (SRI)',s:'M',e:'400',pt:'926',p:'48.88',niv:'N4',a:2024,d:'12 mai'},
+{n:'TOURE Samba-junior',s:'M',e:'Triple saut',pt:'982',p:'15m28 (+1.4)',niv:'N3',a:2024,d:'12 mai'},
+{n:'TUFFERY Jules',s:'M',e:'Hauteur',pt:'784',p:'1m85',niv:'IR4',a:2024,d:'12 mai'},
+{n:'WEBER Nicolas',s:'M',e:'3000 Steeple (91)',pt:'837',p:'9.39.39',niv:'IR1',a:2024,d:'12 mai'},
+{n:'ZOLA Emile',s:'M',e:'Marteau (7.26 kg)',pt:'805',p:'54m29',niv:'IR1',a:2024,d:'12 mai'},
+
+
+{n:'BUKASA Alexis',s:'F',e:'Triple Saut',pt:'651',p:'9m35 (+0.0)',niv:'D1',a:2024,d:'12 mai'},
+{n:'BUKASA Alexis',s:'F',e:'Longueur',pt:'734',p:'4m77 (+0.0)',niv:'R4',a:2024,d:'12 mai'},
+{n:'CAZALON Chloe',s:'F',e:'800',pt:'554',p:'2.40.22',niv:'R5',a:2024,d:'12 mai'},
+{n:'CAZALON Chloe',s:'F',e:'Poids (4 Kg)',pt:'356',p:'6m26',niv:'D5',a:2024,d:'12 mai'},
+{n:'FROMAGER Imane',s:'F',e:'Marteau (4 Kg)',pt:'271',p:'18m65',niv:'D6',a:2024,d:'12 mai'},
+{n:'FROMAGER Imane',s:'F',e:'Poids (4 Kg)',pt:'385',p:'6m73',niv:'D4',a:2024,d:'12 mai'},
+{n:'KOUASSI Beyonce',s:'F',e:'100',pt:'713',p:'13.52 (-0.3)',niv:'R3',a:2024,d:'12 mai'},
+{n:'KOUASSI Beyonce',s:'F',e:'Triple Saut',pt:'689',p:'9m74 (+1.3)',niv:'R5',a:2024,d:'12 mai'},
+{n:'MPESSA LOBE Jeanne',s:'F',e:'Hauteur',pt:'453',p:'1m20',niv:'D5',a:2024,d:'12 mai'},
+{n:'MPESSA LOBE Jeanne',s:'F',e:'Javelot (600 G)',pt:'270',p:'15m98',niv:'D6',a:2024,d:'12 mai'},
+{n:'TAVARES-FERRARI Charlotte',s:'F',e:'200',pt:'654',p:'28.42 (-0.4)',niv:'R3',a:2024,d:'12 mai'},
+{n:'TAVARES-FERRARI Charlotte',s:'F',e:'Longueur',pt:'572',p:'4m00 (+0.0)',niv:'D3',a:2024,d:'12 mai'},
+{n:'ETIENNE Baya',s:'F',e:'800',pt:'527',p:'2.42.40',niv:'R5',a:2024,d:'12 mai'},
+{n:'HEUVELINE Fiona',s:'F',e:'Hauteur',pt:'453',p:'1m20',niv:'D5',a:2024,d:'12 mai'},
+{n:'HEUVELINE Fiona',s:'F',e:'200',pt:'737',p:'27.36 (-0.2)',niv:'R1',a:2024,d:'12 mai'},
+{n:'HOCINE Ines',s:'F',e:'Marteau (4 Kg)',pt:'211',p:'14m86',niv:'D7',a:2024,d:'12 mai'},
+{n:'CORBISIER Annie',s:'F',e:'3000 Marche',pt:'0',p:'DNS',niv:'',a:2024,d:'12 mai'},
+{n:'NOGUEIRA Anabela',s:'F',e:'3000',pt:'518',p:'12.28.28',niv:'D1',a:2024,d:'12 mai'},
+{n:'SIROT Anne-cecile',s:'F',e:'1500',pt:'485',p:'5.49.68',niv:'D1',a:2024,d:'12 mai'},
+{n:'CONCHON KERJAN Raphaele',s:'F',e:'1500',pt:'744',p:'5.04.35',niv:'IR4',a:2024,d:'12 mai'},
+{n:'CONDORE Melina',s:'F',e:'Javelot (600 G)',pt:'192',p:'11m69',niv:'D8',a:2024,d:'12 mai'},
+{n:'CONDORE Melina',s:'F',e:'400',pt:'767',p:'62.13',niv:'IR4',a:2024,d:'12 mai'},
+{n:'JARNET Eva',s:'F',e:'Disque (1.0 Kg)',pt:'0',p:'DNS',niv:'',a:2024,d:'12 mai'},
+{n:'MABILLOT Johanna',s:'F',e:'400',pt:'740',p:'62.99',niv:'R1',a:2024,d:'12 mai'},
+{n:'MABILLOT Johanna',s:'F',e:'Disque (1.0 Kg)',pt:'230',p:'13m86',niv:'D7',a:2024,d:'12 mai'},
+{n:'MAITRE Caroline',s:'F',e:'3000 Marche',pt:'162',p:'24.01.87',niv:'D7',a:2024,d:'12 mai'},
+{n:'OLLIVIER Mathilde',s:'F',e:'3000',pt:'0',p:'DNS',niv:'',a:2024,d:'12 mai'},
+{n:'ZADI Mahilys',s:'F',e:'100',pt:'735',p:'13.39 (-1.1)',niv:'R2',a:2024,d:'12 mai'},
+
+
+{n:'CRAZOVER Jules',s:'M',e:'Perche',pt:'211',p:'2m00',niv:'D7',a:2024,d:'12 mai'},
+{n:'CRAZOVER Jules',s:'M',e:'800',pt:'681',p:'2.03.32',niv:'R1',a:2024,d:'12 mai'},
+{n:'JEAN-THEODORE Jaden',s:'M',e:'200',pt:'862',p:'22.47 (+0.0)',niv:'IR1',a:2024,d:'12 mai'},
+{n:'BEAUDOIN Antoine',s:'M',e:'3000 Steeple (91)',pt:'473',p:'11.28.64',niv:'R6',a:2024,d:'12 mai'},
+{n:'ETIENNE Jules',s:'M',e:'Disque (2.0 Kg)',pt:'354',p:'21m23',niv:'D4',a:2024,d:'12 mai'},
+{n:'ETIENNE Jules',s:'M',e:'Hauteur',pt:'698',p:'1m75',niv:'R3',a:2024,d:'12 mai'},
+{n:'SIROT Louis',s:'M',e:'3000',pt:'630',p:'9.21.83',niv:'R2',a:2024,d:'12 mai'},
+{n:'DUBREIL Lino',s:'M',e:'Longueur',pt:'498',p:'4m98 (-0.5)',niv:'D4',a:2024,d:'12 mai'},
+{n:'DUBREIL Lino',s:'M',e:'400',pt:'638',p:'54.00',niv:'R1',a:2024,d:'12 mai'},
+{n:'GUIHEUX Octave',s:'M',e:'400 Haies (91)',pt:'684',p:'60.10',niv:'R1',a:2024,d:'12 mai'},
+{n:'GUITTEAUD Mathys',s:'M',e:'400 Haies (91)',pt:'425',p:'67.59',niv:'D2',a:2024,d:'12 mai'},
+{n:'IVANOV Viktor (UKR)',s:'M',e:'110m Haies (106)',pt:'769',p:'15.78 (-1.9)',niv:'IR2',a:2024,d:'12 mai'},
+{n:'IVANOV Viktor (UKR)',s:'M',e:'Hauteur',pt:'741',p:'1m80',niv:'R2',a:2024,d:'12 mai'},
+{n:'KAAG Timeo',s:'M',e:'3000 Steeple (91)',pt:'128',p:'14.07.44',niv:'D8',a:2024,d:'12 mai'},
+{n:'KAAG Timeo',s:'M',e:'Javelot (800 G)',pt:'481',p:'36m11',niv:'D1',a:2024,d:'12 mai'},
+{n:'KAAG Timeo',s:'M',e:'110m Haies (106)',pt:'0',p:'DNS (-1.9)',niv:'',a:2024,d:'12 mai'},
+{n:'ABDELKADER Yann',s:'M',e:'1500',pt:'461',p:'4.38.52',niv:'R5',a:2024,d:'12 mai'},
+{n:'COURBIN Jillian',s:'M',e:'5000 Marche',pt:'109',p:'37.35.94',niv:'D8',a:2024,d:'12 mai'},
+{n:'DA HORTA SEMEDO Tony',s:'M',e:'Poids (7 Kg)',pt:'401',p:'7m84',niv:'D3',a:2024,d:'12 mai'},
+{n:'DA HORTA SEMEDO Tony',s:'M',e:'Marteau (7 Kg)',pt:'512',p:'35m38',niv:'R5',a:2024,d:'12 mai'},
+{n:'LOTTIER Pascal',s:'M',e:'Disque (2.0 Kg)',pt:'418',p:'24m75',niv:'D3',a:2024,d:'12 mai'},
+{n:'LOTTIER Pascal',s:'M',e:'Marteau (7 Kg)',pt:'357',p:'25m15',niv:'D4',a:2024,d:'12 mai'},
+{n:'LOUNI Amar',s:'M',e:'3000',pt:'627',p:'9.22.45',niv:'R2',a:2024,d:'12 mai'},
+{n:'MADANG Amine',s:'M',e:'400',pt:'689',p:'53.02',niv:'IR4',a:2024,d:'12 mai'},
+{n:'SECHAUD Gilles',s:'M',e:'5000 Marche',pt:'120',p:'37.12.79',niv:'D8',a:2024,d:'12 mai'},
+{n:'ABDALLAH Zaid',s:'M',e:'200',pt:'825',p:'22.75 (-0.8)',niv:'IR2',a:2024,d:'12 mai'},
+{n:'BALAY Wilheim',s:'M',e:'Javelot (800 G)',pt:'544',p:'40m54',niv:'R5',a:2024,d:'12 mai'},
+{n:'BALAY Wilheim',s:'M',e:'Poids (7 Kg)',pt:'515',p:'9m78',niv:'R6',a:2024,d:'12 mai'},
+{n:'BONNET Jonathan',s:'M',e:'1500',pt:'451',p:'4.39.63',niv:'R6',a:2024,d:'12 mai'},
+{n:'PAYET Mathieu',s:'M',e:'Perche',pt:'161',p:'1m80',niv:'D8',a:2024,d:'12 mai'},
+{n:'PAYET Mathieu',s:'M',e:'800',pt:'612',p:'2.06.38',niv:'R2',a:2024,d:'12 mai'},
+{n:'RAZAFINDRAKOTO Jordan',s:'M',e:'Longueur',pt:'533',p:'5m15 (-0.4)',niv:'D3',a:2024,d:'12 mai'},
+{n:'RAZAFINDRAKOTO Jordan',s:'M',e:'Triple Saut',pt:'433',p:'9m92 (+0.0)',niv:'D5',a:2024,d:'12 mai'},
+{n:'TIMON Nelson',s:'M',e:'100',pt:'463',p:'12.66 (-0.4)',niv:'D2',a:2024,d:'12 mai'},
+{n:'TIMON Nelson',s:'M',e:'Triple Saut',pt:'485',p:'10m44 (+0.0)',niv:'D4',a:2024,d:'12 mai'},
+{n:'VAILHE Baptiste',s:'M',e:'100',pt:'777',p:'11.38 (-2.2)',niv:'IR3',a:2024,d:'12 mai'},
+
+
 
 
 
@@ -2121,6 +2331,7 @@ $(document).ready(function() {
 			{ data: "n" },
 			{ data: "s" },
 			{ data: "e" },
+			{ data: "p" },
 			{ data: "pt" },
 			{ data: "niv" },
 			{ data: "d" },
@@ -2165,6 +2376,8 @@ $(document).ready(function() {
 
 	$('#example_filter').hide();
 	$('#example_wrapper > div.dt-buttons > button').css('margin-bottom', '22px');
+	
+	$('#example > thead > tr:nth-child(2) > th:nth-child(8) > input[type=text]').text(2024);
 	
 } );
 

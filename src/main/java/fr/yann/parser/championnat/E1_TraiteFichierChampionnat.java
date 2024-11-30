@@ -23,7 +23,7 @@ public class E1_TraiteFichierChampionnat {
 	public static void main(String[] args) throws Exception {
 
 		// List<Integer>	annees		= new ArrayList<Integer>(Arrays.asList(2016, 2017, 2018, 2019, 2020, 2021, 2022));
-		List<Integer>	annees		= new ArrayList<Integer>(Arrays.asList(2023));
+		List<Integer>	annees		= new ArrayList<Integer>(Arrays.asList(2024));
 		Integer			epreuve		= 800;
 		String			categorie	= "35M";
 

@@ -110,6 +110,10 @@
 				</div>
 			</div>
 		</div>
+	</div>
+	<div class="row" style="margin-bottom:50px">
+
+		<div class="col-md-1"></div>
 
 		<div class="col-md-3" style="margin: 0 20px">
 		
@@ -170,6 +174,10 @@
 				</div>
 			</div>
 		</div>
+	</div>
+	<div class="row" style="margin-bottom:50px">
+
+		<div class="col-md-1"></div>
 
 		<div class="col-md-3" style="margin: 0 20px">
 		
@@ -177,6 +185,44 @@
 				<div class="panel-heading">2022 Châteauroux</div>
 	  				<div class="panel-body">
 					<table id="ch2022" class="display table table-striped" >
+						<thead>
+							<tr>
+								<th>Place</th>
+								<th>Nom</th>
+								<th>Chrono</th>
+								<th>Points</th>
+							</tr>
+						</thead>		
+						<tbody></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3" style="margin: 0 20px">
+		
+			<div class="panel panel-default">
+				<div class="panel-heading">2023 Laval</div>
+	  				<div class="panel-body">
+					<table id="ch2023" class="display table table-striped" >
+						<thead>
+							<tr>
+								<th>Place</th>
+								<th>Nom</th>
+								<th>Chrono</th>
+								<th>Points</th>
+							</tr>
+						</thead>		
+						<tbody></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3" style="margin: 0 20px">
+		
+			<div class="panel panel-default">
+				<div class="panel-heading">2024 Thonon-les-Bains</div>
+	  				<div class="panel-body">
+					<table id="ch2024" class="display table table-striped" >
 						<thead>
 							<tr>
 								<th>Place</th>
@@ -465,6 +511,66 @@ $(document).ready(function() {
 	
 	
 	
+	var table = $('#ch2023').DataTable( {
+		
+		paging: false,
+		bInfo :false,
+		data :
+[
+
+],
+
+		"lengthMenu": [ [100, 500, 1000, -1], [100, 500, 1000, "Tous"] ],
+		iDisplayLength: 100,
+		dom: 'Bfrtip',
+		select: true,
+		orderCellsTop: true,
+		order: [[3, 'desc']],
+		
+ 		columns: [
+			{ data: "place" },
+			{ data: "nom" },
+			{ data: "chrono" },
+			{ data: "pts" }
+		],
+		fixedColumns: true
+	} );
+	
+	
+	
+	var table = $('#ch2024').DataTable( {
+		
+		paging: false,
+		bInfo :false,
+		data :
+[
+	{"place":1, "annee":2024, "cat":"45M", "chrono":"53''52", "nom":"CHAGHIL Driss", "club":"Ca Beglais", "pts":662, "dist":400},
+	{"place":2, "annee":2024, "cat":"45M", "chrono":"53''74", "nom":"BA Oumar", "club":"Ca Beglais", "pts":651, "dist":400},
+	{"place":3, "annee":2024, "cat":"45M", "chrono":"57''96", "nom":"FRUMHOLTZ Julien", "club":"Cognac Ac", "pts":451, "dist":400},
+	{"place":1, "annee":2024, "cat":"45M", "chrono":"58''11", "nom":"LASHERMES Julien", "club":"Sa Thiers", "pts":445, "dist":400},
+	{"place":4, "annee":2024, "cat":"45M", "chrono":"59''22", "nom":"LASNIER Stephane", "club":"C. O. Du Sud De L'essonne", "pts":399, "dist":400}
+
+],
+
+		"lengthMenu": [ [100, 500, 1000, -1], [100, 500, 1000, "Tous"] ],
+		iDisplayLength: 100,
+		dom: 'Bfrtip',
+		select: true,
+		orderCellsTop: true,
+		order: [[3, 'desc']],
+		
+ 		columns: [
+			{ data: "place" },
+			{ data: "nom" },
+			{ data: "chrono" },
+			{ data: "pts" }
+		],
+		fixedColumns: true
+	} );
+	
+	
+	
+
 	
 	
 	
@@ -484,6 +590,8 @@ $(document).ready(function() {
 	$('#ch2020_filter').hide();
 	$('#ch2021_filter').hide();
 	$('#ch2022_filter').hide();
+	$('#ch2023_filter').hide();
+	$('#ch2024_filter').hide();
 	
 } );
 

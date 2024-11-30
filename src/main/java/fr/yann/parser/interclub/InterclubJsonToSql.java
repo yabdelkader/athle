@@ -16,7 +16,8 @@ import fr.yann.service.CotationServiceSautLancer;
 
 public class InterclubJsonToSql {
 
-	private static final String	pathFolder	= "D:\\workspace_athle\\parser\\src\\main\\java\\fr\\yann\\parser\\interclub\\json\\";
+	// private static final String	pathFolder	= "D:\\workspace_athle\\parser\\src\\main\\java\\fr\\yann\\parser\\interclub\\json\\";
+	private static final String	pathFolder	= "C:\\Non_Sauvegardé\\Projets\\workspace_athle\\athle\\src\\main\\java\\fr\\yann\\parser\\interclub\\json\\";
 
 	private static List<ICJson> json;
 	

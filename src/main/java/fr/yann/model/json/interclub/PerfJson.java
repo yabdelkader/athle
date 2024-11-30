@@ -102,7 +102,7 @@ public class PerfJson {
 				+ "\"p\":\"" + p + "\","
 				+ "\"pt\":\"" + pt + "\","
 				+ "\"niv\":\"" + niv + "\","
-				+ "\"nai\":\"" + nai + "\","
+				// + "\"nai\":\"" + nai + "\","
 				+ "\"a\":\"" + a + "\","
 				+ "\"d\":\"" + d + "\""
 				+ "},";
@@ -110,7 +110,8 @@ public class PerfJson {
 	
 	public String display() {
 		return "PerfJson [n=" + n + ", c=" + c + ", s=" + s + ", e=" + e + ", p=" + p + ", pt=" + pt + ", niv=" + niv
-				+ ", nai=" + nai + ", a=" + a + ", d=" + d + "]";
+				+ ", nai=" + nai
+				+ ", a=" + a + ", d=" + d + "]";
 	}
 
 	public String ligneSansQuotes() {
@@ -129,9 +130,12 @@ public class PerfJson {
 	}
 	
 	public String ligneSqlInsert() {
-		return "INSERT INTO ic (nom, categorie, sexe, epreuve, perf, points, niveau, naissance, annee, date)"
+		return "INSERT INTO ic (nom, sexe, epreuve, perf, points, niveau, annee, date)"
 				+ " VALUES ('"
-				+ n + "','" + c + "','" + s + "','" + e + "','" + p + "'," + pt + ",'" + niv + "'," + nai + ", "
+				+ n + "','"
+				// + c + "','"
+				+ s + "','" + e + "','" + p + "'," + pt + ",'" + niv + "',"
+				// + nai + ", "
 				+ a + ",'" + d + "');";
 	}
 	
