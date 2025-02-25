@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<link href="style.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+
+table {
+	width: auto;
+	margin: auto;
+	padding-left: -20px;
+}
+
+tr:hover > td {
+  background-color: #ddd;
+}
+
+
+.highlighted {
+    background-color:  #ddd;
+}
+
+</style>
+
+<script src="../cross/js/jquery-3.3.1.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+
+	<table>
+		
+
+		<tr height=20 style='height: 15.0pt'>
+			<td/>
+			<td class=xl67 width=80 style='width: 60pt'>IA</td>
+			<td class=xl68 width=80 style='width: 60pt'>IB</td>
+			<td class=xl69 width=80 style='width: 60pt'>N1</td>
+			<td class=xl69 width=80 style='width: 60pt'>N2</td>
+			<td class=xl69 width=80 style='width: 60pt'>N3</td>
+			<td class=xl70 width=80 style='width: 60pt'>N4</td>
+			<td class=xl71 width=80 style='width: 60pt'>IR1</td>
+			<td class=xl71 width=80 style='width: 60pt'>IR2</td>
+			<td class=xl71 width=80 style='width: 60pt'>IR3</td>
+			<td class=xl71 width=58 style='width: 44pt'>IR4</td>
+			<td class=xl73 width=58 style='width: 44pt'>R1</td>
+			<td class=xl73 width=58 style='width: 44pt'>R2</td>
+			<td class=xl73 width=58 style='width: 44pt'>R3</td>
+			<td class=xl73 width=58 style='width: 44pt'>R4</td>
+			<td class=xl73 width=58 style='width: 44pt'>R5</td>
+			<td class=xl74 width=58 style='width: 44pt'>R6</td>
+		</tr>
+		<tr height=20 style='height: 15.0pt'>
+			<td height=20 class=xl65 width=118
+				style='height: 15.0pt; width: 89pt'></td>
+			<td class=xl67 width=80 style='width: 60pt'>40 pt</td>
+			<td class=xl68 width=80 style='width: 60pt'>35 pt</td>
+			<td class=xl69 width=80 style='width: 60pt'>30 pt</td>
+			<td class=xl69 width=80 style='width: 60pt'>28 pt</td>
+			<td class=xl69 width=80 style='width: 60pt'>26 pt</td>
+			<td class=xl70 width=80 style='width: 60pt'>24 pt</td>
+			<td class=xl71 width=80 style='width: 60pt'>21 pt</td>
+			<td class=xl71 width=80 style='width: 60pt'>20 pt</td>
+			<td class=xl71 width=80 style='width: 60pt'>19 pt</td>
+			<td class=xl71 width=58 style='width: 44pt'>18 pt</td>
+			<td class=xl73 width=58 style='width: 44pt'>15 pt</td>
+			<td class=xl73 width=58 style='width: 44pt'>14 pt</td>
+			<td class=xl73 width=58 style='width: 44pt'>13 pt</td>
+			<td class=xl73 width=58 style='width: 44pt'>12 pt</td>
+			<td class=xl73 width=58 style='width: 44pt'>11 pt</td>
+			<td class=xl74 width=58 style='width: 44pt'>10 pt</td>
+		</tr>
+		<tr height=20 style='height: 15.0pt'>
+			<td height=20 class=xl65 style='height: 15.0pt; width: 89pt'>100m</td>
+			<td class=xl66 width=80 style='width: 60pt'>10''10</td>
+			<td class=xl72 width=80 style='width: 60pt'>10''20</td>
+			<td class=xl66 width=80 style='width: 60pt'>10''34</td>
+			<td class=xl66 width=80 style='width: 60pt'>10''64</td>
+			<td class=xl66 width=80 style='width: 60pt'>10''84</td>
+			<td class=xl72 width=80 style='width: 60pt'>10''94</td>
+			<td class=xl66 width=80 style='width: 60pt'>11''14</td>
+			<td class=xl66 width=80 style='width: 60pt'>11''34</td>
+			<td class=xl66 width=80 style='width: 60pt'>11''44</td>
+			<td class=xl66 width=58 style='width: 44pt'>11''54</td>
+			<td class=xl66 width=58 style='width: 44pt'>11''74</td>
+			<td class=xl66 width=58 style='width: 44pt'>11''94</td>
+			<td class=xl66 width=58 style='width: 44pt'>12''14</td>
+			<td class=xl66 width=58 style='width: 44pt'>12''24</td>
+			<td class=xl66 width=58 style='width: 44pt'>12''34</td>
+			<td class=xl72 width=58 style='width: 44pt'>12''44</td>
+		</tr>
+		<tr height=20 style='height: 15.0pt'>
+			<td height=20 class=xl65 width=118
+				style='height: 15.0pt; width: 89pt'>200m</td>
+			<td class=xl66 width=80 style='width: 60pt'>20''44</td>
+			<td class=xl72 width=80 style='width: 60pt'>20''64</td>
+			<td class=xl66 width=80 style='width: 60pt'>20''94</td>
+			<td class=xl66 width=80 style='width: 60pt'>21''44</td>
+			<td class=xl66 width=80 style='width: 60pt'>21''84</td>
+			<td class=xl72 width=80 style='width: 60pt'>22''24</td>
+			<td class=xl66 width=80 style='width: 60pt'>22''54</td>
+			<td class=xl66 width=80 style='width: 60pt'>22''84</td>
+			<td class=xl66 width=80 style='width: 60pt'>23''14</td>
+			<td class=xl66 width=58 style='width: 44pt'>23''44</td>
+			<td class=xl66 width=58 style='width: 44pt'>23''74</td>
+			<td class=xl66 width=58 style='width: 44pt'>24''14</td>
+			<td class=xl66 width=58 style='width: 44pt'>24''54</td>
+			<td class=xl66 width=58 style='width: 44pt'>24''84</td>
+			<td class=xl66 width=58 style='width: 44pt'>25''14</td>
+			<td class=xl72 width=58 style='width: 44pt'>25''44</td>
+		</tr>
+		<tr height=20 style='height: 15.0pt'>
+			<td height=20 class=xl65 width=118
+				style='height: 15.0pt; width: 89pt'>400m</td>
+			<td class=xl66 width=80 style='width: 60pt'>45''24</td>
+			<td class=xl72 width=80 style='width: 60pt'>45''84</td>
+			<td class=xl66 width=80 style='width: 60pt'>46''64</td>
+			<td class=xl66 width=80 style='width: 60pt'>47''64</td>
+			<td class=xl66 width=80 style='width: 60pt'>48''64</td>
+			<td class=xl72 width=80 style='width: 60pt'>49''64</td>
+			<td class=xl66 width=80 style='width: 60pt'>50''44</td>
+			<td class=xl66 width=80 style='width: 60pt'>51''44</td>
+			<td class=xl66 width=80 style='width: 60pt'>52''44</td>
+			<td class=xl66 width=58 style='width: 44pt'>53''44</td>
+			<td class=xl66 width=58 style='width: 44pt'>54''44</td>
+			<td class=xl66 width=58 style='width: 44pt'>55''44</td>
+			<td class=xl66 width=58 style='width: 44pt'>56''44</td>
+			<td class=xl66 width=58 style='width: 44pt'>57''44</td>
+			<td class=xl66 width=58 style='width: 44pt'>58''44</td>
+			<td class=xl72 width=58 style='width: 44pt'>59''44</td>
+		</tr>
+		<tr height=20 style='height: 15.0pt'>
+			<td height=20 class=xl65 width=118
+				style='height: 15.0pt; width: 89pt'>800m</td>
+			<td class=xl66 width=80 style='width: 60pt'>1'45''54</td>
+			<td class=xl72 width=80 style='width: 60pt'>1'46''54</td>
+			<td class=xl66 width=80 style='width: 60pt'>1'48''00</td>
+			<td class=xl66 width=80 style='width: 60pt'>1'50''00</td>
+			<td class=xl66 width=80 style='width: 60pt'>1'52''00</td>
+			<td class=xl72 width=80 style='width: 60pt'>1'54''00</td>
+			<td class=xl66 width=80 style='width: 60pt'>1'57''00</td>
+			<td class=xl66 width=80 style='width: 60pt'>1'59''00</td>
+			<td class=xl66 width=80 style='width: 60pt'>2'01''00</td>
+			<td class=xl66 width=58 style='width: 44pt'>2'03''00</td>
+			<td class=xl66 width=58 style='width: 44pt'>2'05''00</td>
+			<td class=xl66 width=58 style='width: 44pt'>2'07''00</td>
+			<td class=xl66 width=58 style='width: 44pt'>2'09''00</td>
+			<td class=xl66 width=58 style='width: 44pt'>2'11''00</td>
+			<td class=xl66 width=58 style='width: 44pt'>2'14''00</td>
+			<td class=xl72 width=58 style='width: 44pt'>2'17''00</td>
+		</tr>
+		<tr height=20 style='height: 15.0pt'>
+			<td height=20 class=xl65 width=118
+				style='height: 15.0pt; width: 89pt'>1&nbsp;000m</td>
+			<td class=xl66 width=80 style='width: 60pt'>2'16''00</td>
+			<td class=xl72 width=80 style='width: 60pt'>2'17''50</td>
+			<td class=xl66 width=80 style='width: 60pt'>2'19''00</td>
+			<td class=xl66 width=80 style='width: 60pt'>2'21''50</td>
+			<td class=xl66 width=80 style='width: 60pt'>2'24''00</td>
+			<td class=xl72 width=80 style='width: 60pt'>2'26''50</td>
+			<td class=xl66 width=80 style='width: 60pt'>2'30''00</td>
+			<td class=xl66 width=80 style='width: 60pt'>2'32''50</td>
+			<td class=xl66 width=80 style='width: 60pt'>2'35''00</td>
+			<td class=xl66 width=58 style='width: 44pt'>2'38''00</td>
+			<td class=xl66 width=58 style='width: 44pt'>2'41''00</td>
+			<td class=xl66 width=58 style='width: 44pt'>2'44''00</td>
+			<td class=xl66 width=58 style='width: 44pt'>2'47''00</td>
+			<td class=xl66 width=58 style='width: 44pt'>2'50''00</td>
+			<td class=xl66 width=58 style='width: 44pt'>2'53''00</td>
+			<td class=xl72 width=58 style='width: 44pt'>2'57''00</td>
+
+		</tr>
+		<tr height=20 style='height: 15.0pt'>
+			<td height=20 class=xl65 width=118
+				style='height: 15.0pt; width: 89pt'>1&nbsp;500m</td>
+			<td class=xl66 width=80 style='width: 60pt'>3'34''00</td>
+			<td class=xl72 width=80 style='width: 60pt'>3'37''00</td>
+			<td class=xl66 width=80 style='width: 60pt'>3'42''00</td>
+			<td class=xl66 width=80 style='width: 60pt'>3'46''00</td>
+			<td class=xl66 width=80 style='width: 60pt'>3'50''00</td>
+			<td class=xl72 width=80 style='width: 60pt'>3'54''00</td>
+			<td class=xl66 width=80 style='width: 60pt'>3'59''00</td>
+			<td class=xl66 width=80 style='width: 60pt'>4'04''00</td>
+			<td class=xl66 width=80 style='width: 60pt'>4'09''00</td>
+			<td class=xl66 width=58 style='width: 44pt'>4'14''00</td>
+			<td class=xl66 width=58 style='width: 44pt'>4'19''00</td>
+			<td class=xl66 width=58 style='width: 44pt'>4'24''00</td>
+			<td class=xl66 width=58 style='width: 44pt'>4'29''00</td>
+			<td class=xl66 width=58 style='width: 44pt'>4'34''00</td>
+			<td class=xl66 width=58 style='width: 44pt'>4'39''00</td>
+			<td class=xl72 width=58 style='width: 44pt'>4'44''00</td>
+
+		</tr>
+		<tr height=20 style='height: 15.0pt'>
+			<td height=20 class=xl65 width=118
+				style='height: 15.0pt; width: 89pt'>3&nbsp;000m</td>
+			<td class=xl66 width=80 style='width: 60pt'>7'44''00</td>
+			<td class=xl72 width=80 style='width: 60pt'>7'50''00</td>
+			<td class=xl66 width=80 style='width: 60pt'>8'00''00</td>
+			<td class=xl66 width=80 style='width: 60pt'>8'10''00</td>
+			<td class=xl66 width=80 style='width: 60pt'>8'20''00</td>
+			<td class=xl72 width=80 style='width: 60pt'>8'30''00</td>
+			<td class=xl66 width=80 style='width: 60pt'>8'40''00</td>
+			<td class=xl66 width=80 style='width: 60pt'>8'50''00</td>
+			<td class=xl66 width=80 style='width: 60pt'>9'00''00</td>
+			<td class=xl66 width=58 style='width: 44pt'>9'10''00</td>
+			<td class=xl66 width=58 style='width: 44pt'>9'20''00</td>
+			<td class=xl66 width=58 style='width: 44pt'>9'30''00</td>
+			<td class=xl66 width=58 style='width: 44pt'>9'40''00</td>
+			<td class=xl66 width=58 style='width: 44pt'>9'50''00</td>
+			<td class=xl66 width=58 style='width: 44pt'>10'00''00</td>
+			<td class=xl72 width=58 style='width: 44pt'>10'10''00</td>
+
+		</tr>
+		<tr height=20 style='height: 15.0pt'>
+			<td height=20 class=xl65 width=118
+				style='height: 15.0pt; width: 89pt'>5&nbsp;000m - 5km</td>
+			<td class=xl66 width=80 style='width: 60pt'>13'10''00</td>
+			<td class=xl72 width=80 style='width: 60pt'>13'25''00</td>
+			<td class=xl66 width=80 style='width: 60pt'>13'45''00</td>
+			<td class=xl66 width=80 style='width: 60pt'>14'00''00</td>
+			<td class=xl66 width=80 style='width: 60pt'>14'20''00</td>
+			<td class=xl72 width=80 style='width: 60pt'>14'40''00</td>
+			<td class=xl66 width=80 style='width: 60pt'>15'00''00</td>
+			<td class=xl66 width=80 style='width: 60pt'>15'20''00</td>
+			<td class=xl66 width=80 style='width: 60pt'>15'40''00</td>
+			<td class=xl66 width=58 style='width: 44pt'>16'00''00</td>
+			<td class=xl66 width=58 style='width: 44pt'>16'20''00</td>
+			<td class=xl66 width=58 style='width: 44pt'>16'40''00</td>
+			<td class=xl66 width=58 style='width: 44pt'>17'00''00</td>
+			<td class=xl66 width=58 style='width: 44pt'>17'20''00</td>
+			<td class=xl66 width=58 style='width: 44pt'>17'40''00</td>
+			<td class=xl72 width=58 style='width: 44pt'>18'00''00</td>
+
+		</tr>
+		<tr height=20 style='height: 15.0pt'>
+			<td height=20 class=xl65 width=118
+				style='height: 15.0pt; width: 89pt'>10&nbsp;000m -&nbsp;10km</td>
+			<td class=xl66 width=80 style='width: 60pt'>27'50</td>
+			<td class=xl72 width=80 style='width: 60pt'>28'15</td>
+			<td class=xl66 width=80 style='width: 60pt'>29'00</td>
+			<td class=xl66 width=80 style='width: 60pt'>29'45</td>
+			<td class=xl66 width=80 style='width: 60pt'>30'30</td>
+			<td class=xl72 width=80 style='width: 60pt'>31'15</td>
+			<td class=xl66 width=80 style='width: 60pt'>32'00</td>
+			<td class=xl66 width=80 style='width: 60pt'>32'45</td>
+			<td class=xl66 width=80 style='width: 60pt'>33'30</td>
+			<td class=xl66 width=58 style='width: 44pt'>34'15</td>
+			<td class=xl66 width=58 style='width: 44pt'>35'00</td>
+			<td class=xl66 width=58 style='width: 44pt'>35'45</td>
+			<td class=xl66 width=58 style='width: 44pt'>36'30</td>
+			<td class=xl66 width=58 style='width: 44pt'>37'15</td>
+			<td class=xl66 width=58 style='width: 44pt'>38'00</td>
+			<td class=xl72 width=58 style='width: 44pt'>38'45</td>
+
+		</tr>
+
+		<tr height=20 style='height: 15.0pt'>
+			<td height=20 class=xl65 width=118
+				style='height: 15.0pt; width: 89pt'>20&nbsp;000m
+				-&nbsp;20km&nbsp;</td>
+			<td class=xl66 width=80 style='width: 60pt'>58'30</td>
+			<td class=xl72 width=80 style='width: 60pt'>59'15</td>
+			<td class=xl66 width=80 style='width: 60pt'>1h01'00</td>
+			<td class=xl66 width=80 style='width: 60pt'>1h02'15</td>
+			<td class=xl66 width=80 style='width: 60pt'>1h03'30</td>
+			<td class=xl72 width=80 style='width: 60pt'>1h05'00</td>
+			<td class=xl66 width=80 style='width: 60pt'>1h07'00</td>
+			<td class=xl66 width=80 style='width: 60pt'>1h08'30</td>
+			<td class=xl66 width=80 style='width: 60pt'>1h10'00</td>
+			<td class=xl66 width=58 style='width: 44pt'>1h11'30</td>
+			<td class=xl66 width=58 style='width: 44pt'>1h13'00</td>
+			<td class=xl66 width=58 style='width: 44pt'>1h14'30</td>
+			<td class=xl66 width=58 style='width: 44pt'>1h16'00</td>
+			<td class=xl66 width=58 style='width: 44pt'>1h18'00</td>
+			<td class=xl66 width=58 style='width: 44pt'>1h19'30</td>
+			<td class=xl72 width=58 style='width: 44pt'>1h22'30</td>
+
+		</tr>
+		<tr height=20 style='height: 15.0pt'>
+			<td height=20 class=xl65 
+				style='height: 15.0pt; width: 89pt'>Semi-Marathon</td>
+			<td class=xl66 width=80 style='width: 60pt'>1h01'30</td>
+			<td class=xl72 width=80 style='width: 60pt'>1h02'15</td>
+			<td class=xl66 width=80 style='width: 60pt'>1h04'00</td>
+			<td class=xl66 width=80 style='width: 60pt'>1h05'30</td>
+			<td class=xl66 width=80 style='width: 60pt'>1h07'00</td>
+			<td class=xl72 width=80 style='width: 60pt'>1h08'30</td>
+			<td class=xl66 width=80 style='width: 60pt'>1h10'30</td>
+			<td class=xl66 width=80 style='width: 60pt'>1h12'30</td>
+			<td class=xl66 width=80 style='width: 60pt'>1h14'00</td>
+			<td class=xl66 width=58 style='width: 44pt'>1h15'30</td>
+			<td class=xl66 width=58 style='width: 44pt'>1h17'30</td>
+			<td class=xl66 width=58 style='width: 44pt'>1h19'00</td>
+			<td class=xl66 width=58 style='width: 44pt'>1h20'30</td>
+			<td class=xl66 width=58 style='width: 44pt'>1h22'30</td>
+			<td class=xl66 width=58 style='width: 44pt'>1h24'00</td>
+			<td class=xl72 width=58 style='width: 44pt'>1h27'00</td>
+
+		</tr>
+		<tr height=20 style='height: 15.0pt'>
+			<td height=20 class=xl65 width=118
+				style='height: 15.0pt; width: 89pt'>Marathon</td>
+			<td class=xl66 width=80 style='width: 60pt'>2h10'00</td>
+			<td class=xl72 width=80 style='width: 60pt'>2h12'30</td>
+			<td class=xl66 width=80 style='width: 60pt'>2h15'00</td>
+			<td class=xl66 width=80 style='width: 60pt'>2h20'00</td>
+			<td class=xl66 width=80 style='width: 60pt'>2h24'00</td>
+			<td class=xl72 width=80 style='width: 60pt'>2h28'00</td>
+			<td class=xl66 width=80 style='width: 60pt'>2h32'00</td>
+			<td class=xl66 width=80 style='width: 60pt'>2h36'00</td>
+			<td class=xl66 width=80 style='width: 60pt'>2h40'00</td>
+			<td class=xl66 width=58 style='width: 44pt'>2h44'00</td>
+			<td class=xl66 width=58 style='width: 44pt'>2h48'00</td>
+			<td class=xl66 width=58 style='width: 44pt'>2h53'00</td>
+			<td class=xl66 width=58 style='width: 44pt'>2h58'00</td>
+			<td class=xl66 width=58 style='width: 44pt'>3h03'00</td>
+			<td class=xl66 width=58 style='width: 44pt'>3h08'00</td>
+			<td class=xl72 width=58 style='width: 44pt'>3h14'00</td>
+
+		</tr>
+
+		<tr height=20 style='height: 15.0pt'>
+			<td height=20 class=xl65 width=118
+				style='height: 15.0pt; width: 89pt'>110m Haies 1.06m</td>
+			<td class=xl66 width=80 style='width: 60pt'>13''44</td>
+			<td class=xl72 width=80 style='width: 60pt'>13''64</td>
+			<td class=xl66 width=80 style='width: 60pt'>13''84</td>
+			<td class=xl66 width=80 style='width: 60pt'>14''24</td>
+			<td class=xl66 width=80 style='width: 60pt'>14''74</td>
+			<td class=xl72 width=80 style='width: 60pt'>15''14</td>
+			<td class=xl66 width=80 style='width: 60pt'>15''54</td>
+			<td class=xl66 width=80 style='width: 60pt'>15''84</td>
+			<td class=xl66 width=80 style='width: 60pt'>16''14</td>
+			<td class=xl66 width=58 style='width: 44pt'>16''54</td>
+			<td class=xl66 width=58 style='width: 44pt'>16''94</td>
+			<td class=xl66 width=58 style='width: 44pt'>17''34</td>
+			<td class=xl66 width=58 style='width: 44pt'>17''64</td>
+			<td class=xl66 width=58 style='width: 44pt'>17''94</td>
+			<td class=xl66 width=58 style='width: 44pt'>18''24</td>
+			<td class=xl72 width=58 style='width: 44pt'>18''54</td>
+
+		</tr>
+		<tr height=20 style='height: 15.0pt'>
+			<td height=20 class=xl65 width=118
+				style='height: 15.0pt; width: 89pt'>400m Haies</td>
+			<td class=xl66 width=80 style='width: 60pt'>49''44</td>
+			<td class=xl72 width=80 style='width: 60pt'>50''14</td>
+			<td class=xl66 width=80 style='width: 60pt'>51''24</td>
+			<td class=xl66 width=80 style='width: 60pt'>52''74</td>
+			<td class=xl66 width=80 style='width: 60pt'>54''04</td>
+			<td class=xl72 width=80 style='width: 60pt'>55''24</td>
+			<td class=xl66 width=80 style='width: 60pt'>56''24</td>
+			<td class=xl66 width=80 style='width: 60pt'>57''24</td>
+			<td class=xl66 width=80 style='width: 60pt'>58''24</td>
+			<td class=xl66 width=58 style='width: 44pt'>59''24</td>
+			<td class=xl66 width=58 style='width: 44pt'>60''24</td>
+			<td class=xl66 width=58 style='width: 44pt'>61''44</td>
+			<td class=xl66 width=58 style='width: 44pt'>62''64</td>
+			<td class=xl66 width=58 style='width: 44pt'>63''84</td>
+			<td class=xl66 width=58 style='width: 44pt'>65''04</td>
+			<td class=xl72 width=58 style='width: 44pt'>66''24</td>
+
+		</tr>
+		<tr height=20 style='height: 15.0pt'>
+			<td height=20 class=xl65 width=118
+				style='height: 15.0pt; width: 89pt'>3&nbsp;000m Steeple</td>
+			<td class=xl66 width=80 style='width: 60pt'>8'20''00</td>
+			<td class=xl72 width=80 style='width: 60pt'>8'30''00</td>
+			<td class=xl66 width=80 style='width: 60pt'>8'45''00</td>
+			<td class=xl66 width=80 style='width: 60pt'>9'00''00</td>
+			<td class=xl66 width=80 style='width: 60pt'>9'15''00</td>
+			<td class=xl72 width=80 style='width: 60pt'>9'30''00</td>
+			<td class=xl66 width=80 style='width: 60pt'>9'40''00</td>
+			<td class=xl66 width=80 style='width: 60pt'>9'50''00</td>
+			<td class=xl66 width=80 style='width: 60pt'>10'00''00</td>
+			<td class=xl66 width=58 style='width: 44pt'>10'10''00</td>
+			<td class=xl66 width=58 style='width: 44pt'>10'20''00</td>
+			<td class=xl66 width=58 style='width: 44pt'>10'35''00</td>
+			<td class=xl66 width=58 style='width: 44pt'>10'50''00</td>
+			<td class=xl66 width=58 style='width: 44pt'>11'05''00</td>
+			<td class=xl66 width=58 style='width: 44pt'>11'20''00</td>
+
+		</tr>
+		<tr height=20 style='height: 15.0pt'>
+			<td height=20 class=xl65 width=118
+				style='height: 15.0pt; width: 89pt'>Hauteur</td>
+			<td class=xl66 width=80 style='width: 60pt'>2m28</td>
+			<td class=xl72 width=80 style='width: 60pt'>2m23</td>
+			<td class=xl66 width=80 style='width: 60pt'>2m16</td>
+			<td class=xl66 width=80 style='width: 60pt'>2m10</td>
+			<td class=xl66 width=80 style='width: 60pt'>2m06</td>
+			<td class=xl72 width=80 style='width: 60pt'>2m01</td>
+			<td class=xl66 width=80 style='width: 60pt'>1m95</td>
+			<td class=xl66 width=80 style='width: 60pt'>1m92</td>
+			<td class=xl66 width=80 style='width: 60pt'>1m89</td>
+			<td class=xl66 width=58 style='width: 44pt'>1m85</td>
+			<td class=xl66 width=58 style='width: 44pt'>1m81</td>
+			<td class=xl66 width=58 style='width: 44pt'>1m78</td>
+			<td class=xl66 width=58 style='width: 44pt'>1m75</td>
+			<td class=xl66 width=58 style='width: 44pt'>1m72</td>
+			<td class=xl66 width=58 style='width: 44pt'>1m68</td>
+			<td class=xl72 width=58 style='width: 44pt'>1m64</td>
+
+		</tr>
+		<tr height=20 style='height: 15.0pt'>
+			<td height=20 class=xl65 width=118
+				style='height: 15.0pt; width: 89pt'>Perche</td>
+			<td class=xl66 width=80 style='width: 60pt'>5m65</td>
+			<td class=xl72 width=80 style='width: 60pt'>5m50</td>
+			<td class=xl66 width=80 style='width: 60pt'>5m40</td>
+			<td class=xl66 width=80 style='width: 60pt'>5m20</td>
+			<td class=xl66 width=80 style='width: 60pt'>5m00</td>
+			<td class=xl72 width=80 style='width: 60pt'>4m80</td>
+			<td class=xl66 width=80 style='width: 60pt'>4m60</td>
+			<td class=xl66 width=80 style='width: 60pt'>4m40</td>
+			<td class=xl66 width=80 style='width: 60pt'>4m30</td>
+			<td class=xl66 width=58 style='width: 44pt'>4m20</td>
+			<td class=xl66 width=58 style='width: 44pt'>4m00</td>
+			<td class=xl66 width=58 style='width: 44pt'>3m80</td>
+			<td class=xl66 width=58 style='width: 44pt'>3m60</td>
+			<td class=xl66 width=58 style='width: 44pt'>3m50</td>
+			<td class=xl66 width=58 style='width: 44pt'>3m40</td>
+			<td class=xl72 width=58 style='width: 44pt'>3m30</td>
+
+		</tr>
+		<tr height=20 style='height: 15.0pt'>
+			<td height=20 class=xl65 width=118
+				style='height: 15.0pt; width: 89pt'>Longueur</td>
+			<td class=xl66 width=80 style='width: 60pt'>8m15</td>
+			<td class=xl72 width=80 style='width: 60pt'>8m00</td>
+			<td class=xl66 width=80 style='width: 60pt'>7m75</td>
+			<td class=xl66 width=80 style='width: 60pt'>7m40</td>
+			<td class=xl66 width=80 style='width: 60pt'>7m20</td>
+			<td class=xl72 width=80 style='width: 60pt'>7m00</td>
+			<td class=xl66 width=80 style='width: 60pt'>6m80</td>
+			<td class=xl66 width=80 style='width: 60pt'>6m60</td>
+			<td class=xl66 width=80 style='width: 60pt'>6m40</td>
+			<td class=xl66 width=58 style='width: 44pt'>6m30</td>
+			<td class=xl66 width=58 style='width: 44pt'>6m20</td>
+			<td class=xl66 width=58 style='width: 44pt'>6m10</td>
+			<td class=xl66 width=58 style='width: 44pt'>6m00</td>
+			<td class=xl66 width=58 style='width: 44pt'>5m85</td>
+			<td class=xl66 width=58 style='width: 44pt'>5m65</td>
+			<td class=xl72 width=58 style='width: 44pt'>5m50</td>
+
+		</tr>
+		<tr height=20 style='height: 15.0pt'>
+			<td height=20 class=xl65 width=118
+				style='height: 15.0pt; width: 89pt'>Triple Saut</td>
+			<td class=xl66 width=80 style='width: 60pt'>17m10</td>
+			<td class=xl72 width=80 style='width: 60pt'>16m80</td>
+			<td class=xl66 width=80 style='width: 60pt'>16m50</td>
+			<td class=xl66 width=80 style='width: 60pt'>15m75</td>
+			<td class=xl66 width=80 style='width: 60pt'>15m00</td>
+			<td class=xl72 width=80 style='width: 60pt'>14m50</td>
+			<td class=xl66 width=80 style='width: 60pt'>14m10</td>
+			<td class=xl66 width=80 style='width: 60pt'>13m80</td>
+			<td class=xl66 width=80 style='width: 60pt'>13m50</td>
+			<td class=xl66 width=58 style='width: 44pt'>13m20</td>
+			<td class=xl66 width=58 style='width: 44pt'>12m90</td>
+			<td class=xl66 width=58 style='width: 44pt'>12m60</td>
+			<td class=xl66 width=58 style='width: 44pt'>12m30</td>
+			<td class=xl66 width=58 style='width: 44pt'>12m00</td>
+			<td class=xl66 width=58 style='width: 44pt'>11m70</td>
+			<td class=xl72 width=58 style='width: 44pt'>11m40</td>
+
+		</tr>
+
+	</table>
+
+<script type="text/javascript">
+
+
+$('td').hover(function() {
+    var t = parseInt($(this).index()) + 1;
+    $('td:nth-child(' + t + ')').addClass('highlighted');
+},
+function() {
+    var t = parseInt($(this).index()) + 1;
+    $('td:nth-child(' + t + ')').removeClass('highlighted');
+});
+
+</script>
+</body>
+
+</html>

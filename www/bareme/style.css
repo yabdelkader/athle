@@ -1,0 +1,102 @@
+.style0 {
+	text-align: general;
+	vertical-align: bottom;
+	white-space: nowrap;
+	color: black;
+	font-size: 10pt;
+	font-weight: 400;
+	font-style: normal;
+	text-decoration: none;
+	font-family: Calibri, sans-serif;
+	border: none;
+}
+
+td {
+	padding-top: 1px;
+	padding-right: 1px;
+	padding-left: 1px;
+	color: black;
+	font-size: 10pt;
+	font-weight: 400;
+	font-style: normal;
+	text-decoration: none;
+	font-family: Calibri, sans-serif;
+	text-align: general;
+	vertical-align: bottom;
+	border: none;
+	white-space: nowrap;
+}
+
+.xl65 {
+
+	text-align: left;
+	white-space: normal;
+}
+
+td {
+	vertical-align: middle;
+	white-space: normal;
+}
+
+.xl67 {
+
+	background: #FFCC00;
+	white-space: normal;
+}
+
+.xl68 {
+
+	border-right: 0pt solid black;
+	border-bottom: none;
+	border-left: none;
+	background: #FFCC00;
+	white-space: normal;
+}
+
+.xl69 {
+
+	background: #99FF99;
+	white-space: normal;
+}
+
+.xl70 {
+
+	border-right: 0pt solid black;
+	border-bottom: none;
+	border-left: none;
+	background: #99FF99;
+	white-space: normal;
+}
+
+.xl71 {
+
+	background: #CCFFFF;
+	white-space: normal;
+}
+
+.xl72 {
+	border-right: 0pt solid black;
+	border-bottom: none;
+	border-left: none;
+	white-space: normal;
+}
+
+.xl73 {
+
+	background: #FFCC99;
+	white-space: normal;
+}
+
+.xl74 {
+
+	border-right: 0pt solid black;
+	border-bottom: none;
+	border-left: none;
+	background: #FFCC99;
+	white-space: normal;
+}
+
+.xl75 {
+	background: #FF99CC;
+	white-space: normal;
+}
