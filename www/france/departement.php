@@ -2,8 +2,8 @@
 
 include "../constantes.php";
 
-$utilisateur=$_POST["utilisateur"];
-$departement=$_POST["departement"];
+$utilisateur=$_GET["utilisateur"];
+$departement=$_GET["departement"];
 
 // Create connection
 // $conn = new mysqli($servername, $username, $password, $dbname);
