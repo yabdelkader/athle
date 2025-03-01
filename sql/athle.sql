@@ -135,3 +135,10 @@ CREATE TABLE IF NOT EXISTS cros (
 
 
 
+CREATE TABLE `base_athle`.`log` (
+`id` INT NOT NULL ,
+`utilisateur` VARCHAR( 32 ) NOT NULL ,
+`departement` VARCHAR( 32 ) NOT NULL ,
+`temps` DATETIME NOT NULL ,
+PRIMARY KEY ( `id` )
+) ENGINE = MYISAM ;

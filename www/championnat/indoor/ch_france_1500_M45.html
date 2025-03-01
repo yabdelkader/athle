@@ -197,7 +197,25 @@
 			</div>
 		</div>
 
-
+		<div class="col-md-3" style="margin: 0 20px">
+		
+			<div class="panel panel-default">
+				<div class="panel-heading">2024 Lyon</div>
+	  				<div class="panel-body">
+					<table id="ch2024" class="display table table-striped" >
+						<thead>
+							<tr>
+								<th>Place</th>
+								<th>Nom</th>
+								<th>Chrono</th>
+								<th>Points</th>
+							</tr>
+						</thead>		
+						<tbody></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
 	</article>
 	<script type="text/javascript" src="../../cross/js/jquery-3.3.1.js"></script>
 	<script type="text/javascript" src="../../cross/js/jquery.dataTables.min.js"></script>
@@ -444,6 +462,32 @@ $(document).ready(function() {
 	
 	
 	
+	var table = $('#ch2024').DataTable( {
+	
+		paging: false,
+		bInfo :false,
+		data :
+[
+	
+	{"place":1, "annee":2024, "cat":"45M", "chrono":"4.14.98", "nom":"DECEROIT Arnaud", "pts":720},
+	{"place":2, "annee":2024, "cat":"45M", "chrono":"4.15.25", "nom":"LE CUN Gerald", "pts":718},
+	{"place":3, "annee":2024, "cat":"45M", "chrono":"4.21.25", "nom":"MONNET Yannick", "pts":653}
+],
+
+		"lengthMenu": [ [100, 500, 1000, -1], [100, 500, 1000, "Tous"] ],
+		iDisplayLength: 100,
+		dom: 'Bfrtip',
+		select: true,
+		orderCellsTop: true,
+		order: [[3, 'desc']],
+ 		columns: [
+			{ data: "place" },
+			{ data: "nom" },
+			{ data: "chrono" },
+			{ data: "pts" }
+		],
+		fixedColumns: true
+	} );
 	
 	
 	
@@ -463,6 +507,8 @@ $(document).ready(function() {
 	$('#ch2020_filter').hide();
 	$('#ch2021_filter').hide();
 	$('#ch2022_filter').hide();
+	$('#ch2023_filter').hide();
+	$('#ch2024_filter').hide();
 	
 } );
 
